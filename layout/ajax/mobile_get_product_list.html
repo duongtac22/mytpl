@@ -1,0 +1,27 @@
+{if="sizeof($product_list) > 0"}
+
+    {loop="product_list"}
+      <div class="pro_item">
+         <a href="{$value.productUrl}" title="{$value.productName}" class="image">
+            <img src="{$value.productImage.large}" title="{$value.productName}"/>
+            {if="sizeof($value.specialOffer) > 0"}
+            <img src="{#IMAGE_PATH#}icon_km.gif" alt="{$value.productName}" class="icon_specialOffer" />
+            {/if}
+            {if="$value.productType.isNew == 1"}<span class="icon_new">NEW</span>{/if}
+            {if="$value.productType.isSaleOff == 1"}
+            <img src="{#IMAGE_PATH#}icon_saleoff.gif" alt="{$value.productName}" class="icon_saleoff" />
+            {/if}
+         </a>
+         <div class="pro_info">
+            <a href="{$value.productUrl}" class="pro_name">
+               {$value.productName}
+            </a>
+            <span class="pro_price">{$value.priceFormat}đ</span> {if="sizeof($value.specialOffer) > 0"}
+            <div class="promotion">
+               Khuyến mãi: <span>{loop="$value.specialOffer"}{|subString:$value.title, 60}{/loop}</span>
+            </div>
+            {/if}
+         </div>
+      </div>
+      {/loop}
+{/if} 

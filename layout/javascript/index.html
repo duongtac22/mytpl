@@ -1,0 +1,57 @@
+<!-- <script src="/javascript/dist/hurastore.js?v=4"> </script> -->
+<script src="{#INCLUDE_PATH#}owl.carousel.min.js"></script>
+<script src="{#INCLUDE_PATH#}jquery.fancybox.min.js"></script>
+<script src="{#INCLUDE_PATH#}custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!---//script hien thi tat ca cac trang-->
+{include="javascript/global"}
+
+<!---//script hien thi homepage-->
+{if="$module.name == 'home'"}
+    {include="javascript/homepage"}
+
+<!---//script hien thi cho san pham-->
+{elseif="$module.name == 'product-category'"}
+    <!---//script hien thi danh muc san pham-->
+    {include="javascript/product_category"}
+    {if="$module.view == 'category'"}
+
+        <!-- {include="javascript/product_category"} -->
+
+    <!---//script hien thi chi tiet san pham-->
+    {elseif="$module.view == 'product-detail'"}
+
+        {include="javascript/product_detail"}
+
+    {elseif="$module.view == 'combo'"}
+
+        {include="javascript/combo"}
+
+    {/if}
+
+
+<!---//script hien thi cho tin bai-->
+{elseif="$module.name == 'article'"}
+
+    <!---//script hien thi danh muc -->
+    {if="$module.view == 'category'"}
+
+    {include="javascript/article_category"}
+
+    <!---//script hien thi chi tiet-->
+    {elseif="$module.view == 'detail'"}
+
+
+    {/if}
+
+<!---//script hien thi cho gio hang-->
+{elseif="$module.name == 'cart'"}
+
+    {include="javascript/cart"}
+
+<!---//script hien thi cho deal-->
+{elseif="$module.name == 'deal'"}
+    {include="javascript/deal"}
+{/if}

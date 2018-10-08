@@ -1,0 +1,79 @@
+<div class="container">
+  <div id="breadcrumb">
+    <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="/" itemprop="url" class="nopad-l">
+        <span itemprop="title">Trang chủ</span>
+      </a>
+    </div>
+    <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      &nbsp;/&nbsp;<a href="" itemprop="url">
+      <span itemprop="title"><h1>{$tag_info.tag_name}</h1></span>
+      </a>
+    </div>
+  </div><!--breadcrumb-->
+  <div class="taskbar-top">
+    <b style="line-height: 31px;margin-left: 10px;">{$product_count} sản phẩm</b>
+    <div class="sort-by">
+      <select onchange="location.href=this.value">
+        <option value="">Sắp xếp theo</option>
+        {loop="$sort_by_collection"}
+        <option value="{$value.url}">{$value.name}</option>
+        {/loop}
+      </select>
+    </div>
+    <div class="clear"></div>
+  </div><!--taskbar-top-->
+  <div class="clear"></div>
+  <div id="content-full">
+    <div class="box-pro-home category-pro-list">
+      <ul class="ul product-list">
+        {loop="$product_list"}
+        <li onclick="location.href='{$value.productUrl}'">
+          <a href="{$value.productUrl}" class="linkPro"></a>
+          <div class="p-container">
+            <a href="{$value.productUrl}" class="p-img"><img class="lazy" src="{#IMAGE_PATH#}loading.gif" data-original="{$value.productImage.large}" alt="{$value.productName}" /></a>
+            <span class="p-price">{if="$value.price > 0"}{$value.price|format_price} VNĐ{else}Liên hệ{/if}</span>
+            {if="$value.marketPrice > $value.price"}
+            {$percent = ceil(100 - $value.price*100/$value.marketPrice)}
+            <span class="discount">-{$percent}%</span>
+            <span class="p-oldprice">{$value.marketPrice|format_price} VNĐ</span>
+            {/if}
+            <a href="{$value.productUrl}" class="p-name">{$value.productName}</a>
+            {if="$value.productType.isNew == 1"}<span class="p-icon_new">NEW</span>{/if}
+            {if="sizeof($value.specialOffer)  > 0"}<i class="p-icon_promotion"></i>{/if}
+            {if="$value.productType.isSaleOff == 1"}<i class="p-icon_sale"></i>{/if}
+          </div><!--p-container-->
+          <div class="p-hover">
+            <span class="p-summary">{$value.productSummary}</span>
+            <span class="p-detail">Xem ngay</span>
+            {if="$value.warranty!='' "} <span class="p-warranty">Bảo hành: {$value.warranty}</span>{/if}
+            <p>
+              <span class="p-price">{if="$value.price > 0"}{$value.price|format_price} VNĐ{else}Liên hệ{/if}</span>
+              {if="$value.marketPrice > $value.price"}
+              <span class="p-oldprice">{$value.marketPrice|format_price} VNĐ</span>
+              {/if}
+            </p>
+          </div><!--p-hover-->
+        </li>
+        {/loop}
+      </ul>
+      <div class="clear"></div>
+      {if="sizeof($paging_collection) > 0"}
+      <div class="paging">
+      	{loop="$paging_collection"}
+        {if="$value.name!='Back'"}
+        <a href="{$value.url}" {if="$value.url=='#'"}class="current"{/if}>{if="$value.name=='Next'"}Tiếp theo{else}{$value.name}{/if}</a>
+        {/if}
+        {/loop}
+        {if="$paging_count > 10"}
+        {if="strpos($current_page_url,'?') > 0"}
+        <a href="{$current_page_url}&page={$paging_count}">Cuối</a>
+        {else}
+        <a href="{$current_page_url}?page={$paging_count}">Cuối</a>
+        {/if}
+        {/if}
+      </div>
+      {/if}
+    </div><!--category-pro-list-->
+  </div><!--content-->
+</div><!--container-->

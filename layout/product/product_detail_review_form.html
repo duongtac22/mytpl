@@ -1,0 +1,117 @@
+
+
+<div class="comment-form">
+          <img src="{#IMAGE_PATH#}noavatar.jpg" alt="avatar" class="img-avatar"/>
+          <form action="/ajax/post_comment.php" method="post" enctype="multipart/form-data"  onsubmit="return check_field(0)">
+            <input type=hidden name='user_post[item_type]' value='product'/>
+            <input type=hidden name='user_post[item_id]' value='{$product_info.productId}'/>
+            <input type=hidden name='user_post[item_title]' value='{$product_info.productName}'/>
+            
+            <!--<input type=hidden name='user_post[rate]' value='0'/>-->
+            
+            <input type=hidden name='user_post[title]' value='{$product_info.productName}'/>
+            <input type=hidden name='user_post[user_email]' value='{$customer_info.email}'/>
+            <input type=hidden name='user_post[user_name]' value='{$customer_info.name}'/>
+            <input type=hidden name='user_post[user_avatar]' value='{$customer_info.avatar}'/>
+            <div class="relative">
+              <textarea name="user_post[content]" placeholder="Nội dung bình luận"  id="content0"></textarea>
+              {if="$is_customer_login=='yes'"}
+              <input type="submit" value="Bình luận" class="btn btn-red right" />
+              {else}
+              <div class="form-input">
+                <a href="javascript:closeFormCommentInput();" class="close">x</a>
+                <table style="width:100%;" class="tbl-common">
+                  <tr class="font14">
+                    <td style="width:50%;">Nhập thông tin để bình luận</td><td>Hoặc đăng nhập qua</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" id="name0" name='user_post[user_name]' class="inputText" placeholder="Họ tên (bắt buộc)" value="{$customer_info.name}"/>
+                    </td>
+                    <td>
+                      <a href="javascript:open_oauth('Google')"><i class="icons icon-login-google"></i></a>
+                      <a href="javascript:open_oauth('Facebook')"><i class="icons icon-login-facebook"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" id="email0" name='user_post[user_email]' class="inputText" placeholder="Email" value="{$customer_info.email}"/>
+                    </td>
+                    <td>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" class="inputText" id="comment-capcha0" name="captcha" onkeyup="check_user_captcha(this.value,0)" placeholder="Nhập mã xác nhận"/>
+                    </td>
+                    <td>
+                      <img id="captchaimg" src="/includes/captcha/captcha.php?v=" class="captcha" alt="captcha" style="height:60px; margin-top:-20px;"/>
+                      <a id="change-image" onclick="document.getElementById('captchaimg').src='/includes/captcha/captcha.php?'+Math.random();" href="javascript:;" style="color:#158dda; float:right; margin-top:15px;">[Đổi mã khác]</a>
+                      <input type="hidden" value="" id="check_captcha0"/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan='2'><label class="pull-left" style="padding-right: 10px;position: relative;top: 7px;">Đánh giá: </label>
+                      <div class="rating" style="float:left" id="select-rate-pro">
+                        <input type="radio" class="rating-input" id="rating-input-review-0-5" value="5" name="user_post[rate]" checked=""/>
+                        <label for="rating-input-review-0-5" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-4" value="4" name="user_post[rate]"/>
+                        <label for="rating-input-review-0-4" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-3" value="3" name="user_post[rate]"/>
+                        <label for="rating-input-review-0-3" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-2" value="2" name="user_post[rate]"/>
+                        <label for="rating-input-review-0-2" class="rating-star"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-1" value="1" name="user_post[rate]"/>
+                        <label for="rating-input-review-0-1" class="rating-star"></label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="submit" value="Bình luận" class="btn btn-red" /></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div><!--form-input-->
+              {/if}
+              <div class="space10"></div>
+            </div><!--relative-->
+          </form>
+        </div><!--comment-form-->
+        
+		<div id="comment-list">
+		</div>
+        
+<script>
+  function check_user_captcha(captcha,id){
+    $.post("/ajax/check_user.php", {action : 'check-captcha', captcha : captcha}, function(data){
+    document.getElementById("check_captcha"+id).value = data;
+  });
+  }
+  function check_field(id){
+    var error = "";
+    var name = document.getElementById("name"+id).value;
+    var email = document.getElementById("email"+id).value;
+    var content = document.getElementById("content"+id).value;
+    var captcha = document.getElementById('comment-capcha'+id).value;
+    
+    if(name=='') error+= "Bạn chưa nhập tên\n";
+    if(email=='') error+= "Bạn chưa nhập email\n";
+    if(content=='') error+= "Bạn chưa nhập nội dung\n";
+    if(captcha=='') error+="Bạn chưa nhập mã kiểm tra"
+    else {
+    var check_captcha = $("#check_captcha"+id).val();
+    	if(check_captcha!='') error+=check_captcha;
+    }
+    
+    if(error==''){
+      alert("Đã gửi thành công, bình luận của bạn sẽ được kiểm duyệt trước khi hiển thị");
+      return true;
+    }
+    else {
+      alert(error);
+      return false;
+    }
+  };
+</script>
+

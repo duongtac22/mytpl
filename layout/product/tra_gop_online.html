@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+  <title>Trả góp online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Trả góp online"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<script src="/integration/alepay/config.php"></script>  
+  <style type="text/css">
+    .require {
+    color: red;
+    }
+    .form-group.col-sm-5{margin: 5px;}
+    #header {
+        background: #1a4388;
+        overflow: hidden;
+        padding: 8px 10px;
+    }
+    .btn-info {
+        color: #fff;
+        background-color: #1a4388 !important;
+        border-color: #1a4388;
+    }
+  </style>
+  </head>
+  <body>
+<div id="header">
+  <a href="/" style="float: left;"><img src="/media/banner/logo_ankhang.png" alt="" style="height:34px;" /></a>
+  <h1 style="color: #fff;text-transform: uppercase;font-weight: bold;font-size: 22px;margin: 5px 20px;float: left;">Trả góp online</h1>
+</div>
+  <div id="container" class="container">
+    <div class="col-sm-5 col-xs-12">
+      {if="strpos($current_page_url,'type=product') > 0"}
+      {$type="product"}
+      {else}
+      {$type="cart"}
+      {/if}
+        <h3 id="titleItem">
+        {if="$type=='product'"}
+        {$product_info.productName}
+        {else}
+        Sản phẩm
+        {/if}
+      </h3>
+        
+      {if="$type=='product'"}
+      {$order_price = $product_info.price}
+      <br/>
+        <p><img src="{$product_info.productImage.original}" width="250"  alt="{$product_info.productName}" /></p>
+        
+        <p class="txt_u txt_red txt_18"><strong>Giá</strong>: <span class="price_info price_config" data-price="{$product_info.price}" style="color:#e00; font-weight:bold;">{if="$product_info.price > 0"} {$product_info.price|format_price} VNĐ{else} Liên hệ {/if}</span></p>
+      	<p id="config-info"></p>
+        <p><strong>Bảo hành</strong>:<br/>
+          {$warranty = explode("\n", $product_info.warranty)}
+          {if="$product_info.warranty != '0'"}
+          {loop="$warranty"}
+          	{$value}<br />
+          {/loop}
+          {else}Liên hệ{/if}
+        </p>
+      	<p><b>Tình trạng: </b> {if="$product_info.quantity>0"}Còn hàng{else}Liên hệ kinh doanh{/if}</p>
+      	<p>&nbsp;</p>
+      {else}
+      {$order_price = $shopping_cart_total}
+      <table id="tbl_list_cart">
+        {loop="shopping_cart_item"} 
+        {$item_type = $key}
+        {loop="shopping_cart_item[$item_type]"}
+        <tr>
+          <td><a href="{$value.url}"><img src="{$value.image}" style="width:100px;"/></a></td>
+          <td> 
+            <a href="{$value.url}" style="display:block;"><b>{$value.name}</b></a>
+            <p>Bảo hành: {$value.warranty}</p>
+            <p>{if="$value.price > 0"}Giá: <span style="font-weight:bold; color:#e00;">{$value.price|format_price}</span> VND{else}Liên hệ{/if}</p>
+            
+          </td>
+        </tr>
+        {/loop}
+        {/loop}
+        <tr>
+          <td colspan="2" style="text-align:right; border-top:solid 1px #ddd;">
+            <b>Tổng tiền:</b>
+            <b style="color:red; font-size:18px;"><span class="sub1"  id='total_value'  style="color: red; font-weight: bold;">{$shopping_cart_total|format_price}</span> VND</b><br/>
+          </td>
+        </tr>
+      </table>
+      {/if}
+    </div><!--col-->
+    <div class="col-sm-7">
+      <h3>Thông tin khách hàng</h3>
+      <form class="form-" role="form" method="POST" id="formSubmit"  action="/integration/alepay/process.php?action=sendOrderToAlepayInstallment">
+        <div class="form-group col-sm-5">
+          
+          <label class="control-label">Giá trị sản phẩm <span class="require">(*)</span></label>
+          
+          <input type="text" id="product-price" value="{$product_info.price|format_price}" class="form-control" required readonly />
+          
+        </div>
+        <div class="form-group col-sm-5">
+          
+          <label class="control-label">Số tiền trả trước <span class="require">(*)</span></label>
+          
+          <input type="text" id="prepay" class="form-control" onkeypress="return isNumberKey(event)" onkeyup="this.value = writeStringToPrice(this.value)" value="0" required />
+          
+        </div>
+        <div class="form-group col-sm-5">
+          
+          <label class="control-label">Số tiền trả góp <span class="require">(*)</span></label>
+          
+          <input type="text" class="form-control" value="" name="amount" id="amount" required readonly />
+          
+        </div>
+        <div class="form-group col-sm-5">     
+          <label class="control-label">Số Lượng <span class="require">(*)</span></label>
+          
+          <input type="number" placeholder="Số Lượng" class="form-control"
+                 name="totalItem"
+                 id="totalItem" required value="1"/>
+          
+        </div>
+        
+        <!-- Text input-->
+        <div class="form-group col-sm-5" style="display:none;">
+          <label class="control-label">Tiền Tệ <span class="require">(*)</span></label>
+          
+          <select name="currency" id="currency" class="form-control">
+            <option value="VND" selected>VND</option>
+            <option value="USD">USD</option>
+          </select>
+          
+        </div>
+        <div class="form-group col-sm-5">     
+          <label class="control-label">Email <span class="require">(*)</span></label>
+          
+          <input type="text" placeholder="Email" class="form-control"
+                 name="buyerEmail"
+                 id="buyerEmail" required />
+          
+        </div>
+        <!-- Text input-->
+        <div class="form-group col-sm-5">
+          <label class="control-label">Họ Tên <span  class="require">(*)</span></label>
+          
+          <input type="text" placeholder="Tên" class="form-control"
+                 name="buyerName"
+                 id="buyerName" required />
+        </div>
+        <div class="form-group col-sm-5">     
+          <label class="control-label">Số Điện Thoại <span
+                                                           class="require">(*)</span></label>
+          
+          <input type="text" placeholder="Số Điện Thoại" class="form-control"
+                 name="phoneNumber"
+                 id="phoneNumber" required />
+          
+          
+        </div>
+        <!-- Text input-->
+        <div class="form-group col-sm-5">
+          <label class="control-label">Địa Chỉ <span
+                                                     class="require">(*)</span></label>
+          
+          <input type="text" placeholder="Địa Chỉ" class="form-control"
+                 name="buyerAddress"
+                 id="buyerAddress" required />
+          
+        </div>
+        <div class="form-group col-sm-5" style="display:none;">     
+          <label class="control-label">Quốc gia<span class="require">(*)</span></label>
+          
+          <input type="text" placeholder="" class="form-control" name="buyerCountry" id="buyerCountry" required value="Việt Nam" />
+          
+          
+        </div>
+        <!-- Text input-->
+        <div class="form-group col-sm-5" style="display:none;">
+          <label class="control-label" for="orderDescription">Thông tin hóa đơn<span class="require">(*)</span></label>
+          {if="$type=='product'"}
+          <textarea placeholder="Thông Tin Mô Tả Hóa Đơn" id="orderDescription" name="orderDescription"
+                    class="form-control" required="">({$product_info.productSKU}) {$product_info.productName}</textarea>
+          {else}
+          {$orderDescription=''}
+          {loop="shopping_cart_item"} 
+          {$item_type = $key}
+          {loop="shopping_cart_item[$item_type]"}
+          	{$orderDescription = $orderDescription.'&#13;&#10;'.'('.$value.productSKU.')'.$value.name}
+          {/loop}
+          {/loop}
+          <textarea placeholder="Thông Tin Mô Tả Hóa Đơn" id="orderDescription" name="orderDescription"
+                    class="form-control" required="">{$orderDescription}</textarea>
+          {/if}
+        </div>
+        <div class="form-group col-sm-5">     
+          <label class="control-label">Thành Phố <span
+                                                       class="require">(*)</span></label>
+          
+          <input type="text" placeholder="Thành Phố" class="form-control"
+                 name="buyerCity"
+                 id="buyerCity" required value="Hà Nội" />
+          
+          
+        </div>
+        <div class="row"></div>
+        <div class="col-sm-12" id="alert"></div>
+        <div class="form-group col-sm-5">
+          <p>&nbsp;</p>
+          <button id="sendInstallment" type="button" class="btn btn-info btn-lg">
+            Thanh Toán Trả Góp
+          </button>
+          
+        </div>
+        
+      </form>
+    </div>
+    
+  </div>
+  <!--    Start sendOrderToAlepayInstallment    -->
+  
+  
+  
+  <div id="sendOrderToAlepayInstallment" class="modal fade" role="dialog">
+    <iframe id="frame" scrolling="no" style="overflow: hidden;height: 100%;width: 100%;border: none;"></iframe>
+  </div><!-- /.row -->
+
+
+        <!--    End sendOrderToAlepayInstallment    -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+          	function GetURLParameter(sParam)
+            {
+              var sPageURL = window.location.search.substring(1);
+              var sURLVariables = sPageURL.split('&');
+              for (var i = 0; i < sURLVariables.length; i++)
+              {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam)
+              {
+              	return sParameterName[1];
+              }
+              }
+            }
+          	
+          	
+            function isNumberKey(evt){
+              var charCode = (evt.which) ? evt.which : event.keyCode
+              if (charCode > 31 && (charCode < 48 || charCode > 57))
+              return false;
+              return true;
+            }    
+          	function formatCurrency(a) {
+                var b = parseFloat(a).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1.").toString();
+                var len = b.length;
+                b = b.substring(0, len - 3);
+                return b;
+            }
+          	function writeStringToPrice(str){
+                str = (str+'').replace(/\./g, "");
+                var first_group = str.substr(0,str.length % 3);
+                var remain_group = str.replace(first_group,"");
+                var num_group = remain_group.length/3;
+                var result = "";
+                for(var i=0;i < num_group;i++){
+                    group_of_three = remain_group.substr(i*3,3);
+                    result += group_of_three;
+                    if(i != (num_group-1)) result += ".";
+                }
+                if(first_group.length > 0) {
+                    if(result != "") return first_group + "." + result ;
+                    else return first_group;
+                }else{
+                    if(result != "") return result;
+                    else return "";
+                }
+            }
+
+            $('#product-price,#amount').val(writeStringToPrice({$order_price}));
+          	$(".price_info").html(writeStringToPrice({$order_price}) + "VND");
+          
+            $('#totalItem').bind('keyup change', function () {
+                if (typeof $('#product-price').val() != 'undefined') {
+                    $('#product-price').val((parseInt({$order_price}) * parseInt($('#totalItem').val())).toLocaleString('vi'));
+          
+          			//Tính lại giá trả góp
+          			var productPrice = $("#product-price").val().split('.').join('');
+                    var prepay = $("#prepay").val();
+                    var numberPrepay = prepay.split('.').join('');
+                    
+                    if($("#prepay").val()=='') numberPrepay = 0;
+                    $("#amount").val(writeStringToPrice(parseInt(productPrice) - parseInt(numberPrepay)));
+                }
+            });
+
+          	$("#prepay").keyup(function(){
+          		
+          		var productPrice = $("#product-price").val().split('.').join('');
+          		var prepay = $(this).val();
+          		var numberPrepay = prepay.split('.').join('');
+          
+          		if($(this).val()=='') numberPrepay = 0;
+          		$("#amount").val(writeStringToPrice(parseInt(productPrice) - parseInt(numberPrepay)));
+          	});
+            $('#sendInstallment').on('click', function () {
+                $('#alert').html('Đang tải...');
+                $.ajax({
+                    type: "POST",
+                    url: $("#formSubmit").prop('action'),
+                    data: $("#formSubmit").serialize(), // serializes the form's elements.
+                    success: function (data) {
+                        console.log(data.error);
+                        if (data.error != 'OK') {
+                            $('#alert').html('<div class="alert alert-danger">' + data.message + '</div>');
+                            return false;
+                        } else {
+                            $('#frame').prop('src', data.data);
+                            $('#sendOrderToAlepayInstallment').modal('show');
+                            $('#alert').html('');
+                        }
+
+                    }
+                });
+
+            });
+            $('#frame').on('load', function () {
+                this.style.height = this.contentDocument.body.scrollHeight + 'px';
+            });
+        </script>
+
+<style>
+.form-control2 select {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.tbl-common td{padding:5px 5px 5px 0; font-size:13px;}
+.price{font-weight:bold; color:#e00; font-size:16px;}
+</style>
+  </body>
+</html>

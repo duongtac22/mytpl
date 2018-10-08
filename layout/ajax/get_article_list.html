@@ -1,0 +1,11 @@
+{loop="article_list"}
+{if="$counter < 5"}
+<li>
+  <a href="{$value.url}" class="amain-img"><img src="{$value.image.original}" alt="{$value.title}"/></a>
+  <div class="amain-right">
+    <a href="{$value.url}" class="amain-name"><h3 class="h-title">{$value.title}</h3></a>
+    <span class="amain-time">{$value.lastUpdate}</span>
+  </div>
+</li>
+{/if}
+{/loop}

@@ -1,0 +1,428 @@
+<div id="breadcrumb">
+    <div class="container">
+        <div class="d-flex">
+            <div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="/" itemprop="url" class="nopad-l">
+                    <span itemprop="title">Trang chủ</span>
+                </a>
+            </div>
+            {loop="$product_info.productPath.0.path"}
+            <div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="{$value.url}" itemprop="url">
+                    {if="$counter==sizeof($product_info.productPath.0.path) - 1"}
+                    <span itemprop="title">{$value.name}</span>
+                    {else}
+                    <span itemprop="title">{$value.name}</span>
+                    {/if}
+                </a>
+            </div>
+            {/loop}
+        </div>
+    </div>
+</div>
+<!--breadcrumb-->
+<div class="container page_detail">
+    <div class="row">
+        <!-- detail_top -->
+        <div class="col-12">
+            <div class="header_detail d-flex align-items-baseline border-bottom">
+                <h2>Điện thoại iPhone 6s Plus 32GB</h2>
+                <div class="star_rate ml-2">
+                    <i class="icon-star product-rate star4"></i>
+                    <span>(1 nhận xét)</span>
+                </div>
+                <div class="fb-like position-absolute" data-href="http://tantanstore.vn/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            </div>
+        </div>
+        <div class="col-9 overview-left">
+            <div class="row">
+                <!-- Hình ảnh sản phẩm -->
+                <div class="col-7 image_detail">
+                    <div class="big_imgage text-center">
+                        {loop="$product_info.productImageGallery"}
+                        <a data-fancybox="gallery" href="{$value.size.original}">{if="$counter == 0"}<img class="img-fluid" src="{$value.size.original}" alt="{$product_info.productName}">{/if}</a>
+                        {/loop}
+                    </div>
+                    <div class="list_media d-flex justify-content-center align-items-center">
+                        <div class="item meadia_1">
+                            {loop="$product_info.productImageGallery"}
+                            <a data-fancybox="gallery1" href="{$value.size.original}">{if="$counter == 0"}<img class="img-fluid" src="{$value.size.small}" alt="{$product_info.productName}">{/if}</a>
+                            {/loop}
+                            <span>Tím</span>
+                        </div>
+                        <div class="item meadia_1">
+                            {loop="$product_info.productImageGallery"}
+                            <a data-fancybox="gallery2" href="{$value.size.original}">{if="$counter == 0"}<img class="img-fluid" src="{$value.size.small}" alt="{$product_info.productName}">{/if}</a>
+                            {/loop}
+                            <span>Đen</span>
+                        </div>
+                        <div class="item video">
+                            <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=1&amp;showinfo=0">
+                                <img src="{#IMAGE_PATH#}icon-video.png" alt="">
+                            </a>
+                            <span>Video</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/////////// Hình ảnh sản phẩm -->
+
+                <!-- Thông tin sản phẩm -->
+                <div class="col-5">
+                    <div class="price_sale mt-3">
+                        <div class="area_price">
+                            <strong>11.990.000₫</strong>
+                            <label class="installment">Trả góp 0%</label>
+                            <div class="check_gold">
+                                <input type="checkbox">
+                                <span>Chọn bảo hành vàng <i id="example" data-toggle="tooltip" data-html="true" title="15 Tháng bảo hành cả nguồn, màn, vân tay">?</i></span>
+                            </div>
+                        </div>
+                        <!-- config product -->
+                        <div class="select_config">
+                            <div class="color d-flex w-100">
+                                <span class="title">Chọn màu</span>
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item">
+                                        <input type="radio" name="color" value="">
+                                        <span style="background-color: red"></span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <input type="radio" name="color" value="">
+                                        <span style="background-color: rebeccapurple"></span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <input type="radio" name="color" value="">
+                                        <span style="background-color: royalblue"></span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <input type="radio" name="color" value="">
+                                        <span style="background-color: sienna"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="size d-flex w-100">
+                                <span class="title">Dung lượng</span>
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item">
+                                        <input type="radio" name="size" value="">
+                                        <span>64G</span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <input type="radio" name="size" value="">
+                                        <span>125G</span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <input type="radio" name="size" value="">
+                                        <span>256G</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--/////// config product -->
+                        <div class="tsh"><span><a href="">NHẬN HÀNG TRONG 1 GIỜ</a></span></div>
+
+                        <!-- promotion -->
+                        <div class="area_promotion zero">
+                            <strong data-count="2">Khuyến mãi</strong>
+                            <div class="infopr">
+                                <span class="notapply">
+                                    Giảm ngay 500.000đ
+                                    <label class="sao">*</label>
+                                </span>
+                                <span>
+                                    Cơ hội trúng 31 xe Wave Alpha khi trả góp Home Credit <a href=""> Xem chi tiết</a>
+                                </span>
+                            </div>
+                        </div>
+                        <!--///////// promotion -->
+                        <div class="buy_group">
+                            <a href="" class="buy_now" data-value="163645"><b>Mua ngay </b><span>Giao trong 1 giờ hoặc nhận tại siêu thị</span></a>
+                            <a class="buy_repay " href=""><b>Mua trả góp 0%</b><span>Thủ tục đơn giản</span></a>
+                            <a class="buy_repay s " href=""><b>Trả góp 0% qua thẻ</b><span>Visa, Master, JCB</span></a>
+                        </div>
+                        <span class="callorder">Gọi đặt mua: <a href="tel:18001060">1800.1060</a> (miễn phí - 7:30-22:00)</span>
+                    </div>
+                </div>
+                <!--//////////// Thông tin sản phẩm -->
+            </div>
+        </div>
+        <div class="col-3 overview-right">
+            <div class="rightInfo mt-3">
+                <ul class="policy list-unstyled">
+                    <li class="inpr">
+                        <span>Trong hộp có: <a class="stdImg" href="javascript:void(0)">Adapter, Sách hướng dẫn, Cáp Lightning, Hộp máy <i class="icondetail-camera standkit" href=""></i></a></span>
+                    </li>
+                    <li class="wrpr">
+                        <span>Bảo hành chính hãng 12 tháng. <a href="">Xem chi tiết</a></span>
+                    </li>
+                    <li><strong>1 đổi 1 trong 1 tháng </strong>nếu lỗi, đổi sản phẩm tại nhà trong 1 ngày.  <a href="" target="blank">Xem chi tiết</a></li>            
+                </ul>
+                <div class="productOld">
+                    <a class="viewold" target="_blank" href="">Xem iPad Wifi 32GB (2018) cũ
+                        <div>
+                            <span>Giá dưới: <strong>8.370.000₫</strong></span>
+                            <span>Bảo hành tới 11.5 tháng</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--/////// detail_top -->
+        <hr class="col-12 border-0">
+        <!-- detail_bottom -->
+        <div class="col-8 content_left">
+            <h3 class="title">Đặc điểm nổi bật của iPad Wifi 32GB (2018)</h3>
+            <div class="slider_content">
+                <div class="owl-carousel owl-theme">
+                    {loop="$product_info.productImageGallery"}
+                        <div class="item">
+                            <img class="img-fluid" src="{$value.size.original}" alt="{$product_info.productName}">
+                        </div>
+                    {/loop}
+                </div>
+            </div>
+            <div class="emtry_content">
+                {$product_info.productDescription}
+                <span>Xem thêm</span>
+            </div>
+            <div class="bottom_order mt-4">
+                <div class="info_sp">
+                    <img class="lazy" src="{$product_info.productImage.medium}">
+                    <h3>Máy tính bảng iPad Wifi 32GB (2018)</h3>
+                    <strong>9.990.000₫</strong>
+                </div>
+                <div class="area_order">
+                    <a href="/" class="buy_now"><b>Mua ngay </b><span>Giao trong 1 giờ hoặc nhận tại siêu thị</span></a>
+                    <a class="buy_repay " href=""><b>Mua trả góp 0%</b><span>Thủ tục đơn giản</span></a>
+                    <a class="buy_repay s " href=""><b>Trả góp 0% qua thẻ</b><span>Visa, Master, JCB</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 sidebar_right">
+            <div class="class="tableparameter"">
+                <h4>Thông số kỹ thuật</h4>
+                <table id='tb-product-spec' cellpadding='3' cellspacing='0' border='1' bordercolor='#CCCCCC'>
+                    <tr>
+                        <td class='att-name'>Hãng sản xuất</td>
+                        <td>
+                            <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='att-name'>Hãng sản xuất</td>
+                        <td>
+                            <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='att-name'>Hãng sản xuất</td>
+                        <td>
+                            <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='att-name'>Dung lượng</td>
+                        <td>
+                            <div class='att-value-list'><ul><li>16G</li><li>32G</li></ul></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='att-name'>Hãng sản xuất</td>
+                        <td>
+                            <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class='att-name'>Dung lượng</td>
+                        <td>
+                            <div class='att-value-list'><ul><li>16G</li><li>32G</li></ul></div>
+                        </td>
+                    </tr>
+                </table>
+                <a href="javascript:;" data-fancybox data-src="#box_product-spec" class="viewmore_product-spec">Xem cấu hình chi tiết</a>
+                
+                <div id="box_product-spec" style="display: none">
+                    <h4>Thông số kỹ thuật</h4>
+                    <table id='tb-product-spec' cellpadding='3' cellspacing='0' border='1' bordercolor='#CCCCCC'>
+                        <tr>
+                            <td class='att-name'>Hãng sản xuất</td>
+                            <td>
+                                <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='att-name'>Hãng sản xuất</td>
+                            <td>
+                                <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='att-name'>Hãng sản xuất</td>
+                            <td>
+                                <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='att-name'>Dung lượng</td>
+                            <td>
+                                <div class='att-value-list'><ul><li>16G</li><li>32G</li></ul></div>
+                            </td>
+                        </tr>
+                        <tr>
+                                <td class='att-name'>Hãng sản xuất</td>
+                                <td>
+                                    <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='att-name'>Hãng sản xuất</td>
+                                <td>
+                                    <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='att-name'>Hãng sản xuất</td>
+                                <td>
+                                    <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='att-name'>Dung lượng</td>
+                                <td>
+                                    <div class='att-value-list'><ul><li>16G</li><li>32G</li></ul></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='att-name'>Hãng sản xuất</td>
+                                <td>
+                                    <div class='att-value-list'><ul><li>backbery</li></ul></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class='att-name'>Dung lượng</td>
+                                <td>
+                                    <div class='att-value-list'><ul><li>16G</li><li>32G</li></ul></div>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="blog_related">
+                <h4>Bài viết liên quan</h4>
+                <ul class="list-unstyled">
+                    <li class="b-item">
+                        <a href="#" class="b-img"><img class="img-fluid" src="https://cdn.tgdd.vn/Files/2018/07/20/1102937/1_800x450-300x200.jpg" alt=""></a>
+                        <p class="b-text">
+                            <a href="#">Những lý do nên chọn mua Galaxy J8, smartphone tầm trung mới từ Samsung</a>
+                            <span><i class="fas fa-comment-alt"></i>231 Bình luận</span>
+                        </p>
+                    </li>
+                    <li class="b-item">
+                        <a href="#" class="b-img"><img class="img-fluid" src="https://cdn.tgdd.vn/Files/2018/07/20/1102937/1_800x450-300x200.jpg" alt=""></a>
+                        <p class="b-text">
+                            <a href="#">Những lý do nên chọn mua Galaxy J8, smartphone tầm trung mới từ Samsung</a>
+                            <span><i class="fas fa-comment-alt"></i>231 Bình luận</span>
+                        </p>
+                    </li>
+                    <li class="b-item">
+                        <a href="#" class="b-img"><img class="img-fluid" src="https://cdn.tgdd.vn/Files/2018/07/20/1102937/1_800x450-300x200.jpg" alt=""></a>
+                        <p class="b-text">
+                            <a href="#">Những lý do nên chọn mua Galaxy J8, smartphone tầm trung mới từ Samsung</a>
+                            <span><i class="fas fa-comment-alt"></i>231 Bình luận</span>
+                        </p>
+                    </li>
+                    <li class="b-item">
+                        <a href="#" class="b-img"><img class="img-fluid" src="https://cdn.tgdd.vn/Files/2018/07/20/1102937/1_800x450-300x200.jpg" alt=""></a>
+                        <p class="b-text">
+                            <a href="#">Những lý do nên chọn mua Galaxy J8, smartphone tầm trung mới từ Samsung</a>
+                            <span><i class="fas fa-comment-alt"></i>231 Bình luận</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="product_related">
+                <h4>Phụ kiện liên quan</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/tai-nghe/tai-nghe-ep-awei-q19hi">
+                            <img class="img-fluid" src="https://cdn.tgdd.vn/Products/Images/54/142235/tai-nghe-ep-awei-q19hi-add-600x600.jpg">
+                            <h3>Tai nghe EP Awei Q19Hi</h3>
+                            <strong class="gs">105.000₫</strong>
+                            <strong class="gg">150.000₫</strong>
+                            <label class="per">Giảm 30%</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tai-nghe/tai-nghe-ep-awei-q19hi">
+                            <img class="img-fluid" src="https://cdn.tgdd.vn/Products/Images/54/142235/tai-nghe-ep-awei-q19hi-add-600x600.jpg">
+                            <h3>Tai nghe EP Awei Q19Hi</h3>
+                            <strong class="gs">105.000₫</strong>
+                            <strong class="gg">150.000₫</strong>
+                            <label class="per">Giảm 30%</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tai-nghe/tai-nghe-ep-awei-q19hi">
+                            <img class="img-fluid" src="https://cdn.tgdd.vn/Products/Images/54/142235/tai-nghe-ep-awei-q19hi-add-600x600.jpg">
+                            <h3>Tai nghe EP Awei Q19Hi</h3>
+                            <strong class="gs">105.000₫</strong>
+                            <strong class="gg">150.000₫</strong>
+                            <label class="per">Giảm 30%</label>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/tai-nghe/tai-nghe-ep-awei-q19hi">
+                            <img class="img-fluid" src="https://cdn.tgdd.vn/Products/Images/54/142235/tai-nghe-ep-awei-q19hi-add-600x600.jpg">
+                            <h3>Tai nghe EP Awei Q19Hi</h3>
+                            <strong class="gs">105.000₫</strong>
+                            <strong class="gg">150.000₫</strong>
+                            <label class="per">Giảm 30%</label>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--///// detail_bottom -->
+        <div class="col-12 pb-4">
+            <div class="partner position-relative">
+                <h3>Đối tác</h3>
+                <div class="list_partner">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <a href="#"><img src="{#IMAGE_PATH#}banner_83dc55ae.jpg" alt=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><img src="{#IMAGE_PATH#}banner_91394d0f.jpg" alt=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><img src="{#IMAGE_PATH#}banner_9b91d245.jpg" alt=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><img src="{#IMAGE_PATH#}banner_614594c3.jpg" alt=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><img src="{#IMAGE_PATH#}banner_76f1cfd7.jpg" alt=""></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><img src="{#IMAGE_PATH#}banner_8606f35e.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('#example').tooltip({ boundary: 'window' })
+    });
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

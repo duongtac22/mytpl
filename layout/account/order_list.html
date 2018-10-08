@@ -1,0 +1,44 @@
+    
+<h3>Danh sách đơn hàng</h3>
+
+
+{if="sizeof($order_list) > 0"} 
+	
+    <table width='100%' border=1 bordercolor='#CCCCCC' style='border-collapse:collapse;' cellpadding=4 cellspacing=0>
+			<tr bgcolor='#FFCC00' style='font-weight:bold;'>
+				<td>STT</td>
+				<td>Số đơn hàng</td>
+				<td>Giá trị</td>
+				<td>Thời gian</td>
+				<td>Tình trạng</td>
+			</tr>
+            
+    {loop="order_list"}
+    	
+		<tr>
+			<td>{$counter+1}</td>
+			<td>#{$value.orderId} <a href="?view=account-order-detail&id={$value.orderId}">Xem chi tiết</a></td>
+			<td>
+            	{$total_price = $value.totalValue - $value.discount_price}
+            	{$total_price|format_price}
+            </td>
+			<td>{$value.orderDate}</td>
+			<td>
+            	{if="$value.status_id=='0'"}
+                    Chưa xử lý
+                {else}
+                    {$value.status_message}
+                {/if}
+            </td>
+		</tr>
+        
+    {/loop}
+    </table>
+    <br />
+    {$paging}
+    
+{else}
+	
+    <p>Bạn chưa mua đơn hàng nào</p>
+	    
+{/if}

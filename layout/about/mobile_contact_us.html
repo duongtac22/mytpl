@@ -1,0 +1,76 @@
+<div class="page_path">Liên hệ</div>
+<div class="col-md-12 lh-page">
+      {$store_address}
+      <div class="clear space10px"></div>
+    </div> 
+<div class="clear_fix">
+<div class="contact_us">
+{if="$send_success=='yes'"}
+              <h2>Cảm ơn quý khách đã liên hệ.</h2>
+              <p>Chúng tôi đã nhận được thông tin và sẽ liên hệ với quý khách trong thời gian sớm nhất</p>
+              {else}
+              <style type="text/css">
+                    .require { font-weight: bold; color: #F00 }
+                </style>
+              <div style="font-weight:bold;padding: 15px 0;">Quý khách vui lòng gửi thông tin liên hệ theo form sau :</div>
+              <form>
+                    <table style="vertical-align: middle;">
+                        <tr>
+                            <td>Tên bạn <span class="require">*</span></td>
+                            <td><input type="text" size="40" name="contact_name" id="contact_name" /></td>
+                        </tr>
+                        <tr>
+                            <td>Email <span class="require">*</span></td>
+                            <td><input type="text" size="40" name="contact_email" id="contact_email" /></td>
+                        </tr>
+                        <tr>
+                            <td>Điện thoại</td>
+                            <td><input type="text" size="40" name="contact_tel" id="contact_tel" /></td>
+                        </tr>
+                        <tr>
+                            <td>Thông tin liên hệ <span class="require">*</span></td>
+                            <td><textarea cols="41" rows="8" name="contact_message" id="contact_message"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <br />
+                                <input type="submit" value="Gửi liên hệ" onclick="return check_form();" style="cursor:pointer;" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+          {/if}
+</div>
+
+            <div class="clear"></div>
+
+            <script type="text/javascript">
+                function check_form() {
+                    var error = "";
+                    var check_name = document.getElementById('contact_name').value;
+                    var check_email = document.getElementById('contact_email').value;
+              		var check_tel = document.getElementById('contact_tel').value;
+                    var check_message = document.getElementById('contact_message').value;
+                    if (check_name.length < 4) error += "- Bạn chưa nhập tên\n";
+                    if (check_email.length < 4) error += "- Bạn chưa nhập email\n";
+                    if (check_message.length < 4) error += "- Bạn chưa nhập nội dung\n";
+
+                    if (error == ""){
+              			$.post("/ajax/customer_contact.php", {from: 'ajax',contact_name:check_name, contact_email:check_email, contact_tel:check_tel, contact_message:check_message}
+             ,function(data){
+               alert("Bạn đã gửi liên hệ thành công\nChúng tôi đã nhận được thông tin và sẽ liên hệ với quý khách trong thời gian sớm nhất");
+               
+    			document.getElementById('contact_name').value = '';
+    			document.getElementById('contact_email').value = '';
+    			document.getElementById('contact_tel').value = '';
+    			document.getElementById('contact_message').value = '';
+             });  
+              		}
+                    else alert(error);
+                    return false;
+                }
+              
+              	
+            </script>
+        </div><!--contact_form-->

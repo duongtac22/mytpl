@@ -1,0 +1,190 @@
+<style>
+#cart_page table { border-collapse: collapse; }
+#cart_page table td { border: solid 1px #ddd; }
+#cart_page table td a { color: #0062ac; }
+#cart_page table td table td { border: none; }
+.tbl_nobdr td { border: none !important; }
+table tbody { display: table-row-group; vertical-align: middle; border-color: inherit; }
+#cart_page table td { padding: 5px; }
+input[type="submit"] { background: #6e6566; border: none; padding: 5px 8px; color: #fff; cursor: pointer; }
+input[type="submit"]:hover { background-color: #eb1c24; }
+input[type="button"] { background: #6e6566; border: none; padding: 5px 8px; color: #fff; cursor: pointer; }
+input[type="button"]:hover { background-color: #eb1c24; }
+.frm_submit td input[type="text"] {width: 200px;}
+.frm_submit td textarea {width: 202px;}
+</style>
+<script>
+  function reCountTotal() {
+        var b = "";
+        var a = document.getElementById("item_update_quantity").value;
+        all_item_array = a.split(",");
+        var e = 0;
+        combo_array = new Array();
+        for (var d = 0; d < all_item_array.length; d++) {
+            item_id = all_item_array[d];
+            if (item_id.length > 0) {
+                unformat_price = document.getElementById("sell_price_" + item_id.replace("-", "_")).innerHTML;
+                while (unformat_price.indexOf(".") > 0) {
+                    unformat_price = unformat_price.replace(".", "")
+                }
+                item_price = parseInt(unformat_price);
+                item_quantity = parseInt(document.getElementById("quantity_" + item_id.replace("-", "_")).value);
+                b += "," + item_id + "-" + item_quantity + "-" + item_price;
+                e += item_price * item_quantity
+            }
+        }
+        hura_create_cookie("shopping_cart_store", b, 1);
+        document.getElementById("total_value").innerHTML = writeStringToPrice(e + "");
+        document.getElementById("total_cart_value").value = e;
+        var c = document.getElementById("total_shopping_cart_store");
+        if (c != "undefined" && c != null) {
+            c.innerHTML = writeStringToPrice(e + "")
+        }
+    }
+  </script>
+<div class="page_path">
+      Giỏ hàng
+   </div>
+   <div class="clear_fix">
+   <div id="cart_page" style="max-width:640px; float:right; padding: 10px 0;">
+      {if="sizeof($shopping_cart_item) > 0"}
+      <div style="font-weight:bold;font-family:Tahoma; font-size:12px">
+         Hướng dẫn:
+      </div>
+      <ul style="font-family:Tahoma; font-size:12px; line-height:18px;padding-left: 15px;margin: 10px 0;">
+         <li>Để cập nhật số lượng sản phẩm cần mua, vui lòng điền số lượng vào ô tương ứng rồi, trang web sẽ tự động cập nhật lại tổng giá trị mới nhất cho quý khách.</li>
+         <li>Nếu quý khách không muốn đặt mua sản phẩm nữa, click Xóa để loại bỏ sản phẩm</li>
+         <li>Khi quý khách thỏa mãn với đơn hàng của mình, vui lòng click nút <b>Gửi đơn hàng</b>.</li>
+      </ul>
+      <!---->
+      
+      <form method="post" enctype="multipart/form-data" action="/gui-don-hang" onsubmit="return check_field()">
+         <table id='table-shopping-cart' cellpadding='5' border='1' bordercolor='#CCCCCC' width="100%">
+            <tr id='shopping-cart-first-row'>
+               <td>Sản phẩm</td>
+               <td id='shopping-cart-price-col'>Giá bán</td>
+               <td id='shopping-cart-quantity-col'>Số lượng</td>
+               <td id='shopping-cart-sum-col'>Thành tiền</td>
+               <td id='shopping-cart-del-col'>Xóa</td>
+            </tr>
+            
+            <!--{$start_counter = 0}--> 
+            {loop="shopping_cart_item"} 
+            <!--{$item_type = $key}--> 
+            {loop="shopping_cart_item[$item_type]"}
+            <tr>
+               <td> {if="$value.url != ''"}
+                  <table>
+                     <tr>
+                        <td><img src="{$value.image}" /></td>
+                        <!--<td> <a href="{$value.url}"><b>{$value.name}</b></a></td>--></tr>
+                  </table>
+                  {else} <b>{$value.name}</b> {/if}
+                  {if="$value.information != ''"} <br />
+                  {$value.information}
+                  {/if} </td>
+               <td><span id='sell_price_{$item_type}_{$value.id}'>{$value.price|format_price} VNĐ</span></td>
+               <td><input name='quantity_{$item_type}_{$value.id}' id='quantity_{$item_type}_{$value.id}' value='{$value.quantity}' onchange="updatePrice('{$item_type}','{$value.id}',this.value)" size='10' style="width: 20px"/></td>
+               <td><span id='price_{$item_type}_{$value.id}' class="red">{$value.totalPrice|format_price} VNĐ</span></td>
+               <td style="width: 20px;"><a href="javascript:deleteShoppingCartItem('{$item_type}','{$value.id}','{$value.quantity}','{$value.price}')">
+                     Xóa
+                  </a></td>
+            </tr>
+            {/loop}
+            {/loop}
+            <tr>
+               <td colspan='3' align='right'>Tổng giá trị : </td>
+               <td colspan='3' class="red"><b><span id='total_value' style="color: #ff001c;">{$shopping_cart_total|format_price}</span>&nbsp;<span>VNĐ</span></b></td>
+            </tr>
+         </table>
+         <div class="b_shop chudam">
+            <!--<a href="#buy7">Đặt hàng</a>-->
+            <input type="button" onClick="location.href='/';" value="Tiếp tục mua hàng" style="cursor:pointer;"/>
+         </div>
+         <div class='spacer'>
+         </div>
+         <br />
+         <input type="hidden" name="item_update_quantity" id="item_update_quantity" value="{$shopping_cart_id}" />
+         <input type="hidden" name="update_quantity" value="yes" />
+         <input type="hidden" name="total_cart_value" id="total_cart_value" value="{$shopping_cart_total}" />
+         <br />
+         <br />
+         <div id="buy7" style="font-size:13px; padding-bottom:10px;">
+            Để tiện cho việc xử lý đơn hàng, vui lòng điền đầy đủ thông tin.
+         </div>
+         <table class="frm_submit tbl_nobdr" style="font-size: 12px;">
+            <tr>
+               <td>Họ tên <span class="sub1 red">*</span></td>
+               <td><input type="text" size="50" name="user_info[name]" id="buyer_name" value="{$customer_info.name}" /></td>
+            </tr>
+            <tr>
+               <td>Địa chỉ Email</td>
+               <td><input type="text" size="50" name="user_info[email]" id="buyer_email" value='{$customer_info.email}' /></td>
+            </tr>
+            <tr>
+               <td>Điện thoại <span class="sub1 red">*</span></td>
+               <td><input type="text" size="20" style="width: 120px;" name="user_info[tel]" id="buyer_tel" value='{$customer_info.tel}' /></td>
+            </tr>
+            <tr>
+               <td>Địa chỉ <span class="sub1 red">*</span></td>
+               <td><textarea cols="40" rows="2" name="user_info[address]" id="buyer_address">{$customer_info.address}</textarea></td>
+            </tr>
+            <tr>
+               <td>Yêu cầu thêm</td>
+               <td><textarea cols="40" rows="5" name="user_info[note]" id="buyer_note"></textarea></td>
+            </tr>
+            <tr>
+               <td colspan="2"> Phần đánh dấu (<span class="sub1 red">*</span>) là yêu cầu bắt buộc phải cung cấp ghi gửi đơn hàng.<br /></td>
+            </tr>
+            <tr>
+               <td colspan="2"> “Để nhân viên bán hàng kiểm tra hàng chính xác nhất, Quý khách nên điền thêm đầy đủ thông tin của món hàng vào cột “Yêu cầu thêm” . <br />
+                  Cảm ơn quý khách đã đến với chúng tôi ! </td>
+            </tr>
+         </table>
+        
+        <h3 style="margin-top:20px; margin-left:10px; margin-bottom:10px;">Chọn hình thức thanh toán</h3>
+        {loop="payment_method"}
+        <div class="item-pay" style="padding:3px 10px;">
+          <input type="radio" id="pay_method{$value.id}" name='pay_method' value="{$value.id}" onchange="paymentShow('pay{$counter}')" {if="$counter==0"}checked="checked"{/if} />  
+          <label for="pay_method{$value.id}" style="font-weight: normal;display: inline;vertical-align: top;">{$value.title}</label>
+          <div class="detail" id="pay{$counter}" style="display: none;">
+            {$value.detail}
+          </div>
+          <div class="clear"></div>
+        </div>
+        {/loop}
+         <br />
+         <input type="hidden" name="send_order" value="yes" />
+         <div align="left">
+            <input type="submit" value="Gửi đơn hàng >>"  style="cursor:pointer;"/>
+         </div>
+      </form>
+      
+      <!----> 
+      {else}
+      <p>Bạn chưa chọn sản phẩm nào vào giỏ hàng</p>
+      {/if}
+   </div>
+     </div>
+   <!--category_product_list-->
+   
+   <script type="text/javascript">
+    function check_field(){
+        var error = "";
+        var check_name = document.getElementById('buyer_name').value;
+        if(check_name.length < 4) error += "- Bạn chưa nhập tên\n";
+				
+        var check_add = document.getElementById('buyer_address').value;
+        if(check_add.length < 10) error += "- Bạn chưa nhập địa chỉ\n";
+				
+				var check_email = document.getElementById('buyer_email').value;
+        if(check_email.length < 8) error += "- Bạn chưa nhập email\n";
+				
+	        var check_note = document.getElementById('buyer_note').value;
+        if(check_name.length < 4) error += "- Bạn chưa nhập tên\n";
+        if(error != "") {
+            alert(error); return false;
+        }
+        return true;
+    }
+</script>

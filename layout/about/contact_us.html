@@ -1,0 +1,86 @@
+<div id="breadcrumb">
+    <div class="container">
+        <div class="d-flex">
+            <div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="/" itemprop="url" class="nopad-l">
+                    <span itemprop="title">Trang chủ</span>
+                </a>
+            </div>
+            <div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="/cart" itemprop="url" class="nopad-l">
+                    <span itemprop="title">Liên hệ</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumb-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" style="margin:0 auto;float:none">
+            <div class="col-md-12">
+                {$store_address}
+                <div class="clear space10px"></div>
+            </div>
+            <div class="col-md-12">
+                <h1 class="border-bottom mb-4 pb-2 mt-3 text-18 text-uppercase">Liên hệ</h1>
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Tên đầy đủ</label>
+                        <input type="text" class="inputText form-control is-valid" name="contact_name" id="contact_name">
+                    </div>
+                    <!--form-group-->
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="inputText form-control is-valid" name="contact_email" id="contact_email">
+                    </div>
+                    <!--form-group-->
+                    <div class="form-group">
+                        <label>Điện thoại</label>
+                        <input type="text" class="inputText form-control is-valid" name="contact_tel" id="contact_tel">
+                    </div>
+                    <!--form-group-->
+                    <div class="form-group">
+                        <label>Thông tin liên hệ</label>
+                        <textarea rows="8" name="contact_message" id="contact_message" class="inputText form-control is-valid" style="height:50px;"></textarea>
+                    </div>
+                    <!--form-group-->
+
+                    <input type="button" class="btn btn-danger" value="Gửi liên hệ" onclick="check_form_contact_detail();">
+                    <input type="hidden" value="send" name="action">
+                    <input type="hidden" name="return_url" value="/lien-he">
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function check_form_contact_detail() {
+            var error = "";
+            var check_name = document.getElementById('contact_name').value;
+            var check_email = document.getElementById('contact_email').value;
+            var check_tel = document.getElementById('contact_tel').value;
+            var check_message = document.getElementById('contact_message').value;
+            //var check_captcha = document.getElementById('captcha').value;
+
+            if (check_name.length < 4) error += "- Bạn chưa nhập tên\n";
+            if (check_email.length < 4) error += "- Bạn chưa nhập email\n";
+            if (check_message.length < 4) error += "- Bạn chưa nhập nội dung\n";
+            //if(check_captcha.length < 4) error += "- Bạn chưa nhập Mã bảo vệ\n";
+
+            if (error == "") {
+                $.post("/ajax/customer_contact.php", { from: 'ajax', contact_name: check_name, contact_email: check_email, contact_tel: check_tel, contact_message: check_message }
+                    , function (data) {
+                        alert("Bạn đã gửi liên hệ thành công\nChúng tôi đã nhận được thông tin và sẽ liên hệ với quý khách trong thời gian sớm nhất");
+
+                        document.getElementById('contact_name_detail').value = '';
+                        document.getElementById('contact_email_detail').value = '';
+                        document.getElementById('contact_tel_detail').value = '';
+                        document.getElementById('contact_message_detail').value = '';
+                    });
+            }
+            else alert(error);
+            return false;
+        }
+    </script>
+</div>

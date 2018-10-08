@@ -1,0 +1,66 @@
+<div class="container" style="padding:0 10px;">
+  <div id="breadcrumb">
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="/" itemprop="url" class="nopad-l">
+        <span itemprop="title">Trang chủ</span>
+      </a>
+    </div>
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      &nbsp;/&nbsp;<a href="/marketing" itemprop="url">
+      <span itemprop="title"><b class="red">Khuyến mại</b></span>
+      </a>
+    </div>
+  </div>
+  <div id="promotion-page">
+      <div class="title-page">
+        <h1 class="h-title">Săn khuyến mãi <b>HOT</b></h1>
+        <div class="clear"></div>
+      </div>
+    	<div class="clear"></div>
+
+      <h1 style="color:#013e7d;font-size: 16px;line-height: 22px;">{$program_info.title}</h1>
+      <p style="font-size: 15px;font-style:italic;line-height: 18px;margin: 10px 0;">Chương trình bắt đầu: 
+        <span class="red">{$program_info.start_time}</span>  
+        -  Kết thúc: <span class="red">{$program_info.end_time}</span> 
+      </p>
+
+    <div class="product_list">
+      {loop="$item_list.item_list"}
+      <div class="pro_item">
+         <a href="{$value.productUrl}" title="{$value.productName}" class="image">
+            <img src="{$value.productImage.large}" title="{$value.productName}"/>
+            {if="$value.productType.isNew == 1"}<span class="icon_new">NEW</span>{/if}
+           	{if="$value.marketPrice > $value.price"}
+            {$percent = ceil(100 - $value.price*100/$value.marketPrice)}
+            <span class="discount">-{$percent}%</span>
+            {/if}
+         </a>
+         <div class="pro_info">
+            <a href="{$value.productUrl}" class="pro_name">
+               {$value.productName}
+            </a>
+            <span class="pro_price">{if="$value.price > 0"}{$value.price|format_price} VNĐ{else}Liên hệ{/if}</span> 
+           	 {if="$value.marketPrice > $value.price"}
+              <span class="p-oldprice">{$value.marketPrice|format_price} VNĐ</span>
+              {/if}
+           <p class="fl status{$value.quantity}">{if="$value.quantity == -2"}
+              <span><i class="fa fa-phone-square"></i> Hàng đang về</span>
+              {elseif="$value.quantity == -1"}<span><i class="fa fa-phone-square"></i> Liên hệ</span>
+              {elseif="$value.quantity == 0"}<span><i class="fa fa-phone-square"></i> Hết hàng</span>
+              {elseif="$value.quantity == 1"}<span><i class="fa fa-shopping-bag"></i> Còn hàng</span>
+              {elseif="$value.quantity == 2"}<span><i class="fa fa-shopping-bag"></i> Đặt hàng</span>
+              {elseif="$value.quantity > 2"}<span><i class="fa fa-shopping-bag"></i> Sẵn hàng</span>
+              {/if}</p>
+           {if="$value.specialOffer!=''"}
+            <div class="promotion">
+               Khuyến mãi: <span>{|subString:$value.specialOffer, 60}</span>
+            </div>
+            {/if}
+         </div>
+      </div>
+      {/loop}
+   </div><!--product_list-->
+    <div class="clear"></div>
+    <div>{$paging}</div>
+  </div><!--promotion-page-->
+</div>

@@ -1,0 +1,369 @@
+{if="strpos($current_page_url,'?show=tragop-online') > 0"}
+{include="product/tra_gop_online"}
+{else}
+<div class="page_path">
+  <div class="page_nav productNav" id="NavChitietSP">
+    <span xmlns:v="http://rdf.data-vocabulary.org/#">
+      <span typeof="v:Breadcrumb"> <a rel="v:url" property="v:title" href="/" title='Trang chủ' class="submenuhome123" >Trang chủ </a></span>
+      
+      {loop="$product_info['productPath'][0]['path']"}
+      /
+      <span typeof="v:Breadcrumb"><a  rel="v:url" property="v:title" alt="{$value.name}" title="{$value.name}" href="{$value.url}">{$value.name}</a></span>
+      {/loop}
+    </span>
+  </div></div> <br />
+
+<div  class="single-item" role="toolbar">
+  <div class="pac_single-item-rtl">
+    <a>
+      <img src="{$product_info.productImage.original}" alt="{$product_info.productName}" />
+    </a>
+  </div>
+  {loop="product_info.productThumList"}
+  <div class="pac_single-item-rtl">
+    <a>
+      <img src="{$value.original}" alt="{$product_info.productName}" />
+    </a>
+  </div>
+  {/loop}
+</div>
+
+
+<div class="clear_fix"></div>
+<span itemscope itemtype="http://schema.org/Product">
+  <div class="info">
+    <div class="pro_name" >
+      <a href="{$current_page_url}"><span itemprop="name">{$product_info.productName}</span></a>  
+    </div>
+   	<div id="review-statistic" style="position:relative;">
+      <p id="ratingOveriew" onclick="$('html,body').animate({scrollTop:$('#comment').offset().top - 50},800);"><a href="javascript:void(0)" class="blue">(<b class="reviewCount">{$product_info.reviewCount}</b> người đánh giá)</a></p>
+    </div><!--review-statistic-->
+    <p><b>Tình trạng:</b> <span style="color:#ffa53f">
+      
+      {if="$product_info.quantity == -2"}
+        <span>Hàng sắp về</span>
+        {elseif="$product_info.quantity == -1"}
+        <span>Hết hàng</span>
+        {elseif="$product_info.quantity == 0"}
+        <span>Hết hàng</span>
+        {elseif="$product_info.quantity == 1"}
+        <span>Còn hàng</span>
+        {elseif="$product_info.quantity == 2"}
+        <span>Đặt hàng</span>
+        {elseif="$product_info.quantity > 2"}
+        <span>Sẵn hàng</span>
+        {/if}
+      
+      </span>
+    </p>
+    <meta itemprop="url" content="{$current_page_url}" />
+    {if="$product_info.brandName !== ''"}
+    <meta itemprop="brand" content="{$product_info.brandName}" />
+    {/if}
+    <meta itemprop="image" content="http://m.phucanh.vn{$product_info.productImage.original}" />		
+    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">	
+       {if="$deal_detail.id > 0"}
+      
+            {$temp = 100 - $deal_detail.price*100/$product_info.price;}
+            {$percent = ceil($temp);}
+            {$price_off = $product_info.price - $deal_detail.price}
+            {if="$deal_detail.deal_time_happen > 0"}
+            <div class="deal_heading space10px"><img src="{#IMAGE_PATH#}notify_deal.jpg" alt="deal" width="100%"/></div>
+            {/if}
+            
+            {if="$deal_detail.deal_time_happen > 0"}
+              <div id="price_deal_detail_2" class="detail fl">
+                <div class="img_price_full">{$deal_detail.price|format_price}</div>
+                <div class="clear"></div>
+                <p>Giá thường: <span class="line_through">{$product_info.price|format_price} đ</span>
+                  <span class="percent_off">-{$percent}%</span></p>
+                <p class="red">Tiết kiệm: {$price_off|format_price} đ</p>
+              </div><!--info_deal_detail-->
+      
+        		<div id="time_left">
+              <span>Thời gian còn lại: </span>
+              <span id="count_down"><b id="countTime{$deal_detail.id}"></b></span>
+            </div><script>GetCount({$deal_detail.deal_time_left},'countTime{$deal_detail.id}');</script>
+           {/if}
+        
+      {else}
+      <div class="pro_price" itemprop="price" style="font-weight:bold; font-size:18px;">
+        Giá: {$product_info.priceFormat}đ
+      </div>
+      {if="$product_info.marketPrice > $product_info.price"}
+        <div>
+          Giá thị trường:
+            <span class="pro-oldprice">{$product_info.marketPrice|format_price} VNĐ</span>
+            {$percent = ceil(100 - $product_info.price*100/$product_info.marketPrice)}
+            <span class="percent_off">-{$percent}%</span>
+        </div>
+        {/if}
+      {/if}
+        <div class="clear_fix"></div>
+      <meta itemprop="priceCurrency" content="VND" />
+      {if="$product_info.quantity > 0 "}
+      <link itemprop="availability" href="http://schema.org/InStock" />
+      {else}
+      <link itemprop="availability" href="http://schema.org/OutOfStock" />
+      {/if}
+    </span>
+    <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+      <meta itemprop="reviewCount" content="{$product_info.reviewCount}"/>
+      <meta itemprop="ratingValue" content="{$product_info.rating}"/>
+      <meta itemprop="bestRating" content="5"/>	
+      <meta itemprop="worstRating" content="0"/>				
+    </span>
+    
+    {if="sizeof($product_info.specialOffer) > 0"} <!--ko cho hien thi-->
+    <div class="promotion">
+      <span>Khuyến mãi: </span>{loop="$product_info.specialOffer"}{$value.title}{/loop} <i class="icon icon_promotion"></i>
+    </div>
+    {/if}  
+    <div class="proWarranty">
+      <span>
+        <strong>Bảo hành:</strong>
+      </span> {if="$product_info.warranty == ''"}Chưa có thông tin bảo hành{else}{$product_info.warranty}{/if}
+    </div><!--proWarranty-->
+  </div>
+  <div class="clear_fix"></div>
+  
+  <div class="button-buy-detail">
+    {if="$deal_detail.id > 0"}
+    <a href="javascript:addToShoppingCart('deal','{$deal_detail.id}',1,'{$deal_detail.price}');" class="btn-buy btn-buy-red">
+      <span>Mua ngay</span>
+    </a>
+    {else}
+    
+    {if="$product_info.quantity == -2"}
+            <a href="/page/yeu-cau-dat-hang" target="_blank" class="btn-buy btn-buy-red">
+              <span>Hàng sắp về</span>Yêu cầu đặt hàng
+            </a>
+            {elseif="$product_info.quantity == -1"}
+            <a href="/yeu-cau-dat-hang" target="_blank" class="btn-buy btn-buy-red">
+              <span>Hết hàng</span>Liên hệ đặt hàng
+            </a>
+        	{elseif="$product_info.quantity == 0"}
+              <a href="/yeu-cau-dat-hang" target="_blank" class="btn-buy btn-buy-red">
+                <span>Hết hàng</span>Liên hệ đặt hàng
+              </a>
+        	{elseif="$product_info.quantity > 0"}
+<a href="javascript:;" onclick="addToShoppingCart('pro','{$product_info.productId}',1,'{$product_info.price}');" class="btn-buy btn-buy-red">
+              <span>Mua ngay</span>
+            </a>
+            {/if}
+    
+    {/if}
+    {if="$product_info.price >= 3000000"}
+    <a href="javascript:void(0)" onclick="window.open('{$product_info.productUrl}?show=tragop-online&price={$product_info.price}','_blank');" class="btn-buy btn-buy-blue">
+      <span>Trả góp lãi suất ưu đãi</span>Tư vấn thủ tục nhanh chỉ sau 15 phút
+    </a>
+    {else}
+    <a href="/page/mua-hang-tra-gop" class="btn-buy btn-buy-blue" target="_blank">
+      <span>Trả góp lãi suất ưu đãi</span>Tư vấn thủ tục nhanh chỉ sau 15 phút
+    </a>
+    {/if}
+    <a href="javascript:void(0)" onclick="showPopup('popup-address');" class="btn-buy btn-buy-yellow btn-contact-shop" style="padding:18px 0;">
+      <span style="margin-bottom:0;">Liên hệ cửa hàng</span>
+    </a>
+  </div><!--button-buy-detail-->              
+  
+  <div class="clear_fix">
+  </div>
+  <div class="info_order">
+    <div style="text-align:center;">Gọi đặt hàng tư vấn <b>1800 2095</b> hoặc <b>0904 332 781</b></div>
+  </div><!--info_order-->
+  <div class="clear_fix"></div>
+  
+  
+  <div id="uudai">
+    <h4 class="title h-title text-upc">YÊN TÂM MUA SẮM TẠI An khang</h4>
+    <ul class="ul">
+      <li><i class="icon-star-list"></i> <span>Miễn phí vận chuyển 20km </span></li>
+      <li><i class="icon-star-list"></i> <span>Thanh toán thuận tiện</span></li>
+      <li><i class="icon-star-list"></i> <span>Sản phẩm 100% chính hãng</span></li>
+      <li><i class="icon-star-list"></i> <span>Bảo hành tại nơi sử dụng</span></li>
+      <li><i class="icon-star-list"></i> <span>Giá cạnh tranh nhất thị trường</span></li>
+    </ul>
+  </div>
+  
+  
+  <div class="info_thongso nd" itemprop="description">
+    <span>Tính năng nổi bật</span> <br />
+    {$summary = explode("\n", $product_info.productSummary) }
+    {loop="$summary"}<i class="fa fa-check"></i> {$value}<br />
+    {/loop}
+  </div>
+  <div class="info_thongso">
+    <span>Thông số kỹ thuật</span> 
+    <div id="tskt" class="nd">
+      {if="strlen($product_info.productSpec) > 0"}
+      {$product_info.productSpec}
+      {elseif="strlen($product_info.productTechnicalTable) > 0"}
+      {$product_info.productTechnicalTable}
+      {/if}
+    </div>
+  </div>
+  <div class="clear_fix"></div>
+  <!-- bài viết --> 
+  {if="$product_info.productDescription != ''"}
+  <div id="baiviet">
+    <div class="h3_line">
+      <h3>Đặc điểm nổi bật</h3>
+    </div>
+    <div class="h3_content">
+      <div class="b_left nd">
+        {$product_info.productDescription}
+      </div>
+    </div>
+  </div>
+  {/if}
+  <div class="button-buy-detail">
+    {if="$deal_detail.id > 0"}
+    <a href="javascript:addToShoppingCart('deal','{$deal_detail.id}',1,'{$deal_detail.price}');" class="btn-buy btn-buy-red">
+      <span>Mua ngay</span>
+    </a>
+    {else}
+    
+    {if="$product_info.quantity == -2"}
+            <a href="/page/yeu-cau-dat-hang" target="_blank" class="btn-buy btn-buy-red">
+              <span>Hàng sắp về</span>Yêu cầu đặt hàng
+            </a>
+            {elseif="$product_info.quantity == -1"}
+            <a href="/yeu-cau-dat-hang" target="_blank" class="btn-buy btn-buy-red">
+              <span>Hết hàng</span>Liên hệ đặt hàng
+            </a>
+        	{elseif="$product_info.quantity == 0"}
+              <a href="/yeu-cau-dat-hang" target="_blank" class="btn-buy btn-buy-red">
+                <span>Hết hàng</span>Liên hệ đặt hàng
+              </a>
+        	{elseif="$product_info.quantity > 0"}
+<a href="javascript:;" onclick="addToShoppingCart('pro','{$product_info.productId}',1,'{$product_info.price}');" class="btn-buy btn-buy-red">
+              <span>Mua ngay</span>
+            </a>
+            {/if}
+    {/if}
+    
+    {if="$product_info.price >= 3000000"}
+    <a href="/page/mua-hang-tra-gop" class="btn-buy btn-buy-blue" target="_blank">
+      <span>Trả góp lãi suất ưu đãi</span>Tư vấn thủ tục nhanh chỉ sau 15 phút
+    </a>
+    {/if}
+  </div><!--button-buy-detail-->        
+  <div class="clear_fix">
+  </div><!-- end bai viet --> 
+  {if="strlen($product_info.video_code) > 0"} 
+  <!-- video -->
+  <div id="video">
+    <div class="h3_line">
+      <h3>Video</h3>
+    </div>
+    <div class="h3_content">
+      {$product_info.video_code}
+    </div>
+  </div>
+  <!-- end video --> 
+  {/if}
+  
+  {if="sizeof($product_same_price) > 0"}
+  <div class="clear_fix space10px"></div>
+  <div class="h3_line"><h3 style="color:#0a62ac; font-size:18px;">Sản phẩm tương đương</h3></div>
+  <div class="product_list">
+    {loop="$product_same_price"}
+    {if="$counter < 5"}
+    <div class="pro_item">
+      <a href="{$value.productUrl}" title="{$value.productName}" class="image">
+        <img src="{$value.productImage.large}" title="{$value.productName}"/>
+        {if="$value.productType.isNew == 1"}<span class="icon_new">NEW</span>{/if}
+        {if="$value.marketPrice > $value.price"}
+        {$percent = ceil(100 - $value.price*100/$value.marketPrice)}
+        <span class="discount">-{$percent}%</span>
+        {/if}
+      </a>
+      <div class="pro_info">
+        <a href="{$value.productUrl}" class="pro_name">
+          {$value.productName}
+        </a>
+        <span class="pro_price">{$value.priceFormat}đ</span> {if="sizeof($value.specialOffer) > 0"}
+        <div class="promotion">
+          Khuyến mãi: <span>{loop="$value.specialOffer"}{|subString:$value.title, 60}{/loop}</span>
+        </div>
+        {/if}
+      </div>
+    </div>
+    {/if}
+    {/loop}
+   </div>
+  {/if}
+  
+  {if="sizeof($product_info.productAccessoryList) > 0"}
+  <div class="clear_fix"></div>
+  <div class="h3_line"><h3 style="color:#0a62ac; font-size:18px;">Sản phẩm liên quan</h3></div>
+  <div class="product_list">
+      {loop="$product_info.productAccessoryList"}
+      {if="$counter < 5"}
+      <div class="pro_item">
+         <a href="{$value.productUrl}" title="{$value.productName}" class="image">
+            <img src="{$value.productImage.large}" title="{$value.productName}"/>
+            {if="$value.productType.isNew == 1"}<span class="icon_new">NEW</span>{/if}
+           	{if="$value.marketPrice > $value.price"}
+            {$percent = ceil(100 - $value.price*100/$value.marketPrice)}
+            <span class="discount">-{$percent}%</span>
+            {/if}
+         </a>
+         <div class="pro_info">
+            <a href="{$value.productUrl}" class="pro_name">
+               {$value.productName}
+            </a>
+            <span class="pro_price">{$value.priceFormat}đ</span> {if="sizeof($value.specialOffer) > 0"}
+            <div class="promotion">
+               Khuyến mãi: <span>{loop="$value.specialOffer"}{|subString:$value.title, 60}{/loop}</span>
+            </div>
+            {/if}
+         </div>
+      </div>
+    	{/if}
+      {/loop}
+   </div>
+  {elseif="sizeof($similar_category_product) > 0"}
+  
+  <div class="clear_fix"></div>
+  <div class="h3_line"><h3 style="color:#0a62ac; font-size:18px;">Sản phẩm liên quan</h3></div>
+  <div class="product_list">
+      {loop="$similar_category_product"}
+    	{if="$counter < 5"}
+      <div class="pro_item">
+         <a href="{$value.productUrl}" title="{$value.productName}" class="image">
+            <img src="{$value.productImage.large}" title="{$value.productName}"/>
+            {if="$value.productType.isNew == 1"}<span class="icon_new">NEW</span>{/if}
+           	{if="$value.marketPrice > $value.price"}
+            {$percent = ceil(100 - $value.price*100/$value.marketPrice)}
+            <span class="discount">-{$percent}%</span>
+            {/if}
+         </a>
+         <div class="pro_info">
+            <a href="{$value.productUrl}" class="pro_name">
+               {$value.productName}
+            </a>
+            <span class="pro_price">{$value.priceFormat}đ</span> {if="sizeof($value.specialOffer) > 0"}
+            <div class="promotion">
+               Khuyến mãi: <span>{loop="$value.specialOffer"}{|subString:$value.title, 60}{/loop}</span>
+            </div>
+            {/if}
+         </div>
+      </div>
+    {/if}
+      {/loop}
+   </div>
+  
+  {/if}
+  
+  <div class="clear_fix" id="comments"></div>
+  <div class="danhgia">
+    <span>Bình luận</span>
+  </div>
+  <div id="comment" class="rating-form" style="display:block; position:relative;">
+    
+    {include="product/mobile_product_detail_review"}
+    
+   </div><!--rating-form-->
+  {/if}

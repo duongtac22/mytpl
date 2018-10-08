@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Báo giá sản phẩm Công ty TNHH Máy Tính và Viễn Thông An Khang</title>
+  <link rel="stylesheet" href="{#INCLUDE_PATH#}style.css" type="text/css" />
+    <style>
+        .list_table {
+            border-collapse:collapse;
+        }
+        .list_table td{border:solid 1px #aaa; padding:5px; text-algin:center; vertical-align:middle;}
+        .cart_first_tr {
+            background-color:#cccccc;
+        }
+        BODY, FORM, TABLE, TD, SPAN, DIV {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:12px;
+        }
+        .title a {
+            color:#0000FF;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:12px;
+            text-decoration:none;
+        }
+        .title a:hover {
+            color:#0000FF;
+            text-decoration:underline;
+        }
+    </style>
+  	<style>body{background:url({#IMAGE_PATH#}bg_print_page.png?v=2.1) center center no-repeat fixed}</style>
+</head>
+<body>
+<div style="width: 700px;margin: 0 auto;">
+
+
+<table width="700">
+    <tr>
+        <td colspan="3" valign="top">
+            <img src="/template/2017v1/images/logo_print.png?v=2.1" alt="" />
+        </td>
+        <td colspan="5" align="right" style="line-height: 19px;">
+            <b style="text-transform:uppercase;">Công ty TNHH Máy Tính và Viễn Thông An Khang</b><br />
+                            Trụ sở chính: Số 210 Đường Thái Hà, Phường Trung Liệt, Quận Đống Đa, TP. Hà Nội<br />
+
+- Cơ sở 2: Số 02 ngõ 71 Trần Quang Diệu, Đống Đa, TP. Hà Nội<br />
+
+- Cơ sở 3: Số 30 Nguyễn Văn Huyên nối dài, Cầu Giấy, Hà Nội<br />
+
+- Giám đốc: Ông Phạm Anh Dậu<br />
+
+- Điện thoại: 1900 2655 - 024 3537 9888 <br />
+
+- Website: www.ankhang.vn<br />
+
+- Số ĐKKD & Mã số thuế: 0103728344<br />
+        </td>
+    </tr>
+    <tr><td colspan="8"></td></tr>
+    <tr>
+        <td colspan="8" style="border-top: 4px double #ccc;;font-size:21px; font-weight:bold; text-align:center; padding:15px 0;">BẢNG BÁO GIÁ SẢN PHẨM</td>
+    </tr>
+    <tr><td colspan="8" style="text-align: center;">
+            <div id="price_time"></div>
+    </td></tr>
+</table>
+
+<table width="700">
+    <tr><td colspan="4"></td><td colspan="4"></td></tr>
+    <tr>
+        <td colspan="4" width="45%">
+            Ông/bà: Quý khách hàng<br/>
+            Đơn vị:<br/>
+            Địa chỉ:<br/>
+            Điện thoại:<br/>
+        </td>
+        <td colspan="4">
+            &nbsp;<br/>
+            &nbsp;<br/>
+            Email:<br/>
+            Fax:<br/>
+        </td>
+    </tr>
+</table>
+
+    <div style="padding: 10px;"></div>
+
+<table width="700">
+    <tr><td colspan="8"></td></tr>
+    <tr>
+        <td colspan="6"><b>Công ty TNHH Máy Tính và Viễn Thông An Khang xin trân trọng gửi tới quý khách hàng bảng chào giá sau :</b></td>
+        <td colspan="2"><!--<i>Đơn vị tính: VNĐ</i>--></td>
+    </tr>
+    <tr>
+        <td colspan="8"></td>
+    </tr>
+</table>
+
+<table class="list_table"  width="700">
+    <tr>
+        <!--<td> <strong>STT </strong></td>-->
+        <td> <strong>Mã sản phẩm</strong></td>
+        <td> <strong>Hình ảnh </strong></td>
+        <td colspan="2"> <strong>Tên sản phẩm </strong></td>
+        <td> <strong>Số lượng </strong></td>
+        <td> <strong>Đơn giá </strong></td>
+        <td> <strong>Bảo hành </strong></td>
+    </tr>
+    <!--{$start_counter = 0}-->
+    {loop="shopping_cart_item"}
+        <!--{$item_type = $key}-->
+    {loop="shopping_cart_item[$item_type]"}
+        <tr valign="middle">
+            <!--<td>{$counter + 1}</td>-->
+            <td>{$value.productSKU}</td>
+            <td height="60"><img src="{$value.image}" align=absmiddle width=60 alt="{$value.name}"/></td>
+            <td colspan="2">
+                <b>{$value.name}</b><br/>
+                {if="$value.promotion !=''"}
+                <p style="color: #f00;"> Khuyến mại:<br> {$value.promotion}</p>
+                {/if}
+            </td>
+            <td align="center">{$value.quantity}</td>
+            <td align="center">{$value.price|format_price} VNĐ</td>
+            <!--<td align="center">{$value.totalPrice|format_price} VNĐ</td>-->
+            <td align="center"> {$value.warranty}</td>
+        </tr>
+    {/loop}{/loop}
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td colspan="5"> <strong>Tổng cộng : {$shopping_cart_total|format_price} VNĐ</strong></td>
+    </tr>
+</table>
+
+<div style="text-align: center;padding: 20px 0; font-weight:bold; font-size:14px; color:#e00;">
+    <a href="/gio-hang" class="btn_cyan" style="width:100px;display:inline-block;">Đặt mua</a>
+    <a href="javascript:window.print()" style="width:100px;display:inline-block;" class="btn_orange">In đơn hàng</a>
+</div>
+
+<table  width="700">
+	<tr>
+		<td style="width:70%">
+			<b>Cung cấp: </b>Tại Hà Nội ngay sau khi khách hàng thanh toán
+		</td>
+		<td><b>Người lập:</b></td>
+	</tr>
+	<tr>
+		<td>
+			<b>Thanh toán: </b>Tiền mặt, séc hoặc chuyển khoản
+		</td>
+		<td><b>Chức vụ:</b></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><b>Điện thoại:</b></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><b>Mobile:</b></td>
+	</tr>
+</table> 
+
+<script>
+    function show_time(){
+        var currentdate = new Date();
+        var date_time = currentdate.getDate() + "/"+(currentdate.getMonth()+1) + "/" + currentdate.getFullYear() + " " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+        document.getElementById('price_time').innerHTML = date_time;
+    }show_time();
+</script>
+
+</div>
+
+</body>
+</html>

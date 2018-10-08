@@ -1,0 +1,120 @@
+<h2>Đơn hàng số #{$order_info.orderId}</h2>
+
+{if="$order_info.system_status=='new'"}
+  <p> <a href="javascript:;" onclick="user_cancel_order({$order_info.orderId}, 'new')">Hủy đơn hàng</a></p>
+{/if}
+
+<div>
+	<b>Thời gian đặt mua</b> : {$order_info.orderDate}<br />
+	<b>Tình trạng</b> : 
+	{if="$order_info.status_id=='0'"}
+    	Chưa xử lý
+    {else}
+    	{$order_info.status_message}
+    {/if}
+</div>  
+<br>
+<div style="color:#f60; font-weight:bold;">Thông tin người mua</div>
+<br />
+<table>
+  <tr>
+    <td>Họ và tên</td>
+    <td>: {$customer_info.name}</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>: {$customer_info.email}</td>
+  </tr>
+  <tr>
+    <td>Điện thoại</td>
+    <td>: {$customer_info.mobile}</td>
+  </tr>
+  <tr>
+    <td>Địa chỉ</td>
+    <td>: {$customer_info.address} </td>
+  </tr>
+  <!--tr>
+    <td>Ghi chú</td>
+    <td>: {$customer_info.buyerInstruction} </td>
+  </tr-->
+  </table>
+<br />
+<div style="color:#f60; font-weight:bold;">Thông tin đơn hàng</div>
+<br>
+<table width=100% cellpadding=5 border=1 bordercolor='#CCCCCC' style="border-collapse:collapse;">
+    <tr bgcolor='#EEEEEE'>
+        <td>STT</td>
+        <td>Ảnh</td>
+        <td>Tên sản phẩm</td>
+        <td>Giá bán</td>
+        <td>Số lượng</td>
+        <td>Tổng</td>
+    </tr>
+
+	{loop="order_item"}	 
+    	
+        <tr>
+            <td>{$counter+1}</td>
+            <td>
+                {if="$value.item_image!=''"}
+                    <img src="{$value.item_image}" /> 
+                {else}
+                	--    
+                {/if}
+            </td>
+            <td>
+                {if="$value.item_type=='combo'"}
+                    [Combo] <b>{$value.item_name}</b> (#{$value.item_id})
+                    <br />{$value.item_information}
+                {elseif="$value.item_type=='deal'"}
+                    [Deal] <a href="{$value.item_url}" target="_blank"><b>{$value.item_name}</b></a> (#{$value.item_id})
+                {elseif="$value.item_type=='pro'"}
+                    [SP] <a href="{$value.item_url}" target="_blank"><b>{$value.item_name}</b></a> (#{$value.item_id}) 
+                    {if="$value.item_information !=''"}<br />{$value.item_information} {/if}
+                {/if}
+            </td>
+            <td><b>{$value.item_price|format_price} VND</b></td>
+            <td>{$value.quantity}</td>
+            <td>{$value.total_price|format_price} VND</td>
+        </tr>
+       
+    {/loop}
+    
+	<tr>
+		<td colspan=4 align=right>Giá trị</td>
+		<td colspan=2><b>{$order_info.totalValue|format_price}</b> VND</td>
+	</tr>
+    
+    {if="$order_info.discount_info != ''"}
+	<tr>
+		<td colspan=4 align=right>Khuyến mại khác</td>
+		<td colspan=2>
+        	{if="$order_info.discount_price > 0"}<b>{$order_info.discount_price|format_price}</b> VND <br />{/if}
+        	{$order_info.discount_info}
+        </td>
+	</tr>    
+    {/if}
+    
+    <tr>
+		<td colspan=4 align=right>Phí vận chuyển</td>
+		<td colspan=2>
+        	{if="$order_info.shippingFee > 0"}
+            	<b>{$order_info.shippingFee|format_price}</b> VND (Ghi chú: {$order_info.shippingNote})
+            {else}
+            	Chưa được cập nhật hoặc miễn phí
+            {/if}
+        </td>
+	</tr>
+    <tr>
+		<td colspan=4 align=right>Tổng giá trị đơn hàng</td>
+		<td colspan=2>
+        {$total_value = $order_info.totalValue + $order_info.shippingFee}
+        {if="$order_info.discount_price > 0"}
+        	{$total_value = $total_value - $order_info.discount_price}
+        {/if}
+        <b>{$total_value|format_price}</b> VND</td>
+	</tr>
+</table>
+
+<p align="center"><a href="javascript:window.print()">In đơn hàng</a></p>
+<p>&nbsp;</p>

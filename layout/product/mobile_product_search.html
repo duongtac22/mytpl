@@ -1,0 +1,140 @@
+      <div class="page_path">
+        Kết quả tìm kiếm: {$search_query}
+      </div>
+      <div class="clear_fix"></div>
+       {if="(strpos($current_page_url,'?brand') > 0 || strpos($current_page_url,'&brand') > 0 || strpos($current_page_url,'min') > 0 || strpos($current_page_url,'max') > 0 || strpos($current_page_url,'filter') > 0) && strpos($current_page_url,'?') > 0"}
+      <div class="filter_query">
+        <div class="filter_query_wapper">
+          <div class="filter_items">
+            {loop="$attribute_filter_list"}
+            {if="$value.selected==1"}
+            <span><b>{$value.attributeName} : </b>
+              {loop="$value.filterList"}
+              {$value.name}<a href="{$value.url}">x</a>
+              {/loop}
+            </span>
+            {/if}
+            {/loop}
+            {loop="brand_collection"}
+            {if="strpos($current_page_url,'?brand') > 0 || strpos($current_page_url,'&brand') > 0"}
+            <span><b>Hãng sản xuất : </b>{$value.name}<a href="{$value.url}">x</a></span>
+            {/if}
+            {/loop}
+            {loop="$price_filter_list"}
+            {if="$value.isCurrent==1"}
+            <span><b>Khoảng giá : </b>{$value.name}<a href="{$value.url}">x</a></span>
+            {/if}
+            {/loop}
+          </div>
+        </div>
+      </div>
+      {/if}
+  <ul class="filter">
+    <li>
+      <span class="criteria">Hãng 
+      </span>
+      <div class="manufacture" style="display: none;">
+        <button type="button" class="closefilter"><i class="iconmobile-closefil">x</i></button>
+        <aside>
+          {loop="brand_collection"}
+          {if="strpos($current_page_url,'?brand') > 0 || strpos($current_page_url,'&brand') > 0"}
+          <label><a href="{$value.url_back}">{$value.name} (Xóa)</a></label>
+          {else}
+          <label><a href="{$value.urlSearch}">{$value.name}</a></label>
+          {/if}
+          {/loop}
+        </aside>
+        
+      </div>
+    </li>
+    <li>
+      <span class="criteria">Giá 
+      </span>
+      <div class="listprice" style="display: none;">
+        <button type="button" class="closefilter"><i class="iconmobile-closefil">x</i></button>
+        {loop="$price_filter_list"}
+        {if="strpos($current_page_url,'min') > 0 || strpos($current_page_url,'max') > 0"}
+        <label>
+          <i class="iconmobile-checklist"></i>
+          <a href="{$value.url}">{$value.name} (Xóa)</a>
+        </label>
+        {else}
+        <label>
+          <i class="iconmobile-checklist"></i>
+          <a href="{$value.url}">{$value.name}</a>
+        </label>
+        {/if}
+        {/loop}
+      </div>
+    </li>
+    {if="sizeof($attribute_filter_list) > 0"}
+    <li>
+      <span class="criteria">Tính năng </span>
+      <div class="feature">
+        <button type="button" class="closefilter"><i class="iconmobile-closefil">x</i></button>
+        
+        
+        <aside class="rowfeature">
+          {loop="$attribute_filter_list"}
+          <aside class="property">
+            <strong>{$value.attributeName}</strong>
+            {loop="$value.filterList"}{if="$value.name !=''"}
+            <label>
+              <a href="{$value.url}">
+                <i class="iconmobile-checkbox"></i>
+                {$value.name} {if="$value.isCurrent==1"}(Xóa){/if}
+              </a>
+            </label>
+            {/if}
+            {/loop}
+          
+         </aside>
+          {if="($counter+1)%2==0"}</aside><aside class="rowfeature">{/if}
+          {/loop}
+        </aside>
+        
+      </div>
+    </li>
+    {/if}
+     <li>
+      <!--{$current_url = str_replace(':443','',$current_page_url)}-->
+      <span class="criteria">Sắp xếp</span>
+      <div class="sortprice" style="display: none;">
+        <button type="button" class="closefilter"><i class="iconmobile-closefil">x</i></button>
+        {loop="$sort_by_collection"}
+        <label class="check">
+          <a href="{$value.url}" {if="$value.url==$current_url"}class="current"{/if}><i class="iconmobile-checklist"></i>{$value.name}</a></label>
+        {/loop}
+      </div>
+    </li>
+  </ul>
+      <div class="clear_fix"></div>
+      <div class="product_list">
+         {loop="product_list"}
+          <div class="pro_item">
+            <a href="{$value.productUrl}" title="{$value.productName}" class="image">
+              <img src="{$value.productImage.large}" title="{$value.productName}"/>
+              {if="$value.productType.isNew == 1"}<span class="icon_new">NEW</span>{/if}
+              {if="$value.marketPrice > $value.price"}
+              {$percent = ceil(100 - $value.price*100/$value.marketPrice)}
+              <span class="discount">-{$percent}%</span>
+              {/if}
+            </a>
+            <div class="pro_info">
+              <a href="{$value.productUrl}" class="pro_name">
+                {$value.productName}
+              </a>
+              <span class="pro_price">{$value.priceFormat}đ</span>
+               {if="$value.marketPrice > $value.price"}
+              <span class="p-oldprice">{$value.marketPrice|format_price} VNĐ</span>
+              {/if}
+              {if="sizeof($value.specialOffer) > 0"}
+              <div class="promotion">
+                Khuyến mãi: <span>{loop="$value.specialOffer"}{|subString:$value.title, 60}{/loop}</span>
+              </div>
+              {/if}
+            </div>
+          </div>
+         {/loop}
+      </div>
+   <div>{$paging}</div>

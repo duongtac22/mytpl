@@ -1,0 +1,94 @@
+<div id="review-statistic">
+  <h4 class="h-title">Chi tiết đánh giá</h4> 
+  
+  <p id="ratingOveriew" title="Mời bạn gửi đánh giá về sản phẩm">
+    <i class="icons icon-star star{$product_info.rating}"></i>
+    &nbsp;&nbsp;<a href="javascript:void(0)" class="blue">(<b class="reviewCount">{$product_info.reviewCount}</b> người đánh giá)</a></p>
+  
+  <!--<div class="rating-form">
+    <p>Mời bạn gửi đánh giá về sản phẩm</p>
+    <table>
+      <tr>
+        <td style="text-align: right;vertical-align: top;padding-right: 5px;"><img src="{#IMAGE_PATH#}noavatar.jpg" alt="avatar" /></td>
+        <td><textarea id="rating-content" placeholder="Đánh giá của bạn"></textarea></td>
+      </tr>
+      <tr>
+        <td><label>Đánh giá:</label></td>
+        <td>
+          <div class="rating" style="float:left" id="select-rate-pro">
+            <input type="radio" class="rating-input" id="rating-input-review-0-5" value="5" name="user_post[rate]" checked=""/>
+            <label for="rating-input-review-0-5" class="rating-star"></label>
+            <input type="radio" class="rating-input" id="rating-input-review-0-4" value="4" name="user_post[rate]"/>
+            <label for="rating-input-review-0-4" class="rating-star"></label>
+            <input type="radio" class="rating-input" id="rating-input-review-0-3" value="3" name="user_post[rate]"/>
+            <label for="rating-input-review-0-3" class="rating-star"></label>
+            <input type="radio" class="rating-input" id="rating-input-review-0-2" value="2" name="user_post[rate]"/>
+            <label for="rating-input-review-0-2" class="rating-star"></label>
+            <input type="radio" class="rating-input" id="rating-input-review-0-1" value="1" name="user_post[rate]"/>
+            <label for="rating-input-review-0-1" class="rating-star"></label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label>Tên bạn</label></td>
+        <td><input type="text" id="rating-name" class="inputText"/></td>
+      </tr>
+      <tr>
+        <td><label>Email</label></td>
+        <td><input type="text" id="rating-email" class="inputText"/></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><a href="javascript:void(0);" onclick="send_vote()" class="btn btn-red">Gửi đánh giá</a></td>
+      </tr>
+    </table>
+  </div><!--rating-form-->
+  
+  <div class="clear"></div>
+  <p class="font14" style="padding-left:5px;"><b class="totalRating">{$product_info.rating}</b>/5 sao</p>
+  
+  <!--{$StarF=0}{$StarFo=0}{$StarTh=0}{$StarTw=0}{$StarOne=0} {$totalVote=0}
+
+{$StarFZen=0}{$TempStarZen=0}{$BadStarZen=0}{$StarTwZen=0}{$StarOneZen=0}
+
+{$totalVote = sizeof($product_user_review.productReviewList)}
+
+
+
+           {loop="product_user_review.productReviewList"}
+           		{if="$value.rate == 5"}{$StarF=$StarF+1}{/if}
+				{if="$value.rate == 4"}{$StarFo=$StarFo+1}{/if}
+               	{if="$value.rate == 3"}{$StarTh=$StarTh+1}{/if}
+				{if="$value.rate == 2"}{$StarTw=$StarTw+1}{/if}
+               	{if="$value.rate == 1 || $value.rate == 0"}{$StarOne=$StarOne+1}{/if}
+           {/loop}
+-->
+  
+  <ul class="ul font14">
+    <li>
+      <span class="blue">5 sao</span>{if="$product_info.reviewCount > 0 && $totalVote > 0"} {$StarFZen=($StarF/$totalVote)*100} {/if}
+      <div class="line-rating"><span class="percent percent5" style="width:{$StarFZen}%;"></span> </div>
+      <span class="count count-rating5"></span>
+    </li>
+    <li>
+      <span class="blue">4 sao</span>{if="$product_info.reviewCount > 0 && $totalVote > 0"} {$TempStarZen=($StarFo/$totalVote)*100}{/if}
+      <div class="line-rating"><span class="percent percent4" style="width:{$TempStarZen}%;"></span> </div>
+      <span class="count count-rating4"></span>
+    </li>
+    <li>
+      <span class="blue">3 sao</span>{if="$product_info.reviewCount > 0 && $totalVote > 0"} {$BadStarZen=($StarTh/$totalVote)*100}{/if}
+      <div class="line-rating"><span class="percent percent3" style="width:{$BadStarZen}%;"></span> </div>
+      <span class="count count-rating3"></span>
+    </li>
+    <li>
+      <span class="blue">2 sao</span>{if="$product_info.reviewCount > 0 && $totalVote > 0"} {$StarTwZen=($StarTw/$totalVote)*100}{/if}
+      <div class="line-rating"><span class="percent percent2" style="width:{$StarTwZen}%;"></span> </div>
+      <span class="count count-rating2"></span>
+    </li>
+    <li>
+      <span class="blue">1 sao</span>{if="$product_info.reviewCount > 0 && $totalVote > 0"} {$StarOneZen=($StarOne/$totalVote)*100}{/if}
+      <div class="line-rating"><span class="percent percent1" style="width:{$StarOneZen}%;"></span> </div>
+      <span class="count count-rating1"></span>
+    </li>
+  </ul>
+</div><!--review-statistic-->

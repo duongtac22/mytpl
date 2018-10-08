@@ -1,0 +1,106 @@
+<li onclick="location.href='{$value.productUrl}'">
+  <a href="{$value.productUrl}" class="linkPro"></a>
+  <div class="p-container">
+    <a href="{$value.productUrl}" class="p-img"><img class="lazy" src="{#IMAGE_PATH#}loading.gif" data-original="{$value.productImage.large}" alt="{$value.productName}" /></a>
+    
+    {if="$counter < 6 "}<h2 class="p-name"><a href="{$value.productUrl}">{$value.productName}</a></h2>
+    {else}<h3 class="p-name"><a href="{$value.productUrl}">{$value.productName}</a></h3>{/if}
+    
+    <span class="p-price">{if="$value.price > 0"}{$value.price|format_price} VNĐ{else}Liên hệ{/if}</span>
+    {if="$value.marketPrice > $value.price"}
+    {$percent = ceil(100 - $value.price*100/$value.marketPrice)}
+    <span class="discount">-{$percent}%</span>
+    <span class="p-oldprice">{$value.marketPrice|format_price} VNĐ</span>
+    {/if}
+    {if="$value.productType.isNew == 1"}<span class="p-icon_new">NEW</span>{/if}
+    {if="sizeof($value.specialOffer)  > 0"}<i class="p-icon_promotion"></i>{/if}
+    {if="$value.productType.isSaleOff == 1"}<i class="p-icon_sale"></i>{/if}
+    
+    <div class="p-act">
+      <p class="fl status{$value.quantity}">{if="$value.quantity == -2"}
+        <span><i class="fa fa-phone-square"></i> Hàng đang về</span>
+        {elseif="$value.quantity == -1"}<span><i class="fa fa-phone-square"></i> Liên hệ</span>
+        {elseif="$value.quantity == 0"}<span><i class="fa fa-phone-square"></i> Hết hàng</span>
+        {elseif="$value.quantity == 1"}<span><i class="fa fa-shopping-bag"></i> Còn hàng</span>
+        {elseif="$value.quantity == 2"}<span><i class="fa fa-shopping-bag"></i> Đặt hàng</span>
+        {elseif="$value.quantity > 2"}<span><i class="fa fa-shopping-bag"></i> Sẵn hàng</span>
+        {/if}</p>
+      <p class="fr">
+        <a href="javascript:void(0)" onclick="addToShoppingCartStop('pro','{$value.productId}','1','{$value.price}')"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cho vào giỏ</a>
+      </p>
+    </div>
+    
+  </div><!--p-container-->
+  <div class="p-hover">
+    <span class="p-summary">{$value.productSummary}</span>
+    <span class="p-detail">Xem ngay</span>
+    {if="$value.warranty!='' "} <span class="p-warranty">Bảo hành: {$value.warranty}</span>{/if}
+    <p>
+      <span class="p-price">{if="$value.price > 0"}{$value.price|format_price} VNĐ{else}Liên hệ{/if}</span>
+      {if="$value.marketPrice > $value.price"}
+      <span class="p-oldprice">{$value.marketPrice|format_price} VNĐ</span>
+      {/if}
+    </p>
+  </div><!--p-hover-->
+  
+  <div class="hover_content_pro tooltip">
+    <a href="{$value.productUrl}" class="hover_name">{$value.productName}</a>
+    {if="$value.brand.image!=''"}
+    <a href="" class="hover_brand"><img src="/media/brand/{$value.brand.image}" alt=""/></a>
+    {/if}
+    <div class="hori_line"></div>
+    <table>
+      <tr>
+        <td width="80"><b>Giá bán:</b></td>
+        <td>
+          <span class="img_price_full">{if="$value.price > 0"}{$value.price|format_price}{else}Liên hệ{/if}</span>
+          <span class="hover_vat">
+            {if="$value.hasVAT==1"}[Đã bao gồm VAT]{/if}
+            {if="$value.hasVAT==2"}[Chưa bao gồm VAT]{/if}
+          </span>
+        </td>
+      </tr>
+      <tr><td><b>Bảo hành:</b></td><td>{$value.warranty}</td></tr>
+      <tr>
+        <td><b>Kho hàng:</b></td>
+        <td>
+          <div class="p_quantity">
+            {if="$value.quantity == -2"}
+            <span>Hàng đang về</span>
+            {elseif="$value.quantity == -1"}
+            <span>Liên hệ</span>
+            {elseif="$value.quantity == 0"}
+            <span>Hết hàng</span>
+            {elseif="$value.quantity == 1"}
+            <span>Còn hàng</span>
+            {elseif="$value.quantity == 2"}
+            <span>Đặt hàng</span>
+            {elseif="$value.quantity > 2"}
+            <span>Sẵn hàng</span>
+            {/if}
+          </div>
+        </td>
+      </tr>
+    </table>
+    {if="$value.productSummary!=''"}
+    <div class="hori_line"></div>
+    <div class="hover_offer">
+      {$summary = explode("\n",$value.productSummary)}
+      <b>Mô tả tóm tắt:</b><br/>
+      {loop="$summary"}
+      + {$value}<br/>
+      {/loop}
+    </div>
+    {/if}
+    {if="sizeof($value.specialOffer) > 0"}
+    <div class="hori_line"></div>
+    <div class="hover_offer">
+      <b>Khuyến mại:</b><br/>
+      {loop="$value.specialOffer"}
+      {$value.title}<br/>
+      {/loop}
+    </div>
+    {/if}
+  </div><!--hover_content_pro-->
+  
+</li>

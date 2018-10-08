@@ -1,0 +1,50 @@
+<div class="page_path">
+    <div class="page_nav productNav" id="NavChitietSP">
+        <span xmlns:v="http://rdf.data-vocabulary.org/#">
+            <span typeof="v:Breadcrumb"> 
+                <a rel="v:url" property="v:title" href="/" title='Trang chủ' class="submenuhome123" >Trang chủ </a>
+            </span> > 
+            <span typeof="v:Breadcrumb">
+              <a rel="v:url" property="v:title" alt="{$category_info.name}" title="{$category_info.name}" href="">Tin tức</a></span>
+        </span>
+    </div>
+</div>
+<div class="clear_fix"></div>
+
+<div class="article_cat">
+  <ul class="ul owl-carousel">
+    {loop="article_category[article][0]"}
+    <li><a href="{$value.url}" class="">{$value.title}</a></li>
+    {/loop}
+  </ul>
+</div>
+<script>
+  $('.article_cat .owl-carousel').owlCarousel({
+        autoHeight:true,
+        autoplay: false,
+        margin: 0,
+        nav: false,
+        dots: false,
+        loop: false,
+  		autoWidth:true
+    });
+</script>
+
+<div class="clear_fix"></div>
+<div class="article_list">
+    {loop="new_article_list"}
+    <div class="news-item {if="$counter == 0"}first{/if}">
+        <a href="{$value.url}" class="news-image">
+            <img src="{if="$counter == 0"}{$value.image.original}{else}{$value.image.thum}{/if}" alt="{$value.title}" />
+        </a>
+        <a href="{$value.url}" class="news-name">{$value.title}</a>
+        <span class="news-summary">{|subString:$value.summary,120}</span>
+      	<span class="amain-time text-999 space3px block">{$value.lastUpdate}</span>
+    </div>
+    {/loop}
+    <div id="show-more-product"></div>
+    <div class="clear_fix"></div>
+    <div class="paging">
+        {$paging}
+    </div>
+</div>

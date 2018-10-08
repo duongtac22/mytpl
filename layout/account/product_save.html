@@ -1,0 +1,44 @@
+<h3>Sản phẩm bạn ưa thích</h3>
+
+{if="sizeof($product_list) > 0"}
+
+	<table width='100%' border=1 bordercolor='#CCCCCC' style='border-collapse:collapse;' cellpadding=4 cellspacing=0>
+			<tr bgcolor='#FFCC00' style='font-weight:bold;'>
+				<td>STT</td>
+				<td>Ảnh SP</td>
+				<td>Tên SP</td>
+				<td>Thông tin</td>
+				<td>Thời gian cập nhật</td>
+			</tr>
+
+    {loop="product_list"}	
+        
+        <tr id='row_{$value.id}'>
+            <td>{$counter+1}</td>
+            <td><img src="{$value.productImage.small}" /></td>
+            <td><b><a href="{$value.productUrl}" target="_blank">{$value.productName}</a></b></td>
+            <td>{$value.priceFormat}</td>
+            <td><a href='javascript:;' onclick="removeFavoritePro('{$value.id}')" style='color:red;'>Loại bỏ sản phẩm</a></td>
+        </tr>
+                            
+    {/loop}
+	
+	</table>
+    
+    {$paging}
+
+{else}
+	
+	<p>Hiện bạn chưa lưu sản phẩm nào.</p>
+
+{/if}
+
+<script type="text/javascript">
+	function removeFavoritePro(pro_id){
+		if(confirm('Bạn chắc chắn muốn xóa sản phẩm này khỏi danh sách đang lưu ?')){
+			$.post("/ajax/user_like_manager.php", {action: 'remove-like', type : 'pro', pro_id : pro_id}, function(){
+				$("#row_" + pro_id).fadeOut();
+			});
+		}
+	}
+</script>

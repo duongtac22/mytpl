@@ -1,0 +1,58 @@
+<div class="page_path">
+  <div class="page_nav productNav" id="NavChitietSP">
+         <span xmlns:v="http://rdf.data-vocabulary.org/#">
+      <span typeof="v:Breadcrumb"> <a rel="v:url" property="v:title" href="/" title='Trang chủ' class="submenuhome123" >Trang chủ </a></span>
+    
+        &nbsp;&nbsp;/&nbsp;&nbsp;
+       <span typeof="v:Breadcrumb">
+         <a  alt="Deal" title="Deal" href="/deal">Deal</a></span>
+      </span>
+  </div>
+</div>
+  <div class="clear_fix"></div>
+ 
+   <h1 class="" style="color:#e4393c; text-transform:uppercase;">Deal sốc mỗi ngày</h1>
+
+   <div class="clear_fix"></div>
+  {if="sizeof($deal_list) > 0"}
+<div class="product_list">
+      {loop="$deal_list"}
+      <div class="pro_item">
+         <a href="{$value.productUrl}" title="{$value.productName}" class="image">
+            <img src="{$value.productImage.large}" title="{$value.productName}"/>
+            {if="$value.productType.isNew == 1"}<span class="icon_new">NEW</span>{/if}
+          
+         </a>
+         <div class="pro_info">
+            <a href="{$value.productUrl}" class="pro_name">
+               {$value.productName}
+            </a>
+            <p class="pro_price">{$value.deal_price|format_price} đ</p> 
+           <p class="itd-oldprice">
+            Giá cũ: <del>{$value.price|format_price}</del>
+            {$percent = ceil(100 - $value.deal_price*100/$value.price)}
+            <span class="deal-discount">-{$percent}%</span>
+          </p>
+           {if="sizeof($value.specialOffer) > 0"}
+            <div class="promotion">
+               Khuyến mãi: <span>{loop="$value.specialOffer"}{|subString:$value.title, 60}{/loop}</span>
+            </div>
+            {/if}
+         </div>
+      </div>
+      {/loop}
+  	  <!--
+      <div id="show-more-product"></div>
+      <div class="clear_fix"></div>
+       <div id='show-more-bt'>
+       	<i class="icon show_more"></i>
+       	<a onclick="show_more_product({$current_category.id})" class="btn_more_pro">Xem thêm</a>
+       </div>
+		-->
+   </div><!--product_list-->
+{else}
+<p class="space10px">Hiện tại đang không có sản phẩm Deal nào</p>
+{/if}
+<div>{$paging}</div>
+  <input type=hidden id='view_page' value="2" />
+

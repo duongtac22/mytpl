@@ -1,0 +1,73 @@
+<div class="container">
+  <div id="breadcrumb">
+    <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="/" itemprop="url" class="nopad-l">
+        <span itemprop="title">Trang chủ</span>
+      </a>
+    </div>
+    <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      &nbsp;/&nbsp;<a href="" itemprop="url">
+      <span itemprop="title">Tài khoản của bạn</span>
+      </a>
+    </div>
+  </div><!--breadcrumb-->
+  <div class="line"></div>
+  <div class="clear"></div>
+  <div id="content">
+	<style type="text/css">
+          #tb-account { width:100%; border-collapse:collapse}
+          #account-left { width:220px; vertical-align:top; padding-right:30px;}
+          h2,h3{margin-top:0;}
+          #account-left dt {
+            font-weight: bold;
+            line-height: 26px;
+            background:#D11A1A;
+            color: white;
+            padding: 0 8px;
+            }
+          #account-left dd, dt, dl{ margin:0; padding:0}
+          #account-left dl { margin-bottom:10px}
+          #account-left a {
+            color: #383838;
+            text-decoration: none;
+            line-height: 30px;
+            }
+      </style>
+      
+      <table id="tb-account">
+        <tr>
+          <td id="account-left">
+            <dl>
+              <dt>Đơn hàng đặt mua</dt>
+              <dd><a href="?view=account-order">Danh sách đơn hàng</a></dd>
+            </dl>
+            
+            <dl>
+              <dt>Hoạt động cá nhân</dt>
+              <dd><a href="?view=account-pro-save">Sản phẩm đang lưu</a></dd>
+              
+            </dl>
+            
+            <dl>
+              <dt>Thông tin tài khoản</dt>
+              <dd><a href="?view=account-info">Thông tin cá nhân</a></dd>
+              <dd><a href="?view=account-change-pass">Thay đổi mật khẩu</a></dd>
+              
+            </dl>
+            
+            <div><a href="/logout.php">Đăng xuất</a></div>
+            
+          </td>
+          
+          <td valign="top">
+            
+            {$account_content}
+            
+          </td>
+        </tr>
+      </table>
+  </div>
+</div> 
+
+
+

@@ -1,0 +1,29 @@
+<main class="pb-4">
+    <div id="breadcrumb">
+        <div class="container">
+            <div class="d-flex">
+                <div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="/" itemprop="url" class="nopad-l">
+                        <span itemprop="title">Trang chủ</span>
+                    </a>
+                </div>
+                <div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="/cart" itemprop="url" class="nopad-l">
+                        <span itemprop="title">{$page_info.title}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumb-->
+    <div class="container bg-white rounded py-3">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="border-bottom mb-4 pb-2 text-18 text-uppercase">{$page_info.title}</h1>
+                <div class="w-100">
+                    {$page_info.content}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

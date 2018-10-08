@@ -1,0 +1,45 @@
+<div class="container" style="padding:0 10px;">
+  <div id="breadcrumb">
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a href="/" itemprop="url" class="nopad-l">
+        <span itemprop="title">Trang chủ</span>
+      </a>
+    </div>
+    <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      &nbsp;/&nbsp;<a href="/marketing" itemprop="url">
+      <span itemprop="title"><b class="red">Khuyến mại</b></span>
+      </a>
+    </div>
+  </div>
+  {if="sizeof($banner_header[23]) > 0"}
+  <div class="banner-pro-list">
+    <div class="owl-carousel owl-theme">
+      {loop="$banner_header[23]"}
+      <div class="item">{$value.display}</div>
+      {/loop}
+    </div>
+
+  </div><!--banner-left-->
+  <div class="clear" style="height:10px;"></div>
+  {/if}
+  <div id="promotion-page">
+  	<div class="title-page">
+      <h1 class="h-title">Săn khuyến mãi <b>HOT</b></h1>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="list">
+      {loop="$item_list"}
+      <a href="{$value.url}" class="item">
+      	<img src="{$value.thumbnail}" class="img" alt="{$value.title}" />
+        <span class="title">{$value.title}</span>
+        <span class="time">Từ: {$value.start_time} - Kết thúc: {$value.end_time}</span>
+      </a>
+      {/loop}
+    </div><!--list-->
+    
+    <div class="clear"></div>
+    <div>{$paging}</div>
+  </div><!--promotion-page-->
+  
+</div><!--container-->
