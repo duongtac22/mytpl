@@ -1,27 +1,4 @@
-<div id="breadcrumb">
-	<div class="container">
-		<div class="d-flex">
-			<div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-				<a href="/" itemprop="url" class="nopad-l">
-					<span itemprop="title">Trang chủ</span>
-				</a>
-			</div>
-			{loop="$current_category.path.path"}
-			<div class="item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-				<a href="{$value.url}" itemprop="url">
-					{if="$counter==sizeof($current_category.path.path.0) - 1"}
-					<span itemprop="title">{$value.name}</span>
-					{else}
-					<span itemprop="title">{$value.name}</span>
-					{/if}
-				</a>
-			</div>
-			{/loop}
-		</div>
-	</div>
-</div>
-<!--breadcrumb-->
-<div class="container category_content">
+<!-- <div class="container category_content">
 	<div class="row">
 		<div class="col-lg-3">
 			<div class="sidebar-left">
@@ -57,7 +34,6 @@
 				<div class="filter_item border-bottom pb-2">
 					<h3>Thương Hiệu</h3>
 					<div class="list_brand">
-						<!-- {$brand_filter_list|print_r} -->
 						{loop="$brand_filter_list"}
 						{if="$counter < 10"} <p><a class="w-100" href="{$value.url}">{$value.name}</a></p>
 							{else}
@@ -255,6 +231,151 @@
 							<a href="#"><img src="{#IMAGE_PATH#}banner_8606f35e.jpg" alt=""></a>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+
+<!-- template product_list 2 -->
+<div class="cate-phongtap">
+	<div class="phongtap-banner">
+		<div class="container">
+			<img class="img-fluid" src="{#IMAGE_PATH#}phong_tap_banner.jpg" alt="">
+		</div>
+	</div>
+	<div class="service-catalog phongtap-cate">
+		<div class="box-text service-title">
+			<h3 class="txt1 text-30">Các dịch vụ luyện tập và những cách giảm cân hiệu quả</h3>
+			<span class="cate-desciption text-14">Hiện nay có rát nhiều phương pháp để giảm cân. Nhưng lựa chọn tốt nhất cho bạn
+				là giảm cân nhưng vẫn đảm bảo sức khỏe
+				<br>cùng với những phương pháp rèn luyện phù hợp với từng đối tượng. </span>
+		</div>
+		<div class="service-list">
+			<div class="container">
+				<div class="row">
+					<div class="col-4">
+						<div class="service-img">
+							<img class="img-fluid" src="{#IMAGE_PATH#}gym.jpg" alt="">
+							<span class="service-name">Gym</span>
+						</div>
+						<div class="service-hover">
+
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="service-img">
+							<img class="img-fluid" src="{#IMAGE_PATH#}zumba.jpg" alt="">
+							<span class="service-name">Zumba</span>
+						</div>
+						<div class="service-hover">
+
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="service-img">
+							<img class="img-fluid" src="{#IMAGE_PATH#}yoga.jpg" alt="">
+							<span class="service-name">Yoga</span>
+						</div>
+						<div class="service-hover">
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- end service-catalog -->
+	<div class="showroom phongtap-showroom">
+		<div class="box-text showroom-title">
+			<h3 class="txt1 text-30">Trung tâm tập luyện</h3>
+			<span class="cate-desciption text-14">Với 5 năm hoạt động, chúng tôi đã có mặt tài 3 thành phố lớn: Hà Nội, Nam Định
+				và Hà Nam. Hãy tìm cho bạn một trung <br> tâm phù hợp nhất với bạn để bắt đầu tập luyện.</span>
+		</div>
+		<div class="showroom-content phongtap-showroom-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 row m-0">
+						<div class="align-items-center col-12 d-flex flex-row flex-wrap p-0 position-relative bg-orange mb-1">
+							<div class="showroom-img">
+								<img class="img-fluid" src="{#IMAGE_PATH#}showroom-1.jpg" alt="">
+							</div>
+							<div class="showroom-title big-title text-30 ">
+								<span>Ha Noi</span>
+							</div>
+						</div>
+						<div class="col-6 p-1">
+							<div class="showroom-img">
+								<img class="img-fluid" src="{#IMAGE_PATH#}showroom-1.jpg" alt="">
+							</div>
+							<div class="showroom-title small-title text-20 text-center mt-1">
+								<span>Ha Noi</span>
+							</div>
+						</div>
+						<div class="col-6 p-1">
+							<div class="showroom-img">
+								<img class="img-fluid" src="{#IMAGE_PATH#}showroom-1.jpg" alt="">
+							</div>
+							<div class="showroom-title small-title text-20 text-center mt-1">
+								<span>Ha Noi</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end showroom -->
+	<div class="article-staff ">
+		<div class="box-text service-title">
+			<h3 class="txt1 text-30">Các dịch vụ luyện tập và những cách giảm cân hiệu quả</h3>
+			<span class="cate-desciption text-14">Hiện nay có rát nhiều phương pháp để giảm cân. Nhưng lựa chọn tốt nhất cho bạn
+				là giảm cân nhưng vẫn đảm bảo sức khỏe
+				<br>cùng với những phương pháp rèn luyện phù hợp với từng đối tượng. </span>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<ul class="align-items-center d-flex flex-wrap list-unstyled text-center ul">
+						<li class="staff-content">
+							<div class="staff-image">
+								<img class="img-fluid" src="{#IMAGE_PATH#}staff1.jpg" alt="">
+							</div>
+							<div class="staff-info">
+								<span class="staff-name">AAACCCBBB</span>
+								<span class="staff-position">Quản lý cấp phường</span>
+							</div>
+						</li>
+						<li class="staff-content">
+							<div class="staff-image">
+								<img class="img-fluid" src="{#IMAGE_PATH#}staff2.jpg" alt="">
+							</div>
+							<div class="staff-info">
+								<span class="staff-name">AAACCCBBB</span>
+								<span class="staff-position">Quản lý cấp phường</span>
+							</div>
+						</li>
+						<li class="staff-content">
+							<div class="staff-image">
+								<img class="img-fluid" src="{#IMAGE_PATH#}staff2.jpg" alt="">
+							</div>
+							<div class="staff-info">
+								<span class="staff-name">AAACCCBBB</span>
+								<span class="staff-position">Quản lý cấp phường</span>
+							</div>
+						</li>
+						<li class="staff-content">
+							<div class="staff-image">
+								<img class="img-fluid" src="{#IMAGE_PATH#}staff4.jpg" alt="">
+							</div>
+							<div class="staff-info">
+								<span class="staff-name">AAACCCBBB</span>
+								<span class="staff-position">Quản lý cấp phường</span>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
