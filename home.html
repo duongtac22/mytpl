@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <myheader></myheader>
+      <main>
+        <!-- slider homepage-->
+        <section class="js-carousel nonwat-slider position-relative" data-items="1" data-autoplay="true" data-loop="true" data-dots="false" data-dotsData="false" data-arrows="false">
+            <div class="item">
+                <a href="#" class="clearfix">
+                    <img src="images/slider.png" alt="Slider 1">
+                </a>
+            </div>
+            <div class="item">
+              <a href="#" class="clearfix">
+                  <img src="images/slider.png" alt="Slider 2">
+              </a>
+          </div>
+        </section>
+
+        <!-- banner under slider-->
+        <section class="nowat-banner-underslider position-relative">
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <figure class="position-relative">
+                        <img src="images/banner-home1.png" alt="">
+                        <div class="static-text">
+                          <span class="title text-uppercase">Đồng hồ Nam</span>
+                          <a href="" class="action">
+                            Xem chi tiết <span class="material-icons fs-14">keyboard_arrow_right</span>
+                          </a>
+                        </div>
+                    </figure>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <figure class="position-relative ">
+                        <img src="images/banner-home2.png" alt="">
+                        <div class="static-text center">
+                          <span class="title text-uppercase">Phụ kiện</span>
+                          <a href="" class="action">
+                            Xem chi tiết <span class="material-icons fs-14">keyboard_arrow_right</span>
+                          </a>
+                        </div>
+                    </figure>
+                </div>
+                <div class="col-lg-4 col-12">
+                  <figure class="position-relative ">
+                      <img src="images/banner-home3.png" alt="">
+                      <div class="static-text right">
+                        <span class="title text-uppercase ">Đồng hồ Nữ</span>
+                        <a href="" class="action">
+                          Xem chi tiết <span class="material-icons fs-14">keyboard_arrow_right</span>
+                        </a>
+                      </div>
+                  </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- block sp -->
+        
+      </main>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        components: {
+          myheader: httpVueLoader("vue_components/header.vue"),
+          myfooter: httpVueLoader("vue_components/footer.vue"),
+        },
+        mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              RunFn.runnCarousel('.js-carousel');
+            });
+          });
+        },
+      });
+    </script>
+  </body>
+</html>
