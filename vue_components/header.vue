@@ -2,8 +2,9 @@
    
 <header class="header">
     <div class="header-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <ul class="social-list list-unstyled p-0">
+      <div class="container d-flex align-items-center justify-content-between flex-wrap">
+       
+        <ul class="social-list list-unstyled p-0 ">
           <li class="social-item">
               <a href="/" class="material-icons fs-13">
               facebook
@@ -31,13 +32,13 @@
             <span class="material-icons fs-14">
             location_on
             </span> 
-            <span class="text">Số 10, Trần Phú, Hà Đông, Hà Nội</span>
+            <span class="text fira-light">Số 10, Trần Phú, Hà Đông, Hà Nội</span>
           </a>
           <a href="tel:0192837465" class="fs-13 float-left">
             <span class="material-icons fs-14">
             phone
             </span> 
-            <span class="text">Hotline : 1900 1099</span>
+            <span class="text fira-light">Hotline : 1900 1099</span>
           </a>
         </div>
 
@@ -122,7 +123,9 @@
           </ul>
 
           <div class="d-lg-none">
-              <a href="#menu-mobile" class="bar-menu-mobile"><i aria-hidden="true" class="fa fa-bars"></i></a>
+              <a href="#menu-mobile" class="bar-menu-mobile"><span class="material-icons fs-20 color-white">
+menu
+</span></a>
           </div>
       </div>  
     </div>

@@ -48,6 +48,7 @@ header {
                 line-height: 19px;
                 display: flex;
                 align-items: center;
+                font-weight: 300;
             }
             &::before {
                 content: '';
@@ -97,6 +98,7 @@ header {
                 transition: 0.2s ease-in-out;
                 opacity: 0;
                 visibility: hidden;
+                z-index: 1000;
                 .sub2 {
                     margin: 16px 0;
                     a {
@@ -129,7 +131,7 @@ header {
             align-items: center;
             a {
                 line-height: 19px;
-                
+                font-weight: 300;
             }
             .material-icons {
                 vertical-align: top;
@@ -155,3 +157,21 @@ header {
     }
 }
 
+@media screen and (max-width: 1199px){
+    header .menu .menu-item {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 991px){
+    header .main-menu {
+        display: none;
+    }
+}
+@media (max-width: 767px){
+    header .header-top .header-top-right , header .header-top .social-list{
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+}
