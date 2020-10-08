@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="header-bottom">
-      <div class="container d-flex align-items-center justify-content-between">
+      <div class="container d-flex align-items-center justify-content-between position-relative">
           <div class="logo">
               <a href="/">
                 <img src="images/logo.png" alt="logo non-wat" /></a>
@@ -84,7 +84,7 @@
               </ul>
           </nav>
 
-          <ul class="header-bottom-right list-unstyled p-0 d-flex">
+          <ul class="header-bottom-right list-unstyled p-0 d-flex position-relative">
               <li class="item ">
                 <span class="material-icons fs-16 color-white">account_circle</span>
                 <a href="/dang-ky" class="color-white">Đăng ký /</a>
@@ -127,8 +127,25 @@
 menu
 </span></a>
           </div>
-      </div>  
+      </div> 
     </div>
+    <div class="nav_search_mobi d-lg-none">
+      <div class="container">
+              
+        <div class="header_search header_searchs">
+          <form action="" method="" class="input-group search-bar">
+            <input type="hidden" name="type" value="product" /> <input type="search" name="" value="" placeholder="Nhập từ khóa tìm kiếm ..." class="search-input" />
+            <span class="input-group-btn">
+                <button class="btn btn-submit-search">
+                  <span class="search-submit material-icons color-theme ">
+                    search
+                  </span>
+                </button>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div> 
     <h1 class="d-none">Tieu de H1 </h1>
 </header>
 </template>

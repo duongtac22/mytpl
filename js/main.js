@@ -1,7 +1,7 @@
 var RunFn = (function () {
   var $carouselIcons = [
-    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-    '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+    '<img src ="images/icon_arrow_right.png">',
+    '<img src ="images/icon_arrow_right.png">',
   ];
   function runnCarousel(holder) {
     var $carousel = $(holder);

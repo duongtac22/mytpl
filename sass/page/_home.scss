@@ -85,6 +85,27 @@
 
 .block-home {
     margin-top: 70px;
+    h2 {
+        margin-bottom: 50px;
+    }
+    .view-all {
+        margin-top: 30px;
+        background: #fff;
+        border: 1px solid #FF9500;
+        border-radius: 99px;
+        line-height: 17px;
+        display: inline-block;
+        color: #FF9500 !important;
+        padding: 8px 22px;
+        .material-icons {
+            vertical-align: top;
+        }
+    }
+}
+.block-article-home {
+    h2 {
+        margin-bottom: 33px;
+    }
 }
 .block-sp-tabs {
     h2 {
@@ -178,6 +199,19 @@
     }
 }
 
+.tabs-sp-content {
+    padding-top: 40px;
+}
+
+.nowat-banner {
+    figure {
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 13px;
+        overflow: hidden;
+        height: 230px;
+    }
+}
+
 
 @media screen and (max-width: 1199px){
     .why-us .why-us-content-wrapper .why-us-content {
@@ -198,6 +232,8 @@
             margin-bottom: 15px;
         }
     }
+    .nowat-banner figure {     margin-bottom: 15px !important;
+        height: 180px;}
     .why-us .why-us-content-wrapper .why-us-content {
         flex: 0 0 100%;
         max-width: 100%;
@@ -205,87 +241,62 @@
     .why-us .why-us-content-wrapper .why-us-item:nth-child(2){
         margin-top: 15px;
     }
+    .logo {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        float: none;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        a {
+            display: inline-block;
+            margin: 0 auto;
+            text-align: left;
+          }
+      }
+      
+      
+      a.bar-menu-mobile span {
+        top: 50%;
+        left: 15px;
+        position: absolute;
+        transform: translateY(-50%);
+        z-index: 1000;
+      }
+      
+      .header-bottom-right {
+        position: absolute;
+        right: 15px;
+        bottom: 0px;
+        .item:not(.cart-top) {
+            display: none;
+          }
+        .item.cart-top {
+        margin: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        right: 15px;
+        }
+      }
+      .header-bottom {
+        padding: 0;
+        height: 66px;
+      }
 }
 
-
-
-
-.p-img .p-thumbnail {
-    position: relative;
-    padding-top: 100%;
-    overflow: hidden;
-    display: block;
-}
-
-.p-img .p-thumbnail img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    bottom: 0;
-    right: 0;
-    transform: translate(-50%,-50%);
-}
-
-.p-img {
-    position: relative;
-}
-
-.p-img .hover-button {
-    max-width: 100%;
-    padding: 0 5px;
-    top: 40%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    z-index: 2;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: column;
-    flex-direction: column;
-    position: absolute;
-}
-
-.p-container:hover .p-img .hover-button {
-}
-
-.p-container:hover .p-img .hover-button {
-    opacity: 1;
-    visibility: visible;
-    top: 50%;
-}
-
-.hover-button a {
-    background: #fff;
-    color: #222;
-    padding: 0;
-    font-size: 14px;
-    margin: 5px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 100%;
-    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.1);
-    box-shadow: 1px 1px 1px rgba(0,0,0,.1);
-    border-radius: 40px;
-    padding: 8px 34px;
-}
-
-.p-container:hover .p-img:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.1);
-    z-index: 1;
-    transition: .5s;
+@media (max-width: 480px){
+    .block-line {
+        &:before {
+            width: 100%;
+        }
+    }
+    .new-letter form .input-group input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .new-letter form .input-group-btn .btn {
+        margin-left: 0 ;
+    }
 }

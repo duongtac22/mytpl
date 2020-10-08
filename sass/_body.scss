@@ -6,6 +6,7 @@ body{
     font-size:14px;
     color:#333
 }
+img { max-width: 100%; height: auto;}
 .fira-regular{
     font-family: "Fira Sans";
 }
@@ -272,3 +273,114 @@ error 404
         stroke-dashoffset: -136px;
     }
 }
+
+
+/* custom nav + dots owl carousel */
+
+.owl-carousel 
+{
+    .owl-nav {
+        .owl-prev img {
+            transform: rotate(180deg);
+        }
+        .owl-prev , .owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #333333;
+            padding: 0;
+            margin: 0;
+            outline: none;
+            span {
+                font-size: 40px;
+                font-weight: 300;
+            }
+            &:hover {
+                background: transparent !important;
+                span{
+                    color: #FF9500;
+                    background: transparent;
+                }
+            }
+        }
+    
+        .owl-prev:hover , .owl-nav:hover {
+            background: none;
+            border: none;
+            color: #FF9500;
+        }
+        .owl-prev {
+            left: -35px;
+        }
+    
+    
+        .owl-next {
+            right: -35px;
+        }
+        .disabled {
+            opacity: 0.2;
+            cursor: default
+        }
+    
+    }
+    .owl-dots {
+        display: block;
+        margin-top: -10px;
+        text-align: center;
+        width: 100% ;
+        .owl-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #cdcfdd;
+            border-radius: 50%;
+            margin: 0 4px;
+            border-color: transparent;
+            padding: 0;
+            outline: none;
+            &.active {
+                background: #FF9500;
+                width: 14px;
+                height: 14px;
+            }
+            span {
+                display: none;
+            }
+              
+          }
+      }
+}
+
+
+@media (max-width: 1199px) {
+	.owl-nav .owl-prev {
+		left: -5% !important
+	}
+	.owl-nav .owl-next {
+		right: -5% !important
+	}
+}
+
+@media (min-width: 414px) and (max-width: 991px) {
+	.owl-nav .owl-prev {
+		left: 0 !important
+	}
+	.owl-nav .owl-next {
+		right: 0 !important
+	}
+}
+
+@media (max-width: 767px) {
+  .owl-carousel .owl-nav .owl-prev:before,
+  .owl-carousel .owl-nav .owl-next:before {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px
+  }
+}
+
+
+

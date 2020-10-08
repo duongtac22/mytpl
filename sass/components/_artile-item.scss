@@ -1,0 +1,49 @@
+.article-container {
+    margin-bottom: 30px;
+    .article-img {
+        position: relative;
+        .time {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #9C8E7C;
+            text-align: center;
+            border-radius: 50%;
+            padding: 10px 14px;
+            color: #fff;
+            .day {
+                display: block;
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 29px;
+            }
+            .month {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+    }
+    .article-info {
+        padding-top: 18px;
+        .article-name {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            color: #333333;
+            margin-top: 16px;
+            overflow: hidden;
+            height: 44px;
+            text-overflow: ellipsis;
+        }
+        .article-des {
+            margin: 16px 0 0 0;
+            font-size: 14px;
+            line-height: 20px;
+            overflow: hidden;
+            height: 40px;
+            text-overflow: ellipsis;
+            color: #555555;
+        }
+    }
+
+}

@@ -167,11 +167,81 @@ header {
     header .main-menu {
         display: none;
     }
+
+    .nav_search_mobi {
+        position: relative;
+        padding: 5px 25px 15px 25px;
+        .header_search {
+            height: 42px;
+            line-height: 42px;
+            width: 100%;
+            .search-bar {
+                margin-bottom: 10px;
+                position: relative;
+                display: table;
+                border-collapse: separate;
+                border-radius: 5px;
+                box-shadow: 0px 0px 8px 3px rgba(255,149,0,0.35);
+            }
+            .search-input {
+                width: 100%;
+                margin-left: 0px;
+                margin-bottom: 0;
+                height: 42px;
+                line-height: 42px;
+                padding: 0px 0px 0px 20px;
+                font-size: 14px;
+                max-width: 100%;
+                display: block;
+                border: none;
+                outline: none;
+                border-top-left-radius: 5px !important;
+                border-bottom-left-radius: 5px !important;
+            }
+            .input-group-btn {
+                position: relative;
+                white-space: nowrap;
+                width: 1%;
+                padding: 0;
+                display: table-cell;
+                vertical-align: middle;
+                margin: 0;
+                z-index: 0;
+            }
+            button {
+                background: #fff;
+                color: #000;
+                font-size: 16px;
+                padding: 0 10px;
+                text-transform: uppercase;
+                border-radius: 0;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                outline: none !important;
+                cursor: pointer;
+                border: none !important;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+
 }
 @media (max-width: 767px){
     header .header-top .header-top-right , header .header-top .social-list{
         flex: 0 0 100%;
         max-width: 100%;
         text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav_search_mobi {
+        padding : 15px 0 ;
+        width: 100%;
+    }
+    header .header-top {
+        display:none;
     }
 }
