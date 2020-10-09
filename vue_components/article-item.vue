@@ -2,18 +2,25 @@
     <article class="article-container">
         <div class="article-img">
             <div class="time">
-                <span class="day">10</span>
-                <span class="month">Tháng 7</span>
+                <span class="day" > {{ create.split('-')[0] }} </span>
+                <span class="month">Tháng {{ create.split('-')[1] }}</span>
             </div>
             <a href="">
-                <img src="images/article2.png" alt="">
+                <img v-bind:src="img" alt="">
             </a>
         </div>
         <div class="article-info">
-            <a href="" class="article-name"> Đồng hồ - Vật bất ly thân của phụ nữ thời hiện đại </a>
+            <a href="" class="article-name"> {{ name }} </a>
             <p class="article-des">
-            Da chúng ta dễ bị thâm nám là do tiếp xúc với ánh nắng mặt trời thường xuyên, chế độ ăn uống ngh...
+                {{ desc }}
             </p>
         </div>
     </article>
 </template>
+
+
+<script>
+module.exports = {
+    props: ["name", "img", "desc","create"],
+};
+</script>

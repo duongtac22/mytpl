@@ -2,27 +2,31 @@
   <div class="p-container">
     <div class="p-img">
       <a class="p-thumbnail" href="">
-        <img src="images/product/product1.jpg" alt="">
+        <img v-bind:src="img" v-bind:alt="name" />
       </a>
       <div class="hover-button">
-        <a href="javascript:;">
-          xem nhanh
+        <a href="javascript:;" data-toggle="modal" data-target="#popProduct" class="btn-buynow">
+                   <span class="material-icons">
+visibility
+</span> Xem nhanh
         </a>
-        <a href="javascript:;">
-          mua hang
+        <a href="javascript:;" class="btn-addtocart">
+<img src="images/bag-add-18-1.svg" alt=""> Thêm vào giỏ hàng
         </a>
       </div>
     </div>
     
     <div class="p-info">
-      <a class="p-name" href=""> Full-On Masscara </a>
-      <span class="p-price"><del class="p-price">140.000đ</del><ins class="p-oldPrice"> 150.000đ</ins></span>
+      <a class="p-name" href="" > {{ name }} </a>
+      <span class="p-price"><del class="p-price">{{price}}đ</del><ins class="p-oldPrice"> {{mprice}}đ</ins></span>
     </div>
+
+
   </div>
 </template>
 
 <script>
-// module.exports = {
-//   props: ["email", "name", "img"],
-// };
+module.exports = {
+  props: ["price", "name", "img","mprice"],
+};
 </script>

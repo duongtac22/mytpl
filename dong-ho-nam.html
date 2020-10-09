@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="libs/mmenu/jquery.mmenu.all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="menu-mobile">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Trang chủ
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Giới thiệu
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Sản phẩm
+            </a>
+          </li>
+               
+        </ul>
+      </div>
+      <myheader></myheader>
+      <main>
+        <section class="breadcrumb_background">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="wrap_breadcrumb text-center">
+                        <h1 class="title-head-page margin-top-0">Đồng hồ Nam</h1>
+                        <ul class="breadcrumb">
+                            <li class="home">
+                               <a href="/"><span>Trang chủ</span></a>						
+                               <span class="mr_lr"> / </span>
+                            </li>
+                            <li><strong><span> Đồng hồ Nam </span></strong></li>
+                         </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </section>
+
+
+      </main>  
+
+      <myfooter></myfooter>
+    </div>
+     
+    
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/mmenu/jquery.mmenu.all.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+            product: [],
+            post : [],
+            loading: false,
+            fakes: 12
+        },
+        components: {
+          myheader: httpVueLoader("vue_components/header.vue"),
+          myfooter: httpVueLoader("vue_components/footer.vue"),
+          myproduct: httpVueLoader("vue_components/product-item.vue")
+        },
+        mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              RunFn.runnCarousel('.js-carousel');
+              RunFn.mmenu('#menu-mobile');
+              RunFn.changeImgProduct();
+            });
+          });
+        },
+        methods: {
+              getDataProduct: function () {
+                  fetch(`json/product.json`)
+                      .then(result => result.json())
+                      .then(result => {
+                          console.log(result);
+                          this.product = result;
+                          this.loading = true;
+                      })
+                      .catch(
+                          function (error) {
+                              console.log('Error: \n', error);
+                          }
+                      );
+                }
+            },
+            created: function () {
+                this.getDataProduct();
+            }
+
+      });
+    </script>
+  </body>
+</html>

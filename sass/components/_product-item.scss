@@ -66,10 +66,35 @@
             text-overflow: ellipsis;
             flex: 0 0 auto;
             width: auto;
-            max-width: 100%;
-            box-shadow: 1px 1px 1px rgba(0,0,0,.1);
             border-radius: 40px;
             padding: 8px 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.btn-buynow {
+                background: rgba(255, 255, 255, 0.7);
+                .material-icons {
+                    font-size: 14px;
+                    margin-right: 5px;
+                }
+                &:hover {
+                    background: #FF9500;
+                    color : #fff !important;
+                }
+            }
+            &.btn-addtocart {
+                background: #FF9500;
+                color: #fff;
+                img {
+                    filter: brightness(100);
+                    max-width: 14px;
+                    margin-top: -3px;
+                    margin-right: 5px;
+                }
+                &:hover {
+                    color : #333 !important ;
+                }
+            }
         }
     }
 }
@@ -82,7 +107,7 @@
         line-height: 22px;
         display: block;
         margin-bottom: 8px;
-        color : #333 !important;
+        color : #333 ;
     }
     .p-price {
         font-size: 14px;
@@ -91,6 +116,7 @@
         del {
             color: #FF4040;
             font-weight: 600;
+            text-decoration: none !important ;
         }
         ins {
             font-size: 12px;

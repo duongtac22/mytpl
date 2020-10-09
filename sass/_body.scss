@@ -7,6 +7,7 @@ body{
     color:#333
 }
 img { max-width: 100%; height: auto;}
+.mm-slideout { z-index: auto;}
 .fira-regular{
     font-family: "Fira Sans";
 }
@@ -22,7 +23,7 @@ img { max-width: 100%; height: auto;}
     font-family: "Fira Sans";
     font-weight:700
 }
-
+.color-green { color : #32a923 }
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -98,6 +99,7 @@ a{
     &:focus,&:hover{
         text-decoration:none;
         transition: 0.3s all;
+        color : #FF9500 !important ;
     }
 }
 ul{
@@ -353,6 +355,34 @@ error 404
       }
 }
 
+/*  modal */
+
+
+.modal-content {
+    background: #FFFFFF;
+    border-radius: 4px;
+    .close-modal {
+        position: absolute;
+        right: -12px;
+        top: -12px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #828282;
+        text-align: center;
+        img {
+            width: 8px;
+            height: 8px;
+        }
+    }
+}
+.modal-backdrop.fade.show {
+    background: #000000;
+    opacity: 0.4;
+}
+
+
+
 
 @media (max-width: 1199px) {
 	.owl-nav .owl-prev {
@@ -362,6 +392,11 @@ error 404
 		right: -5% !important
 	}
 }
+@media (min-width: 992px) {
+    .modal-dialog {
+      max-width: 730px;
+    }
+  }
 
 @media (min-width: 414px) and (max-width: 991px) {
 	.owl-nav .owl-prev {
