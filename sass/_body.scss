@@ -24,6 +24,9 @@ img { max-width: 100%; height: auto;}
     font-weight:700
 }
 .color-green { color : #32a923 }
+.color-red { color : #FF3B30}
+.mb-30 { margin-bottom: 30px;}
+.mt-50 { margin-top: 50px;}
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -398,7 +401,7 @@ error 404
     }
   }
 
-@media (min-width: 414px) and (max-width: 991px) {
+@media (max-width: 991px) {
 	.owl-nav .owl-prev {
 		left: 0 !important
 	}

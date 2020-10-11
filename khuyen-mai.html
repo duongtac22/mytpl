@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="libs/mmenu/jquery.mmenu.all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <div id="menu-mobile">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Trang chủ
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Giới thiệu
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Sản phẩm
+            </a>
+          </li>
+               
+        </ul>
+      </div>
+      <myheader></myheader>
+      <main>
+        <section class="breadcrumb_background breadcrumb_background_khuyenmai">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="wrap_breadcrumb text-center">
+                        <h1 class="m-0 text-uppercase title">Khuyến mãi</h1>
+                        <ul class="breadcrumb justify-content-center mb-0">
+                            <li class="home">
+                               <a href="/"><span class="text-black">Trang chủ</span></a>						
+                               <span class="mr_lr text-black"> / </span>
+                            </li>
+                            <li><span class="text-black"> Khuyến mãi </span></li>
+                         </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </section>
+    
+        <section class="p-list-content">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-12">
+                <div class="d-flex align-items-center justify-content-between flex-wrap p-list-top mb-30">
+                  <div class="p-list-title">
+                    <span class="title">Sản phẩm đang khuyến mãi</span>
+                    <span class="count-sp"> Có 7 sản phẩm</span>
+                  </div>
+                  <div class="align-items-center d-flex sort-by">
+                    <label class="left hidden-xs">Hiển thị : </label> <div class="border_sort"><select>
+                      <option value="default" class="valued">Mới cập nhật</option> <option value="price-asc">Giá tăng dần</option> <option value="price-desc">Giá giảm dần</option> <option value="alpha-asc">Từ A-Z</option> <option value="alpha-desc">Từ Z-A</option> <option value="created-asc">Mới đến cũ</option> <option value="created-desc">Cũ đến mới</option></select></div>
+                  </div>
+                </div>
+
+                <div class="p-list-product">
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3" v-for="item in product" v-if="loading">
+
+                        <myproduct :name="item.Name" :price="item.Price" :mprice="item.RetailPrice" :img="item.ThumbnailURL"></myproduct>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="paging d-block text-center">
+                    <a href="javascript:;" class="page-item pref">
+                      <i aria-hidden="true" class="fa right fa-angle-left "></i>
+                    </a>
+                    <a href="javascript:;" class="page-item current">
+                      1
+                    </a>
+                    <a href="javascript:;" class="page-item">
+                      2
+                    </a>
+                    <a href="javascript:;" class="page-item">
+                      3
+                    </a>
+                    <a href="javascript:;" class="page-item next">
+                      <i aria-hidden="true" class="fa right fa-angle-right "></i>
+                    </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>  
+
+      <myfooter></myfooter>
+    </div>
+     
+    
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/mmenu/jquery.mmenu.all.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+            product: [],
+            post : [],
+            loading: false,
+            fakes: 12
+        },
+        components: {
+          myheader: httpVueLoader("vue_components/header.vue"),
+          myfooter: httpVueLoader("vue_components/footer.vue"),
+          myproduct: httpVueLoader("vue_components/product-item.vue")
+        },
+        mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              RunFn.runnCarousel('.js-carousel');
+              RunFn.mmenu('#menu-mobile');
+              RunFn.changeImgProduct();
+            });
+          });
+        },
+        methods: {
+              getDataProduct: function () {
+                  fetch(`json/product.json`)
+                      .then(result => result.json())
+                      .then(result => {
+                          console.log(result);
+                          this.product = result;
+                          this.loading = true;
+                      })
+                      .catch(
+                          function (error) {
+                              console.log('Error: \n', error);
+                          }
+                      );
+                }
+            },
+            created: function () {
+                this.getDataProduct();
+            }
+
+      });
+    </script>
+  </body>
+</html>

@@ -35,26 +35,205 @@
       </div>
       <myheader></myheader>
       <main>
-        <section class="breadcrumb_background">
+        <section class="breadcrumb_background breadcrumb_background_donghonam">
             <div class="container">
                <div class="row">
                   <div class="col-12">
                      <div class="wrap_breadcrumb text-center">
-                        <h1 class="title-head-page margin-top-0">Đồng hồ Nam</h1>
-                        <ul class="breadcrumb">
+                        <h1 class="m-0 text-uppercase text-white title">Đồng hồ Nam</h1>
+                        <ul class="breadcrumb justify-content-center mb-0">
                             <li class="home">
                                <a href="/"><span>Trang chủ</span></a>						
                                <span class="mr_lr"> / </span>
                             </li>
-                            <li><strong><span> Đồng hồ Nam </span></strong></li>
+                            <li><span> Đồng hồ Nam </span></li>
                          </ul>
                      </div>
                   </div>
                </div>
             </div>
         </section>
+    
+        <section class="p-list-content">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-12 col-lg-9 order-lg-1 ">
+                <div class="d-flex align-items-center justify-content-between flex-wrap p-list-top mb-30">
+                  <div class="p-list-title">
+                    <span class="title">Đồng hồ nam</span>
+                    <span class="count-sp"> Có 5 sản phẩm</span>
+                  </div>
+                  <div class="align-items-center d-flex sort-by">
+                    <label class="left hidden-xs">Hiển thị : </label> <div class="border_sort"><select>
+                      <option value="default" class="valued">Mới cập nhật</option> <option value="price-asc">Giá tăng dần</option> <option value="price-desc">Giá giảm dần</option> <option value="alpha-asc">Từ A-Z</option> <option value="alpha-desc">Từ Z-A</option> <option value="created-asc">Mới đến cũ</option> <option value="created-desc">Cũ đến mới</option></select></div>
+                  </div>
+                </div>
+
+                <div class="p-list-product">
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4" v-for="item in product" v-if="loading">
+
+                        <myproduct :name="item.Name" :price="item.Price" :mprice="item.RetailPrice" :img="item.ThumbnailURL"></myproduct>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="paging d-block text-center">
+                    <a href="javascript:;" class="page-item pref">
+                      <i aria-hidden="true" class="fa right fa-angle-left "></i>
+                    </a>
+                    <a href="javascript:;" class="page-item current">
+                      1
+                    </a>
+                    <a href="javascript:;" class="page-item">
+                      2
+                    </a>
+                    <a href="javascript:;" class="page-item">
+                      3
+                    </a>
+                    <a href="javascript:;" class="page-item next">
+                      <i aria-hidden="true" class="fa right fa-angle-right "></i>
+                    </a>
+                </div>
+
+              </div>
+              <div class="col-12 col-lg-3 p-list-box-left">
+                <div class="sub-category box-left-item mb-30">
+                  <span class="title big-title">
+                    DANH SÁCH SẢN PHẨM
+                  </span>
+                  <div class="list-category attr-list one-col">
+                    <a href="javascript:;" class="filter-item active">
+                      Đồng hồ Nam
+                    </a>
+                    <a href="javascript:;" class="filter-item">
+                      Đồng hồ Nữ
+                    </a>
+                    <a href="javascript:;" class="filter-item">
+                      Phụ kiện
+                    </a>
+                  </div>
+                </div>
+
+                <div class="box-filter box-left-item">
+                  <div class="head-title position-relative">
+                    <span class="title big-title"> Bộ lọc </span>
+                    <a href="javascript:;" class="reset-filter"> Bỏ chọn <span class="material-icons color-red fs-14 ml-1">
+                      close
+                      </span></a>
+                  </div>
+
+                  <div class="attr-item">
+                    <span class="attr-name"> Hãng sản xuất </span>
+                    <div class="attr-list two-col">
+                      <div class="filter-item">
+                        <span>
+                          <label for="filter-nonwat">
+                            <input type="checkbox" id="filter-nonwat" > 
+                            <i class="fa"></i>
+                            NON-WAT
+                          </label>
+                        </span>
+                      </div>
+
+                      <div class="filter-item">
+                        <span>
+                          <label for="filter-colosseum">
+                            <input type="checkbox" id="filter-colosseum" > 
+                            <i class="fa"></i>
+                            COLOSSEUM
+                          </label>
+                        </span>
+                      </div>
+
+                      <div class="filter-item">
+                        <span>
+                          <label for="filter-kashmir">
+                            <input type="checkbox" id="filter-kashmir" > 
+                            <i class="fa"></i>
+                            Kashmir
+                          </label>
+                        </span>
+                      </div>
 
 
+                      <div class="filter-item">
+                        <span>
+                          <label for="filter-mikosnos">
+                            <input type="checkbox" id="filter-mikosnos" > 
+                            <i class="fa"></i>
+                            Mikosnos
+                          </label>
+                        </span>
+                      </div>
+                    </div>
+                    
+                  </div>
+
+                  <div class="attr-item">
+                    <span class="attr-name"> Kích thước mặt </span>
+                    <div class="attr-list two-col">
+                      <div class="filter-item">
+                        <span>
+                          <label for="filter-40mm">
+                            <input type="checkbox" id="filter-40mm"> 
+                            <i class="fa"></i>
+                            40mm
+                          </label>
+                        </span>
+                      </div>
+
+                      <div class="filter-item">
+                        <span>
+                          <label for="filter-42mm">
+                            <input type="checkbox" id="filter-42mm"  > 
+                            <i class="fa"></i>
+                            42mm
+                          </label>
+                        </span>
+                      </div>
+
+                    </div>
+                    
+                  </div>
+
+                  <div class="attr-item">
+                    <span class="attr-name"> Màu sắc </span>
+                    <div class="attr-list two-col">
+                      <div class="filter-item attr-color">
+                        <span>
+                          <label for="filter-silver">
+                            <input type="checkbox" id="filter-silver" > 
+                            <img src="images/product/config-img2.png" alt="">
+                            Silver
+                          </label>
+                        </span>
+                      </div>
+
+                      <div class="filter-item attr-color">
+                        <span>
+                          <label for="filter-rosegold">
+                            <input type="checkbox" id="filter-rosegold" > 
+                            <img src="images/product/config-img3.png" alt="">
+                            Rosegold
+                          </label>
+                        </span>
+                      </div>
+
+                    </div>
+                    
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </section>
       </main>  
 
       <myfooter></myfooter>

@@ -263,32 +263,32 @@
         <!-- sp sap ra mat -->
         <section class="block-sp-new block-home" >
           <div class="container">
-            <div class="title">
-                <div class="block-line">
+              <div class="title">
+                  <div class="block-line">
                   <img src="images/clock.svg" alt="" class="img-fluid">
-
-                </div>
-                <h2 class="text-uppercase text-center mb-0">
-                    Sản phẩm <span class="color-theme"> sắp ra mắt </span>
-                </h2>
-            </div>
-
-
-
-            <div class="tabs-sp-content">
-              <div class="row">
-                <div class="col-lg-3 col-md-6 col-12" v-for="item in product" v-if="loading">
-                  <myproduct :name="item.Name" :price="item.Price" :mprice="item.RetailPrice" :img="item.ThumbnailURL"></myproduct>
-                </div>
+  
+                  </div>
+                  <h2 class="text-uppercase text-center mb-0">
+                      Sản phẩm <span class="color-theme"> sắp ra mắt </span>
+                  </h2>
               </div>
-            </div>
-            <div class="text-center d-block">
+  
+  
+  
+              <div class="tabs-sp-content">
+              <div class="row">
+                  <div class="col-lg-3 col-md-6 col-12" v-for="(item,index) in product" v-if="loading">
+                  <myproduct v-if="index < 4" :name="item.Name" :price="item.Price" :mprice="item.RetailPrice" :img="item.ThumbnailURL"></myproduct>
+                  </div>
+              </div>
+              </div>
+              <div class="text-center d-block">
               <a href="" class="view-all">
-                Xem chi tiết <span class="material-icons fs-14">keyboard_arrow_right</span>
+                  Xem chi tiết <span class="material-icons fs-14">keyboard_arrow_right</span>
               </a>
-            </div>
-            </div>
-        </section>
+              </div>
+              </div>
+          </section>
 
         <!-- tintuc -->
         <section class="block-article-home block-home" >
@@ -338,7 +338,7 @@
               <img src="images/close-modal.png" alt="">
             </a>
 
-            <div class="modal-product">
+            <div class="modal-product" id="modal-product-content">
               <div class="row">
               <div class="list-img product-detail-left col-12 col-md-5 col-lg-5">
                 <div class="large-image">
@@ -472,6 +472,7 @@
               </div>
 
             </div>
+
           </div>
         </div>
       </div>

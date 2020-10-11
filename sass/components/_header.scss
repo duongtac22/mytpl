@@ -197,6 +197,9 @@ header {
                 outline: none;
                 border-top-left-radius: 5px !important;
                 border-bottom-left-radius: 5px !important;
+                border-top-right-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+                -webkit-appearance: none;
             }
             .input-group-btn {
                 position: relative;
@@ -209,6 +212,9 @@ header {
                 z-index: 0;
             }
             button {
+
+                -moz-appearance: none;
+                -webkit-appearance: none;
                 background: #fff;
                 color: #000;
                 font-size: 16px;

@@ -61,26 +61,26 @@
 
                     <ul class="list-unstyled sub-menu">
                       <li class="sub2">
-                        <a href="">
+                        <a href="/dong-ho-nam.html">
                           Đồng hồ Nam
                         </a>
                       </li>
                       <li class="sub2">
-                        <a href="">
+                        <a href="/dong-ho-nam.html">
                           Đồng hồ Nữ
                         </a>
                       </li>
                       <li class="sub2">
-                        <a href="">
+                        <a href="/dong-ho-nam.html">
                           Phụ kiện
                         </a>
                       </li>
                     </ul>
 
                   <li>
-                  <li class="menu-item"><a href="/khuyen-mai" class="menu-link color-white fs-16">Khuyến mãi</a></li>
-                  <li class="menu-item"><a href="/tin-tuc" class="menu-link color-white fs-16">Tin tức</a></li>
-                  <li class="menu-item"><a href="/lien-he" class="menu-link color-white fs-16">Liên hệ</a></li>
+                  <li class="menu-item"><a href="/khuyen-mai.html" class="menu-link color-white fs-16">Khuyến mãi</a></li>
+                  <li class="menu-item"><a href="/tin-tuc.html" class="menu-link color-white fs-16">Tin tức</a></li>
+                  <li class="menu-item"><a href="/lien-he.html" class="menu-link color-white fs-16">Liên hệ</a></li>
               </ul>
           </nav>
 
@@ -146,6 +146,7 @@ menu
         </div>
       </div>
     </div> 
+    
     <h1 class="d-none">Tieu de H1 </h1>
 </header>
 </template>

@@ -1,16 +1,44 @@
-.breadcrumb-block{
-    background-color: #f3f3f3;
-    .breadcrumb{
-        background: transparent;
-        margin-bottom: 0;
+.breadcrumb_background {
+    background-size: cover;
+    background-position: center top;
+    padding: 25px 0px;
+    background-repeat: no-repeat;
+    min-height: 165px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    &.breadcrumb_background_donghonam {
+        background-image: url('../../images/breadcrumb_bg/bg_breadcrumb_cate1.png');
     }
-    a{
-        font-size: 14px;
-        color: rgba(80, 80, 80, 255);
+    &.breadcrumb_background_khuyenmai {
+        background-image: url('../../images/breadcrumb_bg/bg_breadcrumb_khuyenmai.png');
+    }
+    &.breadcrumb_background_tintuc{
+        background-image : url('../../images/breadcrumb_bg/bg_breadcrumb_tintuc.png')
     }
 }
-@media (max-width: 767px){
-    .breadcrumb-block{
-        background-color: #ffffff;
+.breadcrumb {
+    background: transparent;
+    li {
+        span {
+            display: inline;
+            color: #fff;
+        }
+        &> a {
+            color: #fff;
+        }
+        .mr_lr {
+            padding: 0px 5px;
+            color: #fff;
+        }
     }
 }
