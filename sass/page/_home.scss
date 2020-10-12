@@ -84,7 +84,7 @@
 }
 
 .block-home {
-    margin-top: 70px;
+    margin: 35px 0;
     h2 {
         margin-bottom: 50px;
     }
@@ -99,6 +99,10 @@
         padding: 8px 22px;
         .material-icons {
             vertical-align: top;
+        }
+        &:hover{
+            color: #fff !important;
+            background: #ff9500;
         }
     }
 }

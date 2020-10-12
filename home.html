@@ -413,7 +413,7 @@
                     <div class="config-item">
                       <b class="title">Chọn màu sắc</b>
                       <div class="config-list">
-                        <a href="javascript:;" class="config-item active">
+                        <a href="javascript:;" class="config-item active text-black js-change-config">
                           <span class="config-attr">
                             <img src="images/product/config-img1.png" alt="">
                           </span>
@@ -421,7 +421,7 @@
                             Black
                           </span>
                         </a>
-                        <a href="javascript:;" class="config-item">
+                        <a href="javascript:;" class="config-item text-black js-change-config">
                           <span class="config-attr">
                             <img src="images/product/config-img2.png" alt="">
                           </span>
@@ -429,7 +429,7 @@
                             Silver
                           </span>
                         </a>
-                        <a href="javascript:;" class="config-item">
+                        <a href="javascript:;" class="config-item  text-black js-change-config">
                           <span class="config-attr">
                             <img src="images/product/config-img3.png" alt="">
                           </span>
@@ -510,6 +510,7 @@
               RunFn.runnCarousel('.js-carousel');
               RunFn.mmenu('#menu-mobile');
               RunFn.changeImgProduct();
+              RunFn.changeConfig('.js-change-config');
             });
           });
         },

@@ -87,8 +87,8 @@
           <ul class="header-bottom-right list-unstyled p-0 d-flex position-relative">
               <li class="item ">
                 <span class="material-icons fs-16 color-white">account_circle</span>
-                <a href="/dang-ky" class="color-white">Đăng ký /</a>
-                <a href="/dang-nhap" class="color-white">Đăng nhập</a>
+                <a href="javascript:;" data-toggle="modal" data-target="#popRegister" class="color-white">Đăng ký/</a>
+                <a href="javascript:;" data-toggle="modal" data-target="#popLogin" class="color-white"> Đăng nhập</a>
               </li>
 
               <li class="item search-box position-relative">
@@ -148,5 +148,42 @@ menu
     </div> 
     
     <h1 class="d-none">Tieu de H1 </h1>
+
+          <!--  modal product-->
+      <div class="modal fade" id="popRegister" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+            <a href="javascript:;" data-dismiss="modal" aria-label="Close" class="close-modal">
+              <img src="images/close-modal.png" alt="">
+            </a>
+
+            <div class="modal-register modal-user" id="modal-register-content">
+
+                <p> modal dang ky</p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="popLogin" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+            <a href="javascript:;" data-dismiss="modal" aria-label="Close" class="close-modal">
+              <img src="images/close-modal.png" alt="">
+            </a>
+
+            <div class="modal-login modal-user" id="modal-login-content">
+
+                <p> modal dang nahp</p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
 </header>
 </template>

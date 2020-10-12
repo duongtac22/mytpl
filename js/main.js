@@ -253,7 +253,12 @@ var RunFn = (function () {
       });
     })
   }
-
+  function changeConfig(holder){
+    $(holder).on('click', function() {
+      $(holder).removeClass('active');
+      $(this).addClass('active');
+    })
+  }
   return {
     runnCarousel: runnCarousel,
     syncOwl: syncOwl,
@@ -261,5 +266,6 @@ var RunFn = (function () {
     backTop: backTop,
     mmenu: mmenu,
     changeImgProduct : changeImgProduct ,
+    changeConfig : changeConfig 
   };
 })();

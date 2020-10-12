@@ -4,6 +4,7 @@
     border-radius: 4px;
     margin-bottom: 30px;
     transition: 0.2s ease-in-out;
+    background: #fff ;
     &:hover {
         border-color: #FF9500;
         .p-img .hover-button {
@@ -21,6 +22,32 @@
             background: rgba(0,0,0,.1);
             z-index: 1;
             transition: .5s;
+        }
+    }
+    .p-info {
+        padding: 20px 17px;
+        text-align: center;
+        .p-name {
+            font-size: 18px;
+            line-height: 22px;
+            display: block;
+            margin-bottom: 8px;
+            color : #333 ;
+        }
+        .p-price {
+            font-size: 14px;
+            line-height: 17px;
+            text-transform: uppercase;
+            del {
+                color: #FF4040;
+                font-weight: 600;
+                text-decoration: none !important ;
+            }
+            ins {
+                font-size: 12px;
+                text-decoration: line-through;
+                margin-left: 3px;
+            }
         }
     }
 }
@@ -99,29 +126,4 @@
     }
 }
 
-.p-info {
-    padding: 20px 17px;
-    text-align: center;
-    .p-name {
-        font-size: 18px;
-        line-height: 22px;
-        display: block;
-        margin-bottom: 8px;
-        color : #333 ;
-    }
-    .p-price {
-        font-size: 14px;
-        line-height: 17px;
-        text-transform: uppercase;
-        del {
-            color: #FF4040;
-            font-weight: 600;
-            text-decoration: none !important ;
-        }
-        ins {
-            font-size: 12px;
-            text-decoration: line-through;
-            margin-left: 3px;
-        }
-    }
-}
+
