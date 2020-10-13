@@ -34,7 +34,7 @@ $sides: (top, bottom, left, right, all);
 }
 
 // tạo danh sách font site theo class .fs- (vd .fs-12)
-@for $i from 10 through 50 {
+@for $i from 10 through 100 {
     .fs-#{$i}{
         font-size: #{$i}px !important;
     }

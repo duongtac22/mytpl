@@ -14,7 +14,7 @@
   <body>
     <div id="app">
 
-      <myheader></myheader>
+      <myheader :login = "isLogin" ></myheader>
       <main>
         <section class="p-list-content">
           <div class="container">
@@ -108,9 +108,46 @@
                         </div>
                         
                         <div class="order-detail-summary">
-                            
+                            <div class="order-summary-item">
+                              <span class="name">
+                                Tạm tính
+                              </span>
+                              <span class="value">
+                                599.000
+                              </span>
+                            </div>
+                            <div class="order-summary-item">
+                              <span class="name">
+                                Chiết khấu (mã giảm giá)
+                              </span>
+                              <span class="value">
+                                0
+                              </span>
+                            </div>
+                            <div class="order-summary-item">
+                              <span class="name">
+                                Phí vận chuyển
+                              </span>
+                              <span class="value">
+                                30.000
+                              </span>
+                            </div>
+                            <div class="order-summary-item">
+                              <span class="name">
+                                Tổng tiền phải thanh toán
+                              </span>
+                              <span class="value color-red">
+                                629.000
+                              </span>
+                            </div>
                         </div>
 
+                        <a href="javascript:;" class="align-items-center back d-flex mt-2">
+                          <span class="material-icons fs-16 mr-2">
+                            arrow_back
+                            </span>
+                            Quay lại Đơn hàng của tôi
+                        </a>
                     </div>
 
               </div>

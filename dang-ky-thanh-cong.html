@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="libs/mmenu/jquery.mmenu.all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+
+      <myheader :login = "isLogin" ></myheader>
+      <main>
+        <section class="success-page">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-12 text-center success-content-wrapper">
+
+                <span class="material-icons color-green icon-success">
+                check_circle
+                </span>
+                <p class="success-message text-center fs-24 fira-medium mb-10">
+                    Chúc mừng! </br>
+                    Bạn đã đăng ký tài khoản thành công!
+                </p>
+                <p class="fs-14 static-text mb-30">
+                    Cùng khám phá các tính năng mới và mua sắm không giới hạn cùng NON-WAT nhé!
+                </p>
+
+                <div class="success-action">
+                    <a href="/tai-khoan.html" class="btn-success-page ">
+                        Đến thông tin tài khoản
+                    </a>
+                    <a href="/home.html" class="btn-success-page btn-success-color">
+                        Xem top sản phẩm <span class="material-icons fs-16 mr-2">
+                            arrow_forward
+                            </span>
+                    </a>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </section>
+      </main>  
+
+      <myfooter></myfooter>
+      <div id="menu-mobile">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Trang chủ
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Giới thiệu
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Sản phẩm
+            </a>
+          </li>
+               
+        </ul>
+      </div>
+    </div>
+     
+    
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/mmenu/jquery.mmenu.all.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+            product: [],
+            post : [],
+            loading: false,
+            fakes: 12
+        },
+        components: {
+          myheader: httpVueLoader("vue_components/header.vue"),
+          myfooter: httpVueLoader("vue_components/footer.vue"),
+        },
+        mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              RunFn.mmenu('#menu-mobile');
+            });
+          });
+        }
+
+      });
+    </script>
+  </body>
+</html>

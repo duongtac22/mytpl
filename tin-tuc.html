@@ -13,27 +13,8 @@
 
   <body>
     <div id="app">
-      <div id="menu-mobile">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="" class="menu-link">
-            Trang chủ
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
-            Giới thiệu
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
-            Sản phẩm
-            </a>
-          </li>
-               
-        </ul>
-      </div>
-      <myheader></myheader>
+
+      <myheader :login = "isLogin" ></myheader>
       <main>
         <section class="breadcrumb_background breadcrumb_background_tintuc">
             <div class="container">
@@ -126,6 +107,26 @@
       </main>  
 
       <myfooter></myfooter>
+      <div id="menu-mobile">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Trang chủ
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Giới thiệu
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Sản phẩm
+            </a>
+          </li>
+               
+        </ul>
+      </div>
     </div>
      
     

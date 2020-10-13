@@ -14,7 +14,7 @@
   <body>
     <div id="app">
 
-      <myheader></myheader>
+      <myheader :login = "isLogin" ></myheader>
       <main>
         <section class="p-list-content">
           <div class="container">
@@ -22,7 +22,7 @@
 
               <div class="col-12 col-lg-4 order-lg-1 text-left">
 
-                    <h1 class="fs-24 mt-0 text-uppercase title"> THông tin cá nhân </h1>
+                    <h1 class="fs-24 mt-0 text-uppercase title mb-30"> THông tin cá nhân </h1>
 
                     <div class="account-summary">
                         <div class="account-img mb-4">
@@ -123,7 +123,8 @@
             product: [],
             post : [],
             loading: false,
-            fakes: 12
+            fakes: 12,
+            isLogin : false 
         },
         components: {
           myheader: httpVueLoader("vue_components/header.vue"),

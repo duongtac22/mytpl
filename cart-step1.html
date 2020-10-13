@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="libs/mmenu/jquery.mmenu.all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+
+      <myheader :login = "isLogin" ></myheader>
+      <main>
+        <section class="breadcrumb_background breadcrumb_background_giohang mb-20">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="wrap_breadcrumb text-center">
+                        <h1 class="m-0 text-uppercase title text-black">Thanh toán</h1>
+                        <ul class="breadcrumb justify-content-center mb-0">
+                            <li class="home">
+                               <a href="/"><span class="text-black">Trang chủ</span></a>						
+                               <span class="mr_lr text-black"> / </span>
+                            </li>
+                            <li class="home">
+                                <a href="/gio-hang.html"><span class="text-black">Giỏ hàng</span></a>						
+                                <span class="mr_lr text-black"> / </span>
+                             </li>
+                            <li><span class="text-black"> Thanh toán </span></li>
+                         </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </section>
+        
+        <section class="cart-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 cart-steps mb-30">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <a href="javascript:;" class="cart-steps-item success d-flex align-items-center fs-16">
+                                <span class="material-icons fs-20">
+                                check_circle
+                                </span>
+                                Thông tin giao hàng
+                            </a>
+                            <a href="javascript:;" class="cart-steps-item d-flex align-items-center fs-16">
+                                <span class="material-icons fs-20">
+                                check_circle
+                                </span>
+                                Thông tin thanh toán
+                            </a>
+                            <a href="javascript:;" class="cart-steps-item d-flex align-items-center fs-16">
+                                <span class="material-icons fs-20">
+                                check_circle
+                                </span>
+                                Hoàn thành
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8 mb-30">
+                        <div class="cart-list-wrapper d-inline-block w-100">
+                            <div class="cart-list d-inline-block w-100 border-radius-4">
+                                <div class="cart-head">
+                                    <span class="material-icons fs-15 color-theme">
+                                    place
+                                    </span>
+                                    <span class="title fs-18 text-uppercase fira-medium lh-22">
+                                        thông tin người nhận hàng
+                                    </span>
+                                </div>
+                                
+                                <div class="buyer-info">
+                                    <form action="" method="">
+                                        <div class="row mb-2">
+                                            <div class="form-group col-12 col-lg-6">
+                                            <label for="buyer-name">Họ tên <span class="color-red">* </span></label>
+                                            <input type="text" class="form-control change-input" id="buyer-name" placeholder="Tên người mua">
+                                            
+                                            </div>
+                                            
+                                            <div class="form-group col-12 col-lg-6">
+                                                <label for="buyer-email">Email  <span class="color-red">* </span> </label>
+                                                <input type="email" class="form-control change-input" id="buyer-email" placeholder="email@email.com">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <div class="form-group col-12 col-lg-6">
+                                            <label for="buyer-tel">Số điện thoại <span class="color-red">* </span></label>
+                                            <input type="text" class="form-control change-input" id="buyer-tel" placeholder="0123456789">
+                                            
+                                            </div>
+                                            
+                                            <div class="form-group col-12 col-lg-6">
+                                                <label for="buyer-city">Tỉnh/ Thành phố  <span class="color-red">* </span> </label>
+                                                <select id="buyer-city" class="form-control change-input">
+                                                    <option selected>Chọn</option>
+                                                    <option value="1">Hà Nội</option>
+                                                    <option value="2">Đà Nẵng</option>
+                                                    <option value="3">Tp.HCM</option>
+                                                  </select>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <div class="form-group col-12 col-lg-6">
+                                            <label for="buyer-district">Quận / Huyện <span class="color-red">*</label>
+                                                <select id="buyer-district" class="form-control change-input">
+                                                    <option selected>Chọn</option>
+                                                    <option value="1">Đống Đa</option>
+                                                    <option value="2">Thanh Xuân</option>
+                                                    <option value="3">Cầu Giấy</option>
+                                                  </select>
+                                            
+                                            </div>
+                                            
+                                            <div class="form-group col-12 col-lg-6">
+                                                <label for="buyer-street">Xã / Phường <span class="color-red">*</label>
+                                                    <select id="buyer-street" class="form-control change-input">
+                                                        <option selected>Chọn</option>
+                                                        <option value="1">Đống Đa</option>
+                                                        <option value="2">Thanh Xuân</option>
+                                                        <option value="3">Cầu Giấy</option>
+                                                      </select>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row mb-2">
+                                            <div class="form-group col-12">
+                                            <label for="buyer-addr">Địa chỉ chi tiết </label>
+                                            <input type="text" class="form-control change-input" id="buyer-addr" placeholder="85 Vũ Trọng PhụngThanh Xuân Trung, Thanh Xuân, Hà Nội
+                                            ">
+                                            
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row mb-2">
+                                            <div class="form-group col-12">
+                                            <label for="buyer-note">Ghi chú thêm (Tùy chọn) </label>
+                                            <input type="text" style="min-height: 72px;" class="form-control change-input" id="buyer-note" placeholder="Ví dụ: Gửi giờ hành chính/ Nhận hàng vào giờ trưa...">
+                                            
+                                            </div>
+                                            
+                                        </div>
+                                      </form>
+                                      <div class="text-center">
+                                        <a href="/cart-step1.htm" class="btn btn-next-step d-inline-block">
+                                            Tiến hành thanh toán <span class="material-icons fs-14 ml-2">
+                                              arrow_right_alt
+                                            </span>
+                                        </a>
+                                      </div>
+                                     
+                                </div>
+
+
+                               
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 cart-right">
+                        <div class="cart-right-item cart-list border-radius-4 mb-30">
+                            <div class="d-flex align-items-center justify-content-between cart-head">
+                                <div class="title fs-18 text-uppercase lh-22">
+                                    <img src="images/ic-cart.svg" alt="icon giỏ hàng" width="16" height="16">
+                                    <span class="fira-medium ">
+                                        Giỏ hàng
+                                    </span>
+                                </div>
+                              
+
+                                <a href="/gio-hang.html" class="float-right">
+                                    Thay đổi
+                                    <span class="material-icons fs-14 ml-1" style="vertical-align: middle;">
+                                        keyboard_arrow_right
+                                    </span>  
+                                </a>
+                            </div>
+
+                            <div class="cart-right-list">
+                                <div class="cart-right-prod">
+                                    <a href="" class="cart-right-prod-img">
+                                        <img src="images/product1.jpg" alt="" width="64" height="64">
+                                    </a>
+                                    <div class="cart-right-prod-info">
+                                        <a href="" class="cart-right-prod-name fira-medium fs-16 d-block text-black"> Colosseum Mortar </a>
+                                        <span class="cart-right-prod-desc fs-12 d-block">
+                                            Màu: Đen | Loại dây: Thép không gỉ
+                                        </span>
+                                        <div class="cart-right-prod-summary">
+                                            <span class="cart-right-prod-qty">
+                                                x1 &nbsp; |
+                                            </span>
+                                            <span class="color-red cart-right-prod-price"> 699.000đ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-right-prod">
+                                    <a href="" class="cart-right-prod-img">
+                                        <img src="images/product1.jpg" alt="" width="64" height="64">
+                                    </a>
+                                    <div class="cart-right-prod-info">
+                                        <a href="" class="cart-right-prod-name fira-medium fs-16 d-block text-black"> Colosseum Mortar </a>
+                                        <span class="cart-right-prod-desc fs-12 d-block">
+                                            Màu: Đen | Loại dây: Thép không gỉ
+                                        </span>
+                                        <div class="cart-right-prod-summary">
+                                            <span class="cart-right-prod-qty">
+                                                x1 &nbsp; |
+                                            </span>
+                                            <span class="color-red cart-right-prod-price"> 699.000đ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="cart-right-item cart-list border-radius-4 cart-right-prod">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span>Tổng tiền hàng</span>
+                                <span class="fs-18"> 1.289.000đ </span>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span>Phí vận chuyển</span>
+                                <span class="fs-18"> 30.000đ </span>
+                            </div>
+                           
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span>Tổng tiền cần thanh toán</span>
+                                <span class="fs-24 color-red"> 1.328.000đ </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      </main>  
+
+      <myfooter></myfooter>
+      <div id="menu-mobile">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Trang chủ
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Giới thiệu
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Sản phẩm
+            </a>
+          </li>
+               
+        </ul>
+      </div>
+    </div>
+     
+    
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/mmenu/jquery.mmenu.all.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var app = new Vue({
+          el: "#app",
+          data: {
+              product: [],
+              post : [],
+              loading: false,
+              fakes: 12,
+              isLogin: true 
+          },
+          components: {
+            myheader: httpVueLoader("vue_components/header.vue"),
+            myfooter: httpVueLoader("vue_components/footer.vue"),
+          },
+          mounted() {
+            this.$nextTick(() => {
+              $(window).bind("load", function () {
+                RunFn.mmenu('#menu-mobile');
+              });
+            });
+          }
+        });
+      </script>
+  </body>
+</html>
