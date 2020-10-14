@@ -140,5 +140,9 @@
                 </div>
                <div class="bg-footer-bottom copyright clearfix"><div class="container"><div class="inner clearfix"><div class="row tablet"><div id="copyright" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 a-center fot_copyright"><span class="fs-12 wsp"><span class="mobile">© Bản quyền thuộc về <b>Webfly</b><span class="hidden-xs"> | </span></span><span class="opacity1">Cung cấp bởi</span> <a href="" rel="nofollow" title="WebFly" target="_blank">WebFly</a></span></div></div></div></div></div>
             </footer>
+            
+            <div class="fixed-icon">
+                <img src="images/conversation-chat.png" alt="">        
+            </div>
         </div>
 </template>

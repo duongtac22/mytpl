@@ -14934,6 +14934,54 @@ header .header-bottom-right .cart-top .cart-summary {
   }
 }
 
+.fixed-icon {
+  position: fixed;
+  z-index: 9999;
+  cursor: pointer;
+  bottom: 10vh;
+  right: 10vw;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FF9500;
+  text-align: center;
+  line-height: 48px;
+  -webkit-box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+          box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+  -webkit-animation: breathe 2s linear infinite;
+          animation: breathe 2s linear infinite;
+}
+
+@-webkit-keyframes breathe {
+  0% {
+    -webkit-box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+            box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 9px rgba(255, 149, 0, 0.6), 0 0 0 15px rgba(255, 149, 0, 0.3);
+            box-shadow: 0 0 0 9px rgba(255, 149, 0, 0.6), 0 0 0 15px rgba(255, 149, 0, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+            box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+  }
+}
+
+@keyframes breathe {
+  0% {
+    -webkit-box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+            box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 9px rgba(255, 149, 0, 0.6), 0 0 0 15px rgba(255, 149, 0, 0.3);
+            box-shadow: 0 0 0 9px rgba(255, 149, 0, 0.6), 0 0 0 15px rgba(255, 149, 0, 0.3);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+            box-shadow: 0 0 0 6px rgba(255, 149, 0, 0.6), 0 0 0 12px rgba(255, 149, 0, 0.3);
+  }
+}
+
 .breadcrumb_background {
   background-size: cover;
   background-position: center top;
@@ -15609,11 +15657,20 @@ table.tbl_cart {
 table.tbl_cart .cart-item-name {
   line-height: 29px;
   margin-top: 5px;
+  height: 29px;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 table.tbl_cart .cart-item-img {
   position: relative;
-  width: 100px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
   padding-top: 100px;
   text-align: center;
   display: inline-block;

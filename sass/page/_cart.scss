@@ -146,10 +146,17 @@ table.tbl_cart {
     .cart-item-name  {
         line-height: 29px;
         margin-top: 5px;
+        height: 29px;
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .cart-item-img {
         position: relative;
-        width: 100px;
+        flex: 0 0 100px;
         padding-top: 100px;
         text-align: center;
         display: inline-block;

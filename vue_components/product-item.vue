@@ -21,11 +21,14 @@ visibility
       <span class="p-price"><del class="p-price">{{price}}đ</del><ins class="p-oldPrice"> {{mprice}}đ</ins></span>
     </div>
 
-
+    
   </div>
+
+  
 </template>
 
 <script>
+
 module.exports = {
   props: ["price", "name", "img","mprice"],
 };
