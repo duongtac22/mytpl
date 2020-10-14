@@ -16,6 +16,7 @@ img.rounded-img {border-radius: 50%;overflow: hidden;}
 .mb-10 { margin-bottom: 10px; }
 .mt-10 { margin-top: 10px;}
 .lh-22 { line-height: 22px;}
+.lh-19 { line-height: 19px;}
 .border-radius-4 { border-radius : 4px; }
 .change-input {
     width: 100%;
@@ -349,10 +350,10 @@ error 404
     
     }
     .owl-dots {
-        display: block;
+        display: flex;
         margin-top: -10px;
-        text-align: center;
-        width: 100% ;
+        align-items: center;
+        justify-content: center;
         .owl-dot {
             display: inline-block;
             width: 10px;
@@ -602,6 +603,9 @@ error 404
                     color: #555555 !important;
                     border-color: #828282 !important;
                     background: transparent;
+                    img {
+                        filter: brightness(0);
+                    }
             }
         }
     }

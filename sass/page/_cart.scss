@@ -2,6 +2,19 @@
     .cart-list{
 
         border: 1px solid #DDDDDD;
+        table {
+            td {
+                padding: 8px 10px;
+                min-width: 120px;
+                vertical-align: top;
+                &:first-child {
+                    padding-left : 16px;
+                }
+            }
+            b {
+                font-weight: 500;
+            }
+        }
     }
     .cart-head {
         padding: 13px 16px;
@@ -23,7 +36,7 @@
         background: #FF9500;
         border-radius: 99px;
         padding: 12.5px 29.5px ;
-        color: #fff;
+        color: #fff !important;
         font-size: 14px;
         line-height: 17px;
     }
@@ -59,7 +72,68 @@
             margin-right: 10px;
         }
     }
-    
+    .cart-right-item > div:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    .payment {
+        display: block;
+        line-height: 25px;
+        margin: 5px;
+        input {
+            width: 24px;
+            height: 24px;
+            float: left;
+            &:checked+label .pay-content {
+                display: block !important;
+            }
+        }
+        label {
+            margin-top: 0;
+            margin-bottom: 32px;
+            margin-left: 40px;
+            display: block;
+            font-weight: normal;
+            font-size: 16px;
+        }
+        .box-info-payment {
+            padding: 16px;
+            background: #F9F9F9;
+            border: 1px solid #DDDDDD;
+            border-radius: 4px;
+            margin-top: 10px;
+            .user-bank-info {
+                .title {
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+                span {
+                    display: block;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+        .list-bank {
+            a {
+                border: 1px solid #DDDDDD;
+                margin-right: 16px;
+                display: inline-block;
+                &.active {
+                    border: 1px solid #FF9500;
+                    img{
+                        border: 1px solid #FF9500;
+                    }
+                }
+                img {
+                    border: 1px solid transparent;
+                    width: 80px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
 }
 
 
@@ -159,6 +233,14 @@ table.tbl_cart {
     padding: 16px ; 
     label  {
         font-weight: 500;
+    }
+    select {
+        appearance:none;
+        background: transparent;
+        background-image: url("../images/arrowDown.png");
+        background-repeat: no-repeat;
+        background-position-x: 98%;
+        background-position-y: 10px;
     }
 }
 

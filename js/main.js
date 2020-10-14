@@ -259,6 +259,19 @@ var RunFn = (function () {
       $(this).addClass('active');
     })
   }
+  function boxSearch(click){
+    $(click).click(function(){
+      $(this).parent().toggleClass('active');
+
+    })
+  }
+  function chooseBank(holder){
+    $(holder).click(function() {
+
+      $(this).parent().find('a').removeClass('active');
+      $(this).addClass('active');
+    })
+  }
   return {
     runnCarousel: runnCarousel,
     syncOwl: syncOwl,
@@ -266,6 +279,8 @@ var RunFn = (function () {
     backTop: backTop,
     mmenu: mmenu,
     changeImgProduct : changeImgProduct ,
-    changeConfig : changeConfig 
+    changeConfig : changeConfig ,
+    boxSearch : boxSearch,
+    chooseBank : chooseBank
   };
 })();

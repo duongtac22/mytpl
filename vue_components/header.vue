@@ -5,23 +5,23 @@
         
           <ul class="social-list list-unstyled p-0 ">
             <li class="social-item">
-                <a href="/" class="material-icons fs-13">
-                facebook
+                <a href="/" class="">
+                <i class="fab fa-facebook fs-13"></i>
               </a>
             </li>
             <li class="social-item">
-              <a href="/" class="material-icons fs-13">
-                facebook
+              <a href="/" class="">
+               <i class="fab fa-instagram fs-13"></i>
               </a>
             </li>
             <li class="social-item">
-              <a href="/" class="material-icons fs-13">
-                facebook
+              <a href="/" class="">
+                <i class="fab fa-youtube fs-13"></i>
               </a>
             </li>
             <li class="social-item">
-              <a href="/" class="material-icons fs-13">
-                facebook
+              <a href="/" class="">
+               <i class="fab fa-twitter fs-13"></i>
               </a>
             </li>
           </ul>
@@ -97,13 +97,13 @@
                 </li>
                
 
-                <li class="item search-box position-relative">
-                  <a href="javascript:;">
+                <li class="item search-box" >
+                  <a href="javascript:;" class="js-open-search">
                     <span class="search-box material-icons color-theme ">
                       search
                     </span>
                   </a>
-                  <div class="box-search">
+                  <div class="box-search" id="search-box">
                     <form action="/" method="" enctype="multipart/form-data">
                       <input type="text" name="q" placeholder="Nhập từ khóa tìm kiếm" class="search_input" id="search-keyword" autocomplete="off">
                       <button type="submit">

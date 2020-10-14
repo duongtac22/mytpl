@@ -5,34 +5,20 @@
     margin-bottom: 30px;
     transition: 0.2s ease-in-out;
     background: #fff ;
-    &:hover {
-        border-color: #FF9500;
-        .p-img .hover-button {
-            opacity: 1;
-            visibility: visible;
-            top: 50%;
-        }
-        .p-img:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,.1);
-            z-index: 1;
-            transition: .5s;
-        }
-    }
+
     .p-info {
         padding: 20px 17px;
         text-align: center;
         .p-name {
             font-size: 18px;
             line-height: 22px;
-            display: block;
+            display: -webkit-box;
             margin-bottom: 8px;
-            color : #333 ;
+            color: #333;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 22px;
         }
         .p-price {
             font-size: 14px;
@@ -126,4 +112,27 @@
     }
 }
 
+@media ( min-width: 992px) {
+    .p-container {
+        &:hover {
+            border-color: #FF9500;
+            .p-img .hover-button {
+                opacity: 1;
+                visibility: visible;
+                top: 50%;
+            }
+            .p-img:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,.1);
+                z-index: 1;
+                transition: .5s;
+            }
+        }
+    }
+}
 

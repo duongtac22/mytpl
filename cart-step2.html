@@ -50,7 +50,7 @@
                                 </span>
                                 Thông tin giao hàng
                             </a>
-                            <a href="javascript:;" class="cart-steps-item d-flex align-items-center fs-16">
+                            <a href="javascript:;" class="cart-steps-item success d-flex align-items-center fs-16">
                                 <span class="material-icons fs-20">
                                 check_circle
                                 </span>
@@ -69,93 +69,87 @@
                             <div class="cart-list d-inline-block w-100 border-radius-4">
                                 <div class="cart-head">
                                     <div class="align-items-center d-flex fs-18 lh-22 text-uppercase title">
-                                        <img src="images/ic_map.png" alt="icon map" width="16" height="16" style="margin-right:8px;">
+                                        <img src="images/ic-credit-cart.png" alt="icon credit cart" width="16" height="16" style="margin-right:8px;">
                                         <span class="fira-medium ">
-                                            thông tin người nhận hàng
+                                            thông tin thanh toán
                                         </span>
                                     </div>
                                 </div>
                                 
                                 <div class="buyer-info">
-                                    <form action="" method="">
-                                        <div class="row mb-2">
-                                            <div class="form-group col-12 col-lg-6">
-                                            <label for="buyer-name">Họ tên <span class="color-red">* </span></label>
-                                            <input type="text" class="form-control change-input" id="buyer-name" placeholder="Tên người mua">
-                                            
-                                            </div>
-                                            
-                                            <div class="form-group col-12 col-lg-6">
-                                                <label for="buyer-email">Email  <span class="color-red">* </span> </label>
-                                                <input type="email" class="form-control change-input" id="buyer-email" placeholder="email@email.com">
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="row mb-2">
-                                            <div class="form-group col-12 col-lg-6">
-                                            <label for="buyer-tel">Số điện thoại <span class="color-red">* </span></label>
-                                            <input type="text" class="form-control change-input" id="buyer-tel" placeholder="0123456789">
-                                            
-                                            </div>
-                                            
-                                            <div class="form-group col-12 col-lg-6">
-                                                <label for="buyer-city">Tỉnh/ Thành phố  <span class="color-red">* </span> </label>
-                                                <select id="buyer-city" class="form-control change-input">
-                                                    <option selected>Chọn</option>
-                                                    <option value="1">Hà Nội</option>
-                                                    <option value="2">Đà Nẵng</option>
-                                                    <option value="3">Tp.HCM</option>
-                                                  </select>
-                                                
-                                            </div>
-                                        </div>
+                                    <div class="pay-info-text">
+                                        <div class="payment">
+                                            <input type="radio" id="pay_method_1" name="pay_method" value="1" checked="checked" />
+                                            <label for="pay_method_1">
+                                                <span class="d-block mb-2 payment-name fira-medium lh-19">
+                                                    Thanh toán khi nhận hàng (COD) 
+                                                </span>
+                                                <span class="payment-content">
+                                                    Giao hàng tận nơi, xem hàng tại chỗ, không thích có thể đổi trả lập tức cho nhân viên giao hàng
+                                                </span>
+                                               
 
-                                        <div class="row mb-2">
-                                            <div class="form-group col-12 col-lg-6">
-                                            <label for="buyer-district">Quận / Huyện <span class="color-red">*</label>
-                                                <select id="buyer-district" class="form-control change-input">
-                                                    <option selected>Chọn</option>
-                                                    <option value="1">Đống Đa</option>
-                                                    <option value="2">Thanh Xuân</option>
-                                                    <option value="3">Cầu Giấy</option>
-                                                  </select>
-                                            
-                                            </div>
-                                            
-                                            <div class="form-group col-12 col-lg-6">
-                                                <label for="buyer-street">Xã / Phường <span class="color-red">*</label>
-                                                    <select id="buyer-street" class="form-control change-input">
-                                                        <option selected>Chọn</option>
-                                                        <option value="1">Đống Đa</option>
-                                                        <option value="2">Thanh Xuân</option>
-                                                        <option value="3">Cầu Giấy</option>
-                                                      </select>
-                                                
-                                            </div>
+                                            </label>
                                         </div>
+                                    
+                                        <div class="payment">
+                                            <input type="radio" id="pay_method_2" name="pay_method" value="2" />
+                                            <label for="pay_method_2">
+                                                <span class="d-block mb-2 payment-name fira-medium lh-19">
+                                                    Chuyển khoản ngân hàng
+                                                </span>
+                                                <span class="payment-content">
+                                                    Thanh toán cực kì tiện lợi, nhanh chóng, và an toàn.
+                                                </span>
+                                    
+                                                <div class="boxContent pay-content" id="pay_2" style="display: none;">
+                                                    <div class="box-info-payment">
+                                                        <div class="info-payment-center">
+                                                            <span class="title d-block mb-10">Chọn ngân hàng anh/chị muốn chuyển khoản:</span>
+                                                            <div class="d-block mb-10 list-bank">
+                                                                <a href="javascript:;" class="active js-choose-bank ">
+                                                                    <img src="images/logo-tech.png" alt="logo tech">
+                                                                </a>
+                                                                <a href="javascript:;" class="js-choose-bank ">
+                                                                    <img src="images/logo-mb.png" alt=" logo MB">
+                                                                </a>
+                                                                <a href="javascript:;" class="js-choose-bank ">
+                                                                    <img src="images/logo-tpbank.png" alt="logo tp">
+                                                                </a>
+                                                            </div>
+                                                            <div class="user-bank-info">
+                                                                <span>Ngân hàng TMCP Kỹ thương - Techcombank – Chi nhánh Tây Hồ</span>
+                                                                <span>   STK: 0991000046401</span>
+                                                                <span>   Chủ TK: Trần Thị Thu</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-
-                                        <div class="row mb-2">
-                                            <div class="form-group col-12">
-                                            <label for="buyer-addr">Địa chỉ chi tiết </label>
-                                            <input type="text" class="form-control change-input" id="buyer-addr" placeholder="85 Vũ Trọng PhụngThanh Xuân Trung, Thanh Xuân, Hà Nội
-                                            ">
-                                            
-                                            </div>
-                                            
+                                            </label>
                                         </div>
-                                        <div class="row mb-2">
-                                            <div class="form-group col-12">
-                                            <label for="buyer-note">Ghi chú thêm (Tùy chọn) </label>
-                                            <input type="text" style="min-height: 72px;" class="form-control change-input" id="buyer-note" placeholder="Ví dụ: Gửi giờ hành chính/ Nhận hàng vào giờ trưa...">
-                                            
-                                            </div>
-                                            
+                                    
+                                        <div class="payment">
+                                            <input type="radio" id="pay_method_3" name="pay_method" value="3" />
+                                            <label for="pay_method_3">
+                                                <span class="d-block mb-2 d-block fs-16 mb-2 payment-name fira-medium lh-19">
+                                                    Ví VNPAY, Ví MOMO
+                                                </span>
+                                                <span class="payment-content">
+                                                    Thanh toán cực kì tiện lợi, nhanh chóng, và an toàn.
+                                                </span>
+                                    
+                                                <div class="boxContent pay-content" id="pay_3" style="display: none;">
+                                                   
+                                                </div>
+                                            </label>
                                         </div>
-                                      </form>
+                                    </div>
+                                    <hr></hr>
                                       <div class="text-center">
-                                        <a href="/cart-step2.html" class="btn btn-next-step d-inline-block">
-                                            Tiến hành thanh toán  <img src="images/arrow-right.png" alt="" class="ml-1">
+                                        <a href="/cart-step3.htm" class="btn btn-next-step d-inline-block">
+                                            Đặt mua ngay 
+                                            <img src="images/arrow-right.png" alt="" class="ml-1">
                                         </a>
                                       </div>
                                      
@@ -169,6 +163,56 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-4 cart-right">
+                        <div class="cart-right-item cart-list border-radius-4 mb-30">
+                            <div class="d-flex align-items-center justify-content-between cart-head">
+                                <div class="align-items-center d-flex fs-18 lh-22 text-uppercase title">
+                                    <img src="images/ic_map.png" alt="icon map" width="16" height="16" style="margin-right:8px;">
+                                    <span class="fira-medium ">
+                                        thông tin người nhận
+                                    </span>
+                                </div>
+                              
+
+                                <a href="/gio-hang.html" class="float-right">
+                                    Thay đổi
+                                    <span class="material-icons fs-14 ml-1" style="vertical-align: middle;">
+                                        keyboard_arrow_right
+                                    </span>  
+                                </a>
+                            </div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Họ tên </td>
+                                        <td>Tam Hoang</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>tamhoang@gmail.com</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Số điện thoại</td>
+                                        <td> 0987654321 </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Địa chỉ</td>
+                                        <td>85 Vũ Trọng PhụngThanh Xuân Trung, Thanh Xuân, Hà Nội </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Ghi chú </td>
+                                        <td>--- </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+
+
+                        </div>
+
                         <div class="cart-right-item cart-list border-radius-4 mb-30">
                             <div class="d-flex align-items-center justify-content-between cart-head">
                                 <div class="align-items-center d-flex fs-18 lh-22 text-uppercase title">
@@ -299,6 +343,7 @@
             this.$nextTick(() => {
               $(window).bind("load", function () {
                 RunFn.mmenu('#menu-mobile');
+                RunFn.chooseBank('.js-choose-bank ');
               });
             });
           }

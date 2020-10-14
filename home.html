@@ -306,15 +306,13 @@
 
 
             <div class="tabs-tintuc">
-              <div class="row">
-
-                <div class="col-lg-4 col-md-6 col-12" v-for="items in post" v-if="loading">
-                  <myarticle :name="items.title" :img="items.imageUrl" :desc="items.body" :create="items.created"></myarticle>
-                </div>
-
+<div data-dot="true" data-nav="true" data-items="3" data-md-items="3" data-sm-items="3" data-xs-items="2" data-margin="30" class="js-carousel"> 
+    <div v-for="items in post" v-if="loading">
+      <myarticle :name="items.title" :img="items.imageUrl" :desc="items.body" :create="items.created"></myarticle>
+    </div>
+</div>
               
 
-              </div>  
             </div>
             <div class="text-center d-block">
               <a href="" class="view-all">
@@ -512,6 +510,7 @@
               RunFn.mmenu('#menu-mobile');
               RunFn.changeImgProduct();
               RunFn.changeConfig('.js-change-config');
+              RunFn.boxSearch('.js-open-search')
             });
           });
         },
@@ -543,9 +542,6 @@
                         console.log('Error: \n', error);
                     }
                 );
-              },
-              onClickModal : function(name) {
-                alert("popup modal :" + name );
               }
             },
             created: function () {

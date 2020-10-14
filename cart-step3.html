@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="libs/mmenu/jquery.mmenu.all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+
+      <myheader :login = "isLogin" ></myheader>
+      <main>
+        <section class="breadcrumb_background breadcrumb_background_giohang mb-20">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="wrap_breadcrumb text-center">
+                        <h1 class="m-0 text-uppercase title text-black">Thanh toán</h1>
+                        <ul class="breadcrumb justify-content-center mb-0">
+                            <li class="home">
+                               <a href="/"><span class="text-black">Trang chủ</span></a>						
+                               <span class="mr_lr text-black"> / </span>
+                            </li>
+                            <li class="home">
+                                <a href="/gio-hang.html"><span class="text-black">Giỏ hàng</span></a>						
+                                <span class="mr_lr text-black"> / </span>
+                             </li>
+                            <li><span class="text-black"> Thanh toán </span></li>
+                         </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+        </section>
+        
+        <section class="cart-page success-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 cart-steps mb-30">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <a href="javascript:;" class="cart-steps-item success d-flex align-items-center fs-16">
+                                <span class="material-icons fs-20">
+                                check_circle
+                                </span>
+                                Thông tin giao hàng
+                            </a>
+                            <a href="javascript:;" class="cart-steps-item success d-flex align-items-center fs-16">
+                                <span class="material-icons fs-20">
+                                check_circle
+                                </span>
+                                Thông tin thanh toán
+                            </a>
+                            <a href="javascript:;" class="cart-steps-item success d-flex align-items-center fs-16">
+                                <span class="material-icons fs-20">
+                                check_circle
+                                </span>
+                                Hoàn thành
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-3 success-content-wrapper text-center">
+
+                        <span class="material-icons color-green icon-success fs-76">
+                        check_circle
+                        </span>
+                        <p class="success-message text-center fs-24 fira-medium mb-10">
+                            Chúc mừng!  </br>
+                            Đơn hàng của bạn đã được đặt thành công!
+                        </p>
+                        <p class="fs-14 static-text mb-30">
+                            Cảm ơn bạn đã sử dụng sản phẩm/dịch vụ của Non-Wat. Mã đơn hàng của bạn là <a href="">#NW321120 </a> , chúng tôi đang xử lý và thông báo lại sớm nhất cho bạn.
+                        </p>
+        
+                        <div class="success-action">
+                            <a href="/tai-khoan.html" class="btn-success-page ">
+                                Đến Đơn hàng của tôi
+                            </a>
+                            <a href="/home.html" class="btn-success-page btn-success-color">
+                                Tiếp tục mua sắm <img src="images/arrow-right.png" alt="" class="ml-1" style="    margin-top: -1px;">
+                            </a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+      </main>  
+
+      <myfooter></myfooter>
+      <div id="menu-mobile">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Trang chủ
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Giới thiệu
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Sản phẩm
+            </a>
+          </li>
+               
+        </ul>
+      </div>
+    </div>
+     
+    
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/mmenu/jquery.mmenu.all.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var app = new Vue({
+          el: "#app",
+          data: {
+              product: [],
+              post : [],
+              loading: false,
+              fakes: 12,
+              isLogin: true 
+          },
+          components: {
+            myheader: httpVueLoader("vue_components/header.vue"),
+            myfooter: httpVueLoader("vue_components/footer.vue"),
+          },
+          mounted() {
+            this.$nextTick(() => {
+              $(window).bind("load", function () {
+                RunFn.mmenu('#menu-mobile');
+              });
+            });
+          }
+        });
+      </script>
+  </body>
+</html>

@@ -74,6 +74,7 @@
             display: inline-block;
             padding-top: 16px;
             position: relative;
+            color: #333;
         }
     }
     &.two-col {
@@ -93,6 +94,9 @@
             display: none;
             &:checked+.fa::before {
                 border-color: #007AFF;
+            }
+            &:checked+img{
+                border: 2px solid #FF9500;
             }
             &:checked+.fa::after {
                 content: "";
@@ -187,6 +191,7 @@
     }
 }
 .paging {
+    margin-bottom: 20px;
     .page-item {
         display:inline-block;
         width: 24px;
@@ -208,6 +213,11 @@
     }
 }
 
+@media ( max-width : 1199px ) {
+    .attr-list.two-col .filter-item {
+        width: 100%;
+    }
+}
 @media ( max-width: 480px ) {
     .p-list-top .p-list-title, 
     .p-list-top .sort-by {
