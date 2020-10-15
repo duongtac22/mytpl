@@ -192,6 +192,11 @@ header {
     }
 }
 
+@media ( max-width : 992px ) {
+    #menu-mobile {
+        display: none; 
+    }
+}
 @media screen and (max-width: 1199px){
     header .menu .menu-item {
         margin-right: 20px;

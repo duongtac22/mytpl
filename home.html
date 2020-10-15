@@ -13,26 +13,7 @@
 
   <body>
     <div id="app">
-      <div id="menu-mobile">
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="" class="menu-link">
-            Trang chủ
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
-            Giới thiệu
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="" class="menu-link">
-            Sản phẩm
-            </a>
-          </li>
-               
-        </ul>
-      </div>
+
       <myheader :login = "isLogin" ></myheader>
       <main>
         
@@ -198,24 +179,24 @@
             </div>
 
             <div class="tabs-sp text-center">
-              <ul class="list-unstyled d-inline-block">
-                <li class="tabs-item active">
-                  <a href="" data-tabs="#tab1">
+              <ul class="list-unstyled d-inline-block nav-tabs nav" role="tablist">
+                <li class="tabs-item" role="presentation">
+                  <a href="#tab1" data-tabs="#tab1" aria-controls="tab1" role="tab" data-toggle="tab" class="active">
                     Sản phẩm khuyến mãi
                   </a>
                 </li>
-                <li class="tabs-item">
-                  <a href="" data-tabs="#tab1">
+                <li class="tabs-item" role="presentation">
+                  <a href="#tab2" data-tabs="#tab2" aria-controls="tab2" role="tab" data-toggle="tab" >
                     Đồng hồ Nam
                   </a>
                 </li>
-                <li class="tabs-item">
-                  <a href="" data-tabs="#tab1">
+                <li class="tabs-item" role="presentation">
+                  <a href="#tab3" data-tabs="#tab3" aria-controls="tab3" role="tab" data-toggle="tab" >
                     Đồng hồ Nữ
                   </a>
                 </li>
-                <li class="tabs-item">
-                  <a href="" data-tabs="#tab1">
+                <li class="tabs-item" role="presentation">
+                  <a href="#tab4" data-tabs="#tab4" aria-controls="tab4" role="tab" data-toggle="tab" >
                     Phụ kiện
                   </a>
                 </li>
@@ -223,17 +204,39 @@
 
 
             </div>
-
-            <div class="tabs-sp-content">
-              <div class="row">
-                <div class="col-lg-3 col-md-6 col-12" v-for="item in product" v-if="loading">
-                  <myproduct :name="item.Name" :price="item.Price" :mprice="item.RetailPrice" :img="item.ThumbnailURL"></myproduct>
+              <div class="tabs-sp-content  tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab1">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12" v-for="item in product" v-if="loading">
+                      <myproduct :name="item.Name" :price="item.Price" :mprice="item.RetailPrice" :img="item.ThumbnailURL"></myproduct>
+                    </div>
+                  </div>
                 </div>
-
-               
-
+                <div role="tabpanel" class="tab-pane" id="tab2">
+                  <div class="row">
+                    <div class="col-12" >
+                        <p>  Đang cập nhât Đồng Hồ Nam ... </p>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="tab3">
+                  <div class="row">
+                    <div class="col-12" >
+                        <p>  Đang cập nhât Đồng Hồ Nữ ... </p>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="tab4">
+                  <div class="row">
+                    <div class="col-12" >
+                        <p>  Đang cập nhât Phụ kiện ... </p>
+                    </div>
+                  </div>
+                </div>
+  
               </div>
-            </div>
+          
+
             <div class="text-center d-block">
               <a href="" class="view-all">
                 Xem chi tiết <span class="material-icons fs-14">keyboard_arrow_right</span>
@@ -476,11 +479,32 @@
       </div>
 
       <myfooter></myfooter>
+      <div id="menu-mobile">
+        <ul class="menu">
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Trang chủ
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Giới thiệu
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="" class="menu-link">
+            Sản phẩm
+            </a>
+          </li>
+               
+        </ul>
+      </div>
     </div>
      
     
     <script src="js/vue.js"></script>
     <script src="js/httpVueLoader.js"></script>
+    <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
     <script src="js/jquery-3.4.1.js"></script>
     <script src="libs/bootstrap/bootstrap.min.js"></script>
     <script src="libs/bootstrap/popper.min.js"></script>
@@ -488,6 +512,8 @@
     <script src="libs/mmenu/jquery.mmenu.all.js"></script>
     <script src="js/main.js"></script>
     <script>
+
+
       var app = new Vue({
         el: "#app",
         data: {
@@ -505,6 +531,11 @@
         },
         mounted() {
           this.$nextTick(() => {
+            Vue.use(VueLazyload, {
+              preLoad: 1.3,
+              loading: 'images/rolling.svg',
+              attempt: 1
+            })
             $(window).bind("load", function () {
               RunFn.runnCarousel('.js-carousel');
               RunFn.mmenu('#menu-mobile');

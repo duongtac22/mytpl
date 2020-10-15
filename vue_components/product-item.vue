@@ -2,7 +2,9 @@
   <div class="p-container">
     <div class="p-img">
       <a class="p-thumbnail" href="">
-        <img v-bind:src="img" v-bind:alt="name" />
+        
+        <img v-lazy="img" v-bind:alt="name"  />
+
       </a>
       <div class="hover-button">
         <a href="javascript:;" data-toggle="modal" data-target="#popProduct" class="btn-buynow">

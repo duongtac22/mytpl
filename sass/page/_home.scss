@@ -84,7 +84,7 @@
 }
 
 .block-home {
-    margin: 35px 0;
+    margin: 67px 0 50px 0 ;
     h2 {
         margin-bottom: 50px;
     }
@@ -127,7 +127,10 @@
                 font-size: 16px;
                 line-height: 22px;
                 padding: 0 20px;
-                border-right: 1px solid #DDDDDD;
+                &.active {
+                    color: #FF9500 !important;
+                    font-weight: 600;
+                }
             }
             &:first-child a {
                 padding-left: 0;
@@ -135,10 +138,6 @@
             &:last-child a {
                 border-right: 0;
                 padding-right: 0;
-            }
-            &.active a {
-                color: #FF9500 !important;
-                font-weight: 600;
             }
         }
 

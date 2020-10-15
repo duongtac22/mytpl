@@ -13,7 +13,7 @@
                                     <div class="input-group">
                                         <input type="email" autocomplete="off" class="form-control" value="" placeholder="Nhập email của bạn" name="EMAIL" id="mail">
                                         <span class="input-group-btn">
-                                        <button class="btn btn-default" name="subscribe" id="subscribe" type="submit"> 
+                                        <button class="btn btn-default hover-img-effect position-relative" name="subscribe" id="subscribe" type="submit"> 
                                             <img src="images/icon-newsletter.png">
                                             Đăng ký ngay
                                         </button>

@@ -6,7 +6,7 @@
             td {
                 padding: 8px 10px;
                 min-width: 120px;
-                vertical-align: top;
+                vertical-align: middle;
                 &:first-child {
                     padding-left : 16px;
                 }
@@ -178,8 +178,8 @@ table.tbl_cart {
         border-bottom: 1px solid #dddddd;
     }
     tr {
-        padding: 16px;
-        border-bottom: 1px solid #DDDDDD;
+        border-bottom: 1px solid #ddd;
+        padding: 11px 10px;
         &:last-child {
             border-bottom: 0;
         }
@@ -189,9 +189,6 @@ table.tbl_cart {
     }
     td, th {
         padding: 16px;
-        line-height: 1.5;
-        vertical-align: top;
-        border-top: 1px solid #eceeef;
     }
     td {
         vertical-align: middle;
@@ -252,6 +249,11 @@ table.tbl_cart {
 }
 
 
+@media ( min-width: 1199px ) {
+    table.tbl_cart tr th.product-name {
+        min-width: 440px;;
+    }
+}
 @media ( max-width: 768px) {
 	table.tbl_cart thead {
 		display: none;
