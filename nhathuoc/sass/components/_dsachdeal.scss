@@ -1,0 +1,28 @@
+.block-deal {
+    background: #FFFBFB;
+    border: 1px solid #DC9F9F;
+    padding: 40px 54px ;
+    svg {
+        display: block;
+        height: auto;
+    }
+    .title {
+        font-size: 28px;
+        line-height: 24px;
+        padding: 0 5px 0 15px;
+       
+    }
+    .count-down{
+        span {
+            font-size: 18px;
+            line-height: 24px;
+            color : #fff ;
+            padding: 10px 11px 9px 11px ;
+            background: linear-gradient(180deg, #FDAB30 0%, rgba(224, 52, 14, 0.79) 100%);
+            border-radius: 5px;
+            margin: 0 20px;
+            position: relative;
+            &:not(:last-child):before {content: ":";position: absolute;right: -20px;left: auto;color: #333333;font-size: 26px;line-height: 24px;}
+        }
+    }
+}

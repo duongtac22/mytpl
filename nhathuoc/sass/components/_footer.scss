@@ -1,0 +1,33 @@
+footer{
+    background-color: #111111;
+    padding: 25px 0 60px;
+    .ft-col{
+        .ft-title{
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 60px;
+            margin-bottom: 20px;
+        }
+        p, a{
+            color: #ababab;
+            display: block;
+            margin-bottom: 15px;
+        }
+        a:hover{
+            color: #fff;
+        }
+    }
+    .ft-col-1{
+        .ft-title{
+            margin-top: 15px;
+            margin-bottom: 10px
+        }
+    }
+}
+@media (max-width: 768px){
+    footer .ft-col .ft-title{
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+}

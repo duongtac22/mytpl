@@ -1,0 +1,29 @@
+.article-container {
+    
+    border: 1px solid #EAEAEA;
+    border-radius: 5px 5px 0px 0px ;
+    .article-info {
+        padding : 18px 22px;
+        .time { margin-bottom : 9px;}
+        .article-name {
+            font-size: 20px;
+            line-height: 23px;
+            height: 70px;
+            display: -webkit-box;
+            max-width: 100%;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .article-desc {
+            font-size: 15px;
+            line-height: 18px;
+            color :#696969 ;
+            
+        }
+        .article-link {
+            margin: 10px 0 ;
+        }
+    }
+}

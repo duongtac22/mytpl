@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- <myheader></myheader> -->
+      <homeslider></homeslider>
+
+      <section class="main-content">
+          <div class="container">
+            <deallist></deallist>
+
+            <div class="block-sp-moi block-home bg-white mt-30">
+              <div class="block-home-title">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between">
+                      <h2 class="title m-0">
+                          Sản phẩm mới
+                      </h2>
+      
+                      <a href="" class="view-all fs-15 color-green">
+                        Xem tất cả 
+                      </a>
+                  </div>
+              </div>
+              <div class="block-home-content row">
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-list-banner ">
+              <div class="row">
+                <div class="col-lg-4 col-12 mt-30">
+                  <a href="">
+                    <img src="images/banner-3.png" alt=" tieu de banner" class="img-fluid">
+                  </a>
+                </div>
+                <div class="col-lg-4 col-12 mt-30">
+                  <a href="">
+                    <img src="images/banner-4.png" alt=" tieu de banner" class="img-fluid">
+                  </a>
+                </div>
+                <div class="col-lg-4 col-12 mt-30">
+                  <a href="">
+                    <img src="images/banner-5.png" alt=" tieu de banner" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-tintuc block-home bg-white mt-30">
+              <div class="block-home-title">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between">
+                      <h2 class="title m-0">
+                          Tin tức mới nhất 
+                      </h2>
+      
+                      <a href="" class="view-all fs-15 color-green">
+                        Xem tất cả 
+                      </a>
+                  </div>
+              </div>
+              <div class="block-home-content row">
+                <div class="col-12 col-md-6 col-lg-3">
+                  <articleitem></articleitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <articleitem></articleitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <articleitem></articleitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <articleitem></articleitem>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+      </section>
+
+
+      <!-- <myfooter></myfooter>-->
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/mmenu/jquery.mmenu.all.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        components: {
+          myheader: httpVueLoader("vue_components/header.vue"),
+          myfooter: httpVueLoader("vue_components/footer.vue"),
+          homeslider: httpVueLoader("vue_components/home-slider.vue"),
+          deallist: httpVueLoader("vue_components/deal-list.vue"),
+          articleitem: httpVueLoader("vue_components/article-list.vue"),
+          productitem: httpVueLoader("vue_components/product-item.vue"),
+        },
+        mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              RunFn.runnCarousel('.js-carousel');
+              // RunFn.mmenu();
+            });
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

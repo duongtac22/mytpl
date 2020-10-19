@@ -1,0 +1,28 @@
+.feature-policy {
+    padding: 20px 0 ;
+    svg {
+        display: block;
+        height: auto;
+    }
+    .feature-item {
+        padding: 22px 0 ;
+        .icons {
+            float: left;
+            width: 54px;
+        }
+        .feature-info {
+            display: block;
+            width: calc(100% - 71px);
+            margin-left: 71px;
+            .feature-name {
+                font-size: 18px;
+                line-height: 24px;
+                display: block;
+            }
+            .feature-desc {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}

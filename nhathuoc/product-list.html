@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div id="app">
+        <myheader></myheader>
+        <main>
+            <div class="container">
+                <div v-for="item in product" class="items" v-if="loading">
+                    <product-item :name="item.Name" :email="item.Price" :img="item.ThumbnailURL"></product-item>
+                </div>
+                <div v-for="fake in fakes" v-if="!loading">
+                    <fake-item></fake-item>
+                </div>
+            </div>
+        </main>
+        <myfooter></myfooter>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/magiczoom/magiczoom.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: [],
+                loading: false,
+                fakes: 12
+            },
+            components: {
+                'myheader': httpVueLoader('vue_components/header.vue'),
+                'myfooter': httpVueLoader('vue_components/footer.vue'),
+                'fake-item': httpVueLoader('vue_components/fake-item.vue'),
+                'product-item': httpVueLoader('vue_components/product-item.vue'),
+            },
+            methods: {
+                getData: function () {
+                    fetch(`json/product.json`)
+                        .then(result => result.json())
+                        .then(result => {
+                            console.log(result.length);
+                            this.product = result.slice(0, 2);
+                            this.loading = true;
+                        })
+                        .catch(
+                            function (error) {
+                                console.log('Error: \n', error);
+                            }
+                        );
+                }
+            },
+            created: function () {
+                this.getData();
+            }
+        });
+    </script>
+</body>
+
+</html>

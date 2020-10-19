@@ -1,0 +1,62 @@
+.p-wrapper{
+    .p-container {
+        border: 1px solid #D0DFED;
+        border-radius: 5px;
+    }
+    .p-img {
+        position: relative;
+        padding-top: 75%;
+        overflow: hidden;
+        img.anh-sp {
+            position: absolute;
+            top: 0;
+            left: 0 ;
+            bottom: 0 ;
+            right: 0 ;
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+            z-index: 100;
+        }
+        .p-status {
+            position: absolute;
+            top:0;
+            right: 0 ;
+            z-index: 100;
+            &.icons-new {
+                background: url('../images/product/new-icon.png');
+                background-size: cover;
+                width: 47px;
+                height: 47px;
+            }
+        }
+        .hover-actions {
+            font-size: 16px;
+            line-height: 18px;
+            position: absolute;
+            bottom: -51px ;
+            line-height: 51px;
+            height: 51px;
+            width: 100%;
+            background: #FCBB14;
+            z-index: 1000;
+            text-align: center;
+            color : #fff ;
+            transition: 0.3s ease-in-out;
+        }
+        &:hover {
+            .hover-actions {
+                bottom: 0 ;
+            }
+        }
+    }
+    .p-info {
+        padding: 20px 30px;
+    }
+    .p-name {
+        font-size: 18px;
+        line-height: 24px;
+        display: block;
+    }
+}

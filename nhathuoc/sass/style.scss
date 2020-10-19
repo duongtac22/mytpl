@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import '../sass/_fonts.scss';
+
+@import 
+'../sass/bootstrap-grid',
+'../sass/bootstrap-reboot',
+'../sass/bootstrap';
+
+
+@import 
+'../sass/reset',
+'../sass/variables',
+'../sass/body',
+'../sass/components/header',
+'../sass/components/footer',
+'../sass/components/homeslider',
+'../sass/components/breadcrumb',
+'../sass/components/dsachdeal',
+'../sass/components/articleitem',
+'../sass/components/productitem',
+'../sass/page/home',
+'../sass/page/blog';
