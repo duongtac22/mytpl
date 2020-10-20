@@ -1,0 +1,17 @@
+.product-list-left {
+    @include col-w(288px);
+    padding: 10px ;
+    background: #FFFFFF;
+    border-radius: 3px;
+    .title , .attr-name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .filter-item {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 40px;
+        display: block;
+    }
+}

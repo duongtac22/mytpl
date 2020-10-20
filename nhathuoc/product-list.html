@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- css plugin khoang gia -->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <!-- end -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom.css">
 </head>
@@ -12,16 +15,38 @@
 <body>
     <div id="app">
         <myheader></myheader>
-        <main>
+        <section class="main-content">
             <div class="container">
-                <div v-for="item in product" class="items" v-if="loading">
-                    <product-item :name="item.Name" :email="item.Price" :img="item.ThumbnailURL"></product-item>
-                </div>
-                <div v-for="fake in fakes" v-if="!loading">
-                    <fake-item></fake-item>
-                </div>
+                 <!-- breadcrumb -->
+
+                 <!-- product list content --> 
+
+                 <div class="row">
+                     <div class="block-filter product-list-left">
+                        <filteritem></filteritem>
+                     </div>
+
+                     <div class="col product-list-right">
+                        <div class="box-title">
+                            <div class="box-title-left">
+                                <h1> Danh sách sản phẩm</h1>
+                                <span class="count-sp">(1120 sản phẩm)</span>
+                            </div>
+
+                            <div class="box-title-right">
+                                <div class="sort-by">
+                                    Sắp xếp 
+
+                                    <div class="sort-by-option">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                 </div>
             </div>
-        </main>
+        </section>
         <myfooter></myfooter>
     </div>
 
@@ -32,6 +57,9 @@
     <script src="libs/owl-carousel/owl.carousel.min.js"></script>
     <script src="libs/magiczoom/magiczoom.js"></script>
     <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+    <!-- js plugin khoang gia -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- end -->
     <script src="js/main.js"></script>
 
     <script>
@@ -43,30 +71,36 @@
                 fakes: 12
             },
             components: {
-                'myheader': httpVueLoader('vue_components/header.vue'),
-                'myfooter': httpVueLoader('vue_components/footer.vue'),
-                'fake-item': httpVueLoader('vue_components/fake-item.vue'),
-                'product-item': httpVueLoader('vue_components/product-item.vue'),
+                myheader: httpVueLoader("vue_components/header.vue"),
+                myfooter: httpVueLoader("vue_components/footer.vue"),
+                productitem: httpVueLoader("vue_components/product-item.vue"),
+                filteritem : httpVueLoader("vue_components/filter-product-list.vue"),
             },
-            methods: {
-                getData: function () {
-                    fetch(`json/product.json`)
-                        .then(result => result.json())
-                        .then(result => {
-                            console.log(result.length);
-                            this.product = result.slice(0, 2);
-                            this.loading = true;
-                        })
-                        .catch(
-                            function (error) {
-                                console.log('Error: \n', error);
-                            }
-                        );
-                }
-            },
-            created: function () {
-                this.getData();
-            }
+        mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              // RunFn.mmenu();
+
+              var options = {
+                  range: true,
+                  min: 0,
+                  max: 5000000,
+                  values: [0, 5000000],
+                  step: 5,
+                  slide: function(event, ui) {
+                      var min = 0,
+                          max = 5000000;
+                  },
+                  stop: function(event,ui) {
+                      var min = ui.values[0],
+                          max = ui.values[1];
+                  }
+              }, min, max;
+
+              $("#slider-range").slider(options);
+            });
+          });
+        },
         });
     </script>
 </body>

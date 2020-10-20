@@ -2,7 +2,7 @@
   <div class="p-wrapper">
       <div class="p-container">
           <div class="p-img d-inline-block w-100">
-                          <a href="" class="hover-actions">
+              <a href="" class="hover-actions">
                 <span class="icon-cart">
                     <i>
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@
               <a href="">
                 <img src="../images/product/product1.png" alt="Tên sp" class="anh-sp">
               </a>
-              <span class="p-status icons icons-new"></span>
+              <span class="p-status icons icons-sale"> <b class="p-discount"> 40% </b> </span>
           </div>
           <div class="p-info">
             <a href="" class="p-name">
@@ -29,7 +29,19 @@
             </div>
             <span class="price">
               <b>188,500đ</b>/hộp
+              <del class="sale-price">35.000đ</del>
             </span>
+
+            <div class="progress_deal">
+                <div class="progress_deal_bar">
+                    <div class="line_percent_used" style="width: 38%">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="progress_deal_status">
+                    Đã bán: 20/100 vỉ
+                </div>
+            </div>
           </div>
       </div>
   </div>

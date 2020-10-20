@@ -1,4 +1,8 @@
 .p-wrapper{
+    margin-bottom: 25px;
+    &:hover .p-container {
+        box-shadow: 0px 4px 25px rgba(128, 134, 164, 0.3);
+    }
     .p-container {
         border: 1px solid #D0DFED;
         border-radius: 5px;
@@ -30,20 +34,50 @@
                 width: 47px;
                 height: 47px;
             }
+            &.icons-sale {
+                top:21px;
+                right: 21px ;
+                background: url('../images/product/sale-icon.png');
+                background-size: cover;
+                width: 47px;
+                height: 47px;
+                display: flex;
+                align-items : center ;
+                justify-content: center;
+                .p-discount {
+                    font-weight: bold;
+                    font-size: 15px;
+                    line-height: 24px;
+                    color: #FFFFFF;
+                }
+            }
         }
+
         .hover-actions {
             font-size: 16px;
             line-height: 18px;
             position: absolute;
             bottom: -51px ;
             line-height: 51px;
-            height: 51px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             background: #FCBB14;
             z-index: 1000;
             text-align: center;
             color : #fff ;
             transition: 0.3s ease-in-out;
+        }
+        .icon-cart {
+            display: inline-block;
+            margin-right: 5px;
+            width: 19px;
+            svg {
+                width: 100%;
+                display: block;
+                height: auto;
+            }
         }
         &:hover {
             .hover-actions {
@@ -53,10 +87,91 @@
     }
     .p-info {
         padding: 20px 30px;
+        .price {
+            font-size: 20px;
+            line-height: 24px;
+            color: #E62B2B;
+            display : block;
+            margin: 10px 0 17px 0 ;
+            .sale-price {
+                margin-left: 14px;
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: normal;
+                color: #ACACAC;
+            }
+        }
     }
     .p-name {
         font-size: 18px;
         line-height: 24px;
         display: block;
+        font-weight: 500;
+    }
+    .p-desc {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        color: #474747;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+    .progress_deal_bar {
+        height: 7px;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+        background: #E9E9E9;
+        position: relative;
+        float: left;
+        .line_percent_used {
+            float: left;
+            height: 7px;
+            border-radius: 3px;
+            overflow: hidden;
+            background: #134E47;
+            position: absolute;
+            z-index: 2;
+        }
+    }
+    .progress_deal_status {
+        margin-top: 10px;
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+        color: #555555;
+    }
+    .icon-star {
+        margin-top: 7px;
+        background-image: url(../images/product/star-prite.png);
+        width: 87px;
+        height: 19px;
+        vertical-align: sub;
+        display: inline-block;
+        background-repeat: no-repeat
+    }
+    
+    
+    .icon-star.star1 {
+    background-position : 0 0;
+    
+    }
+    
+    .icon-star.star2 {
+        background-position: 0 -19px;
+    }
+    
+    .icon-star.star3 {
+        background-position: 0 -38px
+    }
+    
+    .icon-star.star4 {
+        background-position: 0 -57px
+    }
+    
+    .icon-star.star5 {
+        background-position: 0 -76px
     }
 }

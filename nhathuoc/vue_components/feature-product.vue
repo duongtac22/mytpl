@@ -2,7 +2,7 @@
   <div class="p-wrapper">
       <div class="p-container">
           <div class="p-img d-inline-block w-100">
-                          <a href="" class="hover-actions">
+                            <a href="" class="hover-actions">
                 <span class="icon-cart">
                     <i>
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -30,15 +30,13 @@
             <span class="price">
               <b>188,500đ</b>/hộp
             </span>
+
+            <div class="p-desc">
+                Điều trị tiêu chảy cấp tính ở trẻ em và trẻ sơ sinh, người lớn 
+            </div>
           </div>
       </div>
   </div>
 
   
 </template>
-
-<script>
-// module.exports = {
-//   props: ["email", "name", "img"],
-// };
-</script>

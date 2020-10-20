@@ -1,9 +1,4 @@
 @charset "UTF-8";
-@media ( min-width : 1200px ) {
-    .container {
-        max-width: 1505px;
-    }
-}
 body{
     background: #F4F4F4;
     font-family: "Roboto";
@@ -12,6 +7,7 @@ body{
     color:#333
 }
 .mt-30 { margin-top: 30px;}
+.mt-10 { margin-top: 10px;}
 .roboto-regular{
     font-family: "Roboto";
 }
@@ -282,10 +278,53 @@ error 404
     .owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
         background: #fff;
     }
+    &.custom-dots-style2 {
+        .owl-dots .owl-dot span {
+            border-color : #C7C7C7 ;
+        }
+        .owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
+            border-color :#FCBB14 ;
+            background : #FCBB14 ;
+        }
+    }
 }
 
 
-
+.owl-theme.custom-navs {
+    .owl-nav {
+        margin: 0 ;
+        button {
+            position: absolute;
+            top: 50%;
+            transition: all 0.2s ease;
+            outline: none;
+            z-index: 100;
+            transform: translate(0, -50%);
+            background: #FFFFFF;
+            border: 1px solid #EAEAEA;
+            box-shadow: 0px 4px 4px rgba(204, 204, 204, 0.25);
+            border-radius: 3px;
+            padding: 9px 20px;
+            margin: 0;
+            i {
+                font-size: 35px;
+                color: #FCBB14;
+            }
+            &:hover {
+                background: #FCBB14 !important;
+                i {
+                    color : #fff ;
+                }
+            }
+        }
+    }
+    .owl-next{
+        right:-28px;
+    }
+    .owl-prev {
+        left: -28px;
+    }
+}
 
 
 

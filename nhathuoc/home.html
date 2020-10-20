@@ -12,13 +12,159 @@
 
   <body>
     <div id="app">
-      <!-- <myheader></myheader> -->
+      <myheader></myheader>
       <homeslider></homeslider>
 
       <section class="main-content">
           <div class="container">
-            <deallist></deallist>
 
+            <!-- block sp deal-->
+            <div class="block-deal mt-30">
+                <div class="deal-titlte">
+                    <div class="d-flex flex-wrap align-items-center">
+                        <span class="icon-sales icons">
+                            <i>
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M42.0468 22L43.9999 18.5155L41.0656 15.8052L41.8465 11.8876L38.2182 10.2167L37.7503 6.24962L33.7833 5.78169L32.1123 2.15342L28.1948 2.93424L25.4845 0L22 1.9531L18.5155 0L15.8053 2.93433L11.8878 2.1535L10.2168 5.78178L6.24979 6.24971L5.78186 10.2167L2.1535 11.8877L2.93442 15.8053L0 18.5155L1.95318 22L0 25.4844L2.93433 28.1947L2.15342 32.1123L5.78169 33.7833L6.24962 37.7503L10.2167 38.2182L11.8876 41.8465L15.8051 41.0656L18.5154 43.9999L21.9998 42.0468L25.4842 43.9999L28.1945 41.0656L32.1119 41.8465L33.7829 38.2182L37.75 37.7503L38.2179 33.7833L41.8462 32.1123L41.0652 28.1947L43.9996 25.4844L42.0468 22ZM14.3811 25.0098C14.199 25.3469 13.9587 25.6163 13.6605 25.8176C13.3621 26.0192 13.0249 26.1645 12.6492 26.2535C12.2733 26.3425 11.8955 26.3872 11.5159 26.3872C11.2136 26.3872 10.9036 26.3639 10.5861 26.3175C10.2683 26.271 9.95266 26.2052 9.63873 26.12C9.32489 26.0348 9.02265 25.934 8.73209 25.8177C8.44154 25.7015 8.17221 25.5699 7.92428 25.4225L8.90062 23.4349C9.17175 23.6054 9.45448 23.7565 9.74907 23.8882C9.997 24.0044 10.2779 24.1089 10.5918 24.202C10.9056 24.295 11.2253 24.3415 11.5508 24.3415C11.7986 24.3415 11.971 24.3087 12.068 24.2427C12.1649 24.1769 12.2132 24.0898 12.2132 23.9811C12.2132 23.8648 12.1648 23.7661 12.068 23.6847C11.971 23.6033 11.8374 23.5317 11.667 23.4697C11.4965 23.4078 11.3008 23.3458 11.0801 23.2837C10.8593 23.2218 10.6248 23.1482 10.3768 23.0629C10.0126 22.9391 9.69872 22.8054 9.43532 22.6619C9.17183 22.5186 8.95476 22.3559 8.78443 22.1737C8.61393 21.9918 8.48803 21.7843 8.40665 21.5519C8.32535 21.3194 8.28462 21.0521 8.28462 20.7498C8.28462 20.2926 8.3678 19.8897 8.53444 19.541C8.70107 19.1924 8.9276 18.9017 9.21437 18.6693C9.50097 18.4368 9.82848 18.2607 10.1966 18.1404C10.5645 18.0204 10.9539 17.9603 11.3648 17.9603C11.667 17.9603 11.9614 17.9893 12.248 18.0475C12.5347 18.1056 12.8118 18.1794 13.0791 18.2683C13.3465 18.3575 13.5964 18.4543 13.8289 18.5589C14.0613 18.6636 14.2706 18.7624 14.4566 18.8553L13.4802 20.7267C13.2478 20.5872 13.0075 20.4633 12.7595 20.3548C12.5504 20.2617 12.3159 20.1746 12.0563 20.0932C11.7966 20.0119 11.5429 19.9711 11.2951 19.9711C11.0935 19.9711 10.9328 20.0021 10.8127 20.0641C10.6926 20.1263 10.6326 20.2309 10.6326 20.378C10.6326 20.4866 10.6674 20.5755 10.7373 20.6453C10.807 20.715 10.9075 20.779 11.0395 20.8371C11.1712 20.8951 11.3319 20.9515 11.5219 21.0056C11.7116 21.0598 11.9266 21.1258 12.1669 21.2031C12.5465 21.3194 12.8894 21.4472 13.1956 21.5867C13.5017 21.7262 13.7632 21.8909 13.9803 22.0807C14.197 22.2706 14.3638 22.5011 14.4801 22.7722C14.5964 23.0436 14.6544 23.3728 14.6544 23.7602C14.6542 24.2562 14.5631 24.6728 14.3811 25.0098ZM20.2101 26.2826L19.7103 24.667H17.5135L17.0253 26.2826H14.7122L17.5832 18.0301H19.6521L22.5115 26.2826H20.2101ZM23.1972 26.2826V18.0301H25.4637V24.3067H29.2064V26.2826H23.1972V26.2826ZM35.8783 26.2826H35.8782H29.9969V18.0301H35.7737V20.0061H32.2635V21.1684H35.2623V23.0049H32.2635V24.3068H35.8783V26.2826Z" fill="#E92C2C"/>
+            </svg>
+                            </i>
+                        </span>
+                        
+                        <h2 class="title m-0">
+                            Khuyến mại tuần này
+                        </h2>
+
+                        <div class="count-down d-flex align-items-center">
+                            <span id="hour"> 06 </span>
+                              
+                            <span id="minutes"> 30 </span>
+                            
+                            <span id="secs"> 15 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-list js-carousel custom-navs custom-dots custom-dots-style2" data-items="4" data-margin="30" data-autoplay="false" data-loop="true" data-dots="true" data-dotsData="false" data-arrows="true">
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                    <dealproduct></dealproduct>
+                </div>
+            </div>
+
+            <!-- block sp ban chay-->
+            <div class="block-sp-moi block-home bg-white mt-30">
+              <div class="block-home-title">
+                  <div class="d-flex flex-wrap align-items-center justify-content-between">
+                      <h2 class="title m-0">
+                          Sản phẩm bán chạy
+                      </h2>
+      
+                      <a href="" class="view-all fs-15 color-green">
+                        Xem tất cả 
+                      </a>
+                  </div>
+              </div>
+              <div class="deal-list js-carousel custom-navs custom-dots custom-dots-style2" data-items="4" data-margin="30" data-autoplay="false" data-loop="true" data-dots="true" data-dotsData="false" data-arrows="true">
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+                <featuredproduct></featuredproduct>
+            </div>
+            </div> 
+
+            <!--  list 2 banner -->
+            <div class="block-list-banner ">
+              <div class="row">
+                <div class="col-lg-6 col-12 mt-30">
+                  <a href="">
+                    <img src="images/banner-1.png" alt=" tieu de banner" class="img-fluid">
+                  </a>
+                </div>
+                <div class="col-lg-6 col-12 mt-30">
+                  <a href="">
+                    <img src="images/banner-2.png" alt=" tieu de banner" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- list dmuc-->
+            <div class="block-category block-home bg-white mt-30">
+              <div class="block-home-title">
+                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                    <h2 class="title m-0">
+                      Danh mục phổ biến 
+                    </h2>
+                </div>
+              </div>
+              <div class="block-home-content d-flex flex-wrap list-category">
+                <div class="category-item">
+                <a href="" class="category-img">
+                <img src="images/cate1.png" alt="ten category">
+                </a>
+                <a href="" class="category-name">
+                  Thuốc dạ dày, ruột gan
+                </a>
+                </div>
+                <div class="category-item">
+                <a href="" class="category-img">
+                <img src="images/cate3.png" alt="ten category">
+                </a>
+                <a href="" class="category-name">
+                  Thuốc hệ thần kinh
+                </a>
+                </div>
+                <div class="category-item">
+                <a href="" class="category-img">
+                <img src="images/cate4.png" alt="ten category">
+                </a>
+                <a href="" class="category-name">
+                  Thuốc hệ tim mạch
+                </a>
+                </div>
+                <div class="category-item">
+                <a href="" class="category-img">
+                <img src="images/cate5.png" alt="ten category">
+                </a>
+                <a href="" class="category-name">
+                  Thuốc chống viêm, hạ sốt
+                </a>
+                </div>
+                <div class="category-item">
+                <a href="" class="category-img">
+                <img src="images/cate6.png" alt="ten category">
+                </a>
+                <a href="" class="category-name">
+                  Thuốc kháng sinh
+                </a>
+                </div>
+                <div class="category-item">
+                <a href="" class="category-img">
+                <img src="images/cate2.png" alt="ten category">
+                </a>
+                <a href="" class="category-name">
+                Thuốc tránh thai
+                </a>
+                </div>
+              </div>
+            </div>
+            <!-- list sp moi-->
             <div class="block-sp-moi block-home bg-white mt-30">
               <div class="block-home-title">
                   <div class="d-flex flex-wrap align-items-center justify-content-between">
@@ -44,9 +190,22 @@
                 <div class="col-12 col-md-6 col-lg-3">
                   <productitem></productitem>
                 </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                  <productitem></productitem>
+                </div>
               </div>
             </div>
-
+              
+            <!-- list  3 banner -->
             <div class="block-list-banner ">
               <div class="row">
                 <div class="col-lg-4 col-12 mt-30">
@@ -67,6 +226,7 @@
               </div>
             </div>
 
+            <!-- block tintuc -->
             <div class="block-tintuc block-home bg-white mt-30">
               <div class="block-home-title">
                   <div class="d-flex flex-wrap align-items-center justify-content-between">
@@ -100,12 +260,13 @@
       </section>
 
 
-      <!-- <myfooter></myfooter>-->
+      <myfooter></myfooter>
     </div>
 
     <script src="js/vue.js"></script>
     <script src="js/httpVueLoader.js"></script>
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
     <script src="libs/owl-carousel/owl.carousel.min.js"></script>
     <script src="libs/mmenu/jquery.mmenu.all.js"></script>
     <script src="js/main.js"></script>
@@ -116,9 +277,10 @@
           myheader: httpVueLoader("vue_components/header.vue"),
           myfooter: httpVueLoader("vue_components/footer.vue"),
           homeslider: httpVueLoader("vue_components/home-slider.vue"),
-          deallist: httpVueLoader("vue_components/deal-list.vue"),
+          dealproduct: httpVueLoader("vue_components/product-deal.vue"),
           articleitem: httpVueLoader("vue_components/article-list.vue"),
           productitem: httpVueLoader("vue_components/product-item.vue"),
+          featuredproduct: httpVueLoader("vue_components/feature-product.vue"),
         },
         mounted() {
           this.$nextTick(() => {

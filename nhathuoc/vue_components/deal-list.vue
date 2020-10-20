@@ -23,5 +23,8 @@
                 </div>
             </div>
         </div>
+        <div class="deal-list">
+            
+        </div>
     </div>
 </template>

@@ -14,3 +14,46 @@
         
     }
 }
+
+.block-category{
+    .list-category{
+        justify-content: space-between;
+    }
+}
+.category-item {
+    flex: 0 0 184px;
+    max-width: 184px;
+    background: #FFFFFF ;
+    
+    border: 1px solid #D0E0EE;
+    border-radius: 5px;
+    padding: 20px;
+    .category-name {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        display: block;
+        text-align: center;
+    }
+    .category-img {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        padding-top: 60%;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            transform: translate(-50%,-50%);
+        }
+    }
+    &:hover {
+        background: #F5F9FF;
+    }
+}
+
+
+
+
