@@ -18,31 +18,108 @@
         <section class="main-content">
             <div class="container">
                  <!-- breadcrumb -->
-
+                <ul class="breadcrumb justify-content-flex-start mb-0">
+                    <li class="home">
+                       <a href="/"><span>Trang chủ</span></a>						
+                       <span class="mr_lr"> <img src="images/breadcrum-arrow.png" alt=""> </span>
+                    </li>
+                    <li><span> Sản phẩm </span></li>
+                 </ul>
                  <!-- product list content --> 
 
                  <div class="row">
                      <div class="block-filter product-list-left">
                         <filteritem></filteritem>
+
+                        <a href="" class="banner-left-productlist" >
+                            <img src="images/banner-product-list.png" alt="" class="img-fluid">
+                        </a>
                      </div>
 
                      <div class="col product-list-right">
-                        <div class="box-title">
+                         <div class="product-list-right-wrapper bg-white">
+                              <div class="box-title">
                             <div class="box-title-left">
                                 <h1> Danh sách sản phẩm</h1>
                                 <span class="count-sp">(1120 sản phẩm)</span>
                             </div>
 
                             <div class="box-title-right">
-                                <div class="sort-by">
-                                    Sắp xếp 
+                                <div class="align-items-center d-flex sort-by">
+                                    <label class="left hidden-xs">Sắp xếp </label>
+                                    <div class="border_sort">
+                                        <div class="select">
 
-                                    <div class="sort-by-option">
-                                        
-                                    </div>
-                                </div>
+                                            <div id="sortby" class="current-sort">
+                                                Mới nhất 
+                                            </div>
+
+                                            <div class="sortby-value" style="display:none">
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Mới nhất
+                                                </a>
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Đang khuyến mãi
+                                                </a>
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Giá giảm dần
+                                                </a>
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Giá tăng dần
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                  </div>
                             </div>
                         </div>
+
+                        <div class="list-product row">
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                        </div>
+                        <div class="paging d-block text-right">
+                            <a href="javascript:;" class="pref">
+                                <i aria-hidden="true" class="fa right fa-angle-left "></i>
+                              </a>
+                              <a href="javascript:;" class="page-item current">
+                                1
+                              </a>
+                              <a href="javascript:;" class="page-item">
+                                2
+                              </a>
+                              <a href="javascript:;" class="page-item">
+                                3
+                              </a>
+                              <a href="javascript:;" class="next">
+                                <i aria-hidden="true" class="fa right fa-angle-right "></i>
+                              </a>
+                        </div>
+                         </div>
+                       
                      </div>
                  </div>
             </div>
@@ -80,7 +157,15 @@
           this.$nextTick(() => {
             $(window).bind("load", function () {
               // RunFn.mmenu();
+              
+              // toggle sort
+              $('#sortby').click(function() {
 
+                $(this).parent().find('.sortby-value').toggle();
+
+              })
+
+              // option khoang gia
               var options = {
                   range: true,
                   min: 0,

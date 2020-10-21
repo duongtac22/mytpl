@@ -1,16 +1,22 @@
-.breadcrumb-block{
-    background-color: #f3f3f3;
-    .breadcrumb{
-        background: transparent;
-        margin-bottom: 0;
-    }
-    a{
-        font-size: 14px;
-        color: rgba(80, 80, 80, 255);
-    }
-}
-@media (max-width: 767px){
-    .breadcrumb-block{
-        background-color: #ffffff;
+.breadcrumb {
+    background: none;
+    padding: 24px 0 21px 0 ;
+    li {
+        span {
+            
+            font-size: 14px;
+            line-height: 16px;
+            color: #333;
+            font-weight: 600;
+            color: #000000;
+        }
+        &.home span{
+
+            color: #737373;
+        }
+
+        .mr_lr {
+            padding: 0px 5px;
+        }
     }
 }

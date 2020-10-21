@@ -18,8 +18,11 @@
         </div>
         <div class="attr-item price-filter">
             <span class="attr-name"> Khoảng giá tiền</span>
-            <div class="box-filter filter-check">
-                <div id="slider-range"></div>
+            <div class="box-filter filter-check attr-list">
+                <div class="price-filter-range">
+<div id="slider-range"></div>
+                </div>
+                
                 <div class="slider-price-range">
                     <div class="range-item">
                         <span> Từ </span>
@@ -44,14 +47,14 @@
                         </label>
                     </span>
                      <span>
-                        <label for="filter-Brauer">
+                        <label for="filter-Colgate">
                         <input type="checkbox" id="filter-Colgate" > 
                         <i class="fa"></i>
                         Colgate
                         </label>
                     </span>
                      <span>
-                        <label for="filter-Brauer">
+                        <label for="filter-Mega">
                         <input type="checkbox" id="filter-Mega" > 
                         <i class="fa"></i>
                         Mega
