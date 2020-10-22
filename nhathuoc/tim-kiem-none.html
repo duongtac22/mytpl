@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div id="app">
+        <myheader></myheader>
+        <section class="main-content">
+            <div class="container">
+                 <!-- breadcrumb -->
+                <ul class="breadcrumb justify-content-flex-start mb-0">
+                    <li class="home">
+                       <a href="/"><span>Trang chủ</span></a>						
+                       <span class="mr_lr"> <img src="images/breadcrum-arrow.png" alt=""> </span>
+                    </li>
+                    <li><span> Tìm kiếm </span></li>
+                 </ul>
+                 <!-- product detail content --> 
+
+                 <div class="search-page bg-white">
+                     <div class="row">
+                        <div class="col-12">
+                            <div class="search-none-wrap text-center">
+                                <img src="images/search-none.png" alt="Không có kết quả">
+                                <div class="alert-text">
+                                    Rất tiếc! Chúng tôi không thể tìm kiếm kết quả cho từ khóa 
+                                    <span class="search-key d-block text-center">“Thuốc ho cho bé 3 tuổi” </span>
+                                </div>
+
+                                <span class="noti">
+                                    Hãy chắc chắn rằng anh/chị đang tìm kiếm đúng sản phẩm, xin vui lòng thử lại 
+                                </span>
+                            </div>
+                          
+                        </div>
+                     </div>
+
+                 </div>
+            </div>
+        </section>
+        <myfooter></myfooter>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/magiczoom/magiczoom.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+    <!-- js plugin khoang gia -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- end -->
+    <script src="js/main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: [],
+                loading: false,
+                fakes: 12
+            },
+            components: {
+                myheader: httpVueLoader("vue_components/header.vue"),
+                myfooter: httpVueLoader("vue_components/footer.vue"),
+                productitem: httpVueLoader("vue_components/product-item.vue")
+            },
+            mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              // RunFn.mmenu();
+              
+              // toggle sort
+              $('#sortby').click(function() {
+
+                $(this).parent().find('.sortby-value').toggle();
+
+              })
+            });
+          });
+        },
+        });
+    </script>
+</body>
+
+</html>

@@ -29,3 +29,20 @@
         }
     }
 }
+
+@media ( max-width: 768px ) {
+    .block-deal {
+        padding: 15px;
+        .title {
+            font-size: 18px;
+        }
+        .count-down span{
+            padding: 10px;
+            margin: 0 10px;
+            font-size: 16px;
+            &:not(:last-child):before{
+                right: -13px;
+            }
+        }
+    }
+}

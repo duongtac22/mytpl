@@ -54,6 +54,22 @@
     }
 }
 
-
+@media ( max-width: 768px ) {
+    .block-home{
+        padding: 15px;
+        .block-home-title {
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 20px;
+        }
+    }
+    .block-category{
+        .category-item {
+            @include col-w(49%);
+            margin-bottom: 2%;
+        }
+    }
+}
 
 

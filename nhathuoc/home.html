@@ -13,6 +13,8 @@
   <body>
     <div id="app">
       <myheader></myheader>
+      <headermobile></headermobile>
+      <div class="ovelay" style="display: none;"></div>
       <homeslider></homeslider>
 
       <section class="main-content">
@@ -275,6 +277,7 @@
         el: "#app",
         components: {
           myheader: httpVueLoader("vue_components/header.vue"),
+          headermobile: httpVueLoader("vue_components/header-mobile.vue"),
           myfooter: httpVueLoader("vue_components/footer.vue"),
           homeslider: httpVueLoader("vue_components/home-slider.vue"),
           dealproduct: httpVueLoader("vue_components/product-deal.vue"),

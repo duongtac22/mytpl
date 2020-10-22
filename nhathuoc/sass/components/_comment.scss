@@ -1,0 +1,81 @@
+.block-comment-wrapper {
+    .comment-form {
+        
+        margin-top: 27px;
+        border: 1px solid #E0E0E0;
+        border-radius: 3px;
+    }
+    textarea {
+        width: 100%;
+        border: none;
+        padding: 26px;
+        padding-bottom: 0;
+        outline: none;
+    }
+    .comment-actions {
+        padding: 11px;
+        border-top: 1px solid #E0E0E0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input[type='radio']{
+            display : none;
+        }
+    }
+    .select-sex {
+        .form-check label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            &::before {content: '';width: 21px;height: 21px;display: inline-block;background: #EAEAEA;border-radius: 50%;margin-right: 10px;border: 4px solid #EAEAEA;}
+
+        }
+        .form-check input:checked ~ label:before {
+            border-color: #308FE7;
+            background: #fff;
+        }
+    } 
+
+}
+.comment-list {
+    padding-top: 27px;
+    .comment-item {
+        padding: 10px ;
+        .comment-time {
+            font-size: 13px;
+            line-height: 20px;
+            color: #8D8D8D;
+        }
+    }
+}
+
+input#comment-name {
+    border: 1px solid #CFCFCF;
+    box-sizing: border-box;
+    border-radius: 3px;
+    line-height: 38px;
+    height: 38px;
+    min-width: 254px;
+    padding: 0 17px;
+    font-size: 13px;
+    color: #9F9F9F;
+    outline:none;
+}
+
+button.submit-comment {
+    background: #FFC738;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    line-height: 15px;
+    color: #fff;
+    padding: 13px 25px 10px 29px;
+    border: 1px solid transparent ;
+    cursor: pointer;
+    &:hover {
+        color : #FFC738;
+        background: #fff ;
+        border-color : #FFC738;
+    }
+}

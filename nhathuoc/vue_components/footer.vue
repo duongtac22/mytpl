@@ -82,7 +82,7 @@
                     <div class="col-12 col-md-3 col-lg-4">
                         <div class="footer-item">
                             <h4 class="title">
-                                <a role="button" class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#collapseListnav01" aria-controls="collapseListnav01"> Danh mục <i class="fas fa-plus"></i> </a>
+                                <a role="button" class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#collapseListnav01" aria-controls="collapseListnav01"> Danh mục <i class="fas fa-plus"></i> </a>
                             </h4>
                             <div class="collapse" id="collapseListnav01">
                                 <ul class="footer-list-link">

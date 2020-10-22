@@ -12,6 +12,7 @@
 <body>
     <div id="app">
         <myheader></myheader>
+        <div class="ovelay" style="display: none;"></div>
         <main style="height: 5000px;">
 
         </main>
@@ -20,6 +21,8 @@
     <script src="js/vue.js"></script>
     <script src="js/httpVueLoader.js"></script>
     <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script>
         var app = new Vue({
@@ -30,12 +33,9 @@
             },
             mounted() {
                 this.$nextTick(() => {
-                    $(window).bind("load", function () {
-                        RunFn.runnCarousel();
-                        RunFn.menuscroll();
-                        RunFn.backTop();
-                        RunFn.mmenu();
-                    });
+                    $(window).bind('load', function(){
+                        RunFn.hoverMenu();
+                    })
                 });
             },
         });

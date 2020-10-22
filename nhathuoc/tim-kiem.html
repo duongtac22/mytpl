@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css plugin khoang gia -->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <!-- end -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div id="app">
+        <myheader></myheader>
+        <section class="main-content">
+            <div class="container">
+                 <!-- breadcrumb -->
+                <ul class="breadcrumb justify-content-flex-start mb-0">
+                    <li class="home">
+                       <a href="/"><span>Trang chủ</span></a>						
+                       <span class="mr_lr"> <img src="images/breadcrum-arrow.png" alt=""> </span>
+                    </li>
+                    <li><span> Tìm kiếm </span></li>
+                 </ul>
+                 <!-- product list content --> 
+
+                 <div class="row">
+
+                     <div class="col-12 search-page">
+                         
+                         <div class="product-list-right-wrapper bg-white">
+                        <div class="box-title">
+                            <div class="box-title-left">
+                                <h1> Tìm thấy 43 kết quả cho từ khóa <b>“Thuốc hạ sốt” </b> </h1>
+                                
+                            </div>
+
+                            <div class="box-title-right">
+                                <div class="align-items-center d-flex sort-by">
+                                    <label class="left hidden-xs">Sắp xếp </label>
+                                    <div class="border_sort">
+                                        <div class="select">
+
+                                            <div id="sortby" class="current-sort">
+                                                Mới nhất 
+                                            </div>
+
+                                            <div class="sortby-value" style="display:none">
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Mới nhất
+                                                </a>
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Đang khuyến mãi
+                                                </a>
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Giá giảm dần
+                                                </a>
+                                                <a href="javascript:;" class="js-changesort sortby-item">
+                                                    Giá tăng dần
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <div class="list-product row">
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6 col-xl-3">
+                            <productitem></productitem>
+                            </div>
+                        </div>
+
+                        <div class="viewmore d-block text-center">
+                            <a href="javascript:;" class="btn">
+                                Xem thêm
+                            </a>
+                        </div>
+                        
+                         </div>
+                       
+                     </div>
+                 </div>
+            </div>
+        </section>
+        <myfooter></myfooter>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/magiczoom/magiczoom.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: [],
+                loading: false,
+                fakes: 12
+            },
+            components: {
+                myheader: httpVueLoader("vue_components/header.vue"),
+                myfooter: httpVueLoader("vue_components/footer.vue"),
+                productitem: httpVueLoader("vue_components/product-item.vue")
+            },
+            mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              // RunFn.mmenu();
+              
+              // toggle sort
+              $('#sortby').click(function() {
+
+                $(this).parent().find('.sortby-value').toggle();
+
+              })
+            });
+          });
+        },
+        });
+    </script>
+</body>
+
+</html>

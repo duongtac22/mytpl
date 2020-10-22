@@ -1,5 +1,6 @@
 .p-wrapper{
     margin-bottom: 25px;
+    margin-right: 1px;
     &:hover .p-container {
         box-shadow: 0px 4px 25px rgba(128, 134, 164, 0.3);
     }
@@ -145,33 +146,36 @@
     }
     .icon-star {
         margin-top: 7px;
-        background-image: url(../images/product/star-prite.png);
-        width: 87px;
-        height: 19px;
-        vertical-align: sub;
-        display: inline-block;
-        background-repeat: no-repeat
-    }
-    
-    
-    .icon-star.star1 {
-    background-position : 0 0;
-    
-    }
-    
-    .icon-star.star2 {
-        background-position: 0 -19px;
-    }
-    
-    .icon-star.star3 {
-        background-position: 0 -38px
-    }
-    
-    .icon-star.star4 {
-        background-position: 0 -57px
-    }
-    
-    .icon-star.star5 {
-        background-position: 0 -76px
     }
 }
+
+.icon-star {
+    background-image: url(../images/product/star-prite.png);
+    width: 87px;
+    height: 19px;
+    vertical-align: sub;
+    display: inline-block;
+    background-repeat: no-repeat;
+    &.star1 {
+        background-position : 0 0;
+        
+    }
+    
+    &.star2 {
+        background-position: 0 -19px;
+    }
+
+    &.star3 {
+        background-position: 0 -38px
+    }
+
+    &.star4 {
+        background-position: 0 -57px
+    }
+
+    &.star5 {
+        background-position: 0 -78px
+    }
+}
+
+

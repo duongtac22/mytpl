@@ -126,6 +126,7 @@ footer{
             font-size: 15px;
             line-height: 24px;
             text-transform: uppercase;
+            pointer-events: none;
             i {
                 display:none;
             }
@@ -180,7 +181,7 @@ footer{
 }
 
 
-@media ( max-width: 767px ) {
+@media ( max-width: 768px ) {
     .footer-item {
         padding-bottom: 0 ;
         .title {
@@ -192,6 +193,7 @@ footer{
                 display: block;
                 cursor: pointer;
                 padding: 15px 20px 15px 0px;
+                pointer-events: unset;
                 i {
                     display: block;
                     position: absolute;

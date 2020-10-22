@@ -1,14 +1,19 @@
 .article-container {
-    
-    border: 1px solid #EAEAEA;
-    border-radius: 5px 5px 0px 0px ;
     margin-bottom: 25px;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #EAEAEA;
+    border-radius: 5px 5px 0px 0px;
+    background-color : #fff ;
     .article-img {
-        display: inline-block;
-        width: 100%;
+        float: left;
+        width: calc(100% + 2px);
         padding-top: 70%;
         overflow: hidden;
         position: relative;
+        margin-top: -1px;
+        margin-left: -1px;
+        border-radius: 5px 5px 0px 0px;
         img {
             position: absolute;
             width: 100%;
@@ -22,7 +27,8 @@
         }
     }
     .article-info {
-        padding : 18px 22px;
+        float: left;
+        padding: 18px 22px;
         .time { margin-bottom : 9px;}
         .article-name {
             font-size: 20px;
@@ -43,6 +49,38 @@
         }
         .article-link {
             margin: 10px 0 ;
+        }
+    }
+    &.tuyendung-item {
+        .article-info  {
+            .article-name  {
+                height: auto;
+                margin-bottom: 26px;
+            }
+        }
+    }
+}
+.viewmore-style2 {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 48px;
+    color: #575757;
+    border-radius: 3px;
+    background: #FFFFFF;
+    border: 1px solid #CFCFCF;
+    display: inline-block;
+    padding: 2px 35px;
+    &:hover {
+        color: #fff;
+        border-color: #0DA0F3;
+        background: #0DA0F3;
+    }
+}
+@media ( max-width: 768px ) {
+    .article-container {
+        margin-bottom: 10px;
+        .article-info {
+            border: none;
         }
     }
 }

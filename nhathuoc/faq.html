@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css plugin khoang gia -->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <!-- end -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<!-- class dung rieng cho page -->
+<body>
+    <div id="app">
+        <myheader></myheader>
+        <section class="main-content">
+            <!-- faq page -->
+
+            <div class="faq-page">
+                <a href="">
+                    <img src="images/faq-banner.png" alt="" class="img-fluid">
+                </a>
+
+                <div class="faq-wrap">
+                    <h1 class="title">
+                        Câu hỏi thường gặp
+                    </h1>
+
+                    <div class="faq-list-item" id="accordion">
+                        <div class="faq-item">
+                            <div class="faq-item-name" id="faq1">
+                                <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Tôi có thể tìm nhà thuốc Mỹ Nhung ở đâu?
+                                </button>
+                                </h5>
+                            </div>
+                        
+                            <div id="collapseOne" class="collapse hide" aria-labelledby="faq1" data-parent="#accordion">
+                                <div class="faq-item-content">
+                                    Bạn hoàn toàn có thể tìm Hiệu Thuốc Mỹ Nhung ở Số 48 Mạc Thị Bưởi, phường Vị Hoàng, tp. Nam Định trên website chúng tôi đã có mục liên hệ bao gồm số điện thoại và địa chỉ
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-item-name" id="faq2">
+                                <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne">
+                                    Nhà Thuốc Mỹ Nhung có hỗ trợ giao hàng và đổi trả hàng trên toàn quốc hay không?
+                                </button>
+                                </h5>
+                            </div>
+                        
+                            <div id="collapse2" class="collapse hide " aria-labelledby="faq2" data-parent="#accordion">
+                                <div class="faq-item-content ">
+                                    Bạn hoàn toàn có thể tìm Hiệu Thuốc Mỹ Nhung ở Số 48 Mạc Thị Bưởi, phường Vị Hoàng, tp. Nam Định trên website chúng tôi đã có mục liên hệ bao gồm số điện thoại và địa chỉ
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-item-name" id="faq3">
+                                <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne">
+                                    Nhà Thuốc Mỹ Nhung có hỗ trợ giao hàng và đổi trả hàng trên toàn quốc hay không?
+                                </button>
+                                </h5>
+                            </div>
+                        
+                            <div id="collapse3" class="collapse hide " aria-labelledby="faq3" data-parent="#accordion">
+                                <div class="faq-item-content ">
+                                    Nhà Thuốc Mỹ Nhung có hỗ trợ giao hàng và đổi trả hàng trên toàn quốc hay không?
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-item-name" id="faq4">
+                                <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapseOne">
+                                    Nhà Thuốc Mỹ Nhung có hỗ trợ giao hàng và đổi trả hàng trên toàn quốc hay không?
+                                </button>
+                                </h5>
+                            </div>
+                        
+                            <div id="collapse4" class="collapse hide " aria-labelledby="faq4" data-parent="#accordion">
+                                <div class="faq-item-content ">
+                                    Nhà Thuốc Mỹ Nhung có hỗ trợ giao hàng và đổi trả hàng trên toàn quốc hay không?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <myfooter></myfooter>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: [],
+                loading: false,
+                fakes: 12
+            },
+            components: {
+                myheader: httpVueLoader("vue_components/header.vue"),
+                myfooter: httpVueLoader("vue_components/footer.vue"),
+                tuyendungitem: httpVueLoader("vue_components/tuyendung-item.vue"),
+            },
+        });
+    </script>
+</body>
+
+</html>

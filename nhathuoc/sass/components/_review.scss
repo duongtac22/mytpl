@@ -1,0 +1,115 @@
+.block-review-wrapper {
+    .block-review-main {
+        position: relative;
+        &:after {content: '';width: 1px;height: 100%;position: absolute;top: 0;right: -15px;background: rgb(224, 224, 224);}
+    }
+    
+    
+    .block-review-total {
+        @include col-w(200px);
+        padding: 10px 0 ;
+        border-right: 1px solid rgb(224, 224, 224);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .block-review {
+        padding: 31px 0;
+        .review-avg {
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 42px;
+            margin-bottom: 10px;
+        }
+        .review-rating-total {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            color: #9C9C9C;
+            margin-top: 13px;
+        }
+    }
+    .block-review-right {
+        padding: 0px 24px;
+        .block_percent_rate {
+            width: 237px;
+            margin: 0 10px;
+            position: relative;
+            display: inline-block;
+            font-size: 0;
+            line-height: 0;
+            vertical-align: middle;
+            background: #E2E2E2;
+            height: 4px;
+            border-radius: 15px;
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 4px;
+                background: #869ADE;
+                font-size: 0;
+                line-height: 0;
+                display: inline-block;
+            }
+        }
+    }
+
+    .review-item {
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        
+        &:last-child {
+            border:none;
+        }
+
+        .review-name {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 17px;
+            .specialtext {
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 17px;
+                color: #1BA84B;
+            }
+        }
+        .review-time {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 17px;
+            color: #777777;
+        }
+        .review-content {
+            display: block;
+            padding: 17px 0;
+        }
+        .reply-review {
+            padding: 18px;
+            background: #F3F3F3;
+            border-radius: 3px;
+            .reply-name {
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 16px;
+                color: #249953;
+            }
+            .reply-content {
+                margin-bottom: 5px;
+            }
+        }
+    }
+    .paging .page-item {
+        width: 37px;
+        height: 37px;
+        line-height: 37px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 1564px) {
+    .block-review-wrapper .block-review-main:after {
+        display: none;
+    }
+}

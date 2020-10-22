@@ -236,12 +236,145 @@ var RunFn = (function () {
   function mmenu(mmenuItems) {
     $(mmenuItems).mmenu();
   }
+  function hoverMenu() {
+    $(".menu-cat").hover(
+      function () {
+        $('.ovelay').show();
+      }, function () {
+        $('.ovelay').hide();
+      }
+    );
+  }
+  function dropSearch() {
+    $('.drop-cat-search').click(function () {
+      $('.list-cat-search').toggleClass('active');
+    });
+    $(document).mouseup(function (e) {
+      var container = $(".drop-search");
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+        $('.list-cat-search').removeClass('active');
+      }
+    });
+  }
+  function menuSticky() {
+    // grab the initial top offset of the navigation 
+    var stickyNavTop = 400;
 
+    // our function that decides weather the navigation bar should have "fixed" css position or not.
+    var stickyNav = function () {
+      var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+      // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+      // otherwise change it back to relative
+      if (scrollTop > stickyNavTop) {
+        $('.header').addClass('sticky');
+        $('.menu-fixed').addClass('show-menu-sticky');
+        $('.js-menu-fixed').removeClass('active');
+      } else {
+        $('.header').removeClass('sticky');
+        $('.menu-fixed').removeClass('show-menu-sticky');
+      }
+    };
+
+    stickyNav();
+    // and run it again every time you scroll
+    $(window).scroll(function () {
+      stickyNav();
+    });
+  }
+
+  function showFixed(){
+    $('.btn-cat-fixed').click( function(e){
+      $('.js-menu-fixed').toggleClass('active');
+      e.preventDefault()
+    });
+
+    $(document).mouseup(function (e) {
+      var container = $(".show-menu-sticky");
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+        $('.show-menu-sticky .js-menu-fixed').removeClass('active');
+      }
+    });
+  }
+  function changeImgProduct(){
+    $('#product-slider-img img').click(function (e) {
+      e.preventDefault();
+      var ths = $(this).attr('data-img');
+      $('.large-image .checkurl').attr('src', ths);
+      var thumbLargeimg = $('.product-detail-left .large-image img').attr('src');
+      console.log(thumbLargeimg);
+      $('#product-slider-img .owl-item .item').each(function () {
+        var srcimage = $(this).find('a img').attr('data-img');
+        if (srcimage == thumbLargeimg) {
+          $(this).find('a').addClass('active');
+        } else {
+          $(this).find('a').removeClass('active');
+        }
+      });
+    })
+  }
+  function changeConfig(holder){
+    $(holder).on('click', function() {
+      $(holder).removeClass('active');
+      $(this).addClass('active');
+    })
+  }
+  function boxSearch(click){
+    $(click).click(function(){
+      $(this).parent().toggleClass('active');
+
+    })
+  }
+  function chooseBank(holder){
+    $(holder).click(function() {
+
+      $(this).parent().find('a').removeClass('active');
+      $(this).addClass('active');
+    })
+  }
+  function menuMobile(){
+    $('.btn-toggle-menu').click(function(){
+      $('.main-menu').stop().toggle(100);
+      $('.ovelay').stop().toggle();
+      $('.search-main').stop().hide();
+    });
+    $('.has-sub').click(function(e){
+      $(this).children('.sub-menu').stop().toggle(100);
+      $(this).toggleClass('active');
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    });
+  }
+  function showSeachM(){
+    $('.btn-seach-mobile').click(function (){
+      $('.search-main').stop().toggle();
+      $('.main-menu').stop().hide();
+    });
+  }
   return {
     runnCarousel: runnCarousel,
     syncOwl: syncOwl,
     menuscroll: menuscroll,
     backTop: backTop,
     mmenu: mmenu,
+    hoverMenu: hoverMenu,
+    dropSearch: dropSearch,
+    menuSticky: menuSticky,
+    showFixed: showFixed,
+    changeImgProduct : changeImgProduct ,
+    changeConfig : changeConfig ,
+    boxSearch : boxSearch,
+    chooseBank : chooseBank,
+    menuMobile: menuMobile,
+    showSeachM: showSeachM,  
   };
 })();
+
+$(window).bind('load', function () {
+  RunFn.dropSearch();
+  RunFn.menuSticky();
+  RunFn.showFixed();
+  RunFn.hoverMenu();
+  RunFn.menuMobile();
+  RunFn.showSeachM();
+})
