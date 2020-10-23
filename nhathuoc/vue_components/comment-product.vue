@@ -7,7 +7,7 @@
 
                 <div class="select-sex">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="male">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="male" value="male" checked>
                         <label class="form-check-label" for="male">Anh</label>
                     </div>
                     <div class="form-check form-check-inline">

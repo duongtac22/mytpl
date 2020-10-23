@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<!-- class dung rieng cho page -->
+<body>
+    <div id="app">
+        <myheader></myheader>
+        <section class="main-content">
+            <!-- lien he page -->
+
+            <div class="contact-us-page">
+                <a href="">
+                    <img src="images/lien-he.png" alt="" class="img-fluid">
+                </a>
+
+                <div class="contact-us-wrap">
+                    <div class="contact-us-content">
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-xl-6 col-lg-6 col-12">
+                                    <div class="contact-us-left">
+                                        <div class="company-content">
+                                            <h2 class="company-name">Nhà thuốc Mỹ Nhung</h2>
+                                            <div class="company-info">
+                                                <div class="company-item company-addr">
+                                                    <img src="images/lien-he-map.png" alt="" class="img-fluid">
+                                                    <span>
+                                                        Số 48 Mạc Thị Bưởi - P. Vị Hoàng - Tp. Nam Định
+                                                    </span>
+                                                </div>
+                                                <div class="company-item company-addr">
+                                                    <img src="images/lien-he-phone.png" alt="" class="img-fluid">
+                                                    <div class="multi-company-item">
+                                                        <span>Hotline tư vấn miễn phí</span> 
+                                                        <a href="javascript:;">(0350) 36.31.668</a>
+                                                    </div>
+                                                    <div class="multi-company-item">
+                                                        <span>Đường dây nóng</span> 
+                                                        <a href="javascript:;">039 599 6699</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="company-item company-addr">
+                                                    <img src="images/lien-he-mail.png" alt="" class="img-fluid">
+                                                    <div class="multi-company-item">
+                                                        <span>Email liên hệ</span> 
+                                                        <a href="javascript:;">cskhmynhung@gmail.com</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="contact-form">
+                                            <h2 class="title"> Gửi tin nhắn tới chúng tôi</h2>
+                                            <form class="" action="" method="" onsubmit="return false;">
+
+                                                <input type="text" class="contact-input" id="contact-name" placeholder="Họ tên">
+                                                <input type="text" class="contact-input" id="contact-email" placeholder="Địa chỉ Email">
+                                                <input type="text" class="contact-input" id="contact-tel" placeholder="Số điện thoại">
+                                                <textarea rows="5" id="contact-content" placeholder="Để lại tin nhắn"></textarea>
+                                                <button class="submit-contact">
+                                                    Gửi thông tin
+                                                </button>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-12">
+                                    <div class="contact-us-right">
+                                        <a href="">
+                                            <img src="images/lien-he-banner.png" alt="" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </section>
+        <myfooter></myfooter>
+    </div>
+
+  
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: [],
+                loading: false,
+                fakes: 12
+            },
+            components: {
+                myheader: httpVueLoader("vue_components/header.vue"),
+                myfooter: httpVueLoader("vue_components/footer.vue"),
+            },
+        });
+    </script>
+</body>
+
+</html>

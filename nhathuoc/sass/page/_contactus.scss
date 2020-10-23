@@ -1,0 +1,162 @@
+.contact-us-page {
+    .contact-us-content {
+        padding: 55px 0 25px 0 ;
+    }
+    .contact-us-left {
+        max-width: 482px;
+        float: right;
+    }
+    .company-name {
+        font-size: 30px;
+        line-height: 24px;
+        margin-bottom: 26px;
+    }
+    .company-info {
+        .company-item {
+            display: flex;
+            align-items: center;
+            img {
+                margin-right: 13px;
+            }
+            &.company-addr {
+                font-size: 16px;
+                line-height: 26px;
+                & > span {
+                    padding : 0 10px;
+                }
+            }
+            .multi-company-item {
+                &:not(:last-child){
+                    border-right: 1px solid rgba(0, 0, 0, 0.1);
+                    padding: 0 10px;
+                }
+                padding-left: 10px;
+                & > span {
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 20px;
+                    display: block;
+                    color: #747474;
+                }
+                & > a {
+                    font-weight: normal;
+                    font-size: 20px;
+                    line-height: 24px;
+                    white-space: nowrap;
+                }
+            }
+            &:nth-child(1){
+                padding-bottom: 14px;
+            }
+            &:nth-child(2){
+                padding-bottom: 23px;
+            }
+        }
+    }
+
+    .contact-form {
+        padding-top: 37px;
+        
+        .title {
+            font-size: 26px;
+            line-height: 24px;
+            margin-bottom: 32px;
+        }
+        form {
+            max-width: 482px;
+        }
+        input{
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #DBDBDB;
+            border-radius: 3px;
+            line-height: 59px;
+            height: 59px;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            line-height: 24px;
+            color: #969696;
+            padding: 0 25px;
+            margin-bottom: 26px;
+        }
+        textarea {
+            color: #969696;
+            width: 100%;
+            
+            background-color: #fff;
+            border: 1px solid #DBDBDB;
+            border-radius: 3px;
+            margin-bottom: 26px;
+            padding: 20px 25px;
+            outline: none;
+            border : none;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    .submit-contact {
+        background: #FCBB14;
+        border-radius: 3px;
+        outline: none;
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        padding: 18px 40px 15px 43px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        float: right;
+        &:hover {
+            color: #fcbb14;
+            background: #fff;
+            border-color: #fcbb14;
+        }
+    }
+}
+
+@media ( max-width: 992px ) {
+    .contact-us-page .contact-us-left {
+        max-width: 100%;
+        float: none;
+    }
+}
+
+@media ( max-width : 480px ) {
+    .contact-us-page .contact-us-content {
+        padding: 20px 0;
+    }
+    .contact-us-page .company-name {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .contact-us-page .company-info .company-item.company-addr {
+        font-size: 14px;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+        & > span { padding: 0 0 10px 0; }
+        .multi-company-item {
+            @include col-w(100%);
+            border: none;
+            margin-top: 5px;
+            padding: 0;
+        }
+    }
+    .contact-us-page .company-info .company-item .multi-company-item > a {
+        white-space: normal;
+        font-size: 14px;
+    }
+    .contact-us-page .contact-form input {
+        line-height: 32px;
+        height: 32px;
+        font-size: 14px;
+        padding: 0 10px;
+        margin-bottom: 15px;
+    }
+    .contact-us-page .contact-form .title {         
+        font-size: 24px;
+        margin-bottom: 15px; }
+    .contact-us-page .submit-contact {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}

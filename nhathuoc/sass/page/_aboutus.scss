@@ -1,0 +1,106 @@
+.about-us-wrap {
+    display: block;
+    max-width: 1403px;
+    background-color : #fff ;
+    margin:0 auto;
+    margin-top: -51px;
+    position: relative;
+    .about-us-content {
+        padding: 100px 90px 50px 90px;
+        .about-us-text {
+            max-width: 432px;
+            padding-bottom: 83px;
+            h1 {
+                font-size: 20px;
+                line-height: 24px;
+                margin-bottom: 13px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 24px;
+                &.bigtext {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+    .promise {
+        max-width: 868px;
+        margin: 0 auto;
+        text-align: center;
+        .title {
+            font-size: 24px;
+            line-height: 24px;
+            text-align: center;
+            margin-bottom: 44px;
+        }
+        .promise-result{
+            font-size: 16px;
+            line-height: 22px;
+            padding-top: 38px;
+            max-width: 653px;
+            margin: 0 auto;
+        }
+        .promise-list {
+            display: flex;
+            flex-wrap : wrap ;
+            justify-content: space-between;
+            .promise-item{
+                @include col-w(262px);
+                background: #F5F5F5;
+                border-radius: 5px;
+                padding: 24px ;
+                text-align: center;
+                .promise-text {
+                    display: block;
+                    margin-top: 32px;
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    .about-us-wrap .about-us-content  {
+        padding: 50px ;
+        .about-us-text {
+            max-width: 100%;
+            padding-bottom: 25px;
+        }
+        .about-us-img {
+            padding-bottom: 25px;
+        }
+    }
+    .about-us-wrap .promise  {
+        .title {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .promise-list {
+            overflow-y: hidden;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            justify-content: unset;
+            flex-wrap: unset;
+            .promise-item {
+                width: 262px;
+                -ms-flex-negative: 0;
+                flex-shrink: 0;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    .about-us-wrap .about-us-content  {
+        padding: 25px 15px ;
+      
+    }
+}

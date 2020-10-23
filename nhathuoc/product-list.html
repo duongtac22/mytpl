@@ -168,21 +168,24 @@
               // option khoang gia
               var options = {
                   range: true,
-                  min: 0,
-                  max: 5000000,
-                  values: [0, 5000000],
+                  min: 0, 
+                  max: 500000,
+                  values: [0, 500000],
                   step: 5,
-                  slide: function(event, ui) {
-                      var min = 0,
-                          max = 5000000;
-                  },
                   stop: function(event,ui) {
                       var min = ui.values[0],
                           max = ui.values[1];
+
+                        //set value min
+                        $("#minPrice").val(RunFn.formatCurrency(min)) ;
+                        //set value max
+                        $("#maxPrice").val(RunFn.formatCurrency(max)) ;
                   }
               }, min, max;
 
               $("#slider-range").slider(options);
+              
+
             });
           });
         },
