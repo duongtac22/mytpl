@@ -99,6 +99,12 @@
                     width: 100%;
                     display: inline-block;
                     border-right: 1px solid #dedede;
+                    display: -webkit-box;
+                    max-width: 100%;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     img {
                         width: 9px;
                         object-fit: scale-down;
