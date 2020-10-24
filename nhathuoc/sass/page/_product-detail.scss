@@ -334,3 +334,12 @@
         @include col-w(100%);
     }
 }
+
+@media ( max-width: 768px ) {
+    .p-detail-right .p-detail-info .p-has-deal{
+        padding: 10px 0 ;
+        .count-down {
+            @include col-w(100%);
+        }
+    }
+}
