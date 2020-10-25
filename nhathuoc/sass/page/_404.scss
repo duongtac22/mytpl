@@ -1,0 +1,38 @@
+.error-page {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(50% 50% at 50% 50%, #9BE2EE 0%, #75C2D0 100%);
+    
+    .error-page-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        width: 80%;
+        .bigText {
+            font-size: 36px;
+            line-height: 42px;
+            text-align: center;
+            color: #155C69;
+        }
+        .smallText {
+            font-size: 20px;
+            line-height: 36px;
+            text-align: center;
+            color: #1E6468;
+        }
+    }
+}
+@media ( max-width: 768px ) {
+    .error-page {
+        .error-page-content {
+            .bigText {
+                font-size: 20px;
+            }
+            .smallText {
+                font-size: 16px;
+            }
+        }
+    }
+}

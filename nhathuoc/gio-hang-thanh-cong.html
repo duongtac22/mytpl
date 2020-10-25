@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div id="app">
+        <myheader></myheader>
+        <section class="main-content">
+            <div class="container">
+                 <!-- breadcrumb -->
+                <ul class="breadcrumb justify-content-flex-start mb-0">
+                    <li class="home">
+                       <a href="/"><span>Trang chủ</span></a>						
+                       <span class="mr_lr"> <img src="images/breadcrum-arrow.png" alt=""> </span>
+                    </li>
+                    <li><span> Giỏ hàng </span></li>
+                 </ul>
+                 <!-- cart page content --> 
+
+                 <div class="cart-page bg-white">
+                   
+                    <div class="cart-page-success text-center">
+                        <div class="cart-success-top">
+                            <i class="fas fa-check-circle"></i>
+                            <h2 class="title">
+                                Đặt hàng thành công!
+                            </h2>
+                            <span class="order-id">
+                                Mã đơn hàng: <b>GXZMP1234</b> 
+                            </span>
+                        </div>
+
+                        <div class="cart-success-content">
+                            <div class="sub_tbl">
+                                <div class="tbl_title">
+                                  <span> MÃ SẢN PHẨM </span>
+                                  <span> TÊN SẢN PHẨM </span>
+                                  <span> SỐ LƯỢNG </span>
+                                  <span> THÀNH TIỀN</span>
+                                </div>
+                                <div class="tbl_row">
+                                  <span data-title="MÃ SẢN PHẨM"> <a href=""> #MGZ12356 </a> </span>
+                                  <span data-title="TÊN SẢN PHẨM"> CoversyI Plus</span>
+                                  <span data-title="SỐ LƯỢNG" > x1 </span>
+                                  <span data-title="THÀNH TIỀN" class="price"> 59,000đ </span>
+                                </div>
+                                <div class="tbl_row">
+                                  <span data-title="MÃ SẢN PHẨM"> <a href=""> #MGZ12353 </a> </span>
+                                  <span data-title="TÊN SẢN PHẨM"> LipanthyI Caps 300mg </span>
+                                  <span data-title="SỐ LƯỢNG" class="wait"> x2 </span>
+                                  <span data-title="THÀNH TIỀN" class="price"> 199,000đ </span>
+                                </div>
+                                <div class="tbl_row">
+                                  <span data-title="MÃ SẢN PHẨM"> <a href=""> #MGZ12351 </a> </span>
+                                  <span data-title="TÊN SẢN PHẨM"> Tanatril tab 5mg </span>
+                                  <span data-title="SỐ LƯỢNG" class="success"> x1 </span>
+                                  <span data-title="THÀNH TIỀN" class="price"> 359,000đ</span>
+                                </div>
+
+                                <div class="tbl_row total_row">
+                                    <span class="title-total"> Tổng tiền </span>
+                                    <span class="total-price">  1,052,000đ </span>
+                                </div>
+                              </div>
+                        </div>
+
+
+
+                        <div class="cart-success-bottom">
+                            <div class="static-text text-left">
+                                <p>Mỹ nhung xin cảm ơn quý khách Nguyễn Tuấn Dũng đã sử dụng dịch vụ của chúng tôi.</p>
+                                <p>Đơn hàng của quý khách đã được tiếp nhận và đang trong quá trình xử lý.</p>
+                                <p>Mỹ nhung sẽ liên hệ với quý khách trong thời gian sớm nhất.</p>
+                            </div>
+
+                            <div class="actions">
+                                <a href="" class="addmore btn"> Mua thêm </a>
+                                <a href="" class="backhome btn"> Về trang chủ </a>
+                            </div>
+
+                            <div class="cart-hotline text-center">
+                                <p> Mọi thắc mắc xin vui lòng liên hệ số hotline bên dưới để được tư vấn và giải đáp </p>
+
+                                <a href="" class="d-inline-block">
+                                    <img src="images/phone-cart.png" alt="" class="img-fluid">
+                                    <p>
+                                        <span>Hotline</span>
+                                         <b>039 599 6699 </b>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <myfooter></myfooter>
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+    <script src="libs/magiczoom/magiczoom.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+    <!-- js plugin khoang gia -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- end -->
+    <script src="js/main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: [],
+                loading: false,
+                fakes: 12
+            },
+            components: {
+                myheader: httpVueLoader("vue_components/header.vue"),
+                myfooter: httpVueLoader("vue_components/footer.vue")
+            },
+        });
+    </script>
+</body>
+
+</html>

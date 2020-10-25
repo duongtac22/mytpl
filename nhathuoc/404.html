@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<!-- class dung rieng cho page -->
+<body>
+    <div id="app">
+        <section class="main-content">
+            <!-- 404 page -->
+            <div class="error-page">
+                <div class="error-page-content">
+
+                    <a href="">
+                        <img src="images/404.png" alt="" class="img-fluid">
+                    </a>
+
+                    <div class="error-text">
+                        <span class="bigText d-block">Website hiện đang bảo trì</span>
+                        <span class="smallText">Quý khách vui lòng quay lại sau ít phút</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+
+    <!-- script fb like -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v8.0&appId=309690550467911&autoLogAppEvents=1" nonce="XJYPup4V"></script>
+    <!-- end script -->
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                product: [],
+                loading: false,
+                fakes: 12
+            },
+            components: {
+                myheader: httpVueLoader("vue_components/header.vue"),
+                myfooter: httpVueLoader("vue_components/footer.vue"),
+                tuyendungitem: httpVueLoader("vue_components/tuyendung-item.vue"),
+            },
+        });
+    </script>
+</body>
+
+</html>

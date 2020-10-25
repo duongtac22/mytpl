@@ -24,7 +24,191 @@
     }
 }
 
+.cart-page-success {
+    max-width: 979px;
+    margin: 0 auto ;
+    padding-bottom: 40px;
+    .cart-success-top {
+        padding-top: 80px;
+        i {
+            font-size: 77px;
+            color : #1DC843;
+        }
+        .title {
+            font-size: 24px;
+            line-height: 28px;
+            display: block;
+            padding-top: 20px;
+        }
+        .order-id {
+            font-size: 16px;
+            line-height: 19px;
+            color: #7C7C7C;
+            display: block;
+            padding-top: 10px;
+        }
+    }
+    .cart-success-content {
+        display: inline-block;
+        width: 100%;
+        padding-top: 45px;
+        .sub_tbl {
+            display: inline-block;
+            width: 100%;
+            background: #fff;
+            border: 1px solid #DADADA;
+            border-radius: 3px;
+        }
+        .tbl_row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            &.total_row {
+                border-top: 1px solid rgba(0, 0, 0, 0.15);
+            }
+        }
+        .tbl_title {
+            background: #EDFBFF;
+            text-transform: uppercase;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 15px;
 
+            color: #000000;
+        }
+        span {
+            padding: 15px 20px;
+            flex: 1;
+            color: #000000;
+            
+            &.price , &.total-price{
+                font-size: 18px;
+                line-height: 21px;
+                color: #BB1F1F;
+            }
+            &.title-total {
+                flex: 3 ;
+                text-align: right;
+            }
 
+        }
+        a {
+            font-size: 14px;
+            line-height: 16px;
 
+            color: #31A5E7;
+        }
+    }
+
+    .cart-success-bottom {
+        padding-top: 10px;
+        .static-text p {
+            font-size: 14px;
+            line-height: 30px;
+            margin-bottom : 0 ;
+        }
+        .btn {
+            background: #1E9EE7;
+            border-radius: 3px;
+            color : #fff ;
+            font-size: 14px;
+            line-height: 30px;
+            min-width: 176px;
+            &.addmore {
+                margin-right: 10px;
+                &:hover {
+                    background: #196960;
+                }
+            }
+            &.backhome {
+                color : #727272 ;
+                background: #F3F3F3;
+                &:hover {
+                    color : #fff ;
+                    background: #1E9EE7;
+                }
+            }
+        }
+        .cart-hotline {
+            padding-top: 30px;
+            a {
+                background: #FDF8E9;
+                border-radius: 3px;
+                padding: 10px 20px;
+                img {
+                    float: left ;
+                    width: 29px;
+                    margin-top: 8px;
+                }
+                p {
+                    display: block;
+                    width: calc(100% - 45px);
+                    margin-left: 45px;
+                    margin-bottom: 0px;
+                    color: #333;
+                    text-align: left;
+                    span {
+                        display: block;
+                        
+                    }
+                    b {
+                        font-size: 20px;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media( max-width: 1200px ) {
+    .cart-page-success {
+        max-width: 100%;
+        padding: 0 15px;
+        padding-bottom: 20px;
+    }
+}
+
+@media ( max-width : 992px ) {
+    .cart-page-success .cart-success-content {
+        .tbl_title {
+            display: none;
+        }
+        span {
+            @include col-w(100%);
+            &:before {
+                content: attr(data-title) ":";
+                float: left;
+                font-weight: 700;
+            }
+            &.total-price:before , &.title-total:before {
+                display: none; 
+            }
+            &.title-total , &.total-price {
+                flex : 1;
+
+            }
+        }
+        .tbl_row:not(:last-child) {
+            border-bottom: 1px solid #DADADA;
+        }
+    }
+}
+@media ( max-width : 768px ) {
+    .cart-page-success .cart-success-bottom {
+        .btn {
+            &.addmore {
+                margin-right: 0 ;
+                margin-bottom : 10px;
+                width : 100%;
+            }
+            &.backhome {
+                width : 100%;
+            }
+        }
+    }
+}
 
