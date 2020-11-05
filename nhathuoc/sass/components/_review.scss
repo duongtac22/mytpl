@@ -106,10 +106,92 @@
         line-height: 37px;
         margin: 0 5px;
     }
+
+    .review-form {
+        border: 1px solid #E0E0E0;
+        border-radius: 3px;
+        textarea {
+            width: 100%;
+            border: none;
+            padding: 26px;
+            padding-bottom: 0;
+            outline: none;
+        }
+        .review-rate {
+            display: flex;
+            flex-direction: column;
+        }
+        .review-actions {
+            padding: 19px 11px;
+            border-top: 1px solid #E0E0E0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .submit-review {
+                background: #FFC738;
+                border-radius: 3px;
+                border: none;
+                outline: none;
+                font-size: 13px;
+                line-height: 15px;
+                color: #fff;
+                padding: 13px 25px 10px 29px;
+                border: 1px solid transparent;
+                cursor: pointer;
+            }
+        }
+        #review-name {
+            border: 1px solid #CFCFCF;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius: 3px;
+            line-height: 38px;
+            height: 38px;
+            min-width: 306px;
+            padding: 0 17px;
+            font-size: 13px;
+            color: #9F9F9F;
+            outline: none;
+        }
+        .rating-input {
+            float: right;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            margin: 0 0 0 -20px;
+            opacity: 0;
+        }
+        .rating-star{
+            position:relative;
+            float:right;
+            display:block;
+            width:20px;
+            height:20px;
+            background:url('../images/product/star_rating.png')  -2px -25px;;
+            margin: 0 2px 0 0;
+        }
+        .rating-star:hover, .rating-star:hover ~ .rating-star{background-position:-2px -25px;}
+        .rating-star:hover, .rating-star:hover ~ .rating-star, .rating-input:checked ~ .rating-star{background-position:-2px -2px}
+
+    }
 }
 
 @media (max-width: 1564px) {
     .block-review-wrapper .block-review-main:after {
         display: none;
+    }
+}
+
+@media ( max-width : 992px ) {
+    .block-review-wrapper .review-form .review-rate{
+        @include col-w(100%);
+        flex-direction: row;
+        margin-bottom: 10px;
+        .title { margin-right: 5px;}
+    }
+    .block-review-wrapper .review-form #review-name {
+        min-width: 100%;
+        margin-bottom: 10px;
     }
 }

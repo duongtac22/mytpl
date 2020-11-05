@@ -138,6 +138,11 @@
                 background-color: #fff !important;
                 padding-right: 28px;
                 cursor: pointer;
+                #sortby {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
                 .sortby-value {
                     position: absolute;
                     background: #fff;
@@ -188,6 +193,9 @@
         color: #C9C9C9;
         display: block;
         outline: none;
+        &:focus, &:active {
+            color: #333;
+        }
     }
     & > span {
         font-weight: normal;

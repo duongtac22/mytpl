@@ -22,7 +22,7 @@
 
                             <ul class="sub-menu">
                                 <li class="menu-item">
-                                    <a href="#" class="menu-link">
+                                    <a href="/123123" class="menu-link">
                                         DANH SÁCH SẢN PHẨM 1
                                     </a>
                                 </li>

@@ -269,6 +269,7 @@
                     &:hover,
                     &.active {
                         border-bottom: 3px solid #fcbb14;
+                        color: #fcbb14;
                     }
                 }
                 .sub-menu {
@@ -587,16 +588,12 @@
         position: fixed;
         top: 59px;
         left: 0;
-        width: 100vw;
-        height: calc(100vh - 59px);
+        width: 100%;
+        height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         display: none;
         .form-search {
             background-color: #fff;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
         }
         .form-search {
             border-radius: 4px;
@@ -604,9 +601,10 @@
             @extend .d-flex;
             input {
                 border: none;
-                padding: 10px;
-                width: 280px;
+                padding: 8px 10px;
+                width: 100%;
                 outline: none;
+                font-size: 16px !important;
             }
             button {
                 background-color: #fcbb14;

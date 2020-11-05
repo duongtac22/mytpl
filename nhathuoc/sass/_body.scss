@@ -308,6 +308,7 @@ error 404
             border-radius: 3px;
             padding: 9px 20px;
             margin: 0;
+            margin-top: -57px;
             i {
                 font-size: 35px;
                 color: #FCBB14;
@@ -328,12 +329,30 @@ error 404
     }
 }
 
+.view-all {
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    i {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+}
 
 //static-page
 .static-content {
     padding: 40px 0 ;
 }
 
+@media ( max-width: 1564px) {
+    .owl-theme.custom-navs .owl-nav button {
+        padding: 5px 10px;
+    }
+    
+    .owl-theme.custom-navs .owl-nav button i {
+        font-size: 20px;
+    }
+}
 @media ( max-width : 992px ) {
     .owl-theme.custom-navs .owl-nav button {
         padding : 5px 10px;

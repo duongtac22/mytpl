@@ -26,75 +26,183 @@
             </div>
 
             <!-- gio hang content --> 
-            <div class="cart-page-success text-center">
-                <div class="cart-success-top">
-                    <i class="fas fa-check-circle"></i>
-                    <h2 class="title">
-                        Đặt hàng thành công!
-                    </h2>
-                    <span class="order-id">
-                        Mã đơn hàng: <b>GXZMP1234</b> 
-                    </span>
-                </div>
+            <div class="cart-page-wrapper container">
+                <div class="row">
+                    <div class="col-lg-8 col-12">
+                        <div class="bg-white">
+                            <div class="cart-page-content">
+                                <h1 class="title"> Giỏ hàng của bạn </h1>
 
-                <div class="cart-success-content">
-                    <div class="sub_tbl">
-                        <div class="tbl_title">
-                          <span> MÃ SẢN PHẨM </span>
-                          <span> TÊN SẢN PHẨM </span>
-                          <span> SỐ LƯỢNG </span>
-                          <span> THÀNH TIỀN</span>
-                        </div>
-                        <div class="tbl_row">
-                          <span data-title="MÃ SẢN PHẨM"> <a href=""> #MGZ12356 </a> </span>
-                          <span data-title="TÊN SẢN PHẨM"> CoversyI Plus</span>
-                          <span data-title="SỐ LƯỢNG" > x1 </span>
-                          <span data-title="THÀNH TIỀN" class="price"> 59,000đ </span>
-                        </div>
-                        <div class="tbl_row">
-                          <span data-title="MÃ SẢN PHẨM"> <a href=""> #MGZ12353 </a> </span>
-                          <span data-title="TÊN SẢN PHẨM"> LipanthyI Caps 300mg </span>
-                          <span data-title="SỐ LƯỢNG" class="wait"> x2 </span>
-                          <span data-title="THÀNH TIỀN" class="price"> 199,000đ </span>
-                        </div>
-                        <div class="tbl_row">
-                          <span data-title="MÃ SẢN PHẨM"> <a href=""> #MGZ12351 </a> </span>
-                          <span data-title="TÊN SẢN PHẨM"> Tanatril tab 5mg </span>
-                          <span data-title="SỐ LƯỢNG" class="success"> x1 </span>
-                          <span data-title="THÀNH TIỀN" class="price"> 359,000đ</span>
-                        </div>
+                                <div class="cart-list-item tbl_cart">
+                                    <div class="sub_tbl">
+                                        <div class="tbl_title">
+                                          <div class="cart-name"> TÊN SẢN PHẨM </div>
+                                          <div class="cart-qty"> SỐ LƯỢNG </div>
+                                          <div class="cart-total-value"> GÍA THÀNH</div>
+                                        </div>
+                                        <div class="tbl_row">
+                                          <div class="cart-new-item cart-name" data-title="TÊN SẢN PHẨM">
+                                              <div class="d-block">
+                                                <a href="" class="cart-item-img">
+                                                    <img src="http://via.placeholder.com/118x113" alt="Tên sp">
+                                                </a>
+ 
+                                                <div class="cart-item-info">
+                                                    <a href="" class="cart-item-name d-block">
+                                                         Redoxon Double Eff Tab
+                                                    </a>
+                                                    <a href="" class="cart-del">
+                                                         <i class="far fa-trash-alt"></i>
+                                                         Xóa sản phẩm
+                                                    </a>
+                                                </div>
+                                              </div>
+                                          
 
-                        <div class="tbl_row total_row">
-                            <span class="title-total"> Tổng tiền </span>
-                            <span class="total-price">  1,052,000đ </span>
+                                          </div>
+                                          <div class="cart-qty " data-title="SỐ LƯỢNG" > 
+                                            <a href="javascript:void(0);" class="minor quantity-change" data-value="-1" title="tru"></a>
+                                            <input class="buy-quantity quantity-change" value="01" size="5">
+                                            <a href="javascript:void(0);" class="add quantity-change" data-value="1" title="them"></a> 
+                                          </div>
+                                          <div class="cart-total-value" data-title="GÍA THÀNH" > 
+                                              <div class="d-inline-block">
+                                                <p class="m-0">59,000đ </p>
+                                              </div>
+                                            
+                                          </div>
+                                        </div>
+                                        <div class="tbl_row">
+                                            <div class="cart-new-item cart-name" data-title="TÊN SẢN PHẨM">
+                                                <div class="d-block">
+                                                    
+                                                 <a href="" class="cart-item-img">
+                                                     <img src="http://via.placeholder.com/118x113" alt="Tên sp">
+                                                 </a>
+  
+                                                 <div class="cart-item-info">
+                                                     <a href="" class="cart-item-name d-block">
+                                                          Redoxon Double Eff Tab
+                                                     </a>
+                                                     <a href="" class="cart-del">
+                                                          <i class="far fa-trash-alt"></i>
+                                                          Xóa sản phẩm
+                                                     </a>
+                                                 </div>
+                                                </div>
+  
+                                            </div>
+                                            <div class="cart-qty " data-title="SỐ LƯỢNG" > 
+                                              <a href="javascript:void(0);" class="minor quantity-change" data-value="-1" title="tru"></a>
+                                              <input class="buy-quantity quantity-change" value="01" size="5">
+                                              <a href="javascript:void(0);" class="add quantity-change" data-value="1" title="them"></a> 
+                                            </div>
+                                            <div class="cart-total-value" data-title="GÍA THÀNH" > 
+                                               <div class="d-inline-block">
+                                                <p class="m-0">59,000đ </p>
+                                                <del>100.000đ</del>
+                                               </div>
+                                            </div>
+                                          </div>
+                                    </div>
+
+
+                                    <div class="cart-summary">
+                                        <a href="">
+                                            <i class="fas fa-angle-left"></i>
+                                            Quay lại mua thêm sản phẩm khác
+                                        </a>
+                                        <div class="total-payment">
+                                            <div class="cart-final-price d-flex justify-content-between align-items-center"> 
+                                                <b> Tổng đơn hàng : </b>
+                                                <span class="price"> 500.000đ</span>
+                                            </div>
+                                            <div class="cart-final-price d-flex justify-content-between align-items-center"> 
+                                                <b> Chi phí vận chuyển : </b>
+                                                <span class="price shipping"> 0đ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                </div>
-
-
-
-                <div class="cart-success-bottom">
-                    <div class="static-text text-left">
-                        <p>Mỹ nhung xin cảm ơn quý khách Nguyễn Tuấn Dũng đã sử dụng dịch vụ của chúng tôi.</p>
-                        <p>Đơn hàng của quý khách đã được tiếp nhận và đang trong quá trình xử lý.</p>
-                        <p>Mỹ nhung sẽ liên hệ với quý khách trong thời gian sớm nhất.</p>
                     </div>
 
-                    <div class="actions">
-                        <a href="" class="addmore btn"> Mua thêm </a>
-                        <a href="" class="backhome btn"> Về trang chủ </a>
-                    </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="cart-box payment bg-white">
+                            <div class="title">
+                                Phương thức thanh toán
+                            </div>
 
-                    <div class="cart-hotline text-center">
-                        <p> Mọi thắc mắc xin vui lòng liên hệ số hotline bên dưới để được tư vấn và giải đáp </p>
+                            <div class="select-payment">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="payment_1" value="payment_1" checked>
+                                    <label class="form-check-label" for="payment_1">Thanh toán tại quầy</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="payment_2" value="payment_2">
+                                    <label class="form-check-label" for="payment_2">Thanh toán chuyển khoản</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="payment_3" value="payment_3">
+                                    <label class="form-check-label" for="payment_3">Giao hàng và thanh toán</label>
+                                </div>
+                            </div>
+                        </div>
 
-                        <a href="" class="d-inline-block">
-                            <img src="images/phone-cart.png" alt="" class="img-fluid">
-                            <p>
-                                <span>Hotline</span>
-                                 <b>039 599 6699 </b>
-                            </p>
-                        </a>
+                        <div class="cart-box buyer-info bg-white mt-3">
+                            <div class="title">
+                                Nhập thông tin đặt hàng
+                            </div>
+
+                            <form action="" method="" class="buyer-form">
+                                <div class="row mb-2">
+                                    <div class="form-group col-12 ">
+                                        <input type="text" id="buyer-name" placeholder="Tên người mua" class="form-control change-input" />
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="form-group col-12 ">
+                                        <input type="email" id="buyer-email" placeholder="email@email.com" class="form-control change-input" />
+                                    </div>
+                                </div>
+
+                                <div class="row mb-2">
+                                    <div class="form-group col-12">
+                                        <input type="text" id="buyer-tel" placeholder="0123456789" class="form-control change-input" />
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="form-group col-12 col-lg-6">
+                                        <select id="buyer-city" class="form-control change-input">
+                                            <option selected="selected">Chọn Tỉnh/TP</option>
+                                            <option value="1">Hà Nội</option>
+                                            <option value="2">Đà Nẵng</option>
+                                            <option value="3">Tp.HCM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-12 col-lg-6">
+                                        <select id="buyer-district" class="form-control change-input">
+                                            <option selected="selected">Quận/Huyện</option>
+                                            <option value="1">Đống Đa</option>
+                                            <option value="2">Thanh Xuân</option>
+                                            <option value="3">Cầu Giấy</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-12">
+                                    <textarea rows="4" id="buyer-full-addr" class="form-control change-input "
+                                        placeholder="Nhập địa chỉ chi tiết">
+                                    </textarea>
+                                    </div>
+                                </div>
+                                <button class="btn btn-submit-cart">
+                                    Đặt hàng
+                                </button>
+                            </form>
+                            
+                        </div>
                     </div>
                 </div>
             </div>

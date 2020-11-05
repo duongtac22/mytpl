@@ -134,12 +134,6 @@
         flex-wrap: wrap;
         padding-bottom: 10px;
         & > span { padding: 0 0 10px 0; }
-        .multi-company-item {
-            @include col-w(100%);
-            border: none;
-            margin-top: 5px;
-            padding: 0;
-        }
     }
     .contact-us-page .company-info .company-item .multi-company-item > a {
         white-space: normal;
@@ -158,5 +152,16 @@
     .contact-us-page .submit-contact {
         padding: 10px 20px;
         font-size: 14px;
+    }
+}
+
+@media( max-width : 348px){
+    .contact-us-page .company-info .company-item.company-addr {
+        .multi-company-item {
+            @include col-w(100%);
+            border: none;
+            margin-top: 5px;
+            padding: 0;
+        }
     }
 }

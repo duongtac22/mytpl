@@ -1,7 +1,7 @@
 footer{
     .block-newsletter {
-        background: url(../../images/bg-news-letter.png) no-repeat center center ;
-        background-size: 100% 100%; 
+        background: url(../../images/bg-news-letter.png) no-repeat center right;
+        background-size: cover;
         margin-top: 153px;
         .newsletter-left{
             img {
@@ -224,5 +224,21 @@ footer{
     
     .mid-footer .footer-multi-info {
         flex-wrap: wrap;
+    }
+}
+@media ( max-width: 768px) {
+    footer .block-newsletter {
+        margin-top: 25px; 
+    }
+    footer .block-newsletter .newsletter-left img {
+        display: none;
+    }
+    footer .block-newsletter #newsletter-form .input-group-btn {
+        position: relative;
+        display: block;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        margin-top: 5px;
     }
 }

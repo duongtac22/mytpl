@@ -262,7 +262,7 @@
     justify-content: center;
     background: #fff;
     height: 137px;
-    width: 130px;
+    width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     img {
@@ -309,13 +309,27 @@
 .nd ol{padding-left:40px !important;margin:1em 0;list-style:decimal !important;}
 .nd ol li{list-style-type:decimal !important;}
 .nd p{margin:1em 0;}
-.nd table{border-collapse:collapse;}
+.nd table{border-collapse:collapse;width: 100% !important;}
 .nd table td,.nd table th{border:solid 1px #ddd;padding:5px;}
 .nd a{font-size:inherit;}
 .nd{line-height:1.45;}
-.nd img{max-width:100%;}
+.nd img{max-width:100% !important;height: auto !important;}
 .nd a{color:#0000ff !important;}
+.nd * {
+    &:not(table){
+        max-width: 100% !important;
+        height: auto !important;
+        width: auto !important;
+    }
+}
 
+@media ( max-width: 1564px) {
+    .p-detail-right .p-detail-info .p-detail-top table.p-detail-status td {
+        display: block;
+        text-align: left !important;
+    }
+
+}
 @media ( max-width: 1200px ) {
     .p-detail-left , .p-detail-right{
         @include col-w(100%);
@@ -336,10 +350,22 @@
 }
 
 @media ( max-width: 768px ) {
+
+    .product-detail-wrapper {
+        padding : 15px;
+    }
+    #product-gallery .owl-item .item a{
+        height: auto;
+        width: auto;
+    }
     .p-detail-right .p-detail-info .p-has-deal{
         padding: 10px 0 ;
         .count-down {
             @include col-w(100%);
         }
+    }
+    .block-review-wrapper .block-review-total {
+        @include col-w(100%);
+        border-right: 0;
     }
 }

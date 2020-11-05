@@ -53,6 +53,34 @@
               </div>
     </div>
 
+    <form action="" class="review-form" method="" onsubmit="return false ; " > 
+        <textarea rows="4" id="review-content" placeholder="Mời bạn tham gia thảo luận, vui lòng nhập tiếng việt có dấu."></textarea> 
+        <div class="review-actions">
+            <div class="review-rate">
+              <span class="title"> Đánh giá của bạn </span>
+              <div class="rating" id="rating-review0" style="display: inline-block; vertical-align:bottom;">
+                  <input type="radio" class="rating-input" id="rating-input-review-0-5" value="5" name="user_post[rate]" checked="">
+                  <label for="rating-input-review-0-5" class="rating-star"></label>
+                  <input type="radio" class="rating-input" id="rating-input-review-0-4" value="4" name="user_post[rate]">
+                  <label for="rating-input-review-0-4" class="rating-star"></label>
+                  <input type="radio" class="rating-input" id="rating-input-review-0-3" value="3" name="user_post[rate]">
+                  <label for="rating-input-review-0-3" class="rating-star"></label>
+                  <input type="radio" class="rating-input" id="rating-input-review-0-2" value="2" name="user_post[rate]">
+                  <label for="rating-input-review-0-2" class="rating-star"></label>
+                  <input type="radio" class="rating-input" id="rating-input-review-0-1" value="1" name="user_post[rate]">
+                  <label for="rating-input-review-0-1" class="rating-star"></label>
+              </div>
+            </div>
+
+            <input type="text" id="review-name" placeholder="Họ tên ( bắt buộc ) ">
+
+            <button class="submit-review">
+                Gửi đánh giá
+            </button>
+        </div>
+    </form>
+
+
     <!-- list danh gia -->
     <div class="review-list">
 
