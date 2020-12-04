@@ -1,0 +1,78 @@
+#header {
+    background: #240066;
+    width: 100%;
+    height: 70px;
+    .logo-wifi {
+        width: 130px;
+        height: 40px;
+    }
+}
+.admin-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    height: 100%;
+    position: relative;
+}
+.router-main {
+    &.no-router {
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: url(../../images/bizfly-bg-city.png) no-repeat center;
+        background-size: cover;
+        position: relative;
+        .box-text {
+            padding-top: 180px;
+            h1.title {
+                font-family: Roboto;
+                font-weight: bold;
+                font-size: 36px;
+                line-height: 48px;
+                margin: 34px 0 ; 
+                transition: 0.1s ease-in-out;
+            }
+            .btn-add-router {
+                max-width: 230px;
+                margin: 0 auto;
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url(../../images/bizfly-bg-cloud.png) no-repeat top;
+            background-size: contain;
+            width: 100%;
+            max-width: 694px;
+            height: 174px;
+            transition: 0.1s ease-in-out;
+        }
+    }
+}
+
+@media ( max-width: 768px ) {
+    .router-main.no-router {
+        .box-text {
+            padding-top: 0;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            z-index: 9999;
+            h1.title {
+                font-size : 24px;
+                line-height: 1.2;
+                margin: 20px 0 ; 
+            }
+            &> img {
+                max-width: 250px;
+            }
+        }
+        &:after {
+            height: 130px;
+        }
+    }
+}

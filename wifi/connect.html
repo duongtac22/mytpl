@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+
+        <div class="custom-container">
+
+            <div class="box-header text-center">
+
+                <a href="/" class="logo">
+                    <img src="images/wifi-logo-bizfly.png" alt="" class="logo-img">
+                </a>
+
+                <h1 class="head-title">
+                        Chào mừng Quý khách 
+                        đến với Bizfly Techshow 2020!
+                </h1>
+
+                <p class="head-desc">
+                    Sự kiện Chuyển đổi số cho Doanh nghiệp Việt 2020
+                </p>
+
+            </div>
+            
+            <form action="" class="form-actions">
+
+                <h2 class="form-title text-center">
+                    Điền thông tin để kết nối vào wifi 
+                    “Bizfly Wifi FREE”
+                </h2>
+
+                <input type="text" class="input-custom" id="customer-name" placeholder="Họ và tên Quý khách">
+
+                <input type="email" class="input-custom" id="customer-email" placeholder="Địa chỉ Email">
+
+                <input type="number" class="input-custom" id="customer-tel" placeholder="Số điện thoại">
+
+                <button type="submit" class="btn-submit" value="">Kết nối ngay</button>
+            </form>
+
+        </div>
+    </div>
+     
+    
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script>
+
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+
+        },
+        
+      });
+    </script>
+  </body>
+</html>

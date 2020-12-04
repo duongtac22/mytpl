@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="app">
+        <myheader :login = "isLogin" ></myheader>
+        
+        <div class="router-main no-router">
+            <div class="container">
+                <div class="box-text text-center ">
+
+                    <img src="images/bizfly-router.png" alt="">
+    
+                    <h1 class="title"> Bạn chưa có Router nào, thêm Router mới để bắt đầu!  </h1>
+    
+                    <p class="text-center mb-0">
+                        <a href="/" class="btn-submit btn-add-router">
+                            Thêm Router mới
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+     
+    
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script>
+
+
+      var app = new Vue({
+        el: "#app",
+        data: {
+            isLogin : false 
+        },
+        components: {
+          myheader: httpVueLoader("vue_components/header.vue")
+        },
+      });
+    </script>
+  </body>
+</html>
