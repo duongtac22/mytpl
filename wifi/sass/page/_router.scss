@@ -15,6 +15,7 @@
     position: relative;
 }
 .router-main {
+    font-family: 'Roboto';
     &.no-router {
         width: 100%;
         height: calc(100vh - 70px);
@@ -50,8 +51,155 @@
             transition: 0.1s ease-in-out;
         }
     }
+    &.router-step {
+        h1.title {
+            font-size: 36px;
+            line-height: 48px;
+            margin: 30px 0 0 0 ; 
+        }
+        .list-steps {
+            padding: 0 52px; 
+        }
+        .step-item {
+            font-size: 16px;
+            line-height: 19px;
+            position: relative;
+            float: left;
+            margin-right: 48px;
+            a {
+                display: inline-block;
+                padding: 16px 0 ; 
+            }
+            .step-count {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                text-align: center;
+                color : #555555;
+                background: transparent;
+                border: 1px solid #555555;
+                margin-right: 4px;
+                line-height: 22px;
+            }
+            .step-name {
+                color: #555555;
+            }
+            &:after {
+                content: '';
+                background: url(../../images/bizfly-ic-back.png) no-repeat center;
+                position: absolute;
+                right: -32px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 16px;
+                height: 16px;
+            }
+            &:last-child{
+                margin-right: 0 ;
+                &:after {
+                    display: none; 
+                }
+            }
+            &.current {
+                .step-count {
+                    border: 1px solid #240066;
+                    background: #240066;
+                    color: #fff;
+                }
+                .step-name {
+                    color: #240066;
+                    font-weight: bold;
+                }
+            }
+            &.done {
+                .step-count {
+                    border-color:#34C759;
+                    background: #34C759;
+                    color: #fff;
+                }
+            }
+        }
+
+        .router-setup-content {
+            padding: 47px 0 ; 
+        }
+        .setup-box-left {
+            .step-left-title {
+                font-size: 24px;
+                line-height: 30px;
+                margin: 19px 0 30px 0 ; 
+            }
+            .form-group {
+                margin-bottom: 30px;
+            }
+            label {
+                margin-bottom: 10px;
+            }
+            input {
+                background: #FFFFFF;
+                border: 1px solid #DDDDDD;
+                border-radius: 4px;
+                height: 40px;
+                line-height: 38px;
+                font-size: 14px;
+                color: #828282;
+            }
+        }
+        .setup-box-right {
+            background: #F9F9F9;
+            border: 1px solid #DDDDDD;
+            border-radius: 2px;
+            padding: 0 24px 19px 17px;
+            h2.title {
+                font-size: 24px;
+                line-height: 30px;
+                margin: 19px 0;
+                img {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 8px;
+                }
+            }
+            .box-right-content {
+                padding-left: 23px;
+                font-size: 18px;
+                
+                p {
+                    line-height: 22px;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+.custom-select2 {
+    position: relative;
+    select{
+        appearance: none;
+        background: none; 
+        color: #828282;
+        font-size: 14px;
+    }
+   
+    &:after {
+        content: '';
+        position: absolute;
+        right: 10px;
+        background: url(../../images/bizfly-ic-search2.png) no-repeat center;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
+@media ( max-width: 1199px) {
+    .router-main.router-step .list-steps {
+        padding: 0 ; 
+    }
+}
 @media ( max-width: 768px ) {
     .router-main.no-router {
         .box-text {
@@ -74,5 +222,29 @@
         &:after {
             height: 130px;
         }
+    }
+
+    .router-main.router-step .step-item {
+        margin-right: 30px;
+        a {
+            padding: 10px 0 ;
+        }
+        &:after {
+            right: -22px;
+        }
+    }
+    .router-main.router-step .router-setup-content {
+        padding: 20px 0 ; 
+    }
+    .router-main.router-step .setup-box-left .step-left-title{
+        margin: 15px 0 ;
+    }
+}
+
+@media (max-width: 640px) {
+    .router-main.router-step h1.title {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 30px 0;
     }
 }

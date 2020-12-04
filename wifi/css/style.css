@@ -1,362 +1,282 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css");
-/* material fonts */
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/MaterialIcons/MaterialIcons-Regular.eot);
-  /* For IE6-8 */
-  src: local("Material Icons"), url(../fonts/MaterialIcons/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons/MaterialIcons-Regular.ttf) format("truetype");
-}
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css");
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Fira Sans Light"), local("FiraSans-Light"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnPKreSxf6TF0.woff2) format("woff2");
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/roboto/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2) format("woff2");
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
 /* cyrillic */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Fira Sans Light"), local("FiraSans-Light"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnPKreQhf6TF0.woff2) format("woff2");
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/roboto/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format("woff2");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* greek-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Fira Sans Light"), local("FiraSans-Light"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnPKreShf6TF0.woff2) format("woff2");
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/roboto/KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2) format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 
 /* greek */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Fira Sans Light"), local("FiraSans-Light"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnPKreRRf6TF0.woff2) format("woff2");
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/roboto/KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2) format("woff2");
   unicode-range: U+0370-03FF;
 }
 
 /* vietnamese */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Fira Sans Light"), local("FiraSans-Light"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnPKreSRf6TF0.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/roboto/KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Fira Sans Light"), local("FiraSans-Light"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnPKreSBf6TF0.woff2) format("woff2");
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/roboto/KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2) format("woff2");
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Fira Sans Light"), local("FiraSans-Light"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnPKreRhf6.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local("Roboto Light"), local("Roboto-Light"), url(../fonts/roboto/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(../fonts/FiraSans/va9E4kDNxMZdWfMOD5VvmojLeTY.woff2) format("woff2");
+  src: local("Roboto"), local("Roboto-Regular"), url(../fonts/roboto/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format("woff2");
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
 /* cyrillic */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(../fonts/FiraSans/va9E4kDNxMZdWfMOD5Vvk4jLeTY.woff2) format("woff2");
+  src: local("Roboto"), local("Roboto-Regular"), url(../fonts/roboto/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format("woff2");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* greek-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(../fonts/FiraSans/va9E4kDNxMZdWfMOD5Vvm4jLeTY.woff2) format("woff2");
+  src: local("Roboto"), local("Roboto-Regular"), url(../fonts/roboto/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 
 /* greek */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(../fonts/FiraSans/va9E4kDNxMZdWfMOD5VvlIjLeTY.woff2) format("woff2");
+  src: local("Roboto"), local("Roboto-Regular"), url(../fonts/roboto/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format("woff2");
   unicode-range: U+0370-03FF;
 }
 
 /* vietnamese */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(../fonts/FiraSans/va9E4kDNxMZdWfMOD5VvmIjLeTY.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  src: local("Roboto"), local("Roboto-Regular"), url(../fonts/roboto/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(../fonts/FiraSans/va9E4kDNxMZdWfMOD5VvmYjLeTY.woff2) format("woff2");
+  src: local("Roboto"), local("Roboto-Regular"), url(../fonts/roboto/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format("woff2");
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(../fonts/FiraSans/va9E4kDNxMZdWfMOD5Vvl4jL.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local("Roboto"), local("Roboto-Regular"), url(../fonts/roboto/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnZKveSxf6TF0.woff2) format("woff2");
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/roboto/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format("woff2");
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
 /* cyrillic */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnZKveQhf6TF0.woff2) format("woff2");
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/roboto/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format("woff2");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* greek-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnZKveShf6TF0.woff2) format("woff2");
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/roboto/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 
 /* greek */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnZKveRRf6TF0.woff2) format("woff2");
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/roboto/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format("woff2");
   unicode-range: U+0370-03FF;
 }
 
 /* vietnamese */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnZKveSRf6TF0.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/roboto/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnZKveSBf6TF0.woff2) format("woff2");
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/roboto/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format("woff2");
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Fira Sans Medium"), local("FiraSans-Medium"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnZKveRhf6.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(../fonts/roboto/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* cyrillic-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: swap;
-  src: local("Fira Sans SemiBold"), local("FiraSans-SemiBold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnSKzeSxf6TF0.woff2) format("woff2");
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto/KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2) format("woff2");
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
 /* cyrillic */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: swap;
-  src: local("Fira Sans SemiBold"), local("FiraSans-SemiBold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnSKzeQhf6TF0.woff2) format("woff2");
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto/KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2) format("woff2");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 /* greek-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: swap;
-  src: local("Fira Sans SemiBold"), local("FiraSans-SemiBold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnSKzeShf6TF0.woff2) format("woff2");
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto/KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2) format("woff2");
   unicode-range: U+1F00-1FFF;
 }
 
 /* greek */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: swap;
-  src: local("Fira Sans SemiBold"), local("FiraSans-SemiBold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnSKzeRRf6TF0.woff2) format("woff2");
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto/KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2) format("woff2");
   unicode-range: U+0370-03FF;
 }
 
 /* vietnamese */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: swap;
-  src: local("Fira Sans SemiBold"), local("FiraSans-SemiBold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnSKzeSRf6TF0.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto/KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-display: swap;
-  src: local("Fira Sans SemiBold"), local("FiraSans-SemiBold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnSKzeSBf6TF0.woff2) format("woff2");
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto/KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2) format("woff2");
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* latin */
 @font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local("Fira Sans SemiBold"), local("FiraSans-SemiBold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnSKzeRhf6.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Fira Sans';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnLK3eSxf6TF0.woff2) format("woff2");
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-
-/* cyrillic */
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnLK3eQhf6TF0.woff2) format("woff2");
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-
-/* greek-ext */
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnLK3eShf6TF0.woff2) format("woff2");
-  unicode-range: U+1F00-1FFF;
-}
-
-/* greek */
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnLK3eRRf6TF0.woff2) format("woff2");
-  unicode-range: U+0370-03FF;
-}
-
-/* vietnamese */
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnLK3eSRf6TF0.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnLK3eSBf6TF0.woff2) format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(../fonts/FiraSans/va9B4kDNxMZdWfMOD5VnLK3eRhf6.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /*!
@@ -12983,6 +12903,10 @@ textarea {
   position: relative;
 }
 
+.router-main {
+  font-family: 'Roboto';
+}
+
 .router-main.no-router {
   width: 100%;
   height: calc(100vh - 70px);
@@ -13026,6 +12950,172 @@ textarea {
   transition: 0.1s ease-in-out;
 }
 
+.router-main.router-step h1.title {
+  font-size: 36px;
+  line-height: 48px;
+  margin: 30px 0 0 0;
+}
+
+.router-main.router-step .list-steps {
+  padding: 0 52px;
+}
+
+.router-main.router-step .step-item {
+  font-size: 16px;
+  line-height: 19px;
+  position: relative;
+  float: left;
+  margin-right: 48px;
+}
+
+.router-main.router-step .step-item a {
+  display: inline-block;
+  padding: 16px 0;
+}
+
+.router-main.router-step .step-item .step-count {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  color: #555555;
+  background: transparent;
+  border: 1px solid #555555;
+  margin-right: 4px;
+  line-height: 22px;
+}
+
+.router-main.router-step .step-item .step-name {
+  color: #555555;
+}
+
+.router-main.router-step .step-item:after {
+  content: '';
+  background: url(../../images/bizfly-ic-back.png) no-repeat center;
+  position: absolute;
+  right: -32px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+}
+
+.router-main.router-step .step-item:last-child {
+  margin-right: 0;
+}
+
+.router-main.router-step .step-item:last-child:after {
+  display: none;
+}
+
+.router-main.router-step .step-item.current .step-count {
+  border: 1px solid #240066;
+  background: #240066;
+  color: #fff;
+}
+
+.router-main.router-step .step-item.current .step-name {
+  color: #240066;
+  font-weight: bold;
+}
+
+.router-main.router-step .step-item.done .step-count {
+  border-color: #34C759;
+  background: #34C759;
+  color: #fff;
+}
+
+.router-main.router-step .router-setup-content {
+  padding: 47px 0;
+}
+
+.router-main.router-step .setup-box-left .step-left-title {
+  font-size: 24px;
+  line-height: 30px;
+  margin: 19px 0 30px 0;
+}
+
+.router-main.router-step .setup-box-left .form-group {
+  margin-bottom: 30px;
+}
+
+.router-main.router-step .setup-box-left label {
+  margin-bottom: 10px;
+}
+
+.router-main.router-step .setup-box-left input {
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  height: 40px;
+  line-height: 38px;
+  font-size: 14px;
+  color: #828282;
+}
+
+.router-main.router-step .setup-box-right {
+  background: #F9F9F9;
+  border: 1px solid #DDDDDD;
+  border-radius: 2px;
+  padding: 0 24px 19px 17px;
+}
+
+.router-main.router-step .setup-box-right h2.title {
+  font-size: 24px;
+  line-height: 30px;
+  margin: 19px 0;
+}
+
+.router-main.router-step .setup-box-right h2.title img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.router-main.router-step .setup-box-right .box-right-content {
+  padding-left: 23px;
+  font-size: 18px;
+}
+
+.router-main.router-step .setup-box-right .box-right-content p {
+  line-height: 22px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.custom-select2 {
+  position: relative;
+}
+
+.custom-select2 select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  color: #828282;
+  font-size: 14px;
+}
+
+.custom-select2:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  background: url(../../images/bizfly-ic-search2.png) no-repeat center;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media (max-width: 1199px) {
+  .router-main.router-step .list-steps {
+    padding: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .router-main.no-router .box-text {
     padding-top: 0;
@@ -13047,6 +13137,29 @@ textarea {
   }
   .router-main.no-router:after {
     height: 130px;
+  }
+  .router-main.router-step .step-item {
+    margin-right: 30px;
+  }
+  .router-main.router-step .step-item a {
+    padding: 10px 0;
+  }
+  .router-main.router-step .step-item:after {
+    right: -22px;
+  }
+  .router-main.router-step .router-setup-content {
+    padding: 20px 0;
+  }
+  .router-main.router-step .setup-box-left .step-left-title {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .router-main.router-step h1.title {
+    font-size: 24px;
+    line-height: 32px;
+    margin: 30px 0;
   }
 }
 
