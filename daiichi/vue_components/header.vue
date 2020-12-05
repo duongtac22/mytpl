@@ -1,0 +1,67 @@
+<template>
+    <header id="header">
+        <div class="container">
+
+            <div class="d-flex align-items-center justify-content-lg-between">
+   <a href="javascript:;" class="mb-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <a href="/" class="logo">
+                <img src="images/dai-ichi-life-logo.png" alt="">
+            </a>
+
+            <div class="header-right">
+                
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="/" class="root text-upppercase">
+                            Trang chủ
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item has-child">
+                        <a href="/" class="root text-upppercase ">
+                            Các gói sản phẩm 
+                        </a>
+                        <div class="sub-menu">
+
+                            <a href="javascript:;" class="sub-menu2">
+                                Các gói sản phẩm 1
+                            </a>
+                            <a href="javascript:;" class="sub-menu2">
+                                Các gói sản phẩm 2
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="/" class="root text-upppercase">
+                            Tin tức
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="/" class="root text-upppercase">
+                            Liên hệ
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="tel:0936026700" class="header-hotline">
+
+                    <i class="fal fa-phone-alt"></i>
+                    <span class="text-uppercase">
+                        hotline: 093 602 6700
+                    </span>
+                </a>
+            </div>
+            </div>
+
+         
+
+        </div>
+    </header>
+</template>
