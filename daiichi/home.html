@@ -1,66 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <body>
-    <div id="app">
-        <myheader></myheader>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
 
-        <div class="home-slider">
-            <div class="slider-carousel">
+  <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-              <div class="item">
-                  <img src="images/home-slider1.png" alt="" >
+<body>
+  <div id="app">
+    <myheader></myheader>
 
-                  <div class="container">
+    <div class="home-slider">
+      
+      <div class="slider-carousel js-carousel owl-carousel custom-dots" data-items="1" data-loop="true"
+      data-autoplay="false" auto-height="true" data-arrows="false" data-autoplay-timeout="5000">
 
-                    <div class="box-slider-text">
+        <div class="item">
+          <a href="/" class="block">
+            <img src="images/home-slider1.png" alt="" class="home-slider-img">
+          </a>
+          <div class="box-slider-text-content">
+            <div class="container">
 
-                        <span class="first-text">
-                          dai -ichi life - gắn bó dài lâu
-                        </span>
-                        <span class="second-text">
-                          MÓn quà bình an
-                        </span>
-                        <span class="slider-desc">
-                          Tâm an yên giữa dòng đời
-                          nhiều ẩn số...
-                        </span>
-                    </div>
-                    
-                  </div>
+              <div class="box-slider-text">
 
-
+                <span class="first-text">
+                  dai -ichi life - gắn bó dài lâu
+                </span>
+                <span class="second-text">
+                  MÓn quà bình an
+                </span>
+                <span class="slider-desc">
+                  Tâm an yên giữa dòng đời
+                  nhiều ẩn số...
+                </span>
               </div>
 
             </div>
+          </div>
+
+
+
+        </div>
+        <div class="item">
+          <a href="/" class="block">
+            <img src="images/home-slider1.png" alt="" class="home-slider-img">
+          </a>
+          <div class="box-slider-text-content">
+            <div class="container">
+
+              <div class="box-slider-text">
+
+                <span class="first-text">
+                  dai -ichi life - gắn bó dài lâu
+                </span>
+                <span class="second-text">
+                  MÓn quà bình an
+                </span>
+                <span class="slider-desc">
+                  Tâm an yên giữa dòng đời
+                  nhiều ẩn số...
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="item">
+          <a href="/" class="block">
+            <img src="images/home-slider1.png" alt="" class="home-slider-img">
+          </a>
+          <div class="box-slider-text-content">
+            <div class="container">
+
+              <div class="box-slider-text">
+
+                <span class="first-text">
+                  dai -ichi life - gắn bó dài lâu
+                </span>
+                <span class="second-text">
+                  MÓn quà bình an
+                </span>
+                <span class="slider-desc">
+                  Tâm an yên giữa dòng đời
+                  nhiều ẩn số...
+                </span>
+              </div>
+
+            </div>
+          </div>
+
+
+
         </div>
 
+
+      </div>
+
+      <div class="box-register">
+        <div class="container position-relative">
+
+          <div class="box-register-form">
+            
+            <h2 class="title text-uppercase">
+              Đăng ký dùng thử 21 ngày
+            </h2>
+
+            <form action="">
+              <div class="form-group">
+                <label for="registerName">Họ và tên</label>
+                <input type="text" class="form-control" id="registerName" placeholder="Điền tên của ban ( bắt buộc)" required>
+              </div>
+              <div class="form-group">
+                <label for="registerTel">Số điện thoại </label>
+                <input type="text" class="form-control" id="registerTel" placeholder="Điền số điện thoại của bạn ( bắt buộc )"  required>
+              </div>
+              <div class="form-group">
+                <label for="registerEmail"> Email </label>
+                <input type="text" class="form-control" id="registerEmail" placeholder="Điền email của bạn ( không bắt buộc )">
+              </div>
+              <div class="form-group text-center mb-0">
+                  <button class="btn-submit-resiger" type="submit" value="đăng ký tư vấn">
+                    đăng ký tư vấn
+                  </button>
+              </div>
+            </form>
+
+          </div>
+          </div>
+      </div>
+
     </div>
-     
-    
-    <script src="js/vue.js"></script>
-    <script src="js/httpVueLoader.js"></script>
-    <script>
+
+    <nhucau></nhucau>
+
+    <goibaohiem></goibaohiem>
 
 
-      var app = new Vue({
-        el: "#app",
-        data: {
-            isLogin : false 
+    <myfooter></myfooter>
+  </div>
+
+
+  <script src="js/vue.js"></script>
+  <script src="js/httpVueLoader.js"></script>
+  
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="libs/bootstrap/bootstrap.min.js"></script>
+  <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+  
+  <script src="js/main.js"></script>
+  <script>
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        isLogin: false
+      },
+      components: {
+        myheader: httpVueLoader("vue_components/header.vue"),
+        myfooter: httpVueLoader("vue_components/footer.vue"),
+        nhucau: httpVueLoader("vue_components/nhucau.vue"),
+        goibaohiem: httpVueLoader("vue_components/goibaohiem.vue")
+      },
+      mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              RunFn.runnCarousel('.js-carousel');
+              RunFn.openMbMenu('.js-toggle-menu','.js-mobile-menu');
+
+              RunFn.toggleSubMenu('.has-child');
+            });
+
+          
+          });
         },
-        components: {
-          myheader: httpVueLoader("vue_components/header.vue")
-        },
-      });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>

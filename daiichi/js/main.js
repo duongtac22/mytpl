@@ -272,6 +272,26 @@ var RunFn = (function () {
       $(this).addClass('active');
     })
   }
+  function openMbMenu(holderToggle,holderMbMenu) {
+    $(holderToggle).click(function(){
+
+       $(this).toggleClass('opened');
+       $('body').toggleClass('menu-active');
+       $(holderMbMenu).toggleClass('active');
+   })
+  }
+  function toggleSubMenu(holder){
+    $(holder).click(function(){
+      console.log('aaaaaaaaa')
+      if($(this).hasClass("active")){
+        $(this).removeClass("active");
+        $(this).children(".sub-menu").slideUp("fast");
+        }else{
+          $(this).addClass("active");
+          $(this).children(".sub-menu").slideDown("fast");
+        }
+    })
+  }
   return {
     runnCarousel: runnCarousel,
     syncOwl: syncOwl,
@@ -281,6 +301,8 @@ var RunFn = (function () {
     changeImgProduct : changeImgProduct ,
     changeConfig : changeConfig ,
     boxSearch : boxSearch,
-    chooseBank : chooseBank
+    chooseBank : chooseBank,
+    openMbMenu : openMbMenu,
+    toggleSubMenu : toggleSubMenu
   };
 })();

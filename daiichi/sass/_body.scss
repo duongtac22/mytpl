@@ -258,6 +258,31 @@ ul{
     background: #4D7FF8 !important;
 }
 
+.box-title {
+    h2.title {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        text-transform: capitalize;
+        color: #010414;
+        margin: 16px 0 ;
+    }
+    p.desc {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #666666; 
+    }
+    margin-bottom: 36px;
+}
+@media (min-width: 1440px){
+    .container {
+        max-width: 1296px;
+    }
+}
+
 @keyframes lds-default {
     0%,
     20%,

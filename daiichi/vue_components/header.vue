@@ -3,20 +3,20 @@
         <div class="container">
 
             <div class="d-flex align-items-center justify-content-lg-between">
-   <a href="javascript:;" class="mb-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="javascript:;" class="mb-menu js-toggle-menu">
+                <span class="mobile_menu_icon menu_icon_1"></span>
+                <span class="mobile_menu_icon menu_icon_2"></span>
+                <span class="mobile_menu_icon menu_icon_3"></span>
             </a>
 
             <a href="/" class="logo">
                 <img src="images/dai-ichi-life-logo.png" alt="">
             </a>
 
-            <div class="header-right">
+            <div class="header-right js-mobile-menu">
                 
-                <ul class="menu">
-                    <li class="menu-item">
+                <ul class="menu ">
+                    <li class="menu-item current">
                         <a href="/" class="root text-upppercase">
                             Trang chủ
                         </a>

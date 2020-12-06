@@ -1,0 +1,76 @@
+.block-goibaohiem {
+    .goibaohiem-item {
+        border-radius: 3px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 30px;
+        .goibaohiem-img {
+            display: inline-block;
+            width: 100%;
+            padding-top: 466px;
+            position: relative;
+            img {
+                position: absolute;
+                top: 0 ;
+                left: 0 ;
+                width: 100%;
+                height: 100%;
+                object-position: center;
+                object-fit: cover;
+                border-radius: 0px 0px 3px 3px;
+                z-index: 100;
+            }
+        }
+        .goibaohiem-name {
+            padding: 17px 0;
+            background: #EE1C23;
+            text-align: center;
+            span {
+                display: block; 
+                max-width: 200px;
+                margin: 0 auto;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 28px;
+                text-transform: capitalize;
+                color: #FFFFFF;
+            }
+        }
+        .goibaohiem-link {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            top: auto; 
+            width: 100%;
+            background: #EE1C23;
+            text-align: center;
+            color: #fff !important;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 23px;
+            text-transform: uppercase;
+            padding: 30px 0 ;
+            // transform: translateY(100%);
+            // transform-origin: top;
+            transition: 0.3s ease-in-out;
+            border-radius: 0px 0px 3px 3px;
+            z-index: -1;
+            i {
+                margin-left: 9px;
+            }
+        }
+        &:hover {
+            .goibaohiem-link {
+                //transform: translateY(0);
+                bottom: 0px;
+                z-index: 1000;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .block-goibaohiem .goibaohiem-item .goibaohiem-img {
+        padding-top: 100%;
+    }
+}
