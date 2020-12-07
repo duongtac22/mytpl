@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <myheader></myheader>
+
+  <div class="page-header" >
+      <div class="container">
+          <h1 class="page-title">Danh sách sản phẩm</h2>
+      </div>
+  </div>
+
+    <myfooter></myfooter>
+  </div>
+
+
+  <script src="js/vue.js"></script>
+  <script src="js/httpVueLoader.js"></script>
+  
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="libs/bootstrap/bootstrap.min.js"></script>
+  <script src="libs/bootstrap/popper.min.js"></script>
+  <script src="libs/owl-carousel/owl.carousel.min.js"></script>
+  <script src="libs/fancybox/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        isLogin: false
+      },
+      components: {
+        myheader: httpVueLoader("vue_components/header.vue"),
+        myfooter: httpVueLoader("vue_components/footer.vue"),
+        nhucau: httpVueLoader("vue_components/nhucau.vue"),
+        hoidap: httpVueLoader("vue_components/hoidap.vue"),
+        whyus: httpVueLoader("vue_components/whyus.vue"),
+        goibaohiem : httpVueLoader("vue_components/goibaohiem.vue"),
+        khachhang : httpVueLoader("vue_components/khachhang.vue"),
+        quyenloi: httpVueLoader("vue_components/quyenloi.vue")
+      },
+      mounted() {
+          this.$nextTick(() => {
+            $(window).bind("load", function () {
+              RunFn.runnCarousel('.js-carousel');
+              RunFn.openMbMenu('.js-toggle-menu','.js-mobile-menu');
+
+              RunFn.toggleSubMenu('.has-child');
+              RunFn.checkRunCarrousel('.js-check-slide');
+            });
+
+            $(window).resize(function() {
+              RunFn.checkRunCarrousel('.js-check-slide');
+            });	
+          });
+        },
+    });
+  </script>
+</body>
+
+</html>

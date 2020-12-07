@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <div class="footer-subscribe-btn">
+                        <div class="footer-subscribe-btn text-center mt-3 mt-md-0">
                             <a href="javascript:;" class="btn-subscribe">
                                   Liên hệ ngay<i class="fal fa-long-arrow-right"></i>
                             </a>

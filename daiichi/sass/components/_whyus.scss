@@ -1,7 +1,7 @@
 .block-taisao {
     margin-top: 70px;
     padding: 50px 0 ; 
-    background : url(../../images/bg-taisao.png) no-repeat center;
+    background : url(../images/bg-taisao.png) no-repeat center;
     background-size: cover ; 
 
     h2.title {
@@ -30,7 +30,7 @@
         .taisao-img {
             display: inline-block;
             width: 100%;
-            padding-top: 205px;
+            padding-top: 200px;
             position: relative;
             img {
                 position: absolute;
@@ -137,10 +137,18 @@
 @media ( max-width: 768px) {
     .block-taisao .taisao-list {
         margin: 0 ; 
+        .owl-stage {
+            display: flex; 
+        }
+        .taisao-item-wrap {
+            height: 100%;
+        }
     }
     .block-taisao .taisao-item {
         @include col-w(100%);
         padding: 0;
+        margin-bottom: 0 ; 
+        height: 100%; 
     }
     .block-taisao .taisao-item .taisao-img img{
         width: unset ; 
@@ -149,5 +157,22 @@
         position: relative ;
         bottom: 0 ;
         margin-top: 40px;
+    }
+    .block-taisao .taisao-item .taisao-img {
+        padding-top: 135px;
+    }
+    .block-taisao .taisao-item .name {
+        font-size: 22px;
+    }
+    .block-taisao .taisao-item .desc {
+        margin-bottom: 22px;
+    }
+    .custom-navs {
+        .owl-prev {
+            left: -15px;
+        }
+        .owl-next {
+            right: -15px;
+        }
     }
 }

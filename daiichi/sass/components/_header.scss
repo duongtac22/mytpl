@@ -15,6 +15,7 @@
         max-width: 100%;
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
     .mb-menu {
         display: none; 
@@ -34,7 +35,7 @@
                 display: inline-block;
                 font-size: 14px;
                 line-height: 16px;
-                color : #fff ;
+                color : #fff !important ;
 
             }
             .root {
@@ -49,7 +50,7 @@
                 top: 70%;
                 left: 50%;
                 background-color: #ffffff;
-                width: calc(100% + 40px);
+                width: calc( 100% + 10px);
                 box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
                 z-index: 9999;
                 padding: 12px 20px 12px 24px;
@@ -57,14 +58,15 @@
                 transform-origin: top;
                 border-radius: 3px;
                 a {
-                    color: #333;
+                    color: #333 !important ;
                     font-size: 14px;
                     line-height: 22px;
                 }
                 &:after {
                     content: '';
                     position: absolute;
-                    right: 17px;
+                    right: 5px;
+                    top: -6px;
                     border-left: 8px solid transparent;
                     border-right: 8px solid transparent;
                     border-bottom: 8px solid #ffffff;
@@ -73,6 +75,7 @@
                 }
                 .sub-menu2 {
                     position: relative;
+                    padding: 2px 0px; 
                     &:before {
                         content: '\f0da';
                         font-family: 'Font Awesome 5 Pro';
@@ -85,6 +88,7 @@
                     }
                     &:hover {
                         color: #EE1C23 !important;
+                        font-weight: bold;
                         &::before {
                             opacity: 1;
                             visibility: visible;
@@ -130,6 +134,9 @@
     #header .menu .menu-item {
         margin-right: 28px;
     }
+    #header .header-right .menu {
+        padding-left: 0;
+    }
 }
 
 @media ( max-width: 991px ){    
@@ -143,7 +150,7 @@
     }
     #header .header-right {
         .menu {
-            padding-left: 0;
+          
             .menu-item {
                 margin-right: 14px;
                 .root {

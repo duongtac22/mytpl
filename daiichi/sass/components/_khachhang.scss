@@ -1,7 +1,8 @@
 .block-khachhang {
     margin-top: 70px;
+    padding: 33px 0 50px;
     background: rgba(238, 28, 35, 0.06);
-    padding: 50px 0 ;
+    // padding: 50px 0 ;
     .khachhang-list {
         @extend .row ;
         .khachhang-item {
@@ -25,7 +26,7 @@
             margin-top: 50px;
             background: #EE1C23;
             border-radius: 15px;
-            padding: 26px 0;
+            padding: 20px 0;
             img {
                 margin-left: 180px;
                 margin-right: 92px;
@@ -49,7 +50,7 @@
             
             color: #010414;
             margin-bottom: 26px;
-            margin: 49px 0 26px 0;
+            margin: 35px 0 15px 0;
        }
        .btn-khachhang {
             display: inline-block; 
@@ -79,6 +80,10 @@
     .block-khachhang .khachhang-contact .box-html .box-html-text {
         margin-right: 10px;
     }
+    .block-khachhang .khachhang-list .khachhang-item {
+        @include col-w(50%);
+        margin-bottom: 15px; 
+    }
 }
 
 @media ( max-width: 768px) {
@@ -94,7 +99,7 @@
     }
     .block-khachhang .khachhang-list .khachhang-item {
         @include col-w(100%);
-
+        padding: 0 ; 
     }
     .block-khachhang .khachhang-list {
         margin: 0 !important ; 

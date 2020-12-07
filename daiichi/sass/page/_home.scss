@@ -50,7 +50,7 @@
     }
     .box-slider-text-content {
         position: absolute;
-        top: 50%;
+        top: 42%;
         left: 0;
         width: 100%;
         .container {
@@ -229,6 +229,7 @@
         .first-text {
             font-size: 24px;
             line-height: 28px;
+            text-transform: uppercase;
         }
         .second-text {
             font-size: 41px;

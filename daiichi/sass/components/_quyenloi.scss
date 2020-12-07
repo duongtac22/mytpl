@@ -52,7 +52,8 @@
                     font-size: 18px;
                     line-height: 23px;
                     text-transform: capitalize;
-                    color: #EE1C23;
+                    // color: #EE1C23;
+                    color:#666666;
                     display: block;
                     margin: 19px 0 15px 0 ; 
                 }
@@ -65,7 +66,8 @@
                 .btn-view-more{
                     font-size: 14px;
                     line-height: 16px;
-                    color: #EE1C23;
+                    // color: #EE1C23;
+                    color: #666666;
                     font-weight: 500;
                 }
             }
@@ -98,7 +100,8 @@
             box-shadow: 0px 0px 13px rgba(238, 28, 35, 0.1);
             border-radius: 6px;
             text-align: left ; 
-            padding: 49px 106px;
+            // padding: 49px 106px;
+            padding: 49px 106px 33px;
             .owner-name {
                 font-weight: bold;
                 font-size: 24px;
@@ -137,6 +140,12 @@
     }
 }
 
+@media ( max-width: 991px) {
+    .block-quyenloi .quyenloi-item {
+        @include col-w(50%);
+        margin-bottom: 15px;
+    }
+}
 @media ( max-width: 768px) {
     .block-quyenloi .container {
         padding: 0 ; 
@@ -160,5 +169,11 @@
     .block-quyenloi .quyenloi-contact {
         padding-left : 15px;
         padding-right : 15px;
+    }
+}
+
+@media ( max-width: 480px) {
+    .block-quyenloi .quyenloi-contact .card-owner {
+        padding: 30px 10px;
     }
 }

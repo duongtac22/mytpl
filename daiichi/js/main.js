@@ -307,6 +307,13 @@ var RunFn = (function () {
     owlPost.each(function () {
       let items = $(this).attr("data-items");
       let margins = $(this).attr("data-margin");
+
+      let arrows = false;
+      if( $(this).attr('data-arrows')==='true')  arrows = true;
+      else {
+        arrows = false;
+      }
+      
       if (windowWidth < 768 ) { 
 
         $(this).addClass("owl-carousel owl-theme");
@@ -321,11 +328,8 @@ var RunFn = (function () {
           // autoplayTimeout: 8000,
           margin: parseInt(margins),
           dots: true,
-          nav: false,
-          navText: [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-          ],
+          nav: arrows,
+          navText: $carouselIcons,
           loop: true,
         });
       } else if (windowWidth > 768) {

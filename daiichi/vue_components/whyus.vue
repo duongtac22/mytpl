@@ -5,7 +5,7 @@
                 Tại sao bạn nên lựa chọn DAI-ICHI LIFE?
             </h2>
 
-            <div class="taisao-list js-check-slide custom-dots position-relative" data-items="1.5" data-margin="18">
+            <div class="taisao-list js-check-slide custom-dots position-relative custom-navs" data-items="1.5" data-margin="18" data-arrows="true">
 
                 <div class="taisao-item">
                     <div class="taisao-item-wrap">
