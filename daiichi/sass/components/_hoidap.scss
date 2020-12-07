@@ -1,0 +1,88 @@
+.block-hoidap {
+    padding : 80px 0 ;
+    .hoidap-img {
+        @include col-w(524px); 
+    }
+    .hoidap-content {
+        padding-left : 10px;
+        max-width: 672px;
+        margin: 0 auto;
+    }
+    h2.title {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+        text-transform: capitalize;
+        color: #010414;
+        margin-bottom: 37px;
+        text-align: center;
+    }
+    .faq-wrap {
+        .faq__detail {
+            border-bottom: 1px solid #e7e7e9;
+            padding: 20px 0;
+        }
+        .faq__detail[open] > .faq__summary { 
+            color : #EE1C23 ;
+        }
+        .faq__summary {
+            list-style: none;
+            display: block;
+            padding: 0;
+            position: relative;
+            text-align: left;
+            outline: none;
+            &:before {
+                content: '' ;
+                position: absolute;
+                display: inline-block;
+                width: 12px;
+                height: 7px;
+                top: 8px;
+                background: url(../../images/icon-arrow-up.svg) no-repeat center;
+            }
+            .faq__question {
+                padding-left: 25px;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 23px;
+                display: block;
+            }
+        }
+        .faq__summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq__text {
+            
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 0;
+            padding: 0 25px;
+            
+            padding-top: 20px;
+        }
+        details[open] .faq__summary:before {
+            content: '' ;
+            position: absolute;
+            display: inline-block;
+            width: 12px;
+            height: 7px;
+            top: 8px;
+            background: url(../../images/icon-arrow-down.svg) no-repeat center;
+        }
+    }
+}
+
+@media( max-width: 992px) {
+    .block-hoidap {
+        padding: 50px 0 ; 
+        .hoidap-img, .hoidap-content{
+            @include col-w(100%);
+        
+        }
+        .hoidap-img {
+            padding: 0 10px; 
+            margin-bottom: 45px;
+        }
+    }
+}

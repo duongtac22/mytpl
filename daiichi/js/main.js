@@ -1,7 +1,7 @@
 var RunFn = (function () {
   var $carouselIcons = [
-    '<img src ="images/icon_arrow_right.png">',
-    '<img src ="images/icon_arrow_right.png">',
+    '<i class="far fa-angle-left"></i>',
+    '<i class="far fa-angle-right"></i>',
   ];
   function runnCarousel(holder) {
     var $carousel = $(holder);
@@ -292,6 +292,48 @@ var RunFn = (function () {
         }
     })
   }
+
+  function stopCarousel(holderCarousel) {
+    // let owl = $(holderCarousel);
+    holderCarousel.trigger('destroy.owl.carousel');
+    holderCarousel.removeClass("owl-carousel owl-theme");
+  }
+
+
+
+  function checkRunCarrousel(holder) {
+    let windowWidth = $(window).width();
+    let owlPost = $(holder);
+    owlPost.each(function () {
+      let items = $(this).attr("data-items");
+      let margins = $(this).attr("data-margin");
+      if (windowWidth < 768 ) { 
+
+        $(this).addClass("owl-carousel owl-theme");
+        $(this).owlCarousel({
+          items: items ,
+          slideSpeed: 500,
+          animateOut: 'fadeOut',
+          touchDrag: true,
+          mouseDrag: true,
+          // autoplay: true,
+          // autoplaySpeed: 8000,
+          // autoplayTimeout: 8000,
+          margin: parseInt(margins),
+          dots: true,
+          nav: false,
+          navText: [
+            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+            '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+          ],
+          loop: true,
+        });
+      } else if (windowWidth > 768) {
+  
+          stopCarousel($(this))
+      }
+    });
+  }
   return {
     runnCarousel: runnCarousel,
     syncOwl: syncOwl,
@@ -303,6 +345,7 @@ var RunFn = (function () {
     boxSearch : boxSearch,
     chooseBank : chooseBank,
     openMbMenu : openMbMenu,
-    toggleSubMenu : toggleSubMenu
+    toggleSubMenu : toggleSubMenu,
+    checkRunCarrousel : checkRunCarrousel
   };
 })();

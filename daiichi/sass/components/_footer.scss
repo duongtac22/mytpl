@@ -1,3 +1,7 @@
+footer {
+    background: #121212;
+}
+
 .footer-subscribe {
     padding: 30px 0 ; 
     background: url(../../images/footer-subscribe-bg-pc.png) no-repeat center;
@@ -10,8 +14,108 @@
         font-weight: 30px;
 
     }
-    .desc {
+    span {
         font-size: 18px;
         line-height: 22px;
+    }
+    .btn-subscribe {
+        display: inline-block;
+        background: #EE1C23;
+        border: 1px solid #FFFFFF;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        padding: 17px 40px;
+        i {
+            margin-left: 8px;
+        }
+        &:hover {
+            border-color : #EE1C23; 
+            color : #EE1C23 !important;
+            background-color : #fff ;
+        }
+    }
+}
+
+.footer-main {
+    padding: 81px 0 76px 0;
+    .footer-logo {
+        display: block;
+        margin-bottom: 25px;
+        img{
+            height: 55px;
+            width: 242px;
+        }
+    } 
+    .footer-addr {
+        padding-left:15px;
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 30px;
+            color: #FFFFFF;
+            margin-bottom: 0 ;
+        }
+    }
+    h3.title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        color: #FFFFFF;
+        margin-bottom: 27px;
+    }
+    .footer-link {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 27px;
+        color: #FFFFFF;
+        &:hover {
+            color : #EE1C23 !important ; 
+        }
+    }
+    .footer-social {
+        h3.title {
+            margin-bottom: 19px;
+        }
+        .footer-link {
+            margin-right: 19px;
+        }
+    }
+    .footer-links , .footer-social {
+        padding-top: 17px;
+    }
+}
+
+.copyright {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 27px;
+    color: #FFFFFF;
+    padding: 17px 0 ;
+    border-top: 1px solid #4D4D4D;
+}
+
+@media ( max-width: 992px ) {
+    .footer-main {
+        padding: 50px 0 ; 
+        .footer-addr {
+            padding-left: 0 ; 
+        }
+        .footer-main-item {
+            margin-bottom: 40px;
+        }
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .copyright {
+        display: none !important;
     }
 }

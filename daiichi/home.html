@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -146,6 +147,13 @@
 
     <goibaohiem></goibaohiem>
 
+    <whyus></whyus>
+
+    <quyenloi></quyenloi>
+
+    <khachhang></khachhang>
+
+    <hoidap></hoidap>
 
     <myfooter></myfooter>
   </div>
@@ -156,8 +164,9 @@
   
   <script src="js/jquery-3.4.1.js"></script>
   <script src="libs/bootstrap/bootstrap.min.js"></script>
+  <script src="libs/bootstrap/popper.min.js"></script>
   <script src="libs/owl-carousel/owl.carousel.min.js"></script>
-  
+  <script src="libs/fancybox/jquery.fancybox.min.js"></script>
   <script src="js/main.js"></script>
   <script>
 
@@ -171,7 +180,11 @@
         myheader: httpVueLoader("vue_components/header.vue"),
         myfooter: httpVueLoader("vue_components/footer.vue"),
         nhucau: httpVueLoader("vue_components/nhucau.vue"),
-        goibaohiem: httpVueLoader("vue_components/goibaohiem.vue")
+        hoidap: httpVueLoader("vue_components/hoidap.vue"),
+        whyus: httpVueLoader("vue_components/whyus.vue"),
+        goibaohiem : httpVueLoader("vue_components/goibaohiem.vue"),
+        khachhang : httpVueLoader("vue_components/khachhang.vue"),
+        quyenloi: httpVueLoader("vue_components/quyenloi.vue")
       },
       mounted() {
           this.$nextTick(() => {
@@ -180,9 +193,12 @@
               RunFn.openMbMenu('.js-toggle-menu','.js-mobile-menu');
 
               RunFn.toggleSubMenu('.has-child');
+              RunFn.checkRunCarrousel('.js-check-slide');
             });
 
-          
+            $(window).resize(function() {
+              RunFn.checkRunCarrousel('.js-check-slide');
+            });	
           });
         },
     });

@@ -46,19 +46,50 @@
                 position: absolute;
                 /* opacity: 0; */
                 /* visibility: hidden; */
-                top: 100%;
+                top: 70%;
                 left: 50%;
                 background-color: #ffffff;
                 width: calc(100% + 40px);
                 box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
                 z-index: 9999;
-                padding: 15px;
+                padding: 12px 20px 12px 24px;
                 transform: scaleY(0) translateX(-50%);
                 transform-origin: top;
                 border-radius: 3px;
                 a {
                     color: #333;
-                    font-size: 13px;
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 17px;
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-bottom: 8px solid #ffffff;
+                    z-index: 11;
+                    bottom: 100%;
+                }
+                .sub-menu2 {
+                    position: relative;
+                    &:before {
+                        content: '\f0da';
+                        font-family: 'Font Awesome 5 Pro';
+                        font-weight: 600;
+                        color: #EE1C23;
+                        position: absolute;
+                        left: -10px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    &:hover {
+                        color: #EE1C23 !important;
+                        &::before {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
                 }
             }
            
@@ -126,7 +157,7 @@
     }
     #header .header-hotline {
         font-size: 12px;
-        padding: 12px 15px 11px 15px;
+        padding: 12px 9px;
         i {
             font-size: 15px;
         }
@@ -198,6 +229,7 @@
                     padding: 9px 10px;
                     font-size: 13px;
                     position: relative;
+                    display: block;
                 }
                 &.has-child:after {
                     content: "\f078";
@@ -211,6 +243,9 @@
                     font-size: 11px;
                     height: 34px;
                     transform: translate(0,0);
+                }
+                i {
+                    display: none; 
                 }
             }
         }

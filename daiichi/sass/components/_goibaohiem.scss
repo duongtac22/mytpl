@@ -1,4 +1,5 @@
 .block-goibaohiem {
+    padding-top: 40px; 
     .goibaohiem-item {
         border-radius: 3px;
         overflow: hidden;
@@ -65,6 +66,28 @@
                 bottom: 0px;
                 z-index: 1000;
             }
+        }
+    }
+
+
+    .btn-view-all {
+        display: inline-block;
+        background: #EE1C23;
+        border: 1px solid #FFFFFF;
+        border-radius: 6px;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        padding: 19px 58px;
+        i {
+            margin-left: 8px;
+        }
+        &:hover {
+            border-color : #EE1C23; 
+            color : #EE1C23 !important;
+            background-color : #fff ;
         }
     }
 }

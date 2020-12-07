@@ -45,6 +45,12 @@
            
           </div>
         </div>
+
+        <div class="col-12 text-center">
+            <a href="javascript:;" class="btn-view-all">
+               xem tất cả <i class="fal fa-long-arrow-right"></i>
+            </a>
+        </div>
       </div>
     </div>
   </div>

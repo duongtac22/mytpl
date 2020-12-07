@@ -1,0 +1,153 @@
+.block-taisao {
+    margin-top: 70px;
+    padding: 50px 0 ; 
+    background : url(../../images/bg-taisao.png) no-repeat center;
+    background-size: cover ; 
+
+    h2.title {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        text-transform: capitalize;
+        color: #FFFFFF;
+        margin-bottom: 31px;
+    }
+    .taisao-list {
+        @extend .row;
+
+    }
+    .taisao-item {
+        @include col-w(25%);
+        padding: 0 15px;
+        margin-bottom: 40px; 
+        .taisao-item-wrap {
+            background: #FFFFFF;
+            border: 1px solid rgba(238, 28, 35, 0.5);
+            border-radius: 6px;
+            padding: 0 10px;
+        }
+        .taisao-img {
+            display: inline-block;
+            width: 100%;
+            padding-top: 205px;
+            position: relative;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+        .name {
+            display: block; 
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #EE1C23;
+            margin-bottom: 10px; 
+            
+        }
+        .desc {
+            display: block; 
+            font-size: 15px;
+            line-height: 20px;
+            text-align: center;
+            text-transform: capitalize;
+            color: #333333;
+            margin-bottom: 37px;
+        }
+    }
+
+    .brand-img {
+        display: inline-block;
+        width: 100%;
+        padding-top: 156px;
+        position: relative;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            object-fit: scale-down;
+            object-position: center;
+            filter :brightness(0) invert(1);
+            
+        }
+        &:hover img {
+            filter : brightness(1) invert(0);
+        }
+    }
+    .brand-list-slider {
+        .owl-dots {
+            padding-top: 25px;
+            position: relative;
+            bottom: 0;
+        }
+    }
+}
+
+.custom-navs {
+    .owl-nav {
+        margin: 0;
+        button {
+            position: absolute;
+            top: 50%;
+            transition: all 0.2s ease;
+            outline: none;
+            z-index: 100;
+            transform: translate(0, -50%);
+            background: #FFFFFF;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            margin: 0;
+            i {
+                font-size: 20px;
+                color: #EE1C23;
+                line-height: 30px;
+            }
+            &:hover {
+                background: #EE1C23;
+                i {
+                    color : #fff ;
+                }
+            }
+        }
+    }
+    .owl-next {
+        right: -30px;
+    }
+    .owl-prev {
+        left: -30px;
+    }
+} 
+
+@media ( max-width: 992px) {
+    .block-taisao .taisao-item {
+        @include col-w(50%);
+    }
+}
+
+@media ( max-width: 768px) {
+    .block-taisao .taisao-list {
+        margin: 0 ; 
+    }
+    .block-taisao .taisao-item {
+        @include col-w(100%);
+        padding: 0;
+    }
+    .block-taisao .taisao-item .taisao-img img{
+        width: unset ; 
+    }
+    .block-taisao .custom-dots .owl-dots {
+        position: relative ;
+        bottom: 0 ;
+        margin-top: 40px;
+    }
+}

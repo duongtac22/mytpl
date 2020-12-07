@@ -25,14 +25,20 @@
                     <li class="menu-item has-child">
                         <a href="/" class="root text-upppercase ">
                             Các gói sản phẩm 
+                            <i class="fal fa-chevron-down"></i>
                         </a>
                         <div class="sub-menu">
 
                             <a href="javascript:;" class="sub-menu2">
-                                Các gói sản phẩm 1
+                                Gói cho bé
                             </a>
                             <a href="javascript:;" class="sub-menu2">
-                                Các gói sản phẩm 2
+                                
+Gói cho gia đình
+                            </a>
+                            <a href="javascript:;" class="sub-menu2">
+                                
+Gói cho mẹ và bé
                             </a>
                         </div>
                     </li>
