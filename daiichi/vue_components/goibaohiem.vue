@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="block-goibaohiem-content row">
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="goibaohiem-item">
             <div class="goibaohiem-name">  <span>Gói bảo hiểm cho gia đình </span></div>
             <a href="javascript:;" class="goibaohiem-img">
@@ -21,7 +21,7 @@
             
           </div>
         </div>
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="goibaohiem-item">
             <div class="goibaohiem-name">  <span>Gói bảo hiểm cho Mẹ và bé </span></div>
             <a href="javascript:;" class="goibaohiem-img">
@@ -33,7 +33,7 @@
            
           </div>
         </div>
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-4">
           <div class="goibaohiem-item">
             <div class="goibaohiem-name"> <span> Gói bảo hiểm cho Con </span></div>
             <a href="javascript:;" class="goibaohiem-img">
