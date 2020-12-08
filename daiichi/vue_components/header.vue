@@ -22,25 +22,32 @@
                         </a>
                     </li>
                     
-                    <li class="menu-item has-child">
+                    <li class="menu-item">
+                        
                         <a href="/" class="root text-upppercase ">
                             Các gói sản phẩm 
                             <i class="fal fa-chevron-down"></i>
                         </a>
-                        <div class="sub-menu">
 
-                            <a href="javascript:;" class="sub-menu2">
-                                Gói cho bé
-                            </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="javascript:;" class="sub-menu2">
+                                    Gói cho bé
+                                </a>
+                            </li>
+                          <li>
                             <a href="javascript:;" class="sub-menu2">
                                 
 Gói cho gia đình
                             </a>
+                          </li>
+                             <li>
                             <a href="javascript:;" class="sub-menu2">
                                 
 Gói cho mẹ và bé
                             </a>
-                        </div>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="menu-item">

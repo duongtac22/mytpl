@@ -103,6 +103,7 @@
             text-align: center;
             color: #EE1C23;
             margin-bottom: 25px;
+            font-weight: bold;
         }
         .form-group {
             margin-bottom: 15px;
@@ -276,10 +277,23 @@
     }
 
     .box-register .box-register-form {
-        padding: 15px;
+       
+        padding: 27px 25px 16px; 
         h2.title {
             font-size: 22px;
+        }
+        .btn-submit-resiger {
+            margin-bottom: 20px;
+            margin-top: 24px;
         }
     }
  }
 
+ @media (max-width: 375px ) {  
+    .box-register .box-register-form h2.title {
+        font-size: 17px;
+    }
+    .box-register .box-register-form .btn-submit-resiger {
+        font-size: 14px;
+    }
+ }

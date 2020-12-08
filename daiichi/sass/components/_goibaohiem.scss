@@ -93,8 +93,40 @@
     }
 }
 
-@media (max-width: 992px) {
-    .block-goibaohiem .goibaohiem-item .goibaohiem-img {
-        padding-top: 100%;
+// @media (max-width: 992px) {
+//     .block-goibaohiem .goibaohiem-item .goibaohiem-img {
+//         padding-top: 100%;
+//     }
+// }
+
+@media ( max-width: 480px) {
+    .block-goibaohiem {
+        .box-title {
+            margin-bottom: 48px;
+        }
+        .box-title h2.title {
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+        .goibaohiem-item .goibaohiem-name {
+            padding: 18px 0 19px;
+        }
+        .goibaohiem-item {
+            margin-bottom: 29px;
+        }
+    }
+}
+
+@media ( max-width: 375px) {
+    .block-goibaohiem {
+        .box-title {
+            h2.title {
+                font-size: 24px;
+                line-height: 30px;
+            }
+            p.desc {
+                font-size: 16px;
+            }
+        }
     }
 }

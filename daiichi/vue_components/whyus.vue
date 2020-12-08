@@ -29,7 +29,7 @@ cho khách hàng là ưu tiên hàng đầu
                 <div class="taisao-item">
 <div class="taisao-item-wrap">
                     <a href="javascript:;" class="taisao-img">
-                        <img src="images/daiichi-ic-3.png" alt="">
+                        <img src="images/daiichi-ic-fee.png" alt="">
                     </a>
 
                     <div class="taisao-content">
@@ -45,7 +45,8 @@ cho khách hàng là ưu tiên hàng đầu
                 <div class="taisao-item">
 <div class="taisao-item-wrap">
                     <a href="javascript:;" class="taisao-img">
-                        <img src="images/daiichi-ic-fee.png" alt="">
+                        <img src="images/daiichi-ic-3.png" alt="">
+                        
                     </a>
 
                     <div class="taisao-content">

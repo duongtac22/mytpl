@@ -120,7 +120,7 @@
         border-radius: 60px;
         font-size: 14px;
         line-height: 16px;
-        color : #fff ;
+        color : #fff !important;
         font-weight: bold;
         padding: 12px 22px 11px 21px;
         i {
@@ -142,7 +142,7 @@
 @media ( max-width: 991px ){    
     #header .logo {
         @include col-w(184px);
-        margin: 15px auto;
+        margin: 9px auto;
         img {
             width: 184px;
             height: 41px;
@@ -206,7 +206,7 @@
         margin: 0;
         left: -280px;
         position: absolute;
-        top: 71px;
+        top: 59px;
         width: 280px;
         bottom: 0;
         height: 100%;
@@ -276,7 +276,7 @@
 }
 
 @media screen and (min-width: 768px){
-    #header .menu .menu-item.has-child:hover .sub-menu {
+    #header .menu .menu-item:hover .sub-menu {
         transform: scaleY(1) translateX(-50%);
     }
 }

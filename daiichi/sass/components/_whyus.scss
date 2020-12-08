@@ -137,6 +137,8 @@
 @media ( max-width: 768px) {
     .block-taisao .taisao-list {
         margin: 0 ; 
+        width: calc(100% + 15px);
+        margin-right: -15px;
         .owl-stage {
             display: flex; 
         }
@@ -169,11 +171,38 @@
         margin-bottom: 22px;
     }
     .custom-navs {
+        .owl-nav button {
+            top: 40%;
+        }
         .owl-prev {
-            left: -15px;
+            left: 0;
         }
         .owl-next {
-            right: -15px;
+            right: 0;
+        }
+    }
+}
+
+@media ( max-width : 480px ) {
+    .block-taisao {
+        padding: 50px 0 40px 0;
+        .custom-dots .owl-dots {
+            margin-top: 55px;
+        }
+        h2.title {
+            margin-bottom: 20px;
+        }
+        .taisao-list {
+            width: calc(100% + 15px);
+            margin-right: -15px;
+        }
+    }
+}
+@media ( max-width: 375px) {
+    .block-taisao {
+        h2.title {
+            font-size: 24px;
+            line-height: 30px;
         }
     }
 }

@@ -193,6 +193,7 @@
       },
       mounted() {
           this.$nextTick(() => {
+          
             $(window).bind("load", function () {
               RunFn.runnCarousel('.js-carousel');
               RunFn.openMbMenu('.js-toggle-menu','.js-mobile-menu');

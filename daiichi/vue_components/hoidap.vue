@@ -47,10 +47,10 @@
                             </p>
                         </details>
 
-                          <details class="faq__detail">
+                        <details class="faq__detail">
                             <summary class="faq__summary">
                                 <span class="faq__question">
-                                   Khi nào tôi nên tham gia bảo hiểm nhân thọ?
+                                    Khi nào tôi nên tham gia bảo hiểm nhân thọ?
                                 </span>
                             </summary>
                             <p class="faq__text">
@@ -64,7 +64,7 @@
                         <details class="faq__detail">
                             <summary class="faq__summary">
                                 <span class="faq__question">
-                                   Nên tham gia cho bố mẹ trước hay con cái trước?
+                                    Nên tham gia cho bố mẹ trước hay con cái trước?
                                 </span>
                             </summary>
                             <p class="faq__text">
@@ -78,7 +78,7 @@
                         <details class="faq__detail">
                             <summary class="faq__summary">
                                 <span class="faq__question">
-                                  Nếu các năm sau tôi không đóng thì sao?
+                                    Nếu các năm sau tôi không đóng thì sao?
                                 </span>
                             </summary>
                             <p class="faq__text">
@@ -88,6 +88,7 @@
                                 hiểm nhân thọ.
                             </p>
                         </details>
+                        
                     </div>
 
                 </div>

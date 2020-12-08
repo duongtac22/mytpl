@@ -55,3 +55,30 @@
         padding-top: 50px;
     }
 }
+
+@media (max-width: 480px){
+    .block-nhucau {
+        padding-top: 35px;
+        .box-title {
+            margin-bottom: 28px;
+            h2.title {
+                padding: 0 15px;
+                font-size: 30px;
+                margin: 10px 0 6px;
+            }
+        }
+    }
+}
+@media ( max-width : 375px ) {
+    .block-nhucau {
+        .box-title {
+            h2.title {
+                font-size: 24px;
+                line-height: 30px;
+            }
+            p.desc {
+                font-size: 16px;
+            }
+        }
+    }
+}
