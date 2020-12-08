@@ -19,76 +19,91 @@
                     </h2>
                     <div class="faq-wrap" id="faq-wrap">
 
-                        <details class="faq__detail">
-                            <summary class="faq__summary">
-                                <span class="faq__question">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#faq-wrap" href="#faq1">
                                     Có mất phí tư vấn không?
-                                </span>
-                            </summary>
-                            <p class="faq__text">
-                                Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
-                                không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
-                                Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
-                                hiểm nhân thọ.
-                            </p>
-                        </details>
-
-                        <details class="faq__detail">
-                            <summary class="faq__summary">
-                                <span class="faq__question">
+                                </a>
+                            </div>
+                            <div id="faq1" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <p class="faq__text">
+                                    Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
+                                    không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
+                                    Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
+                                    hiểm nhân thọ.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#faq-wrap" href="#faq2">
                                     Nếu tôi muốn hủy hợp đồng thì sao?
-                                </span>
-                            </summary>
-                            <p class="faq__text">
-                                Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
-                                không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
-                                Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
-                                hiểm nhân thọ.
-                            </p>
-                        </details>
-
-                        <details class="faq__detail">
-                            <summary class="faq__summary">
-                                <span class="faq__question">
-                                    Khi nào tôi nên tham gia bảo hiểm nhân thọ?
-                                </span>
-                            </summary>
-                            <p class="faq__text">
-                                Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
-                                không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
-                                Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
-                                hiểm nhân thọ.
-                            </p>
-                        </details>
-
-                        <details class="faq__detail">
-                            <summary class="faq__summary">
-                                <span class="faq__question">
+                                </a>
+                            </div>
+                            <div id="faq2" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <p class="faq__text">
+                                    Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
+                                    không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
+                                    Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
+                                    hiểm nhân thọ.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#faq-wrap" href="#faq3">
+                                   Khi nào tôi nên tham gia bảo hiểm nhân thọ?
+                                </a>
+                            </div>
+                            <div id="faq3" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <p class="faq__text">
+                                    Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
+                                    không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
+                                    Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
+                                    hiểm nhân thọ.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#faq-wrap" href="#faq4">
                                     Nên tham gia cho bố mẹ trước hay con cái trước?
-                                </span>
-                            </summary>
-                            <p class="faq__text">
-                                Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
-                                không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
-                                Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
-                                hiểm nhân thọ.
-                            </p>
-                        </details>
-
-                        <details class="faq__detail">
-                            <summary class="faq__summary">
-                                <span class="faq__question">
+                                </a>
+                            </div>
+                            <div id="faq4" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <p class="faq__text">
+                                    Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
+                                    không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
+                                    Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
+                                    hiểm nhân thọ.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#faq-wrap" href="#faq5">
                                     Nếu các năm sau tôi không đóng thì sao?
-                                </span>
-                            </summary>
-                            <p class="faq__text">
-                                Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
-                                không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
-                                Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
-                                hiểm nhân thọ.
-                            </p>
-                        </details>
-                        
+                                </a>
+                            </div>
+                            <div id="faq5" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <p class="faq__text">
+                                    Bạn hoàn toàn không mất khoản phí gì khi tìm hiểu bảo hiểm nhân thọ: Không phí tư vấn,
+                                    không phí hồ sơ, Không phí trung gian. Bạn được lựa chọn các quyền lợi mà mình tham gia.
+                                    Người đại lý có trách nhiệm và nghĩa vụ tư vấn, chia sẻ với bạn cách thức tham gia bảo
+                                    hiểm nhân thọ.
+                                </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

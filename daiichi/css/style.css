@@ -33310,6 +33310,53 @@ footer {
   background: url(../images/icon-arrow-down.svg) no-repeat center;
 }
 
+.block-hoidap .faq-wrap .accordion-group {
+  border-bottom: 1px solid #e7e7e9;
+  padding: 20px 0;
+}
+
+.block-hoidap .faq-wrap .accordion-heading a {
+  display: block;
+  position: relative;
+  text-align: left;
+  padding-left: 25px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: capitalize;
+  color: #222222;
+}
+
+.block-hoidap .faq-wrap .faq__text {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0;
+  padding: 0 25px;
+  padding-top: 20px;
+}
+
+.block-hoidap .faq-wrap .accordion-toggle.collapsed:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 12px;
+  height: 7px;
+  left: 0px;
+  top: 8px;
+  background: url(../images/icon-arrow-up.svg) no-repeat center;
+}
+
+.block-hoidap .faq-wrap .accordion-toggle:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 12px;
+  height: 7px;
+  left: 0;
+  top: 8px;
+  background: url(../images/icon-arrow-down.svg) no-repeat center;
+}
+
 @media (max-width: 992px) {
   .block-hoidap {
     padding: 50px 0;
