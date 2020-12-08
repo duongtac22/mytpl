@@ -258,3 +258,28 @@
     }
 }
 
+@media (max-width: 480px ) { 
+    .home-slider .item > a {
+        padding-top: 300px;
+    }
+    .home-slider .box-slider-text {
+        bottom: 20px;
+        .first-text {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+        .second-text {
+            font-size: 28px;
+            line-height: 1.2;
+        }
+        .slider-desc{display: none;}
+    }
+
+    .box-register .box-register-form {
+        padding: 15px;
+        h2.title {
+            font-size: 22px;
+        }
+    }
+ }
+

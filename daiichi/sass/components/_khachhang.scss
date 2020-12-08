@@ -108,5 +108,9 @@
         position: relative ;
         bottom: 0 ;
         margin-top: 40px;
+        span {
+            border: 1px solid #ff1226;
+            background: rgba(238, 28, 35, 0.06);
+        }
     }
 }

@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="col-12 col-md-4">
-                        <div class="footer-subscribe-btn text-center mt-3 mt-md-0">
+                        <div class="footer-subscribe-btn text-center">
                             <a href="javascript:;" class="btn-subscribe">
                                   Liên hệ ngay<i class="fal fa-long-arrow-right"></i>
                             </a>
@@ -33,7 +33,7 @@
         <div class="footer-main">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-12 col-lg-6">
+                    <div class="col-12 col-lg-5 col-md-12">
                         <div class="footer-main-item">
                             <a href="javascript:;" class="footer-logo">
                                 <img src="images/footer-logo.png" alt="">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-3">
+                    <div class="col-12 col-lg-4 col-md-6">
                         <div class="footer-main-item footer-links">
                             <h3 class="title"> Sản phẩm </h3>
 
@@ -68,7 +68,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-3">
+                    <div class="col-12 col-lg-3 col-md-6">
                         <div class="footer-main-item footer-social">
                             <h3 class="title"> KẾT NỐI VỚI CHÚNG TÔI </h3>
                             <div class="footer-main-item-content ">

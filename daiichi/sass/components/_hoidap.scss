@@ -1,7 +1,8 @@
 .block-hoidap {
     padding : 80px 0 ;
     .hoidap-img {
-        @include col-w(524px); 
+        @include col-w(560px); 
+        text-align: center;
     }
     .hoidap-content {
         padding-left : 10px;
@@ -14,7 +15,7 @@
         line-height: 42px;
         text-transform: capitalize;
         color: #010414;
-        margin-bottom: 37px;
+        margin-bottom: 25px;
         text-align: left;
     }
     .faq-wrap {
@@ -84,6 +85,14 @@
             text-align: center;
             padding: 0 10px; 
             margin-bottom: 45px;
+        }
+    }
+}
+
+@media ( max-width: 768px) {
+    .block-hoidap {
+        h2.title {
+            padding: 0 15px;
         }
     }
 }

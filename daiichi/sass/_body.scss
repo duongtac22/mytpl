@@ -307,9 +307,9 @@ ul{
 
 //trang dmuc sp
 .p-list-page{
-    .block-goibaohiem {
-        margin-bottom: 50px;
-    }
+    // .block-goibaohiem {
+    //     margin-bottom: 50px;
+    // }
     &.p-article {
         .block-quyenloi .quyenloi-item-wrap {
             margin-bottom: 44px;
@@ -320,10 +320,82 @@ ul{
 .p-detail-page {
     .block-goibaohiem {
         background: rgba(238, 28, 35, 0.06);
-        padding-bottom: 50px;
+        // padding-bottom: 50px;
+        padding-bottom: 10px;
+    }
+}
+// breadcrumb
+div#breadcrumb {
+    padding: 30px 0;
+    text-align: center;
+    display: inline-block;
+    ol {
+        margin: 0px;
+        float: left;
+        clear: both;
+        padding: 0px;
+        li {
+            float: left;
+            line-height: 24px;
+            position: relative;
+            // margin: 5px 0 ; 
+            text-align: left;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+            h1 , span {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 24px;
+                margin: 0 auto;
+                color: #555555;
+            }
+            &:not(:last-child):after {content: '/';position: absolute;right: -12px;top: 0;}
+        }
+    }
+}
+
+// trang chi tiet tin 
+
+.article-detail-page {
+    .block-quyenloi {
+        background: rgba(238, 28, 35, 0.06);
+        padding-bottom: 80px;
+    }
+    .article-detail-name {
+        font-size: 48px;
+        line-height: 58px;
+        margin-top: 0;
+    }
+    .article-detail-summary {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+// lien he
+.about-content {
+    padding: 51px 0 ;
+    h2.title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        text-transform: uppercase;
+        margin-bottom: 21px;
+    }
+    .text-red {
+        color : #EE1C23 ;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom : 5px; 
+    }
+    a {
+        color: #555555 ;
     }
 }
 // tieu de 
+
 .p-detail-name {
     font-weight: bold;
     font-size: 36px;

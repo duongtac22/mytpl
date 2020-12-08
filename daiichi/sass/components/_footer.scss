@@ -113,8 +113,21 @@ footer {
     
 }
 
+@media (max-width: 768px) {
+    .footer-subscribe {
+        padding: 80px 0 60px 0 ; 
+    }
+    .footer-subscribe .btn-subscribe {
+        margin-top: 36px;
+    }
+}
+
 @media (max-width: 480px) {
     .copyright {
         display: none !important;
     }
+    .footer-main {
+        padding-bottom: 20px; 
+    }
+    
 }
