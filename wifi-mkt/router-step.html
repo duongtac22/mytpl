@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+  <div id="app">
+    <myheader :login="isLogin"></myheader>
+
+    <div class="router-main router-step">
+      <div class="admin-container container">
+        <h1 class="title text-center">
+          Thêm và cấu hình Router mới!
+        </h1>
+
+        <ul class="d-inline-block list-unstyled router-list-step w-100 list-steps">
+
+          <li class="step-item current">
+            <a href="javascript:;">
+              <span class="step-count">1</span>
+              <span class="step-name"> Đăng ký Router</span>
+            </a>
+          </li>
+
+          <li class="step-item done">
+            <a href="javascript:;">
+              <span class="step-count">2</span>
+              <span class="step-name"> Nhập API key</span>
+            </a>
+          </li>
+
+          <li class="step-item">
+            <a href="javascript:;">
+              <span class="step-count">3</span>
+              <span class="step-name"> Chọn Organization</span>
+            </a>
+          </li>
+          <li class="step-item">
+            <a href="javascript:;">
+              <span class="step-count">4</span>
+              <span class="step-name"> Chọn Network              </span>
+            </a>
+          </li>
+          <li class="step-item">
+            <a href="javascript:;">
+              <span class="step-count">5</span>
+              <span class="step-name"> Chọn SSID </span>
+            </a>
+          </li>
+          <li class="step-item">
+            <a href="javascript:;">
+              <span class="step-count">6 </span>
+              <span class="step-name"> Set splash page              </span>
+            </a>
+          </li>
+        </ul>
+
+
+        <div class="router-setup-content">
+          <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="setup-box-left">
+                    <h2 class="step-left-title">
+                      Bước 1. Đăng ký Router
+                    </h2>
+
+                  <form action="" class="form-actions">
+
+                    <div class="form-group">
+                      <label for="routerBrand"> Chọn hãng sản xuất Router </label>
+                      <div class="custom-select2">
+                        <select class="form-control" id="routerBrand">
+                          <option value="" selected> Chọn hãng sản xuất Router </option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                      
+                    </div>
+
+                    <div class="form-group">
+                      <label for="customRouterName">Tên Router bạn muốn đặt</label>
+                      <input type="text" class="form-control" id="customRouterName" placeholder="Tên Router bạn muốn đặt">
+                    </div>
+                    
+
+                    <div class="form-group">
+                      <label for="setsplashpage">Set splash page </label>
+                      <div class="position-relative">
+                        <input type="text" class="form-control input-splash-page" id="setsplashpage" placeholder="Set splash page">
+                        <a href="javascript:;" class="copy-clipboard ">
+                          <img src="images/bizfly-ic-search.png" alt="click to copy">
+                        </a>
+                      </div>
+                     
+                    </div>
+
+                    <div class="d-inline-block form-group w-100">
+                        <a href="javascript:;" class="btn-back-step btn-step float-left">
+                          Trở lại
+                        </a>
+<!-- 
+                        <a href="javascript:;" >
+                            Lưu và Tiếp tục <i class="fal fa-arrow-right"></i>
+                        </a> -->
+
+                        <button type="submit" value="Submit" value="Lưu và Tiếp tục" class="btn-next-step btn-step float-right">
+                            Lưu và Tiếp tục <i class="fal fa-arrow-right"></i>
+                        </button>
+                    </div>
+                  </form>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-12">
+                <div class="setup-box-right">
+                    <h2 class="title">
+                      <img src="images/bizfly-ic-info2.png" alt="">
+                      Hướng dẫn Đăng ký Router
+                    </h2>
+                    <div class="box-right-content">
+                      <p><b>1. Chọn hãng sản xuất Router </b></p>
+
+                        <p>
+                          Là tên nổi bật hay chính là logo hiển thị trên Router có thể ở mặt trên hoặc mặt dưới.
+                        </p>
+                        <p>
+                        Hiện tại Bizfly WIFI đang hỗ trợ Router của các hãng dưới đây: </br>
+                        - Meraki </br>
+                        - Meraki</br>
+                        - Meraki</br>
+                        </p>
+                        <p>
+                        Nếu không có hãng sản xuất nào phù hợp với thiết bị của bạn, vui lòng chọn “Hãng khác” và liên hệ hotline 1900 63 64 65 để được hỗ trợ kịp thời và nhanh chóng.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="js/vue.js"></script>
+  <script src="js/httpVueLoader.js"></script>
+  <script>
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        isLogin: false
+      },
+      components: {
+        myheader: httpVueLoader("vue_components/header.vue")
+      },
+    });
+  </script>
+</body>
+
+</html>

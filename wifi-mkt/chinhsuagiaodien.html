@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+
+        
+        <form action="" class="edit-form">
+            <div class="edit-theme">
+
+            
+                <div class="edit-header d-flex flex-wrap">
+    
+                    <div class="edit-left">
+                        <a href="javascript:;" class="edit-logo">
+                            <img src="images/logo-wifi-2.png" alt="">
+                        </a>
+    
+                        <div class="actions-arrow">
+                            <a href="javascript:;" class="actions-left action">
+                                <img src="images/edit-arrow-back.png" alt="">
+                            </a>
+                            <a href="javascript:;" class="actions-right action">
+                                <img src="images/edit-arrow-next.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="edit-right">
+                        <div class="edit-actions">
+                            <a href="javascript:;" class="btn-picked">
+                                Chọn mẫu khác
+                            </a>
+                            <a href="javascript:;" class="btn-save">
+                                Lưu lại
+                            </a>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <div class="edit-content d-flex flex-wrap">
+                    <div class="edit-left">
+                        
+                        <div class="edit-main-box">
+                            <div class="box-header text-center">
+    
+                                <a href="/" class="logo">
+                                    <img src="images/wifi-logo-bizfly.png" alt="" class="logo-img">
+                                </a>
+                
+                                <h1 class="head-title">
+                                        Chào mừng Quý khách 
+                                        đến với Bizfly Techshow 2020!
+                                </h1>
+                
+                                <p class="head-desc">
+                                    Sự kiện Chuyển đổi số cho Doanh nghiệp Việt 2020
+                                </p>
+                
+                            </div>
+                            
+                            <div class="form-actions">
+                
+                                <h2 class="form-title text-center">
+                                    Điền thông tin để kết nối vào wifi 
+                                    “Bizfly Wifi FREE”
+                                </h2>
+                
+                                <input type="text" class="input-custom" id="customer-name" placeholder="Họ và tên Quý khách">
+                
+                                <input type="email" class="input-custom" id="customer-email" placeholder="Địa chỉ Email">
+                
+                                <input type="text" class="input-custom" id="customer-tel" placeholder="Số điện thoại">
+                
+                                <button type="submit" class="btn-submit" value="">Kết nối ngay</button>
+                            </div>
+                        </div>
+                      
+    
+                    </div>
+                    <div class="edit-right">
+    
+                        <h2 class="title"> Thông tin chung </h2>
+                        
+                        <div class="edit-inputs">
+                            <div class="form-group">
+                                <label for="customRouterName">Tên hình thức đăng nhập</label>
+                                <input type="text" class="form-control" id="customRouterName" placeholder="Tiêu đề hình thức đăng nhập 01">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="routerBrand"> Router áp dụng hình thức đăng nhập này </label>
+                                <div class="custom-select2">
+                                  <select class="form-control" id="routerBrand">
+                                    <option value="" selected> Chọn Router mà bạn muốn áp dụng </option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                  </select>
+                                </div>
+                                
+                              </div>
+    
+                            <div class="form-group">
+                                <label for="customRouterName">Link điều hướng sau khi đăng nhập thành công</label>
+                                <input type="text" class="form-control" id="customRouterName" placeholder="bizfly.vn">
+                            </div>
+                        </div>
+                      
+
+
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+
+      });
+    </script>
+  </body>
+</html>
