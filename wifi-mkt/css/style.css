@@ -31918,7 +31918,7 @@ textarea {
 .router-main.no-router {
   width: 100%;
   height: calc(100vh - 70px);
-  background: url(../../images/bizfly-bg-city.png) no-repeat center;
+  background: url(../images/bizfly-bg-city.png) no-repeat center;
   background-size: cover;
   position: relative;
 }
@@ -31949,7 +31949,7 @@ textarea {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background: url(../../images/bizfly-bg-cloud.png) no-repeat top;
+  background: url(../images/bizfly-bg-cloud.png) no-repeat top;
   background-size: contain;
   width: 100%;
   max-width: 694px;
@@ -32000,7 +32000,7 @@ textarea {
 
 .router-main.router-step .step-item:after {
   content: '';
-  background: url(../../images/bizfly-ic-back.png) no-repeat center;
+  background: url(../images/bizfly-ic-back.png) no-repeat center;
   position: absolute;
   right: -32px;
   top: 50%;
@@ -32186,7 +32186,7 @@ textarea {
   content: '';
   position: absolute;
   right: 10px;
-  background: url(../../images/bizfly-ic-search2.png) no-repeat center;
+  background: url(../images/bizfly-ic-search2.png) no-repeat center;
   width: 16px;
   height: 16px;
   top: 12px;
@@ -32838,10 +32838,10 @@ textarea {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-  width: 68px;
-  height: 38px;
+  width: 36px;
+  height: 20px;
   margin: 0;
-  padding: 4px;
+  padding: 2px;
   background: #ced4da;
   border-radius: 76px;
   -webkit-transition: all 300ms ease;
@@ -32853,8 +32853,8 @@ textarea {
   position: relative;
   display: block;
   content: "";
-  width: 30px;
-  height: 30px;
+  width: 16px;
+  height: 16px;
 }
 
 .custom-switch .custom-switch-input + .custom-switch-btn:after {
@@ -32874,7 +32874,7 @@ textarea {
 }
 
 .custom-switch .custom-switch-input:checked + .custom-switch-btn:after {
-  left: 30px;
+  left: 16px;
 }
 
 .custom-switch .custom-switch-input:checked + .custom-switch-btn ~ .custom-switch-content-checked {
@@ -32899,8 +32899,79 @@ textarea {
   height: auto;
 }
 
-.custom-switch.custom-switch-label-status .custom-switch-input:checked + .custom-switch-btn:after {
-  left: 50px;
+.router-list {
+  margin-top: 20px;
+  width: 100%;
+  background: #fff;
+  min-width: 1170px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.router-list .heading {
+  background: rgba(21, 39, 100, 0.16);
+}
+
+.router-list td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.router-list tr {
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.router-list .login-from {
+  display: block;
+}
+
+.router-list .login-from .login-img {
+  float: left;
+  width: 64px;
+}
+
+.router-list .login-from .login-from-info {
+  display: block;
+  margin-left: 76px;
+  text-align: left;
+}
+
+.router-list .login-from .login-from-info .from-name {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.router-list .login-from .login-from-info .from-link {
+  font-size: 12px;
+  line-height: 14px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #4D7FF8;
+}
+
+.router-list .router-item-button a {
+  display: block;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #4D7FF8;
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+.router-list .router-item-button a.btn-save {
+  background: #4D7FF8;
+  color: #fff;
+}
+
+.router-list .router-item-button a.btn-save:hover {
+  background: #FFFFFF;
+  color: #4D7FF8  !important;
+}
+
+.router-list .router-item-button a:hover {
+  background: #4D7FF8;
+  color: #fff !important;
 }
 
 .edit-form {

@@ -19,7 +19,7 @@
     &.no-router {
         width: 100%;
         height: calc(100vh - 70px);
-        background: url(../../images/bizfly-bg-city.png) no-repeat center;
+        background: url(../images/bizfly-bg-city.png) no-repeat center;
         background-size: cover;
         position: relative;
         .box-text {
@@ -43,7 +43,7 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            background: url(../../images/bizfly-bg-cloud.png) no-repeat top;
+            background: url(../images/bizfly-bg-cloud.png) no-repeat top;
             background-size: contain;
             width: 100%;
             max-width: 694px;
@@ -87,7 +87,7 @@
             }
             &:after {
                 content: '';
-                background: url(../../images/bizfly-ic-back.png) no-repeat center;
+                background: url(../images/bizfly-ic-back.png) no-repeat center;
                 position: absolute;
                 right: -32px;
                 top: 50%;
@@ -251,7 +251,7 @@
         content: '';
         position: absolute;
         right: 10px;
-        background: url(../../images/bizfly-ic-search2.png) no-repeat center;
+        background: url(../images/bizfly-ic-search2.png) no-repeat center;
         width: 16px;
         height: 16px;
         top: 12px;

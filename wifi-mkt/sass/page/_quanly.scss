@@ -510,10 +510,10 @@
     position: relative;
     user-select: none;
     cursor: pointer;
-    width: 68px;
-    height: 38px;
+    width: 36px;
+    height: 20px;
     margin: 0;
-    padding: 4px;
+    padding: 2px;
     background: #ced4da;
     border-radius: 76px;
     transition: all 300ms ease;
@@ -523,8 +523,8 @@
     position: relative;
     display: block;
     content: "";
-    width: 30px;
-    height: 30px;
+    width: 16px;
+    height: 16px;
   }
   .custom-switch .custom-switch-input + .custom-switch-btn:after {
     left: 2px;
@@ -539,7 +539,7 @@
     background: #28a745;
   }
   .custom-switch .custom-switch-input:checked + .custom-switch-btn:after {
-    left: 30px;
+    left: 16px;
   }
   .custom-switch
     .custom-switch-input:checked
@@ -571,8 +571,67 @@
     opacity: 1;
     height: auto;
   }
-  .custom-switch.custom-switch-label-status
-    .custom-switch-input:checked
-    + .custom-switch-btn:after {
-    left: 50px;
+
+
+  .router-list {
+    margin-top: 20px;
+    width: 100%;
+    background: #fff;
+    min-width: 1170px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    .heading {
+        background: rgba(21, 39, 100, 0.16);
+    }
+    td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+    tr {
+        border-bottom: 1px solid #DDDDDD;
+    }
+    .login-from {
+        display: block;
+        .login-img {
+            float: left;
+            width: 64px;
+        }
+        .login-from-info {
+            display: block;
+            margin-left: 76px;
+            text-align: left;
+            .from-name {
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 5px; 
+            }
+            .from-link {
+                font-size: 12px;
+                line-height: 14px;
+                text-decoration-line: underline;
+                color: #4D7FF8;
+            }
+        }
+    }
+    .router-item-button a {
+        display: block;
+        text-align: center;
+        background: #FFFFFF;
+        border: 1px solid #4D7FF8;
+        margin-bottom: 8px;
+        padding: 10px;
+        &.btn-save {
+            background: #4D7FF8;
+            color: #fff;
+            &:hover {
+                background: #FFFFFF;
+                color: #4D7FF8  !important;
+            }
+        }
+        &:hover {
+            background: #4D7FF8;
+            color: #fff !important;
+        }
+    }
+    
   }
