@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="page-quanly page-tongquan">
+        <div class="fixed-sidebar">
+          <a href="javascript:;" class="sidebar-logo">
+            <img src="images/logo-bizfly-wifi.png" alt="" />
+          </a>
+
+          <ul class="sidebar-menu top">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-tongquan.png" alt="" />
+                Tổng quan
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-login.png" alt="" />
+                Hình thức đăng nhập
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-settings.png" alt="" />
+                Cài đặt Router
+              </a>
+            </li>
+          </ul>
+
+          <ul class="sidebar-menu bottom">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-info-circle"></i>
+                Hướng dẫn sử dụng
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-question-circle"></i>
+                Trợ giúp
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quanly-main">
+          <div class="fixed-header">
+            <div class="header-top-right float-right d-flex align-items-center">
+              <div class="dropdown dropdown mr-3">
+                <a href="/" class="notification">
+                  <img
+                    src="../../images/bizfly-ic-bell.png"
+                    alt=""
+                    class="noti-ic"
+                  />
+                </a>
+              </div>
+              <div class="dropdown info d-flex align-items-center">
+                <a class="" href="#">
+                  <img
+                    src="../../images/bizfly-login-ava.png"
+                    alt=""
+                    class="avatar"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="quanly-content">
+
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="page-title">
+                        <h1 class="page-title">Tổng quan</h1>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 d-flex flex-wrap align-items-center">
+                    <div class="custom-select2 select-router"><select id="routerList" class="form-control" dir="rtl"><option value="" selected="selected"> Tất cả các Router</option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                    <div class="custom-select2 select-router-time"><select id="setupTime" class="form-control" dir="rtl"><option value="" selected="selected"> 30 ngày </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="dashboard-box">
+
+                        <p> Tổng số lượt truy cập   <a href="" class="ml-1"> <i class="fal fa-info-circle"></i>  </a> </p>
+
+                        <div class="dashboard-info">
+                            
+                            <div class="result">
+                                <b> 2312 </b>
+                            </div>
+                            <div class="calculate">
+
+                                <img src="images/ic-up.png" alt="">
+                                <span> + 12% </span>
+
+                            </div>
+                        </div>
+
+                        <span>
+                            Truy cập trong 30 ngày gần nhất
+                        </span>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="dashboard-box">
+
+                        <p>  Số lượt đăng nhập <a href="" class="ml-1"> <i class="fal fa-info-circle"></i>  </a> </p>
+
+                        <div class="dashboard-info">
+                            
+                            <div class="result">
+                                <b> 2020 </b>
+                            </div>
+                            <div class="calculate">
+
+                                <img src="images/ic-down.png" alt="">
+                                <span> - 10% </span>
+                                
+                            </div>
+                        </div>
+
+                        <span>
+                            Đăng nhập trong 30 ngày gần nhất
+                        </span>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <div class="dashboard-box">
+
+                    <p> Số khách mới   <a href="" class="ml-1"> <i class="fal fa-info-circle"></i>  </a> </p>
+
+                    <div class="dashboard-info">
+                        
+                        <div class="result">
+                            <b> 889 </b>
+                        </div>
+                        <div class="calculate">
+
+                            <img src="images/ic-up.png" alt="">
+                            <span> + 25% </span>
+                            
+                        </div>
+                    </div>
+
+                    <span>
+                        Khách mới trong 30 ngày gần nhất
+                    </span>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-8">
+                    <div class="dashboard-box">
+                        <p>  Đang truy cập </p>
+
+                        <div class="online d-flex align-items-center flex-wrap mb-3">
+                            <i class="fas fa-circle color-green"></i>
+                            <b class="current-online"> 45 </b>
+                            <span class="mt-0"> phiên đang truy cập </span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="current-device w-100 ">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" class="custom-checkbox">
+                                        </th>
+                                        <th>
+                                            Trạng thái
+                                        </th>
+                                        <th>
+                                            Tên Thiết bị
+                                        </th>
+                                        <th class="text-right">
+                                            Thời gian hoạt động
+                                        </th>
+                                        <th>
+                                            Địa chỉ IP
+                                        </th>
+                                        <th>
+                                            Địa chỉ MAC
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td width="26">
+                                            <input type="checkbox" class="custom-checkbox">
+                                        </td>
+                                        <td width="80">
+                                            Allowed
+                                        </td>
+                                        <td>
+                                            Iphone X
+                                        </td>
+                                        <td class="text-right" width="150">
+                                            00:32:44
+                                        </td>
+                                        <td class="text-left" width="150">
+                                            192.168.2.1
+                                        </td>
+                                        <td width="150">
+                                            00:1B:44:11:3A:B7
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="26">
+                                            <input type="checkbox" class="custom-checkbox">
+                                        </td>
+                                        <td width="80">
+                                            Allowed
+                                        </td>
+                                        <td>
+                                            Iphone X
+                                        </td>
+                                        <td class="text-right" width="150">
+                                            00:32:44
+                                        </td>
+                                        <td class="text-left" width="150">
+                                            192.168.2.1
+                                        </td>
+                                        <td width="150">
+                                            00:1B:44:11:3A:B7
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="26">
+                                            <input type="checkbox" class="custom-checkbox">
+                                        </td>
+                                        <td width="80">
+                                            Allowed
+                                        </td>
+                                        <td>
+                                            Iphone X
+                                        </td>
+                                        <td class="text-right" width="150">
+                                            00:32:44
+                                        </td>
+                                        <td class="text-left" width="150">
+                                            192.168.2.1
+                                        </td>
+                                        <td width="150">
+                                            00:1B:44:11:3A:B7
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-lg-4">
+                    <div class="dashboard-box">
+                        <p>  Loại thiết bị truy cập </p>
+
+                        <div class="chart">
+                            <canvas id="myChart" width="256" height="256"></canvas>
+                        </div>
+
+
+                        <div class="chart-label">
+
+                            <div class="chart-label-name">
+                                <i class="fas fa-circle color-green"></i>
+                                <span> Mobile </span>
+                            </div>
+                            <div class="chart-label-name">
+                                <i class="fas fa-circle color-purple"></i>
+                                <span> Table </span>
+                            </div>
+                            <div class="chart-label-name">
+                                <i class="fas fa-circle color-orange"></i>
+                                <span> Laptop/PC </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+           
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+
+    <!-- chartjs de ve bieu do-->
+    <script src="libs/chartjs/Chart.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        mounted() {
+          this.$nextTick(function () {
+
+            // open preview
+            RunFn.showPopup('.js-open-preview');
+
+            // // close button
+            // RunFn.showPopup('.js-open-preview');
+
+            // hover
+            $(".quanly-item").hover(function () {
+              $(this).find(".quanly-item-wrap").toggleClass("hover");
+            });
+
+            $(".js-steps-slider").slick();
+
+            var ctx = document.getElementById('myChart');
+        
+            var myChart = new Chart(ctx, {
+                type: "pie",
+                data: {
+                    datasets: [{
+                        data: [ 15, 35, 50],
+                        backgroundColor: ['#FF9500',
+                        '#AF52DE',
+                        '#34C759'],
+                        label: "Dataset 1"
+                    }],
+                    labels: ["Red", "Orange", "Yellow"]
+                },
+                options: {
+                            legend: {
+                                display: false,
+                            } ,
+                            responsive:true,
+                            maintainAspectRatio: false
+                        }
+            });
+
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

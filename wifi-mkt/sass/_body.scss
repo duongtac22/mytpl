@@ -258,6 +258,58 @@ ul{
     background: #4D7FF8 !important;
 }
 
+.btn-custom {
+    display: inline-block;
+    color: #4D7FF8;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 10px 15px;
+    background: #FFFFFF;
+    border : 1px solid #4D7FF8 ;
+    min-width: 150px;
+    text-align: center;
+    &:hover {
+        background : #4D7FF8 ;
+        color : #fff !important ;
+        border-color : #4D7FF8 ;
+    }
+    &.btn-color {
+        background: #4D7FF8;
+        color: #fff !important;
+        &:hover {
+            background-color: #fff;
+            color : #4D7FF8 !important; 
+            border-color : #4D7FF8 ;
+        }
+    }
+}
+
+.delete-btn {
+    border: 1px solid #FF3D00;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.016);
+    border-radius: 2px;
+    color: #ff3d00;
+    font-size: 14px;
+    line-height: 22px;
+    min-width: 190px;
+    display: inline-block;
+    text-align: center;
+    padding: 7px 0;
+    i {
+        margin-right: 5px; 
+    }
+    &:hover {
+        color : #fff !important ;
+        background-color : #FF3D00 ;
+    }
+}
+
+.tab-content.bs-tab-content {
+    display: inline-block;
+    width: 100%;
+}
 @keyframes lds-default {
     0%,
     20%,
