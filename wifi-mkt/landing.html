@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+  <div id="app">
+
+    <header id="header">
+        <div class="admin-container align-items-center container-fluid d-flex">
+            <div class="d-flex justify-content-between main-content w-100">
+                <a href="/" class="logo-wifi">
+                    <img src="../../images/logo-bizfly-wifi.png" alt="">
+                </a>
+
+                <div class="header-top-right float-right d-flex align-items-center">
+                    
+                    <a href="javascript:;" class="btn-contact btn-radius">
+                        Đăng ký sử dụng miễn phí
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="landing main-content">
+
+
+      <section class="section1">
+
+          <div class="container">
+
+              <div class="row">
+
+                  <div class="col-12 col-lg-6">
+
+                      <div class="section-box mb-5 mb-lg-0">
+
+                          <h2 class="title">
+                            Bizfly WiFi Marketing 
+                            Giải pháp Marketing & Chăm sóc 
+                            Khách hàng tự động thông qua WiFi 
+                          </h2>
+
+                          <div class="box-content">
+                            <ul class="list-unstyled pl-0 m-0">
+
+                              <li>
+                                  <a href="javascript:;">
+
+                                    <img src="images/ic-check-circle.png" alt="">
+                                    Biết thông tin mọi khách hàng đã từng đến
+
+                                  </a>
+                              </li>
+
+                              <li>
+                                <a href="javascript:;">
+
+                                  <img src="images/ic-check-circle.png" alt="">
+                                  Nhanh chóng tùy biến kịch bản đăng nhập theo ý muốn 
+                                  
+                                </a>
+                            </li>
+
+
+                            <li>
+                              <a href="javascript:;">
+
+                                <img src="images/ic-check-circle.png" alt="">
+                                Chủ động xây dựng, quản lý chiến dịch chăm sóc khách hàng 
+                                
+                              </a>
+                          </li>
+
+
+                          <li>
+                            <a href="javascript:;">
+
+                              <img src="images/ic-check-circle.png" alt="">
+                              Và Bizfly WiFi Marketing hoàn toàn miễn phí
+                              
+                            </a>
+                          </li>
+
+                            </ul>
+
+
+                            <a href="javascript:;" class="btn-custom btn-color btn-radius btn-section">
+                              Đăng ký sử dụng miễn phí
+                              <i class="fal fa-arrow-right"></i>
+                            </a>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="col-12 col-lg-6">
+
+                    <a href="javascript:;">
+
+                        <img src="images/landing-bizfly-wifi-1.png" alt="" class="img-fluid">
+
+                    </a>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+      </section>
+
+      <section class="section2">
+
+        <div class="container">
+
+            <h2 class="title text-center">
+              Bạn hoạt động trong lĩnh vực:
+            </h2>
+
+            <ul class="list-unstyled pl-0 m-0 list-field">
+
+                <li class="field-item">
+
+                    
+
+                </li>
+
+            </ul>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/vue.js"></script>
+  <script src="js/httpVueLoader.js"></script>
+  <script>
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        isLogin: false
+      },
+      components: {
+        myheader: httpVueLoader("vue_components/header.vue")
+      },
+    });
+  </script>
+</body>
+
+</html>

@@ -96,27 +96,36 @@
               <li>
                 <a href="javascript:;">  Danh sách Router </a>
               </li>
+
+
+              
             </ul>
+
+
             <div class="page-title">
               <h1 class="page-title"> Danh sách Router</h1>
               
             </div>
 
             <ul class="sort-by pl-0 m-0 d-flex flex-wrap align-items-center">
-                <li class="sort-item current">
-                    <a href="javascript:;">
+                <li class="sort-item current ">
+                    <a href="javascript:;" class="js-sort-by">
                         Tất cả Router
                     </a>
                 </li>
-                <li class="sort-item">
-                    <a href="javascript:;">
+                <li class="sort-item ">
+                    <a href="javascript:;" class="js-sort-by">
                         Đang hoạt động
                     </a>
                 </li>
-                <li class="sort-item">
-                    <a href="javascript:;">
+                <li class="sort-item ">
+                    <a href="javascript:;" class="js-sort-by">
                         Tạm dừng
                     </a>
+                </li>
+
+                <li class="add-router">
+                  <a href="javascript:;" class="btn-custom btn-color"> <i class="fal fa-plus mr-2"></i>  Thêm Router mới  </a>
                 </li>
             </ul>
 
@@ -275,6 +284,13 @@
 
             // // close button
             // RunFn.showPopup('.js-open-preview');
+
+            // click sort
+            $('.js-sort-by').click(function(){
+              
+              $('.sort-item').removeClass('current');
+              $(this).parent().addClass('current');
+            })
 
           });
         },

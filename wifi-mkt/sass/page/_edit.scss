@@ -79,16 +79,33 @@
             background-size: cover ; 
             position: relative ;
         }
-        .edit-main-box {
-            position: absolute ;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-            background: #fff ;
-            z-index: 1000;
-            padding: 15px ;
-            max-width: 430px;
-        }
+    }
+    
+    
+    .edit-main-box {
+        position: absolute ;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background: #fff ;
+        z-index: 1000;
+        padding: 15px ;
+        max-width: 430px;
     }
 }
 
+@media ( max-width: 992px){
+    .edit-form .edit-left ,
+    .edit-form .edit-right {
+        @include col-w(100%);
+    }
+    .edit-form .edit-main-box {
+        position: relative;
+        top: 0 ;
+        left: 0 ;
+        transform: translate(0,0);
+        max-width: 100%;
+        margin: 0 auto;
+        
+    }
+}

@@ -6,13 +6,13 @@
         flex-basis: 0;
         flex-grow: 1;
         max-width: 100%;
-        margin: 0 10px; 
+        margin-right: 10px; 
     }
     .dashboard-box {
         background: #FFFFFF;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
         padding: 20px ; 
-        margin-bottom: 20px; 
+        margin: 10px 0; 
         & > p {
             font-weight: normal;
             font-size: 20px;
@@ -61,19 +61,119 @@
         }
 
         .current-device {
+            font-family: "Roboto";
             tr {
-                border-bottom: 1px solid #BABABA;
+                border-bottom: 1px solid #DDDDDD;
+            }
+            td {
+                padding: 15px;
+            }
+            th {
+                padding: 8px 15px ;
             }
             td, th {
-                padding: 10px 5px; 
+                
                 font-size: 14px;
                 line-height: 16px;
+                &:first-child {
+                    padding-right: 0 ;
+                }
             }
             .custom-checkbox {
                 width: 16px;
                 height: 16px;
                 vertical-align: middle;
             }
+            tbody tr:nth-child(odd) {
+                background: #F9F9F9;
+            }
         }
+        &.dashboard-box {
+            .dashboard-actions {
+                padding : 0 20px ; 
+            }
+        }
+    }
+    .chart-label {
+        margin-top: 20px; 
+        @extend .d-flex, .flex-wrap ;
+        .chart-label-name {
+            @include col-w(33.333%);
+            text-align: center;
+            font-size: 12px;
+            line-height: 16px;
+            color: #9C9C9C;
+            i {
+                margin-right: 5px; 
+            }
+        }
+    }
+    .color-purple {
+        color : #AF52DE;
+    }
+    .color-orange {
+        color : #FF9500 ;
+    }
+
+    .chart-js .dashboard-box {
+        height: 100%;
+    }
+    .copyright-dashboard {
+        margin-top: 20px;
+        clear: both;
+        margin-bottom: 0;
+        padding-bottom: 20px;
+    }
+    .dashboard-actions-select {
+        margin-bottom: 20px; 
+        .custom-select2 {
+            margin-right: 10px;
+            select {
+                color: #333333;
+            }
+            &:after {
+                background-image: none ; 
+                //ic-search-2.png
+                background: url(../images/ic-search-2.png) no-repeat center;
+            }
+        }
+        .select-table {
+            @include col-w(360px);
+            select {
+                padding-right: 0;
+                padding-left: 30px;
+            }
+            &:after {
+                left: 10px;
+                right: auto;
+            }
+        }
+        .select-times {
+            @include col-w(200px); 
+            input {
+                font-size: 14px;
+                line-height: 24px;
+                color: #828282;
+            }
+        }
+        .select-router {
+            max-width: 200px;
+        }
+        
+    }
+    
+    table {
+        min-width: 1000px;
+    }
+}
+
+@media ( max-width: 1280px ) {
+    .page-tongquan .dashboard-actions-select {
+        .custom-select2 {
+            @include col-w(100%);
+            margin: 5px 0 ; 
+            max-width: 100%;
+        }
+
     }
 }

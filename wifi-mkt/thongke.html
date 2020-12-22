@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <!-- datepicker css-->
+    <link rel="stylesheet" href="libs/datepicker/daterangepicker.css">
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="page-quanly page-tongquan">
+        <div class="fixed-sidebar">
+          <a href="javascript:;" class="sidebar-logo">
+            <img src="images/logo-bizfly-wifi.png" alt="" />
+          </a>
+
+          <ul class="sidebar-menu top">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-tongquan.png" alt="" />
+                Tổng quan
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-login.png" alt="" />
+                Hình thức đăng nhập
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-settings.png" alt="" />
+                Cài đặt Router
+              </a>
+            </li>
+          </ul>
+
+          <ul class="sidebar-menu bottom">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-info-circle"></i>
+                Hướng dẫn sử dụng
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-question-circle"></i>
+                Trợ giúp
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quanly-main">
+          <div class="fixed-header">
+            <div class="header-top-right float-right d-flex align-items-center">
+              <div class="dropdown dropdown mr-3">
+                <a href="/" class="notification">
+                  <img
+                    src="../../images/bizfly-ic-bell.png"
+                    alt=""
+                    class="noti-ic"
+                  />
+                </a>
+              </div>
+              <div class="dropdown info d-flex align-items-center">
+                <a class="" href="#">
+                  <img
+                    src="../../images/bizfly-login-ava.png"
+                    alt=""
+                    class="avatar"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="quanly-content">
+
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="page-title">
+                        <h1 class="page-title">Thống kê</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row chart-js">
+              <div class="col-12">
+                <div class="dashboard-box pl-0 pr-0">
+                    
+                    <div class="dashboard-actions">
+
+                        <div class="justify-content-xl-between row">
+                            <div class="col-12 col-xl-9">
+                                <div class="d-flex flex-wrap dashboard-actions-select">
+                                    <div class="custom-select2 select-table"><select id="routerList" class="form-control"><option value="" selected="selected"> Thống kê Danh sách khách hàng truy cập </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                                    <div class="custom-select2 select-router"><select id="routerList" dir="rtl" class="form-control"><option value="" selected="selected"> Tất cả các Router</option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                                    <div class="select-times">
+                                        <input type="text" name="daterange" value="10/20 - 10/25/2020" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-2">
+                                <div class="text-left text-xl-right">
+                                    <a href="javascript:;" class="btn-custom btn-color">
+                                        Xuất file Excel
+                                    </a>
+                                </div>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="current-device w-100 ">
+                            <thead>
+                                <tr>
+                                    <th width="16">
+                                        <input type="checkbox" class="custom-checkbox">
+                                    </th>
+                                    <th width="100">
+                                        Trạng thái
+                                    </th>
+                                    <th >
+                                        Khách hàng
+                                    </th>
+                                    <th>
+                                        Số điện thoại
+                                    </th>
+                                    <th class="text-left" width="210">
+                                        Email 
+                                    </th>
+                                    <th  >
+                                        Nhóm khách hàng
+                                    </th>
+                                    <th >
+                                        Tên thiết bị
+                                    </th>
+                                    <th class="text-right" width="100">
+                                        Số lần </br> đăng nhập
+                                    </th>
+                                    <th class="text-right" width="150">
+                                        Thời gian sử dụng trung bình
+                                    </th>
+                                   
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td width="16">
+                                        <input type="checkbox" class="custom-checkbox">
+                                    </td>
+                                    <td width="100" >
+                                        Online
+                                    </td>
+                                    <td>
+                                        <b>Ha Tran</b>
+                                    </td>
+                                    <td >
+                                        0988345678
+                                    </td>
+                                    <td >
+                                        hatran@gmail.com
+                                    </td>
+                                    <td >
+                                        Khách hàng thân thiết
+                                    </td>
+                                    <td  >
+                                        Iphone X
+                                    </td>
+                                    <td class="text-right" width="100">
+                                        30
+                                    </td>
+                                    <td class="text-right" width="150">
+                                        00:32:44
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <td width="16">
+                                      <input type="checkbox" class="custom-checkbox">
+                                  </td>
+                                  <td width="100" >
+                                      Online
+                                  </td>
+                                  <td >
+                                      <b>Ha Tran</b>
+                                  </td>
+                                  <td>
+                                      0988345678
+                                  </td>
+                                  <td >
+                                      hatran@gmail.com
+                                  </td>
+                                  <td >
+                                      Khách hàng thân thiết
+                                  </td>
+                                  <td >
+                                    LAPTOP-DELL3308
+                                  </td>
+                                  <td class="text-right" width="100">
+                                      30
+                                  </td>
+                                  <td class="text-right" width="150">
+                                      00:32:44
+                                  </td>
+                              </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+
+    <!-- chartjs de ve bieu do-->
+    <script src="libs/chartjs/Chart.js"></script>
+    <!-- datepicker -->
+    <script src="libs/datepicker/moment.min.js"></script>
+    <script src="libs/datepicker/daterangepicker.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        mounted() {
+          this.$nextTick(function () {
+
+            // open preview
+            RunFn.showPopup('.js-open-preview');
+
+            // // close button
+            // RunFn.showPopup('.js-open-preview');
+
+            // hover
+            $(".quanly-item").hover(function () {
+              $(this).find(".quanly-item-wrap").toggleClass("hover");
+            });
+
+            $(".js-steps-slider").slick();
+
+            //datepicker
+            $(document).ready(function(){
+              $('input[name="daterange"]').daterangepicker({
+
+                  opens : 'left'
+
+                  }, function(start, end , label) {
+
+                  console.log('aaaaaaa');
+
+                  });
+            })
+
+
+            
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

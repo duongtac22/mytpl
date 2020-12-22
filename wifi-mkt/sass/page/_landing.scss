@@ -1,0 +1,54 @@
+
+
+.btn-contact {
+    display: inline-block ; 
+    padding: 9px 13px; 
+    color: #240066;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    background: #FFFFFF;
+    
+}
+.btn-radius {
+    border-radius: 4px;
+}
+.section1 {
+    padding: 58px 0 ; 
+    h2.title {
+        font-weight: bold;
+        font-size: 31px;
+        line-height: 52px;
+        color: #240066; 
+    }
+    .box-content {
+        li {
+            padding: 10px 0 ; 
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
+            color: #000000;
+            
+            img {
+                margin-right: 8px; 
+            }
+        }
+    }
+    .btn-section {
+        padding: 15px 24px;
+        margin-top: 17px; 
+        i {
+            margin-left: 8px; 
+        }
+    }
+}
+
+@media ( max-width: 480px) {
+    #header .logo-wifi {
+        max-width: 100px;
+        height: auto ; 
+    }
+    .btn-contact {
+        font-size: 12px; 
+    }
+}
