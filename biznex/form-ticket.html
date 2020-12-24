@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- <myheader></myheader> -->
+    <main class="page-home">
+      <form-ticket></form-ticket>
+    </main>
+    <!-- <myfooter></myfooter> -->
+  </div>
+
+
+  <script src="js/vue.js"></script>
+  <script src="js/httpVueLoader.js"></script>
+
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="libs/bootstrap/bootstrap.min.js"></script>
+  <script src="libs/bootstrap/popper.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        isLogin: false
+      },
+      components: {
+        myheader: httpVueLoader("vue_components/header.vue"),
+        myfooter: httpVueLoader("vue_components/footer.vue"),
+        "form-ticket": httpVueLoader("vue_components/form-ticket.vue"),
+      },
+      mounted() {
+        this.$nextTick(() => {
+
+        });
+      },
+    });
+  </script>
+</body>
+
+</html>

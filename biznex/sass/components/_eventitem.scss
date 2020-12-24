@@ -1,0 +1,45 @@
+.block-sukien-item {
+    background: #FFFFFF;
+    padding: 20px ; 
+    margin-bottom: 30px ; 
+    .sukien-top {
+        @extend .d-flex , .flex-wrap ,.align-items-center,.justify-content-between ; 
+        .sukien-name {
+            @extend .d-flex , .flex-wrap , .align-items-center  ;
+        }
+        .name {
+            font-size: 30px;
+            line-height: 40px;
+            color: #121212;
+            margin-right: 16px; 
+            margin-bottom: 10px ;
+        }
+        .btn-checkin {
+            @include col-w(154px); 
+            line-height: 40px;
+            font-size: 13px;
+            font-weight: normal;
+        }
+    }
+    .sukien-info {
+        @extend .d-flex , .flex-wrap , .justify-content-between ; 
+        max-width: 50%;
+        .sukien-info-item {
+            @include col-w(50%);
+            
+            margin-bottom: 8px; 
+            i {
+                margin-right: 6px; 
+            }
+            span {
+                font-size: 14px;
+                line-height: 22px;
+                color: #454545;
+            }
+            a {
+                text-decoration: underline;
+                color: #4D7FF8;
+            }
+        }
+    }
+}

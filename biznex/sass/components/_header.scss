@@ -1,0 +1,36 @@
+#header {
+    position: fixed;
+    top: 0 ;
+    height: 50px;
+    width: 100%;
+    z-index: 1000; 
+    background: #240066;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    .header-content {
+        @extend .d-flex , .align-items-center , .justify-content-between ;
+        .header-left , .header-right {
+            min-width: 56px;
+            a   {
+                @extend .d-flex , .align-items-center , .justify-content-center ;
+                padding: 15px 16px;
+            }
+           
+        }
+    }
+}
+
+
+
+
+.fixed-header {
+    background: #fff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 14px 15px;
+    position: fixed;
+    z-index: 1000;
+    display: inline-block;
+    width: calc(100% - 230px);
+}

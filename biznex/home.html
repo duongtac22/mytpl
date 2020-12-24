@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <myheader></myheader>
+      <main class="page-home">
+
+
+        <div class="block-event-info" >
+          <div
+            class="event-status d-flex align-items-center justify-content-between"
+          >
+            <span class="status sapdienra"> Sắp diễn ra </span>
+
+            <a href="javascript:;" class="view-more"> Xem trang sự kiện </a>
+          </div>
+
+          <div class="event-info">
+            <h3 class="event-name">SK2021 - Sự kiện chào năm mới 2021</h3>
+
+            <div class="event-info-item">
+              <i class="icons icons-location"></i>
+              <span> 85 Vũ Trọng Phụng, Thanh Xuân, Hà Nội </span>
+            </div>
+            <div class="event-info-item">
+              <i class="icons icons-clock"></i>
+              <span> 22:00 31/12/2020 đến 18:00 1/1/2021 </span>
+            </div>
+            <div class="event-info-item">
+              <i class="icons icons-file"></i>
+              <span> Có bán vé </span>
+            </div>
+            <div class="event-info-item">
+              <i class="icons icons-earth"></i>
+              <a href="javascript:;">  https://event.bizfly.vn/su-kien-2021 </a>
+            </div>
+          </div>
+
+          <div class="event-actions">
+              <a href="javascript:;" class="btn-custom btn-nocolor">
+                Chi tiết
+              </a>
+
+              <div class="event-config-item">
+                  <a href="" class="btn-custom  has-arrow">
+                      Cấu hình
+                      <i class="fal fa-chevron-down"></i>
+                  </a>
+                  
+                  <div class="event-config-list">
+                    <a class="config-optioon">
+                      <i class="icons icons-edit"></i>
+                      Sửa thông tin sự kiện
+                    </a>
+                    <a class="config-optioon">
+                      <i class="icons icons-ticket"></i>
+                      Kho vé
+                    </a>
+                    <a class="config-optioon">
+                      <i class="icons icons-pie-chart"></i>
+                      Xem báo cáo
+                    </a>
+                    <a class="config-optioon">
+                      <i class="icons icons-share"></i>
+                      Chia sẻ sự kiện
+                    </a>
+                    <a class="config-optioon">
+                     <i class="icons icons-small-file"></i>
+                      Nhân bản sự kiện
+                    </a>
+                    <a class="config-optioon">
+                      <i class="icons icons-trash"></i>
+                      Xóa sự kiện
+                    </a>
+
+                  </div>
+
+              </div>
+
+          </div>
+        </div>
+
+
+        <div class="block-event-info" >
+          <div
+            class="event-status d-flex align-items-center justify-content-between"
+          >
+            <span class="status dangdienra"> Đang diễn ra </span>
+
+            <a href="javascript:;" class="view-more"> Xem trang sự kiện </a>
+          </div>
+
+          <div class="event-info">
+            <h3 class="event-name">SK2021 - Sự kiện chào năm mới 2021</h3>
+
+            <div class="event-info-item">
+              <i class="icons icons-location"></i>
+              <span> 85 Vũ Trọng Phụng, Thanh Xuân, Hà Nội </span>
+            </div>
+            <div class="event-info-item">
+              <i class="icons icons-clock"></i>
+              <span> 22:00 31/12/2020 đến 18:00 1/1/2021 </span>
+            </div>
+            <div class="event-info-item">
+              <i class="icons icons-file"></i>
+              <span> Có bán vé </span>
+            </div>
+            <div class="event-info-item">
+              <i class="icons icons-earth"></i>
+              <a href="javascript:;">  https://event.bizfly.vn/su-kien-2021 </a>
+            </div>
+          </div>
+        </div>
+
+
+      </main>
+
+      <myfooter></myfooter>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          isLogin: false,
+        },
+        components: {
+          myheader: httpVueLoader("vue_components/header.vue"),
+          myfooter: httpVueLoader("vue_components/footer.vue"),
+        },
+        mounted() {
+          this.$nextTick(() => {});
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+
+// block event info
+.block-event-info {
+    background: #FFFFFF;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 10px ; 
+    margin: 10px 16px; 
+    .event-status {
+        .view-more {
+            color: #03A9F4;
+            font-size: 14px;
+            line-height: 22px;
+            text-decoration-line: underline;
+        }
+    }
+    .event-info {
+        margin-top: 14px; 
+        .event-name {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 24px;
+            color: #121212;
+            margin-bottom: 14px; 
+        }
+        .event-info-item {
+            margin-bottom: 8px;
+            span {
+                font-size: 14px;
+                line-height: 22px;
+                color: #454545;
+            }
+            i {
+                margin-right: 6px; 
+            }
+            a {
+                text-decoration-line: underline;
+                color: #454545;
+            }
+        }
+
+    }
+    .event-actions {
+        padding-top: 12px; 
+        padding-bottom: 20px;
+        @extend .d-flex, .flex-wrap, .align-items-center , .justify-content-between ; 
+        .event-config-item {
+            @extend .position-relative;
+            flex: 1 ; 
+            a.has-arrow {
+                @extend .d-flex, .flex-wrap, .align-items-center , .justify-content-between , .position-relative ; 
+                padding-left : 15px; 
+                padding-right: 50px; 
+                i {
+                    position:absolute;
+                    right: 0 ;
+                    top: 0 ;
+                    border-left: 1px solid #FFFFFF;
+                    width: 50px;
+                    line-height: 30px;
+                }
+            }
+           
+            .event-config-list {
+                position: absolute;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                padding: 15px 10px ; 
+                min-width: 196px;
+                .config-optioon {
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #000000;
+                    padding: 4px 0 ; 
+                    display: inline-block;
+                    width: 100% ; 
+                    i {
+                        margin-right: 10px; 
+                    }
+                }
+            }
+        }
+        .btn-custom{
+            line-height: 28px;
+            flex : 1 ;
+            &.btn-nocolor {
+                @include col-w(128px);
+                margin-right: 15px; 
+            }
+        }
+
+    }
+}
+
+.icons {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-size: cover ; 
+    &.icons-location {
+        background: url('../images/ic-location.png') no-repeat center center;
+    }
+    &.icons-file {
+        background: url('../images/ic-file.png') no-repeat center center;
+    }
+    &.icons-clock {
+        background: url('../images/ic-clock.png') no-repeat center center;
+    }
+    &.icons-earth {
+        background: url('../images/ic-earth.png') no-repeat center center;
+    }
+    &.icons-edit {
+        background: url('../images/ic-edit.png') no-repeat center center;
+    }
+    &.icons-ticket {
+        background: url('../images/ic-ticket.png') no-repeat center center;
+    }
+    &.icons-pie-chart {
+        background: url('../images/ic-pie-chart.png') no-repeat center center;
+    }
+    &.icons-share {
+        background: url('../images/ic-share.png') no-repeat center center;
+    }
+    &.icons-small-file {
+        background: url('../images/ic-small-file.png') no-repeat center center;
+    }
+    &.icons-trash{
+        background: url('../images/ic-trash.png') no-repeat center center;
+    }
+}
+
+.status {
+    padding: 4px 10px;
+    font-weight: normal;
+    border-radius: 75px;
+    font-size: 12px;
+    line-height: 18px;
+    &.sapdienra {
+        background: rgba(250, 173, 20, 0.2);
+        color: #EC9D00;
+    }
+    &.dangdienra {
+        background: #E6F7FF;
+        color: #1890FF;
+    }
+    &.daketthuc {
+        background: rgba(19, 194, 194, 0.2);
+        color: #0DB8B8;
+    }
+}
+
+@media ( max-width: 375px ) {
+    .block-event-info .event-actions .event-config-item  {
+        a.has-arrow {
+            padding-right: 40px;
+            i { 
+                width: 40px; 
+            }
+        }
+    }
+}

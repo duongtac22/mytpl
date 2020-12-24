@@ -1,0 +1,199 @@
+.popup__ticket {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	width: 100vw;
+	transform: translate(-50%, -50%);
+	.overlay__modal {
+		background: #000;
+		opacity: 0.5;
+		height: 100vh;
+		width: 100vw;
+	}
+}
+.form__ticket {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	padding: 45px 40px 55px 40px;
+	max-width: 675px;
+	width: 100%;
+	margin: 0 auto;
+	.box__form-ticket {
+		.row {
+			margin: 0;
+		}
+	}
+	h3 {
+		font-family: 'Sarabun';
+		font-style: normal;
+		font-weight: bold;
+		font-size: 38px;
+		line-height: 48px;
+		display: flex;
+		align-items: center;
+		color: #000000;
+		margin: 0 0 23px 0;
+		@media (max-width: 575px) {
+			font-size: 28px;
+		}
+	}
+	.box__form-ticket {
+		.flex__box-input {
+			width: auto;
+			@include col-w(100%);
+			& {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-end;
+				justify-content: space-between;
+			}
+			.checkbox__heading {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-end;
+			}
+			.input__ticket-quantity {
+				@include col-w(43%);
+				padding-right: 30px;
+				@media (max-width: 575px) {
+					@include col-w(34%);
+					padding-right: 10px;
+				}
+				@media (min-width: 576px) and (max-width: 767px) {
+					@include col-w(41.5%);
+					padding-right: 15px;
+				}
+			}
+			.input__ticket-price {
+				@include col-w(43%);
+				padding-right: 12px;
+				@media (max-width: 575px) {
+					@include col-w(34%);
+					padding-right: 0px;
+				}
+				@media (min-width: 576px) and (max-width: 767px) {
+					@include col-w(41.5%);
+				}
+			}
+			.checkbox__heading {
+				@include col-w(14%);
+				margin-bottom: 4px;
+				input {
+					width: auto;
+					margin-bottom: 0;
+				}
+				label {
+					font-size: 14px;
+					line-height: 22px;
+					font-weight: normal;
+					color: #121212;
+					margin-bottom: 0;
+					padding-left: 8px;
+				}
+				@media (max-width: 575px) {
+					@include col-w(32%);
+				}
+				@media (min-width: 576px) and (max-width: 767px) {
+					@include col-w(17%);
+				}
+			}
+		}
+		input,
+		textarea {
+			background: #ffffff;
+			border: 1px solid #dddddd;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 22px;
+			color: #121212;
+			padding: 9px 12px;
+			width: 100%;
+			&:focus {
+				outline: none;
+			}
+		}
+		input {
+			margin-bottom: 8px;
+		}
+		.box__input {
+			h4 {
+				font-family: 'Sarabun';
+				font-weight: normal;
+				font-size: 14px;
+				line-height: 22px;
+				color: #121212;
+				margin: 8px 0;
+			}
+			.input__flex-heading {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+			}
+		}
+		.input__ticket-info {
+			padding-top: 6px;
+		}
+		.box__btn {
+			margin-top: 38px;
+			text-align: center;
+			a {
+				font-weight: normal;
+				font-size: 13px;
+				text-align: center;
+				&:hover {
+					text-decoration: unset;
+				}
+			}
+			.btn-cancel {
+				display: inline-block;
+				border: 1px solid #b6c7f0;
+				padding: 0 32px;
+				color: #4d6398;
+				line-height: 40px;
+				transition: all 0.2s ease-in-out;
+				margin-right: 5px;
+				&:hover {
+					background: #b6c7f0;
+					color: #fff;
+					border: 1px solid #b6c7f0;
+					transition: all 0.2s ease-in-out;
+				}
+			}
+			.btn-create {
+				display: inline-block;
+				border: 1px solid #4d7ff8;
+				padding: 0 34.5px;
+				color: #fff;
+				line-height: 40px;
+				background: #4d7ff8;
+				transition: all 0.2s ease-in-out;
+				margin-left: 5px;
+				&:hover {
+					background: #fff;
+					color: #4d7ff8;
+					border: 1px solid #4d7ff8;
+					transition: all 0.2s ease-in-out;
+				}
+			}
+		}
+	}
+	@media (max-width: 575px) {
+		padding: 25px 15px 25px 15px;
+	}
+	@media (min-width: 576px) and (max-width: 991px) {
+		padding: 35px 25px 35px 25px;
+	}
+	@media (max-width: 991px) {
+		margin: 0 30px;
+		width: calc(100% - 30px);
+		left: calc(50% - 30px);
+	}
+}

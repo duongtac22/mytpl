@@ -1,0 +1,70 @@
+.tablesukien {
+    table {
+        width: 100%;
+        border-collapse: 0;
+        font-size: 14px;
+        line-height: 22px;
+        color: #121212;
+        background: #fff ; 
+        thead {
+            background: #F2F7FF;
+            box-shadow: inset 0px -1px 0px #F0F0F0;
+            color: #121212;
+            th {
+                height: 56px;
+            }
+        }
+        td, th {
+            padding: 8px 15px;
+            vertical-align: middle;
+        }
+        tr {
+            border-bottom: 1px solid #F0F0F0;
+        }
+        span.time-event{
+            font-size: 12px;
+            line-height: 20px;
+        }
+        .list-actions{
+            @extend .d-flex , .flex-wrap , .justify-content-center , .position-relative; 
+            .btn-custom {
+                flex : 1;
+                font-size: 13px;
+                line-height: 30px;
+                max-width: 71px;
+                font-weight: normal;
+                border-color :#4D7FF8 ;
+                    margin-right: 10px; 
+                &.btn-more {
+                    max-width: 30px;
+                }
+            }
+        }
+
+        .show-more-event {
+            position: absolute;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            padding: 20px;
+            top: 100%;
+            transform-origin: top;
+            transform: scale(0);
+            transition: 0.3s ease-in-out;
+            z-index: 1000;
+            .show-more-item {
+                display: block; 
+                font-size: 16px;
+                line-height: 24px;
+                text-align: right;
+                color : #000000 ; 
+                margin-bottom: 24px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            &.active {
+                transform: scale(1);
+            }
+        }
+    }
+}

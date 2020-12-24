@@ -1,0 +1,21 @@
+.page-breadcrumb {
+    margin-bottom: 10px ; 
+    li {
+        float: left ;
+        margin-right: 12px;
+        a {
+            font-size: 16px;
+            line-height: 36px;
+            color: #4D7FF8;
+        }
+        &:last-child a{
+            color : #000000;
+            font-weight: 600;
+        }
+        &:not(:last-child):after {
+            content: '/';
+            color : #000000 ;
+            margin-lefT: 12px; 
+        }
+    }
+}

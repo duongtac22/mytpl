@@ -1,0 +1,14 @@
+.fixed-sidebar {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #240066;
+    width: 230px;
+    .sidebar-logo {
+        display: block;
+        text-align: center;
+        padding: 10px 10px 26px;
+    }
+}

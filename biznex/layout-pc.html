@@ -1,0 +1,296 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- datepicker css-->
+    <link rel="stylesheet" href="libs/datepicker/daterangepicker.css">
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+
+      <section class="main">
+        <div class="fixed-sidebar">
+          <a href="javascript:;" class="sidebar-logo">
+            <img src="images/logo-bizfly-wifi.png" alt="" />
+          </a>
+
+
+        </div>
+
+        <section class="main-content">
+          
+          <div class="fixed-header">
+            <div class="header-top-right float-right d-flex align-items-center">
+
+              <div class="dropdown info d-flex align-items-center">
+                <a class="" href="#">
+                  <img
+                    src="../../images/bizfly-login-ava.png"
+                    alt=""
+                    class="avatar"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="page-home">
+
+            <breadcrumb></breadcrumb>
+
+            <eventitem v-for="item in 3"></eventitem>
+
+
+            <!-- danh sach thong tin -->
+
+            <section class="thongtin mb-30">
+                <div class="row">
+                  <div class="col-6 col-md-3 col-lg-3" >
+                    <div class="block-thongtin">
+
+                      <h3 class="thongtin-name">
+                        Tổng số khách đã Check-in
+                      </h3>
+      
+                      <p class="thongtin-number">
+                          2700 <span class="small-text">/6600</span>
+                      </p>
+      
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-3" >
+                    <div class="block-thongtin">
+
+                      <h3 class="thongtin-name">
+                        Số vé đã thanh toán
+                      </h3>
+      
+                      <p class="thongtin-number">
+                          5600 <span class="small-text">/5903</span>
+                      </p>
+      
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-3" >
+                    <div class="block-thongtin">
+
+                      <h3 class="thongtin-name">
+                        Tổng số vé bán ra
+                      </h3>
+      
+                      <p class="thongtin-number">
+                          6600 
+                      </p>
+      
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-3" >
+                    <div class="block-thongtin">
+
+                      <h3 class="thongtin-name">
+                        Doanh thu
+                      </h3>
+      
+                      <p class="thongtin-number">
+                        550.9 <span class="small-text">triệu</span>
+                      </p>
+      
+                    </div>
+                  </div>
+                </div>
+            </section>
+            
+            
+            <section class="form-thongtin">
+
+              <form action="" class="form-tao-sukien">
+
+                <div class="form-group">
+                  <label for="eventName">Tên sự kiên <span class="required">*</span> </label>
+                  <input type="text" class="form-control" id="eventName" placeholder="Tên sự kiện">
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="eventDayStart">Ngày bắt đầu <span class="required">*</span> </label>
+                    <input type="text" name="daterange" value="10/20 - 10/25/2021" class="form-control" id="eventDayStart" >
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="eventHourStart">Giờ bắt đầu <span class="required">*</span> </label>
+                    <input type="text" class="form-control datepicker-hour" id="eventHourStart" >
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="eventDayEnd">Ngày kết thúc <span class="required">*</span> </label>
+                    <input type="text" name="daterange" value="10/20 - 10/25/2021" class="form-control" id="eventDayEnd" placeholder="">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="eventHourEnd">Giờ kết thúc <span class="required">*</span>  </label>
+                    <input type="text" class="form-control datepicker-hour" id="eventHourEnd" >
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="eventType">Loại sự kiện <span class="required">*</span>  </label>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                      <label class="form-check-label" for="inlineRadio1">Online</label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                      <label class="form-check-label" for="inlineRadio2">Offline</label>
+                    </div>
+                  </div>
+                  </div>
+                 
+
+                </div>
+
+                <div class="form-group">
+                  
+                  <select id="eventLocation" class="form-control">
+                    <option selected value="Hanoi">Hà Nội</option>
+                    <option  value="Hanoi">Hà Nội 2</option>
+                    <option  value="Hanoi">Hà Nội 3</option>
+                    <option  value="Hanoi">Hà Nội 4</option>
+                    <option  value="Hanoi">Hà Nội 5</option>
+                  </select>
+                </div>
+                <div class="form-group text-right">
+                  <a href="javascript:;" class="btn-custom btn-disabled">
+                    Cập nhật
+                  </a>
+                </div>
+               
+              </form>
+
+            </section>
+
+
+            <tablesukien> </tablesukien>
+
+
+
+          </div>
+
+        </section>
+      </section>
+
+    </div>
+
+   
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+
+    <script src="libs/datepicker/moment.min.js"></script>
+    <script src="libs/datepicker/daterangepicker.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        components: {
+          breadcrumb : httpVueLoader("vue_components/breadcrumb.vue"),
+          tablesukien :httpVueLoader("vue_components/tablesukien.vue"),
+          eventitem : httpVueLoader("vue_components/eventItem.vue")
+        },
+        mounted() {
+
+     
+
+        this.$nextTick(function () {
+
+          $(window).bind("load", function () {
+            // click show more
+             $('.js-show-more').click(function(e){
+               
+               let holder = $(this).parent().find('.show-more-event') ;
+
+
+
+               $('.show-more-event').removeClass('active');
+
+               if(holder.hasClass('active') == true ){
+
+
+                holder.removeClass('active');
+               } else {
+
+                holder.addClass('active');
+
+               }
+               
+               e.stopPropagation();
+
+             })
+             // hide showmore khi click ra ngoai
+              $('body').click(function(e){
+                
+                var eventTarget = e.target;
+                var listenClick = '.show-more-event';
+                
+                if( $(eventTarget).parents(listenClick).length != 1  ) { $(".show-more-event").removeClass('active'); }
+
+              });
+
+
+              // datepicker 
+              $('input[name="daterange"]').daterangepicker({
+
+                opens : 'left'
+
+              }, function(start, end , label) {
+
+                  console.log('aaaaaaa');
+
+              });
+
+              // datepicker chi chon thoi gian
+              $('.datepicker-hour').daterangepicker({
+                timePicker: true,
+                timePicker24Hour: true,
+                timePickerIncrement: 1,
+                timePickerSeconds: false,
+                locale: {
+                    format: 'HH:mm'
+                }
+              }).on('show.daterangepicker', function (ev, picker) {
+                picker.container.find(".calendar-table").hide();
+              });
+           })
+
+          });
+        },
+      });
+    </script>
+  </body>
+</html>
