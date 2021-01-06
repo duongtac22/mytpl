@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="page-quanly">
+        <div class="fixed-sidebar">
+          <a href="javascript:;" class="sidebar-logo">
+            <img src="images/logo-bizfly-wifi.png" alt="" />
+          </a>
+
+          <ul class="sidebar-menu top">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-tongquan.png" alt="" />
+                Tổng quan
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-login.png" alt="" />
+                Hình thức đăng nhập
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-settings.png" alt="" />
+                Cài đặt Router
+              </a>
+            </li>
+          </ul>
+
+          <ul class="sidebar-menu bottom">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-info-circle"></i>
+                Hướng dẫn sử dụng
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-question-circle"></i>
+                Trợ giúp
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quanly-main">
+          <div class="fixed-header">
+            <div class="header-top-right float-right d-flex align-items-center">
+              <div class="dropdown dropdown mr-3">
+                <a href="/" class="notification">
+                  <img
+                    src="../../images/bizfly-ic-bell.png"
+                    alt=""
+                    class="noti-ic"
+                  />
+                </a>
+              </div>
+              <div class="dropdown info d-flex align-items-center">
+                <a class="" href="#">
+                  <img
+                    src="../../images/bizfly-login-ava.png"
+                    alt=""
+                    class="avatar"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="quanly-content">
+            <ul class="page-breadcrumb pl-0 list-unstyled m-0">
+              <li>
+                <a href="javascript:;"> Cài đặt Router   </a>
+              </li>
+              <li>
+                <a href="javascript:;">  Danh sách Router </a>
+              </li>
+
+
+              
+            </ul>
+
+
+            <div class="page-title">
+              <h1 class="page-title"> Danh sách Router</h1>
+              
+            </div>
+
+            <ul class="sort-by pl-0 m-0 d-flex flex-wrap align-items-center">
+                <li class="sort-item current ">
+                    <a href="javascript:;" class="js-sort-by">
+                        Tất cả Router
+                    </a>
+                </li>
+                <li class="sort-item ">
+                    <a href="javascript:;" class="js-sort-by">
+                        Đang hoạt động
+                    </a>
+                </li>
+                <li class="sort-item ">
+                    <a href="javascript:;" class="js-sort-by">
+                        Tạm dừng
+                    </a>
+                </li>
+
+                <li class="add-router">
+                  <a href="javascript:;" class="btn-custom btn-color"> <i class="fal fa-plus mr-2"></i>  Thêm Router mới  </a>
+                </li>
+            </ul>
+
+            <div class="table-responsive">
+              <table class="router-list">
+              
+                <tbody>
+                  <tr class="heading">
+                      <td width="90">
+                          <b> ID </b>
+                      </td>
+                      <td width="150" class="text-center">
+                          <b> Trạng thái </b>
+                      </td>
+                      <td width="230">
+                          <b> Tên SSID </b>
+                      </td>
+                      <td width="200">
+                          <b> Hãng sản xuất </b>
+                      </td>
+                      <td >
+                          <b> Hình thức đăng nhập </b>
+                      </td>
+                      <td width="230" class="text-center">
+                          <b> Thao tác nhanh </b>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td width="90">
+                          3213
+                      </td>
+                      <td width="150">
+                          <div class="custom-switch custom-switch-label-yesno text-center">
+                              <input class="custom-switch-input" id="router1" type="checkbox">
+                              <label class="custom-switch-btn" for="router1"></label>
+                              <div class="custom-switch-content-checked">
+                                <span class="text-success">Đang hoạt động</span>
+                              </div>
+                              <div class="custom-switch-content-unchecked">
+                                <span class="text-danger">Tạm dừng</span>
+                              </div>
+                            </div>
+                      </td>
+                      <td width="230">
+                          <b> Bizfly wifi Free </b>
+                      </td>
+                      <td width="200">
+                          Meraki
+                      </td>
+                      <td >
+                          <div class="login-from">
+                            <a href="javascript:;" class="login-img">
+                                <img src="http://via.placeholder.com/120x120" alt="">
+                            </a>
+                            <div class="login-from-info">
+                                <p class="from-name">
+                                  Đăng nhập bằng hình thức Điền form lấy thông tin
+                                </p>
+                                <a href="javascript:;" class="from-link font-italic">
+                                    Chỉnh sửa
+                                </a>
+                            </div>
+                          </div>
+                      </td>
+  
+                      <td width="230">
+                          <div class="router-item-button">
+                              <a href="javascript:;" class="btn-step">
+                                Cấu hình giới hạn truy cập
+                              </a>
+                              <a href="javascript:;" class="btn-save">
+                                Xem chi tiết
+                              </a>
+                          </div>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td width="90">
+                        3215
+                    </td>
+                    <td width="150">
+                        <div class="custom-switch custom-switch-label-yesno text-center">
+                            <input class="custom-switch-input" id="router2" type="checkbox">
+                            <label class="custom-switch-btn" for="router2"></label>
+                            <div class="custom-switch-content-checked">
+                              <span class="text-success">Đang hoạt động</span>
+                            </div>
+                            <div class="custom-switch-content-unchecked">
+                              <span class="text-danger">Tạm dừng</span>
+                            </div>
+                          </div>
+                    </td>
+                    <td width="230">
+                        <b> Bizfly wifi Free </b>
+                    </td>
+                    <td width="200">
+                        Meraki
+                    </td>
+                    <td >
+                        <div class="login-from">
+                          <a href="javascript:;" class="login-img">
+                              <img src="http://via.placeholder.com/120x120" alt="">
+                          </a>
+                          <div class="login-from-info">
+                              <p class="from-name">
+                                Đăng nhập bằng hình thức Điền form lấy thông tin
+                              </p>
+                              <a href="javascript:;" class="from-link font-italic">
+                                  Chỉnh sửa
+                              </a>
+                          </div>
+                        </div>
+                    </td>
+  
+                    <td width="230">
+                        <div class="router-item-button">
+                            <a href="javascript:;" class="btn-step">
+                              Cấu hình giới hạn truy cập
+                            </a>
+                            <a href="javascript:;" class="btn-save">
+                              Xem chi tiết
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                  </tbody>
+              </table>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        mounted() {
+          this.$nextTick(function () {
+
+            // open preview
+            RunFn.showPopup('.js-open-preview');
+
+            // // close button
+            // RunFn.showPopup('.js-open-preview');
+
+            // click sort
+            $('.js-sort-by').click(function(){
+              
+              $('.sort-item').removeClass('current');
+              $(this).parent().addClass('current');
+            })
+
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

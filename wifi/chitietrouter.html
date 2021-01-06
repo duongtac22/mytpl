@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="page-quanly">
+        <div class="fixed-sidebar">
+          <a href="javascript:;" class="sidebar-logo">
+            <img src="images/logo-bizfly-wifi.png" alt="" />
+          </a>
+
+          <ul class="sidebar-menu top">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-tongquan.png" alt="" />
+                Tổng quan
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-login.png" alt="" />
+                Hình thức đăng nhập
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-settings.png" alt="" />
+                Cài đặt Router
+              </a>
+            </li>
+          </ul>
+
+          <ul class="sidebar-menu bottom">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-info-circle"></i>
+                Hướng dẫn sử dụng
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-question-circle"></i>
+                Trợ giúp
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quanly-main">
+          <div class="fixed-header">
+            <div class="header-top-right float-right d-flex align-items-center">
+              <div class="dropdown dropdown mr-3">
+                <a href="/" class="notification">
+                  <img
+                    src="../../images/bizfly-ic-bell.png"
+                    alt=""
+                    class="noti-ic"
+                  />
+                </a>
+              </div>
+              <div class="dropdown info d-flex align-items-center">
+                <a class="" href="#">
+                  <img
+                    src="../../images/bizfly-login-ava.png"
+                    alt=""
+                    class="avatar"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="quanly-content">
+            <ul class="page-breadcrumb pl-0 list-unstyled m-0">
+              <li>
+                <a href="javascript:;"> Cài đặt Router </a>
+              </li>
+              <li>
+                <a href="javascript:;"> Danh sách Router </a>
+              </li>
+              <li>
+                <a href="javascript:;"> Chi tiết Router </a>
+              </li>
+            </ul>
+            <div class="justify-content-between page-title">
+              <h1 class="page-title">Chi tiết Router</h1>
+              
+              <div class="float-right delete-router">
+                <a href="javascript:;" class="delete-btn">
+                    <i class="fal fa-trash-alt"></i> Xóa router này
+                  </a>
+              </div>
+              
+            </div>
+
+            <ul class="tab-list nav page-tabs-list">
+              <li class="nav-item tabs-list-item active" data-id="my-tab-1">
+                <a
+                  data-toggle="tab"
+                  href="#my-tab-1"
+                  role="tab"
+                  aria-controls="my-tab-1"
+                  aria-selected="true"
+                  class="active"
+                >
+                Cấu hình kết nối
+                </a>
+              </li>
+              <li class="nav-item tabs-list-item" data-id="my-tab-2">
+                <a
+                  data-toggle="tab"
+                  href="#my-tab-2"
+                  role="tab"
+                  aria-controls="my-tab-2"
+                  aria-selected="true"
+                  class=""
+                >
+                    Cấu hình hình thức đăng nhập
+                </a>
+              </li>
+              <li class="nav-item tabs-list-item" data-id="my-tab-2">
+                <a
+                  data-toggle="tab"
+                  href="#my-tab-3"
+                  role="tab"
+                  aria-controls="my-tab-2"
+                  aria-selected="true"
+                  class=""
+                >
+                    Cấu hình giới hạn truy cập
+                </a>
+              </li>
+            </ul>
+
+            <div class="tab-content bs-tab-content">
+              <div class="tab-pane active show" id="my-tab-1" role="tabpanel">
+                    <div class="quanly-tabs-content">
+                        <h2 class="title col-12">
+                            Cấu hình kết nối
+                        </h2>
+
+                        <form action="" class="form-settings-router col-12 col-lg-9">
+
+                            <div class="position-relative row form-group">
+                                <label for="exampleEmail" class="col-lg-3 col-12 col-form-label">ID Router</label>
+                                <div class="col-12 col-lg-6">
+                                    <span>
+                                        3213
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="position-relative row form-group">
+                                <label for="exampleEmail" class="col-lg-3 col-12 col-form-label">Trạng thái</label>
+                                <div class="col-12 col-lg-6">
+                                    <div class="custom-switch custom-switch-label-yesno d-flex align-items-center">
+                                        <input class="custom-switch-input" id="router1" type="checkbox">
+                                        <label class="custom-switch-btn" for="router1"></label>
+                                        <div class="custom-switch-content-checked ml-2">
+                                          <span class="text-success">Đang hoạt động</span>
+                                        </div>
+                                        <div class="custom-switch-content-unchecked ml-2">
+                                          <span class="text-danger">Tạm dừng</span>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="position-relative row form-group">
+                                <label for="routerEmail" class="col-lg-3 col-12 col-form-label">Hãng sản xuất Router</label>
+                                <div class="col-12 col-lg-6">
+                                    <input name="routerEmail" id="routerEmail" placeholder="Meraki" type="text" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="position-relative row form-group">
+                                <label for="exampleEmail" class="col-lg-3 col-12 col-form-label">API Key</label>
+                                <div class="col-12 col-lg-6">
+                                    <input name="routerEmail" id="routerEmail" placeholder="Meraki" type="text" class="form-control" readonly>
+                                </div>
+                                <div class="col-12 col-lg-3 mt-3 mt-lg-0">
+                                    <a href="javascript:;" class="btn-color btn-custom">
+                                        Thay đổi API Key
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="position-relative row form-group">
+                                <label for="routerBrand" class="col-lg-3 col-12 col-form-label">Organization</label>
+                                <div class="col-12 col-lg-6">
+                                    <div class="custom-select2"><select id="routerBrand" class="form-control"><option value="" selected="selected"> Bizfly Network </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                                </div>
+                            </div>
+                            <div class="position-relative row form-group">
+                                <label for="routerNetwork" class="col-lg-3 col-12 col-form-label">Network</label>
+                                <div class="col-12 col-lg-6">
+                                    <div class="custom-select2"><select id="routerNetwork" class="form-control"><option value="" selected="selected"> Bizfly Network </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                                </div>
+                            </div>
+                            <div class="position-relative row form-group">
+                                <label for="routerSSID" class="col-lg-3 col-12 col-form-label">SSID</label>
+                                <div class="col-12 col-lg-6">
+                                    <div class="custom-select2"><select id="routerSSID" class="form-control"><option value="" selected="selected"> Bizfly Network </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+              </div>
+              <div class="tab-pane fade" id="my-tab-2" role="tabpanel">
+                <div class="quanly-tabs-content">
+                    <h2 class="title col-12">
+                        Cấu hình hình thức đăng nhập
+                    </h2>
+
+                    <div class="col-12 col-lg-8">
+                        <p class="mb-3">
+                            Đăng nhập bằng hình thức điền Form lấy thông tin
+                        </p>
+                        <p class="mb-3">
+                            <a href="javascript:;" class="d-inline-block btn-custom btn-color">
+                                Chỉnh sửa
+                            </a>
+                        </p>
+                        <p class="mb-3">
+                            <a href="javascript:;" class="d-inline-block btn-custom">
+                                Chọn mẫu khác
+                            </a>
+                        </p>
+                        
+                    </div>
+                    <div class="col-12 col-lg-4">
+                            <div class="login-demo-img text-center">
+                                <img src="images/login-demo-img.png" alt="">
+                                <p class="name fs-16 mt-3"><b> Màn hình đăng nhập </b></p>
+                            </div>
+                    </div>
+
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="my-tab-3" role="tabpanel">
+                <div class="quanly-tabs-content">
+                    <h2 class="title col-12">
+                        Cấu hình giới hạn truy cập
+                    </h2>
+
+                    <form action="" class="form-settings-router col-12 col-lg-6">
+                        
+                        <div class="form-row">
+                            <div class="col-lg-6">
+                                <div class="position-relative form-group">
+                                    <label for="aaa1" class="">Giới hạn băng thông tải xuống</label>
+                                    <div class="custom-select2"><select id="aaa1" class="form-control"><option value="" selected="selected"> 100 Mbps </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="position-relative form-group">
+                                    <label for="aaa2" class="">Giới hạn băng thông tải lên</label>
+                                    <div class="custom-select2"><select id="aaa2" class="form-control"><option value="" selected="selected"> 100 Mbps </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="position-relative form-group">
+                            <label for="aaa3" class="">Khoảng thời gian truy cập</label>
+                            <div class="custom-select2"><select id="aaa3" class="form-control"><option value="" selected="selected"> 00:00 đến 23:59 </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                        </div>
+
+                        <div class="position-relative form-group">
+                            <label for="aaa4" class="">Giới hạn thời gian truy cập mỗi phiên (giờ)</label>
+                            <div class="custom-select2"><select id="aaa4" class="form-control"><option value="" selected="selected"> 3 giờ / phiên </option> <option>1</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option></select></div>
+                        </div>
+
+                        <div class="position-relative form-check">
+                            <input name="check" id="exampleCheck" type="checkbox" class="form-check-input">
+                            <label for="exampleCheck" class="form-check-label mb-3">Hiện thông báo ngắt kết nối khi chạm đến giới hạn</label>
+
+                            <textarea class="form-control" id="" rows="5" placeholder="Bạn đã đạt tới giới hạn truy cập. &#13;&#10;Vui lòng kết nối lại để tiếp tục truy cập Internet."></textarea>
+                        </div>
+
+                    </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        mounted() {
+          this.$nextTick(function () {
+
+            // open preview
+            RunFn.showPopup('.js-open-preview');
+
+            // // close button
+            // RunFn.showPopup('.js-open-preview');
+
+            // hover
+            $(".quanly-item").hover(function () {
+              $(this).find(".quanly-item-wrap").toggleClass("hover");
+            });
+
+            $(".js-steps-slider").slick();
+
+
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

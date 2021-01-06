@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body >
+    <div id="app">
+        <div class="login-theme login-theme-4">
+      <div class="custom-container form-submit">
+        <form action="" method="post" id="" class="form-actions login-themes" >
+          <div class="edit-left">
+
+              <div class="edit-main-box">
+
+                <div class="box-header text-center">
+        
+                    <a href="/" class="logo">
+                        <img src="images/login-theme-logo.png" alt="" class="logo-img">
+                    </a>
+        
+                    <h1 class="head-title">
+                        Chào mừng Quý khách 
+                        đến với An Nam Spa
+                    </h1>
+        
+                    <p class="head-desc">
+                       Miễn phí truy cập Internet
+                    </p>
+                    <p class="theme-desc font-weight-bold">
+                        Vui lòng cho chúng tôi biết cảm nhận của bạn khi sử dụng dịch vụ tại An Nam Spa nhé
+                    </p>
+                    <div class="rating-comment" id="select-rate-pro">
+                        <input type="radio" class="rating-input" id="rating-input-review-0-5" value="5" data-title="Quá tuyệt vời" name="user_post[rate]" checked="" />
+                        <label for="rating-input-review-0-5" class="rating-star" data-title="Quá tuyệt vời"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-4" value="4" data-title="Rất tốt" name="user_post[rate]" />
+                        <label for="rating-input-review-0-4" class="rating-star" data-title="Rất tốt"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-3" value="3" data-title="Bình thường" name="user_post[rate]" />
+                        <label for="rating-input-review-0-3" class="rating-star" data-title="Bình thường"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-2" value="2" data-title="Tạm được" name="user_post[rate]" />
+                        <label for="rating-input-review-0-2" class="rating-star" data-title="Tạm được"></label>
+                        <input type="radio" class="rating-input" id="rating-input-review-0-1" value="1" data-title="Không thích" name="user_post[rate]" />
+                        <label for="rating-input-review-0-1" class="rating-star" data-title="Không thích"></label>
+                    </div>
+                    <p id="star_tip" >Quá tuyệt vời</p>
+                </div>
+                
+                <div class="form-actions">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Ý kiến, chia sẻ của bạn" class="custom-textarea">
+
+                    </textarea>
+                    <button type="submit" class="btn-submit" value="">Kết nối ngay</button>
+                </div>
+              </div>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        mounted() {
+            this.$nextTick(function () {
+
+                $('.rating-star').hover(
+                    function(){ 
+                        $(this).addClass('hover') ;
+                        //console.log($(this).attr('data-title'))
+                        $('#star_tip').html($(this).attr('data-title'))
+                    },
+                    function(){ 
+                        $(this).removeClass('hover'); 
+                        $('#star_tip').html($('.rating-comment input:checked').attr('data-title'));
+
+                    } 
+                ).click(function(){
+                    $(this).addClass('hover') ;
+                    $('#star_tip').html($(this).attr('data-title'))
+                })
+
+            })
+        }
+      });
+
+    </script>
+  </body>
+</html>

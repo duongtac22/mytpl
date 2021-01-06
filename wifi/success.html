@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+  <div id="app">
+    <myheader :login="isLogin"></myheader>
+
+    <div class="router-main success">
+        
+        <div class="container">
+
+            <div class="col-12">
+                <div class="box-success text-center">
+                    <img src="images/ic-success.png" alt="" class="success-icon">
+                    <h1 class="title">
+                        Thêm và cấu hình Router thành công!
+                    </h1>
+                    <p class="desc">
+                        Chỉ còn 1 bước chọn hình thức đăng nhập và cấu hình giao diện đăng nhập cho </br> người dùng khi kết nối.
+                    </p>
+
+                    <a href="javascript:;" class="btn-step btn-next-step">
+                        Chọn hình thức đăng nhập
+                    </a>
+                </div>
+            </div>
+            
+
+
+
+        </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/vue.js"></script>
+  <script src="js/httpVueLoader.js"></script>
+  <script>
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        isLogin: false
+      },
+      components: {
+        myheader: httpVueLoader("vue_components/header.vue")
+      },
+    });
+  </script>
+</body>
+
+</html>

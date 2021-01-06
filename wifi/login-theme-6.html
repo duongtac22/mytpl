@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+
+      <div class="login-theme login-theme-6">
+        <div class="custom-container form-submit">
+          <form action="" method="post" id="" class="form-actions login-themes " >
+            <div class="edit-left">
+  
+                <div class="edit-main-box">
+                    <div class="slider">
+                        <div class="js-theme-slider">
+                            <div class="slick-item">
+                                <img src="images/img-slider1-theme-6.png" alt="">
+                            </div>
+                            <div class="slick-item">
+                                <img src="images/img-slider2-theme-6.png" alt="">
+                            </div>
+
+                            
+                        </div>   
+                    </div>
+                    
+
+                
+                <div class="form-actions btn-submit-fixed-bottom">
+                    <button type="submit" class="btn-submit btn-submit-red" value="">
+                        KẾT NỐI INTERNET
+                        (INTERNET ACCESS)
+                    </button>
+                </div>
+                </div>
+  
+            </div>
+  
+          </form>
+        </div>
+      </div>
+     
+
+
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        mounted() {
+            $(".js-theme-slider").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows : false,
+                dots: true,
+            });
+        }
+      });
+    </script>
+  </body>
+</html>

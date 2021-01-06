@@ -122,4 +122,32 @@
   left: 300px;
   top: 88px;
 }
+
+.select2-selection.select2-selection--single:after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  background: url(../images/bizfly-ic-search2.png) no-repeat center;
+  width: 16px;
+  height: 16px;
+  top: 12px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none;
+}
+
+span.select2-selection.select2-selection--single {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+span.select2.select2-container.select2-container--default, span.select2.select2-container.select2-container--default.select2-container--below.select2-container--focus {
+  max-width: 100% !important;
+  width: 100% !important;
+}
 /*# sourceMappingURL=custom.css.map */

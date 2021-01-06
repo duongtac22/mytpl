@@ -1,7 +1,7 @@
 var RunFn = (function () {
   var $carouselIcons = [
-    '<img src ="images/icon_arrow_right.png">',
-    '<img src ="images/icon_arrow_right.png">',
+    '<i class="fal fa-chevron-left"></i>',
+    '<i class="fal fa-chevron-right"></i>',
   ];
   function runnCarousel(holder) {
     var $carousel = $(holder);
@@ -89,8 +89,8 @@ var RunFn = (function () {
             lazyLoad: true,
             videoWidth: true,
             videoHeight: true,
-            touchDrag: touchDrag,
-            mouseDrag: touchDrag,
+            mouseDrag: false,
+            touchDrag: true,
             onInitialize: function (event) {
               // setTimeout(function () {
               elem.addClass("owl-carousel owl-theme");
@@ -272,6 +272,60 @@ var RunFn = (function () {
       $(this).addClass('active');
     })
   }
+
+  function tooltip(holder , hoverHolder){
+    var h_tooltip = 0;
+    var pad = 10;
+    var x_mouse = 0; var y_mouse = 0;
+    var wrap_left = 0;
+    var wrap_right = 0;
+    var wrap_top = 0;
+    var wrap_bottom = 0;
+
+    $(hoverHolder).mousemove(function(e){
+
+      wrap_left = 0;
+      wrap_top = $(window).scrollTop();
+      wrap_bottom = $(window).height();
+      wrap_right = $(window).width();
+      x_mouse = e.pageX;
+      y_mouse = e.pageY;
+
+
+    
+      if(x_mouse  > wrap_right) $(holder).css("left",x_mouse  - pad);
+      else $(holder).css("left",x_mouse + pad);
+
+      
+      if(y_mouse  < wrap_top) $(holder).css("top",wrap_top);
+      else $(holder).css("top",y_mouse - h_tooltip - pad);
+       $(holder).show();
+
+    });
+
+    $(hoverHolder).mouseout(function(){
+        $(holder).hide();
+    });
+}
+  //show popup
+  function showPopup(holder) {
+    $(holder).click(function() {
+      let a = $(this).attr('data-holder');
+      $(".bg-opacity").fadeIn();
+      $("#" + a).fadeIn();
+      $("#" + a).find(".modal-body").addClass("open");
+      $("#" + a).find(".js-steps-slider").slick('setPosition');
+      $('body').toggleClass('modal-open');
+    })
+  }
+
+  //close popup:
+  function closePopup(holder) {
+    $('body').toggleClass('modal-open');
+    $(".preview-theme").fadeOut();
+    $(".bg-opacity").fadeOut();
+    
+  }
   return {
     runnCarousel: runnCarousel,
     syncOwl: syncOwl,
@@ -281,6 +335,9 @@ var RunFn = (function () {
     changeImgProduct : changeImgProduct ,
     changeConfig : changeConfig ,
     boxSearch : boxSearch,
-    chooseBank : chooseBank
+    chooseBank : chooseBank,
+    tooltip : tooltip,
+    showPopup: showPopup ,
+    closePopup : closePopup
   };
 })();

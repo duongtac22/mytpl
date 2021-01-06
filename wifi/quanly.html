@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/slick/slick.css" />
+    <link rel="stylesheet" href="libs/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="page-quanly">
+        <div class="fixed-sidebar">
+          <a href="javascript:;" class="sidebar-logo">
+            <img src="images/logo-bizfly-wifi.png" alt="" />
+          </a>
+
+          <ul class="sidebar-menu top">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-tongquan.png" alt="" />
+                Tổng quan
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-login.png" alt="" />
+                Hình thức đăng nhập
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <img src="images/ic-settings.png" alt="" />
+                Cài đặt Router
+              </a>
+            </li>
+          </ul>
+
+          <ul class="sidebar-menu bottom">
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-info-circle"></i>
+                Hướng dẫn sử dụng
+              </a>
+            </li>
+            <li class="sidebar-menu-item">
+              <a href="javascript:;">
+                <i class="fal fa-question-circle"></i>
+                Trợ giúp
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="quanly-main">
+          <div class="fixed-header">
+            <div class="header-top-right float-right d-flex align-items-center">
+              <div class="dropdown dropdown mr-3">
+                <a href="/" class="notification">
+                  <img
+                    src="../../images/bizfly-ic-bell.png"
+                    alt=""
+                    class="noti-ic"
+                  />
+                </a>
+              </div>
+              <div class="dropdown info d-flex align-items-center">
+                <a class="" href="#">
+                  <img
+                    src="../../images/bizfly-login-ava.png"
+                    alt=""
+                    class="avatar"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="quanly-content">
+            <ul class="page-breadcrumb pl-0 list-unstyled m-0">
+              <li>
+                <a href="javascript:;"> Hình thức đăng nhập </a>
+              </li>
+              <li>
+                <a href="javascript:;"> Chọn hình thức đăng nhập </a>
+              </li>
+            </ul>
+            <div class="page-title">
+              <h1 class="page-title">Chọn hình thức đăng nhập</h1>
+              <div class="page-info">
+                <i class="fal fa-question-circle"></i>
+                <div class="info-tooltip">
+                  <p>
+                    Hình thức đăng nhập là loại màn hình đầu tiên sẽ hiển thị
+                    khi người dùng kết nối vào wifi của bạn. Có nhiều loại hình
+                    thức đăng nhập với các mục đích khác nhau như: Gia tăng nhận
+                    diện thương hiệu, Thu thập thông tin khách hàng hay Khảo
+                    sát, Giới thiệu chương trình/sản phẩm/dịch vụ mới... Hãy
+                    chọn hình thức đăng nhập phù hợp với mục đích của bạn. Bạn
+                    có thể thay đổi và lựa chọn các mẫu khác để tùy chỉnh theo ý
+                    mình.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <ul class="tab-list nav page-tabs-list">
+              <li class="nav-item tabs-list-item " data-id="my-tab-1">
+                <a
+                  data-toggle="tab"
+                  href="#my-tab-1"
+                  role="tab"
+                  aria-controls="my-tab-1"
+                  aria-selected="true"
+                  class="active"
+                >
+                  Hình thức đăng nhập mẫu
+                </a>
+              </li>
+              <li class="nav-item tabs-list-item active" data-id="my-tab-2">
+                <a
+                  data-toggle="tab"
+                  href="#my-tab-2"
+                  role="tab"
+                  aria-controls="my-tab-2"
+                  aria-selected="true"
+                  class=""
+                >
+                  Hình thức đăng nhập của tôi
+                </a>
+              </li>
+            </ul>
+
+            <div class="tab-content bs-tab-content">
+              <div class="tab-pane  fade" id="my-tab-1" role="tabpanel">
+                <div class="quanly-tabs-content">
+
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap quanly-item-wrap-new">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="images/login-style-1.png"
+                            alt=""
+                          />
+                         
+                        </a>
+                        
+                        <h3 class="item-name">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                        </h3>
+
+                       
+                        <div class="quanly-item-main-new">
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview js-open-preview"
+                            data-holder='popup-preview'
+                          >
+                            <i class="fas fa-eye"></i>
+                            Xem trước
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <img
+                              src="images/bizfly-ic-search.png"
+                              alt="click"
+                            />
+                            Sử dụng mẫu
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap quanly-item-wrap-new">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="images/login-otp.png"
+                            alt=""
+                          />
+                         
+                        </a>
+                        
+                        <h3 class="item-name">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                        </h3>
+
+                       
+                        <div class="quanly-item-main-new">
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview js-open-preview"
+                            data-holder='popup-preview'
+                          >
+                            <i class="fas fa-eye"></i>
+                            Xem trước
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <img
+                              src="images/bizfly-ic-search.png"
+                              alt="click"
+                            />
+                            Sử dụng mẫu
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap quanly-item-wrap-new">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="images/login-mxh.png"
+                            alt=""
+                          />
+                         
+                        </a>
+                        
+                        <h3 class="item-name">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                        </h3>
+
+                       
+                        <div class="quanly-item-main-new">
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview js-open-preview"
+                            data-holder='popup-preview'
+                          >
+                            <i class="fas fa-eye"></i>
+                            Xem trước
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <img
+                              src="images/bizfly-ic-search.png"
+                              alt="click"
+                            />
+                            Sử dụng mẫu
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap quanly-item-wrap-new">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="images/login-video.png"
+                            alt=""
+                          />
+                         
+                        </a>
+                        
+                        <h3 class="item-name">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                        </h3>
+
+                       
+                        <div class="quanly-item-main-new">
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview js-open-preview"
+                            data-holder='popup-preview'
+                          >
+                            <i class="fas fa-eye"></i>
+                            Xem trước
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <img
+                              src="images/bizfly-ic-search.png"
+                              alt="click"
+                            />
+                            Sử dụng mẫu
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap quanly-item-wrap-new">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="images/Login-Account.png"
+                            alt=""
+                          />
+                         
+                        </a>
+                        
+                        <h3 class="item-name">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                        </h3>
+
+                       
+                        <div class="quanly-item-main-new">
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview js-open-preview"
+                            data-holder='popup-preview'
+                          >
+                            <i class="fas fa-eye"></i>
+                            Xem trước
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <img
+                              src="images/bizfly-ic-search.png"
+                              alt="click"
+                            />
+                            Sử dụng mẫu
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap quanly-item-wrap-new">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="images/Login-survey.png"
+                            alt=""
+                          />
+                         
+                        </a>
+                        
+                        <h3 class="item-name">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                        </h3>
+
+                       
+                        <div class="quanly-item-main-new">
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview js-open-preview"
+                            data-holder='popup-preview'
+                          >
+                            <i class="fas fa-eye"></i>
+                            Xem trước
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <img
+                              src="images/bizfly-ic-search.png"
+                              alt="click"
+                            />
+                            Sử dụng mẫu
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap quanly-item-wrap-new">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="images/Login-voucher.png"
+                            alt=""
+                          />
+                         
+                        </a>
+                        
+                        <h3 class="item-name">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                        </h3>
+
+                       
+                        <div class="quanly-item-main-new">
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview js-open-preview"
+                            data-holder='popup-preview'
+                          >
+                            <i class="fas fa-eye"></i>
+                            Xem trước
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <img
+                              src="images/bizfly-ic-search.png"
+                              alt="click"
+                            />
+                            Sử dụng mẫu
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane  active show" id="my-tab-2" role="tabpanel">
+                <div class="quanly-tabs-content">
+
+                  <!-- <div class="col-12 col-md-6 col-lg-4 col-xl-3" v-for="n in 2">
+                    <div class="quanly-item">
+                      <div class="quanly-item-wrap">
+                        <a class="quanly-item-img" href="javascript:;">
+                          <img
+                            src="http://via.placeholder.com/400x400"
+                            alt=""
+                          />
+                        </a>
+                        <div class="quanly-item-main">
+                          <h3 class="item-name">
+                            Tiêu đề hình thức đăng nhập 02
+                          </h3>
+                          <p class="item-desc">
+                            Mẫu sử dụng: Đăng nhập bằng hình thức Điền form lấy thông tin
+                          </p>
+
+                          <a
+                            href="javascript:;"
+                            class="button btn-preview "
+                          >
+
+                          Sao chép mẫu này
+                          </a>
+                          <a href="javascript:;" class="button btn-picked" >
+                            <i class="fal fa-edit"></i>
+                            Chỉnh sửa
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  
+
+                  <div class="col-12 col-xl-6 mb-3">
+
+                      <div class="new-login-theme-box">
+                          <p class="login-theme-name">
+                            Đăng nhập bằng hình thức điền form
+                          </p>
+
+                          <div class="login-theme-info">
+                            <div class="login-theme-info-left">
+                                <div class="login-theme-img">
+                                    <img src="images/new-img-login-box.png" alt=" teen theme ">
+                                </div>
+
+                                <div class="login-theme-actions-list">
+                                    <a href="javascript:;" class="login-theme-actions-item">
+                                      Sửa
+                                    </a>
+                                    <a href="javascript:;" class="login-theme-actions-item">
+                                      Xem
+                                    </a>
+                                    <a href="javascript:;" class="login-theme-actions-item">
+                                      Sao chép
+                                    </a>
+                                    <a href="javascript:;" class="login-theme-actions-item">
+                                      Xóa
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="login-theme-info-right">
+                                <div class="login-theme-used">
+                                    <p class="title" id="count-locations">
+                                        Router đang áp dụng (6)
+                                    </p>
+                                    <ul class="list-unstyled pl-0 m-0 list-locations-setup">
+                                        <li>
+                                        <input id="router-theme-1" type="checkbox" class="custom-switch-input">
+                                        <label for="router-theme-1" class="custom-switch-btn">
+                                        <div class="locations-info">
+                                            <span class="locations-name">
+                                              Bizfly Wifi free 1
+                                            </span>
+                                            <span class="location-addr">
+                                              Chi nhánh Hai Bà Trưng
+                                            </span>
+                                        </div>
+                                        <span class="locations-toggle">
+
+                                        </span>
+                                        </label>
+                                        </li>
+                                        <li>
+                                        <input id="router-theme-2" type="checkbox" class="custom-switch-input">
+                                        <label for="router-theme-2" class="custom-switch-btn">
+                                        <div class="locations-info">
+                                          <span class="locations-name">
+                                            Bizfly Wifi free 2
+                                          </span>
+                                          <span class="location-addr">
+                                            Chi nhánh Đống Đa
+                                          </span>
+                                        </div>
+                                        <span class="locations-toggle">
+
+                                        </span>
+                                        </label>
+                                        </li>
+                                        <li>
+                                        <input id="router-theme-3" type="checkbox" class="custom-switch-input">
+                                        <label for="router-theme-3" class="custom-switch-btn">
+                                        <div class="locations-info">
+                                        <span class="locations-name">
+                                          Bizfly Wifi free 3
+                                        </span>
+                                        <span class="location-addr">
+                                          Chi nhánh Thanh Xuân
+                                        </span>
+                                        </div>
+                                        <span class="locations-toggle">
+
+                                        </span>
+                                        </label>
+                                        </li>
+                                        <li>
+                                        <input id="router-theme-4" type="checkbox" class="custom-switch-input">
+                                        <label for="router-theme-4" class="custom-switch-btn">
+                                        <div class="locations-info">
+                                        <span class="locations-name">
+                                        Bizfly Wifi free 4
+                                        </span>
+                                        <span class="location-addr">
+                                        Chi nhánh Tây Hồ
+                                        </span>
+                                        </div>
+                                        <span class="locations-toggle">
+
+                                        </span>
+                                        </label>
+                                        </li>
+                                        <li>
+                                        <input id="router-theme-5" type="checkbox" class="custom-switch-input">
+                                        <label for="router-theme-5" class="custom-switch-btn">
+                                        <div class="locations-info">
+                                        <span class="locations-name">
+                                        Bizfly Wifi free 5
+                                        </span>
+                                        <span class="location-addr">
+                                        Chi nhánh Ba Đình
+                                        </span>
+                                        </div>
+                                        <span class="locations-toggle">
+
+                                        </span>
+                                        </label>
+                                        </li>
+
+                                        <li class="view-locations " id="viewmore-locations">
+                                            <a href="javascript:;" class="js-toggle-locations" onclick="javascript:showLocations(this);">
+                                                Xem tất cả 
+                                            </a>  
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="col-12 col-xl-6 mb-3">
+
+                    <div class="new-login-theme-box">
+                        <p class="login-theme-name">
+                          Đăng nhập bằng hình thức điền form
+                        </p>
+
+                        <div class="login-theme-info">
+                          <div class="login-theme-info-left">
+                              <div class="login-theme-img">
+                                  <img src="images/new-img-login-box.png" alt=" teen theme ">
+                              </div>
+
+                              <div class="login-theme-actions-list">
+                                  <a href="javascript:;" class="login-theme-actions-item">
+                                    Sửa
+                                  </a>
+                                  <a href="javascript:;" class="login-theme-actions-item">
+                                    Xem
+                                  </a>
+                                  <a href="javascript:;" class="login-theme-actions-item">
+                                    Sao chép
+                                  </a>
+                                  <a href="javascript:;" class="login-theme-actions-item">
+                                    Xóa
+                                  </a>
+                              </div>
+                          </div>
+                          <div class="login-theme-info-right">
+                              <div class="login-theme-not-used">
+                                  <p class="title" id="count-locations">
+                                    Hình thức chưa được áp dụng cho Router nào.
+                                  </p>
+                                  <a href="javascript:;" class="button btn-picked"><img src="images/bizfly-ic-search.png" alt="click">
+                                    Sử dụng mẫu
+                                  </a>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="preview-theme preview-page"
+      id="popup-preview"
+      
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="">
+              <div class="fixed-header fixed-header-preview">
+                  <div class="fixed-header-previewleft">
+                      <a href="javascript:;" onclick="RunFn.closePopup()">
+                          <i class="fal fa-chevron-left"></i>
+                          Quay lại
+                      </a>
+                  </div>
+                  <div class="fixed-header-previewcenter">
+                      <h1 class="title">
+                          Đăng nhập bằng hình thức Điền form lấy thông tin
+                      </h1>
+                  </div>
+                  <div class="fixed-header-previewright">
+                      <a href="javascript:;" class="btn-custom btn-color">
+                          Chọn mẫu này
+                      </a>
+                  </div>
+              </div>
+  
+              <div class="preview-wrap">
+  
+                  <div class="preview-device preview-desktop">
+  
+                      <div class="preview-iframe">
+                        <img src="images/img-preview-desktop.png" alt="">
+                      </div>
+  
+                  </div>
+                  <div class="preview-device preview-mobile">
+                      <div class="preview-iframe">
+                        <img src="images/img-preview-mobile.png" alt="">
+                      </div>
+                  </div>
+  
+  
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-opacity" onclick="RunFn.closePopup()"></div>
+    </div>
+
+
+    <div
+      class="preview-theme popup-yeucau"
+      id="popup-yeucau"
+      
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              class="close-modal js-close-modal"
+              onclick="RunFn.closePopup()"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="preview-header ">
+              <h3 class="text-center title d-inline-block w-100">Yêu cầu tư vấn và thiết kế riêng cho hệ thống của bạn</h3>
+            </div>
+          </div>
+          <div class="modal-body">
+
+            <form action="" class="popup-yeucau">
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder=" Họ và tên *" required  >
+              </div>
+  
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder=" Số điện thoại liên lạc *" required >
+              </div>
+  
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder=" Email">
+              </div>
+  
+              <div class="form-group">
+                <textarea class="form-control" id="" rows="5" placeholder="Hãy cho Bizfly Wifi biết mong muốn, yêu cầu của bạn"></textarea>
+              </div>
+
+              <div class="form-group text-center my-3">
+                <button type="submit" value="Submit" class="btn-save">
+                  Gửi yêu cầu
+                </button>
+              </div>
+              
+
+            </form>
+           
+            
+
+          </div>
+        </div>
+      </div>
+      <div class="bg-opacity" onclick="RunFn.closePopup()"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/vue.js"></script>
+    <script src="js/httpVueLoader.js"></script>
+    <script src="libs/bootstrap/bootstrap.min.js"></script>
+    <script src="libs/bootstrap/popper.min.js"></script>
+    <script src="libs/slick/slick.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        mounted() {
+          this.$nextTick(function () {
+
+            // open preview
+            RunFn.showPopup('.js-open-preview');
+
+            // // close button
+            // RunFn.showPopup('.js-open-preview');
+
+            // hover
+            $(".quanly-item").hover(function () {
+              $(this).find(".quanly-item-wrap").toggleClass("hover");
+            });
+
+            $(".js-steps-slider").slick();
+
+
+          });
+        },
+      });
+
+      function showLocations(holder){
+        $(holder).parents('ul').addClass('show-full');
+        $(holder).parent().html('<a href="javascript:;" class="js-toggle-locations" onclick="javascript:hideLocations(this);">Ẩn bớt </a>');
+      }
+      function hideLocations(holder){
+        $(holder).parents('ul').removeClass('show-full');
+        $(holder).parent().html('<a href="javascript:;" class="js-toggle-locations" onclick="javascript:showLocations(this);">Xem tất cả </a>');
+      }
+    </script>
+  </body>
+</html>
