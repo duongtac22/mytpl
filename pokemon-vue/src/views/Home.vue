@@ -4,7 +4,8 @@
       class="Card"
       v-for="(pokemon, idx) in responseName"
       :key="{ idx }"
-      @click="openDetail"
+      :pokemonName = "pokemon.name"
+      @click="openDetail(idx)"
     >
       <span class="Card--id">#{{ pokemon.id }}</span>
       <img
@@ -19,14 +20,37 @@
     </div>
 
     <!-- <input type="hidden" id="checkbox" v-model="nextUrl" > -->
-    <button @click="newUrl = nextUrl">Load more Pokemon</button>
+    <button @click="loadMore(nextUrl)">Load more Pokemon</button>
   </div>
+   <PokemonDetail 
+      v-if="showDetail"
+      :showDetail="showDetail"
+      @closeDetail="closeDetail" />
 </template>
 
 <script>
-import { reactive, toRefs, onMounted, watch } from "vue";
+
+import { reactive, toRefs, onMounted } from "vue";
+import PokemonDetail from '../views/popupPokemon.vue';
 export default {
   name: "Home",
+   components: {
+     PokemonDetail
+  },
+  data: () => {
+    return {
+      showDetail: false,
+    }
+  },
+   methods: {
+    closeDetail() {
+      this.showDetail = false;
+    },
+    openDetail(pokemon) {
+      console.log(pokemon);
+      this.showDetail = true;
+    },
+  },
   setup() {
     //  const pokemonList = reactive({
     //   pokemons: []
@@ -59,51 +83,77 @@ export default {
       pokemonApi: "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10",
       showDetail: false,
     });
-    async function getPokemonApi(newUrl, state) {
+    
+    const getPokemonApi = async (newUrl) => {
       let apiUrl = "";
       if (newUrl === "") {
         apiUrl = state.pokemonApi;
       } else {
         apiUrl = newUrl;
       }
-      await fetch(apiUrl)
-        .then((response) => response.json())
-        .then(async (res) => {
-          let pokemonData = res.results;
-          state.nextUrl = res.next;
+
+      try {
+        let response  = await fetch(apiUrl);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+          let res = await response.json();
+          let pokemonData =  res.results;
+          state.nextUrl =  res.next;
           for (let i = 0; i < pokemonData.length; i++) {
-            await getpokemon(pokemonData[i].name, state.responseName);
+            await getpokemon(pokemonData[i].name);
+            console.log(pokemonData[i].name)
           }
-        });
-    }
-    async function getpokemon(pokemonName, data) {
-      await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
-        .then((response) => response.json())
-        .then((result) => {
-          // console.log(result);
-          data.push(result);
-        });
-    }
-
-    function openDetail() {
-      state.showDetail = true;
-    }
-
-    function closeDetail() {
-      state.showDetail = false;
-    }
-
-    watch(
-      () => state.newUrl,
-      async () => {
-        await getPokemonApi(state.newUrl, state);
+        }
+      } catch(err) {
+          console.log(err);
       }
-    );
+    }
+
+    const getpokemon = async (pokemonName) => {
+      
+      try {
+        let response  = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+          let res = await response.json();
+          state.responseName.push(res);
+        }
+      } catch(err) {
+          console.log(err);
+      }
+        // .then((response) => response.json())
+        // .then((result) => {
+        //   // console.log(result);
+        //   
+        // });
+    }
+    
+    const loadMore = (newUrl) => {
+      getPokemonApi(newUrl)
+    }
+
+    // const openDetail = (idx) => {
+    //   state.showDetail = true;
+    // }
+
+    // const closeDetail = () => {
+    //   state.showDetail = false;
+    // }
+
+    // watch(
+    //   () => state.newUrl,
+    //   async () => {
+    //     await getPokemonApi(state.newUrl, state);
+    //   }
+    // );
     onMounted(async () => {
       await getPokemonApi(state.pokemonApi, state);
     });
 
-    return { ...toRefs(state), closeDetail, openDetail };
+
+    return { ...toRefs(state),  loadMore  };
   },
 };
 </script>
