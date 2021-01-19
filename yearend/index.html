@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery.slotmachine.css" type="text/css" media="screen" />
+  </head>
+
+  <style>
+    .section-prize .section-head-actions {
+      border: 3px solid #f5db79;
+      background: #393264;
+      border-radius: 0;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #ffda56;
+      text-transform: uppercase;
+      /*box-shadow: 0 0 25px 9px rgba(255, 219, 87, 0.32);*/
+      height: 48px;
+      line-height: 42px;
+      margin-top: 13px;
+      margin-bottom: 50px;
+      display: inline-block;
+    }
+
+    .section-prize .section-head-actions a {
+      font-size: 18px;
+    }
+
+    .section-prize .section-head-actions .prize-text {
+      display: inline-block;
+      vertical-align: top;
+      font-weight: 700;
+    }
+
+    .prize-text.prize-count {
+      padding: 0 10px;
+    }
+
+    .section-prize .section-head-actions .link-prev {
+      float: left;
+      padding: 0 12px;
+    }
+
+    .section-prize .section-head-actions .link-next {
+      float: right;
+      padding: 0 12px;
+    }
+
+    .section-prize .link-next:hover,
+    .section-prize .link-prev:hover {
+      color: #fff;
+    }
+
+    .section-prize .section-body {
+      background: #393264;
+      padding: 11px;
+      border: 3px solid #f5db79;
+      border-radius: 15px;
+      display: inline-block;
+      position: relative;
+      top: -3px;
+      margin-bottom: 37px;
+      max-width: 100%;
+    }
+
+    .section-prize .section-body-inner {
+      overflow: hidden;
+      border-radius: 10px;
+      background: #2a254f;
+      padding: 0 7px;
+      border: 1px solid #1e1948;
+    }
+
+    .section-prize .section-body-inner-primary {
+      padding: 0 4px;
+    }
+
+    .section-prize .section-body .slots {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+
+    .section-prize .section-actions a {
+      margin: 0 8px;
+    }
+
+    .section-prize .section-actions h2 {
+      color: #fff;
+      text-shadow: #030303 2px 2px 2px;
+      margin: 0 0 25px;
+    }
+
+    .section-prize .coin {
+      position: relative;
+      min-height: 120px;
+    }
+
+    .section-prize .coin img {
+      height: 120px;
+    }
+
+    .section-prize .coin img.prize-image {
+      max-height: 200px;
+    }
+
+    .section-prize .coin h1 {
+      font-size: 38px;
+      font-weight: 700;
+      margin: 0;
+      color: #f99a44;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-shadow: 0 3px 1px #aa8524;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #d68f3a;
+    }
+
+    @media (max-width: 768px) {
+      .section-prize {
+        margin: 0 -30px;
+      }
+      .section-prize .coin img.prize-image,
+      .section-prize .coin img {
+        max-width: 73px;
+      }
+      .section-prize .coin h1 {
+        font-size: 19px;
+        margin-top: -2px;
+      }
+      .section-prize .section-head {
+        max-width: 245px;
+        margin-bottom: 44px;
+      }
+      .section-prize .section-head-actions {
+        height: 36px;
+        line-height: 30px;
+        border-radius: 5px;
+        border: 3px solid #f5db79;
+        margin-top: 7px;
+      }
+      .section-prize .section-head-actions a {
+        font-size: 10px;
+        padding: 0 15px;
+      }
+      .section-prize .section-head-actions .prize-text {
+        font-size: 14px;
+      }
+      .section-prize .section-actions h2 {
+        margin-bottom: 26px;
+      }
+      .section-prize .section-actions a {
+        margin-bottom: 17px;
+      }
+      .section-prize .section-body {
+        border: 0;
+        border-radius: 0;
+        background: none;
+        padding: 0;
+      }
+      .section-prize .section-body-inner {
+        background: none;
+        padding: 0;
+        border: 0;
+        height: auto;
+      }
+    }
+    .slots {
+      list-style: none outside none;
+      background: #2a254f;
+      padding: 11px 0;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 0;
+      line-height: 0;
+    }
+
+    .slots-secondary {
+      padding: 7px 0 8px;
+    }
+
+    .slot {
+      width: 180px;
+      display: inline-block;
+      margin: 0 11px 0 10px;
+      background: #413971;
+      border-radius: 5px;
+      height: 250px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slot .slot-item {
+      display: block;
+      width: 100%;
+      height: 250px;
+      position: relative;
+    }
+
+    .slot-number {
+      font-size: 180px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .slot-number img {
+      width: 35%;
+      opacity: 0.25;
+    }
+
+    .slot-1of11 {
+      width: 113px;
+    }
+
+    .slot-1of16 {
+      width: 79px;
+      height: 126px;
+      margin: -6px 1px -6px 0;
+      border-radius: 0;
+      display: inline-block;
+    }
+
+    .slot-1of16 .slot-item {
+      height: 126px;
+    }
+
+    .slot-1of16:last-child {
+      margin-right: 0;
+    }
+
+    .slot-1of16 .slot-number {
+      font-size: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .slots {
+        background: none;
+        border-radius: 0;
+        overflow: hidden;
+        text-align: center;
+      }
+      .slot {
+        background: #393264;
+        border: 3px solid #f5db79;
+        border-radius: 7px;
+        margin: 0 10px;
+        display: none;
+      }
+      .slot:last-child,
+      .slot:nth-last-child(2),
+      .slot:nth-last-child(3) {
+        display: inline-block;
+      }
+      .slot a {
+        height: 208px;
+        width: 150px;
+      }
+    }
+    /* .slotMachineContainer {
+  transition: all 1.578s ease-out 0s;
+  animation-duration: 0.1s;
+  animation-name: transform;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes transform {
+  from {
+    transform: matrix(1, 0, 0, 1, 0, -250);
+  }
+
+  to {
+    transform: matrix(1, 0, 0, 1, 0, -2500);
+  }
+} */
+  </style>
+  <body>
+    <section class="section section-prize">
+      <div class="section-body" ng-class="$ctrl.animClass.setprize">
+        <div class="section-body-inner section-body-inner-primary">
+          <ul class="slots">
+            <li
+              class="slot "
+              style="overflow: hidden"
+            >
+            <div class="slot-item"><div class="slot-number"><span>1</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>3</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>4</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>5</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>2</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>6</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>7</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>9</span></div></div>
+            <div class="slot-item"><div class="slot-number"><span>8</span></div></div>
+            </li>
+            <li
+            class="slot "
+            style="overflow: hidden"
+          >
+          <div class="slot-item"><div class="slot-number"><span>1</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>3</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>4</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>5</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>2</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>6</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>7</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>9</span></div></div>
+          <div class="slot-item"><div class="slot-number"><span>8</span></div></div>
+          </li>
+          <li
+          class="slot "
+          style="overflow: hidden"
+        >
+        <div class="slot-item"><div class="slot-number"><span>1</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>3</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>4</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>5</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>2</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>6</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>7</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>9</span></div></div>
+        <div class="slot-item"><div class="slot-number"><span>8</span></div></div>
+        </li>
+        <li
+        class="slot "
+        style="overflow: hidden"
+      >
+      <div class="slot-item"><div class="slot-number"><span>1</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>3</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>4</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>5</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>2</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>6</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>7</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>9</span></div></div>
+      <div class="slot-item"><div class="slot-number"><span>8</span></div></div>
+      </li>
+      <li
+      class="slot "
+      style="overflow: hidden"
+    >
+    <div class="slot-item"><div class="slot-number"><span>1</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>3</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>4</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>5</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>2</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>6</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>7</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>9</span></div></div>
+    <div class="slot-item"><div class="slot-number"><span>8</span></div></div>
+    </li>
+    <li
+    class="slot "
+    style="overflow: hidden"
+  >
+  <div class="slot-item"><div class="slot-number"><span>1</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>3</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>4</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>5</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>2</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>6</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>7</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>9</span></div></div>
+  <div class="slot-item"><div class="slot-number"><span>8</span></div></div>
+  </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <a href="javascript:;" onclick="run()">Quay</a>
+    <a href="javascript:;" onclick="stop()">STOp </a>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="slotmachine.js"></script>
+    <script src="jquery.slotmachine.js"></script>
+    <script>
+      var machines = [];
+      var slotmachineDelay = 500;
+
+      function run(){
+        $(".slots .slot").each(function (k, slot) {
+            if($(this).find('.slotMachineContainer').length !== 0){
+
+                machines[k].shuffle(999);
+            } else {
+                machines[k] = new SlotMachine(this, {
+                    active: 2,
+                    delay: slotmachineDelay
+                });
+                machines[k].shuffle(999);
+            }
+        });
+      }
+      function stop(){
+        $(".slots .slot").each(function (k, slot) {
+            machines[k].stop();
+        });
+      }
+      
+    </script>
+  </body>
+</html>
