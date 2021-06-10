@@ -206,14 +206,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <div class="video-holder wow fadeInUp">
+                            <div class="video-holder">
                                 <a href="javascript:;" class="img">
                                     <img src="images/img-video.jpg" alt="" class="img-fluid lazy">
                                 </a>
                             </div>
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="video-description wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="video-description">
                                 <h2 class="title">
                                     Mỹ Phẩm <b class="font-weight-bold">1 Làn Da - 1 Công Thức</b>
                                 </h2>
@@ -233,19 +233,10 @@
                                         </span>
                                     </a>
                                 </div>
-                                
-                            </div>
-                            <div class="bg-img wow fadeInRight" data-wow-delay="2.3s">
-                                <img src="images/bg-logo.png" alt="">
                             </div>
                         </div>
                     </div>
-
-                   
                 </div>
-
-                
-                
             </section>
             <!-- end section 2-->
         </div>
@@ -259,7 +250,7 @@
 	<script src="libs/bootstrap/bootstrap.min.js"></script>
 	<script>
         $(document).ready(function(){
-            $(window).width()>=992&&(new WOW).init()
+            new WOW().init();
             var swieprBanner = new Swiper("#slider-banners" , {
                 pagination: {
                     el: "#slider-banners .swiper-pagination",
