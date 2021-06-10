@@ -1,0 +1,282 @@
+.recruitment__page {
+	.sort-block {
+		float: right;
+		width: 100%;
+	}
+	.article-list {
+		clear: both;
+		.article-info {
+			position: relative;
+		}
+		.article-item {
+			.counter {
+				font-weight: normal;
+				font-size: 50px;
+				line-height: 39px;
+				color: #d90221;
+				& {
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				@media (max-width: 991px) {
+					font-size: 40px;
+				}
+				@media (max-width: 575px) {
+					font-size: 30px;
+				}
+			}
+			.desc {
+				font-weight: normal;
+				font-size: 14px;
+				line-height: 24px;
+				text-align: justify;
+				color: #444444;
+				@include line__clamp(3);
+				height: 72px;
+				@media (max-width: 991px) {
+					font-size: 13px;
+					line-height: 19px;
+					@include line__clamp(2);
+					height: 38px;
+				}
+			}
+			.article-img {
+				border-radius: 10px;
+				overflow: hidden;
+			}
+			.name {
+				margin-bottom: 10px;
+				position: relative;
+				padding-left: 85px;
+				@media (max-width: 991px) {
+					font-size: 15px;
+					line-height: 20px;
+					padding-left: 55px;
+				}
+				@media (max-width: 575px) {
+					font-size: 14px;
+					line-height: 18px;
+					padding-left: 40px;
+					margin-bottom: 5px;
+				}
+			}
+			.times {
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 19px;
+				color: #666666;
+				@media (max-width: 991px) {
+					font-size: 14px;
+				}
+			}
+			.more {
+				font-style: italic;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 19px;
+				color: #d90221;
+				&:hover {
+					text-decoration: underline;
+				}
+				@media (max-width: 991px) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+
+// detail chi tiet tuyen dung
+
+.recruitment__content {
+	padding: 55px 0;
+	@media (max-width: 767px) {
+		padding: 30px 0;
+		@media (max-width: 575px) {
+			padding: 20px 0;
+		}
+	}
+
+	.block__detail-recruitment {
+		.big__title {
+			margin-bottom: 25px;
+			h2 {
+				display: block;
+				font-weight: bold;
+				font-size: 30px;
+				line-height: 42px;
+				color: #222222;
+			}
+		}
+
+		.paragraph__detail {
+			h3 {
+				display: block;
+				font-weight: 700;
+				font-size: 22px;
+				line-height: 35px;
+				color: #555;
+			}
+			h5 {
+				display: block;
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 35px;
+				color: #555;
+			}
+			p {
+				display: block;
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 35px;
+				color: #555;
+			}
+		}
+		@media (max-width: 767px) {
+			.big__title {
+				h2 {
+					font-size: 22px;
+					line-height: 35px;
+				}
+			}
+			.paragraph__detail {
+				h3 {
+					font-size: 20px;
+				}
+				p,
+				h5 {
+					font-size: 18px;
+					line-height: 30px;
+				}
+			}
+		}
+
+		@media (max-width: 575px) {
+			.big__title {
+				margin-bottom: 5px;
+				h2 {
+					font-size: 18px;
+					line-height: 25px;
+				}
+			}
+			.paragraph__detail {
+				h3 {
+					font-size: 18px;
+				}
+				p,
+				h5 {
+					font-size: 16px;
+					line-height: 24px;
+				}
+			}
+		}
+	}
+
+	.btn__pushcv {
+		text-align: center;
+		margin-bottom: 35px;
+		a {
+			display: inline-block;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 35px;
+			color: #ffffff;
+			background: #d90221;
+			border-radius: 10px;
+			padding: 5px 50px;
+			&:hover {
+				box-shadow: #ccc 0px 5px 10px;
+			}
+		}
+		@media (max-width: 767px) {
+			a {
+				font-size: 18px;
+				padding: 3px 30px;
+			}
+		}
+	}
+
+	.info__list {
+		display: block;
+		background: #f1f1f1;
+		border: 3px solid #e7e7e7;
+		border-radius: 10px;
+		padding: 18px 30px;
+		margin-bottom: 25px;
+		li {
+			&:not(:last-child) {
+				padding-bottom: 30px;
+			}
+		}
+		h6 {
+			display: block;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 30px;
+			color: #d90221;
+			margin-bottom: 0;
+		}
+		span {
+			display: block;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 30px;
+			color: #333;
+		}
+		@media (max-width: 767px) {
+			padding: 15px 20px;
+			li {
+				&:not(:last-child) {
+					padding-bottom: 15px;
+				}
+			}
+		}
+		@media (max-width: 575px) {
+			padding: 10px;
+			li {
+				&:not(:last-child) {
+					padding-bottom: 5px;
+				}
+			}
+			h6,
+			span {
+				font-size: 16px;
+				line-height: 25px;
+			}
+		}
+	}
+
+	.single-news__recruitment {
+		h3 {
+			display: block;
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 30px;
+			color: #555555;
+		}
+		a {
+			position: relative;
+			padding-left: 20px;
+			&::before {
+				content: '';
+				position: absolute;
+				background: #c4c4c4;
+				height: 6px;
+				width: 6px;
+				border-radius: 50%;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			display: inline;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 35px;
+			letter-spacing: -0.02em;
+			color: #555555;
+			@include line__clamp(1);
+		}
+	}
+}

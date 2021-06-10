@@ -1,0 +1,164 @@
+.contactpage__content {
+	padding: 70px 0;
+	.info {
+		@media (min-width: 992px) {
+			padding-top: 30px;
+		}
+		h2 {
+			display: block;
+			font-weight: bold;
+			font-size: 33px;
+			line-height: 42px;
+			text-transform: uppercase;
+			color: #666666;
+			margin-bottom: 20px;
+		}
+		ul {
+			li {
+				display: flex;
+				flex-flow: row;
+				align-items: baseline;
+				padding-bottom: 12px;
+				img {
+					width: 17px;
+					height: 17px;
+					object-fit: scale-down;
+					position: relative;
+					top: 3px;
+				}
+				h6 {
+					display: block;
+					font-weight: bold;
+					font-size: 17px;
+					line-height: 30px;
+					color: #666666;
+					margin-bottom: 0;
+					padding-left: 15px;
+					span {
+						font-weight: normal;
+					}
+				}
+			}
+		}
+		@media (max-width: 1199px) {
+			h2 {
+				font-size: 25px;
+				line-height: 35px;
+			}
+			ul {
+				li {
+					h6 {
+						font-size: 15px;
+						padding-left: 10px;
+					}
+				}
+			}
+		}
+		@media (max-width: 575px) {
+			h2 {
+				font-size: 20px;
+				line-height: 28px;
+				margin-bottom: 10px;
+			}
+			ul {
+				li {
+					h6 {
+						line-height: 22px;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 991px) {
+		padding: 35px 0;
+	}
+}
+
+.form__contactpage {
+	background: #bf001b;
+	border-radius: 5px;
+	padding: 25px 40px;
+	h3 {
+		display: block;
+		font-weight: bold;
+		font-size: 22px;
+		line-height: 27px;
+		color: #ffffff;
+		margin-bottom: 20px;
+	}
+	label {
+		position: relative;
+		width: 100%;
+		margin-bottom: 0;
+		i {
+			position: absolute;
+			right: 15px;
+			top: calc(50% - 23px);
+			font-size: 25px;
+		}
+	}
+	select {
+		appearance: none;
+	}
+	textarea {
+		height: 110px;
+	}
+	input,
+	textarea,
+	select {
+		display: block;
+		background: #ffffff;
+		border-radius: 5px;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 17px;
+		color: #666666;
+		padding: 15px;
+		width: 100%;
+		margin-bottom: 20px;
+		border: unset;
+	}
+
+	.half__past {
+		display: flex;
+		flex-flow: row;
+		align-items: stretch;
+		margin: 0 -10px;
+		@media (max-width: 575px) {
+			flex-flow: column;
+			margin: 0;
+		}
+		&-items {
+			@include col-w(50%);
+			padding: 0 10px;
+			@media (max-width: 575px) {
+				@include col-w(100%);
+				padding: 0;
+			}
+		}
+	}
+
+	.submit {
+		display: inline-block;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 24px;
+		letter-spacing: 0.05em;
+		color: #ffffff;
+		background: #303032;
+		border-radius: 5px;
+		padding: 15px 80px;
+		&:hover {
+			background: black;
+		}
+	}
+
+	@media (max-width: 1199px) {
+		padding: 20px;
+		.submit {
+			font-size: 16px;
+			line-height: 19px;
+			padding: 10px 50px;
+		}
+	}
+}

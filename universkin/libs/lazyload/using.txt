@@ -1,0 +1,8 @@
+	$("img.lazy").Lazy({
+		effect: "fadeIn",
+		effectTime: 200,
+		enableThrottle: false,
+		scrollDirection: "vertical",
+	});
+
+	  <img class="lazy" src="{{ asset('template') }}/images/loading.gif" data-src="{{ @$v->getImageUrl('original') }}" alt="" />
