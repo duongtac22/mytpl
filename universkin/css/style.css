@@ -12963,4 +12963,166 @@ ul {
 }
 
 /* end section video */
+/* section products */
+.products {
+  padding: 60px 0 110px;
+  background: url("../images/horizonal-dots.png") no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.products h2.title {
+  font-size: 35px;
+  line-height: 40px;
+  margin: 0 0 20px 0;
+}
+
+.products .product-tabs {
+  float: left;
+  width: 360px;
+}
+
+.products .product-tabs .nav-item {
+  display: inline-block;
+  width: 100%;
+}
+
+.products .product-tabs .nav-link {
+  font-size: 20px;
+  line-height: 40px;
+  color: #575856;
+}
+
+.products .product-tabs .nav-link span.icons {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.products .product-tabs .nav-link span.icons svg {
+  position: relative;
+  top: 2px;
+}
+
+.products .product-tabs .nav-link.active, .products .product-tabs .nav-link:hover {
+  font-size: 22px;
+  color: #000000;
+  font-weight: 600;
+}
+
+.products .product-tabs .nav-link.active svg path, .products .product-tabs .nav-link:hover svg path {
+  fill: #000000;
+}
+
+.products .tab-content {
+  display: block;
+  margin-left: 380px;
+}
+
+.products .product-contents .product-gallery {
+  float: left;
+  width: 430px;
+}
+
+.products .swiper-slide {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.products .gallery-top {
+  height: 440px;
+  margin-bottom: 18px;
+}
+
+.products .gallery-thumbs {
+  height: 91px;
+}
+
+.products .gallery-thumbs .swiper-slide {
+  background-size: cover;
+}
+
+.products .gallery-thumbs .swiper-slide.swiper-slide-thumb-active {
+  border: 1px solid #000000;
+}
+
+.products .product-info {
+  display: block;
+  margin-left: 460px;
+}
+
+.products .product-info .name {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.products .product-info .box-attribute {
+  margin-bottom: 19px;
+  color: #4F4F4F;
+}
+
+.products .product-info .box-attribute .name {
+  font-size: 20px;
+  line-height: 22px;
+  margin-bottom: 9px;
+  font-weight: 600;
+}
+
+.products .product-info .box-attribute .contents {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.products .product-info .box-attribute.box-effect .contents {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.products .product-info .box-attribute.box-effect .contents p {
+  position: relative;
+  padding-left: 20px;
+}
+
+.products .product-info .box-attribute.box-effect .contents p::before {
+  content: '';
+  background: url("../images/ic-clock.jpg") no-repeat center center;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  margin-right: 10px;
+}
+
+.products .product-info .box-prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.products .product-info .box-prices .name {
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+.products .product-info .box-prices .prices {
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.products .product-info .box-prices .prices b {
+  font-size: 25px;
+}
+
+.products .product-info .btn-custom {
+  margin-top: 18px;
+}
+
+/* end section products */
 /*# sourceMappingURL=style.css.map */

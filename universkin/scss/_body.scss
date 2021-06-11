@@ -453,3 +453,139 @@ ul {
 	}
 }
 /* end section video */
+
+/* section products */
+
+.products {
+	padding: 60px 0 110px ;
+	background : url('../images/horizonal-dots.png') no-repeat ;
+	background-position: bottom center;
+	background-size: contain;
+	overflow: hidden;
+	h2.title {
+		font-size: 35px;
+		line-height: 40px;
+		margin: 0 0 20px 0 ; 
+	}
+	.product-tabs {
+		float: left ;
+		width: 360px;
+		.nav-item {
+			display: inline-block;
+			width: 100% ; 
+		}
+		.nav-link {
+			font-size: 20px;
+			line-height: 40px;
+			color: #575856;
+			span.icons {
+				width: 18px;
+				height: 18px;
+				display : inline-block;
+				svg {
+					position: relative;
+    				top: 2px;
+				}
+			}
+			&.active , &:hover {
+				font-size: 22px;
+				color: #000000;
+				font-weight: 600;
+				svg path{
+					fill : #000000;
+				}
+			}
+		}
+	}
+	.tab-content {
+		display: block;
+		margin-left: 380px;
+	}
+	.product-contents {
+		.product-gallery {
+			float: left;
+			width: 430px;
+		}
+	}
+	.swiper-slide {
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
+	.gallery-top {
+		height: 440px;
+		margin-bottom: 18px;
+	}
+
+	.gallery-thumbs {
+		height: 91px;
+		.swiper-slide { 
+			background-size: cover;
+		}
+		.swiper-slide.swiper-slide-thumb-active {
+			border: 1px solid #000000;
+		}
+	}
+	.product-info {
+		display: block;
+		margin-left: 460px;
+		.name {
+			font-size: 25px;
+			line-height: 40px;
+		}
+		.box-attribute {
+			margin-bottom: 19px;
+			color: #4F4F4F;
+			.name {
+				font-size: 20px;
+				line-height: 22px;
+				margin-bottom: 9px;
+				font-weight: 600;
+			}
+			.contents {
+				font-size: 18px;
+				line-height: 22px;
+			}
+			&.box-effect {
+				.contents {
+					font-size: 16px;
+					line-height: 20px;
+					p {
+						position: relative;
+						padding-left: 20px;
+					}
+					p::before {
+						content: '' ;
+						background : url('../images/ic-clock.jpg') no-repeat center center ;
+						display: inline-block;
+						width: 14px;
+						height: 14px;
+						position: absolute;
+						top: 2px;
+						left: 0;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+		.box-prices {
+			display: flex;
+			align-items: flex-start;
+			.name {
+				font-size: 18px;
+				margin-right: 12px;
+			}
+			.prices {
+				font-size: 16px;
+				line-height: 40px;
+				b {
+					font-size: 25px;
+				}
+			}
+		}
+		.btn-custom {
+			margin-top: 18px;
+		}
+	}
+}
+/* end section products */
