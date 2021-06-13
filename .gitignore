@@ -2,7 +2,7 @@
 node_modules/
 someOtherfoler/
 template_cache/
-
+.history/
 # Compiled source #
 ###################
 *.com
