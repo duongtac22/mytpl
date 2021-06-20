@@ -1,0 +1,43 @@
+.tragop-steps{
+    input[type=checkbox],
+    input[type=radio] {
+        display: none;
+    }
+    label {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0 ;
+        height: 100%;
+    }
+    img {
+        max-width: 110px;
+        margin : 0 auto ; 
+    }
+    
+    li {
+        display: inline-block;
+        width: 138px;
+        padding: 3px;
+        border: 1px solid #eeeeee;
+        margin-right: 8px;
+        margin-bottom: 10px;
+        height: 50px;
+        line-height: 35px;
+        box-sizing: border-box;
+        &.active {
+            border-color: #169C2C;
+            box-shadow: 0 1px 2px 1px rgba(0,0,0,0.15);
+        }
+    }
+    .tragop-content {
+        display: inline-block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+#list-bank {
+    .tragop-banks {
+        margin-top: 10px;
+    }
+}

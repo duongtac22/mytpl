@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+ <!-- box tra gop -->
+
+        <!-- tra gop steps-->
+
+        <div class="tragop-steps">
+            <form action="" class="tragop-form">
+                <div id="tragop-step1">
+                    <div class="box-title">
+                        <strong class="float-left">
+                            Bước 1: Chọn ngân hàng trả góp
+                        </strong>
+                        <a href="javascript:;" class="float-right">
+                            Xem chi tiết chương trình
+                        </a>
+                    </div>
+
+                    <div id="list-bank" class="tragop-content">
+                        <ul class="tragop-banks list-unstyled p-0 m-0">
+                            <li class="bankDetail" data-bank="VCCOMBANK">
+                                <label for="VCCOMBANK" id="">
+                                    <input name="tragopBank" type="radio" id="VCCOMBANK" data-code="VCCOMBANK" data-card="VISA,MASTERCARD" 
+                                        onclick="chonNganHang(this)">
+                                    <img src="images/vccombank.jpg" alt="">
+                                </label>
+                            </li>
+                            <li class="bankDetail" data-bank="MBBANK">
+                                <label for="MBBANK" id="">
+                                    <input name="tragopBank" type="radio" id="MBBANK" data-code="MBBANK" data-card="VISA" 
+                                        onclick="chonNganHang(this)">
+                                        <img src="images/mbbank.jpg" alt="">
+                                </label>
+                            </li>
+                            <li class="bankDetail" data-bank="SACCOMBANK">
+                                <label for="SACCOMBANK" id="">
+                                    <input name="tragopBank" type="radio" id="SACCOMBANK" data-code="SACCOMBANK" data-card="JCB,VISA,MASTERCARD" 
+                                        onclick="chonNganHang(this)">
+                                        <img src="images/sacommbank.jpg" alt="">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="tragop-step2" style="display: none;">
+                    <div class="box-title">
+                        <strong class="float-left">
+                            Bước 2: Chọn loại thẻ thanh toán
+                        </strong>
+                    </div>
+                    <div id="list-cards" class="tragop-content">
+                        <ul class="tragop-cards list-unstyled p-0 m-0" id="listcardtype">
+                                <li class="detail-visa">
+                                    <label for="card-visa" id="cardType">
+                                        <input name="cardType" type="radio" data-code="VISA" id="card-visa" data-name="Thẻ Visa" data-card="VISA" onclick="SetCard(this)" />
+                                        <img src="images/card-visa.png" alt="VISA" />
+                                    </label>
+                                </li>
+                                <li class="detail-master">
+                                    <label for="card-master" id="cardType">
+                                        <input name="cardType" type="radio" data-code="MASTERCARD" id="card-master" data-name="Thẻ Master" data-card="MASTERCARD" onclick="SetCard(this)" />
+                                        <img src="images/card-master.png" alt="MASTERCARD" />
+                                    </label>
+                                </li>
+                                <li class="detail-jcb">
+                                    <label for="card-jcb" id="cardType">
+                                        <input name="cardType" type="radio" data-code="JCB" id="card-jcb" data-name="Thẻ JCB" data-card="JCB" onclick="SetCard(this)" />
+                                        <img src="images/card-jcb.png" alt="JCB" />
+                                    </label>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <div id="tragop-step3" style="display: none;">
+                    <div class="box-title">
+                        <strong class="float-left">
+                            Bước 3: Số tiền muốn trả góp quả thẻ tín dụng
+                        </strong>
+                    </div>
+                    <div id="tragop-tratruoc" class="tragop-content">
+                        <input type="hidden" id="tragop-total" value="10000000">
+                        <input type="text" id="prepaid" class="form-control" 
+                         onkeypress="return isNumberKey(event)"
+                         onkeyup="this.value = writeStringToPrice(this.value)" value="0" required="">
+                    </div>
+                </div>
+                <div id="tragop-step4" >
+                    <div class="box-title">
+                        <strong class="float-left">
+                            Bước 4: Chọn số tháng trả góp
+                        </strong>
+                    </div>
+                    <div id="tragop-detail" class="tragop-content">
+                       <div class="fixed-titlte">
+                           <div class="item">
+                                Số tháng trả góp
+                           </div>
+                            <div class="item">
+                                Giá sản phẩm
+                            </div>
+                            <div class="item">
+                                Giá trả góp
+                            </div>
+                            <div class="item">
+                                Góp mỗi tháng
+                            </div>
+                            <div class="item">
+                                Tổng tiền trả góp
+                            </div>
+                            <div class="item">
+                                Chênh lệch với mua trả thẳng
+                            </div>
+                            <div class="item">
+                                Số tiền thanh toán khi nhận máy
+                            </div>
+                            <div class="blank item">
+                                
+                            </div>
+                       </div>
+                       <div class="tragop-list-month">
+                            <div class="month">
+                                <div class="item title">
+                                    3 tháng
+                               </div>
+                                <div class="item">
+                                    28.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    27.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    4.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    28.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    0
+                                </div>
+                                <div class="check-month item">
+                                    <label for="tragop-3thang">
+                                        <input name="tragop-thang" type="radio" id="tragop-3thang"/>
+                                        <span></span>
+                                        <b> Chọn </b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="month">
+                                <div class="item title">
+                                    3 tháng
+                               </div>
+                                <div class="item">
+                                    28.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    27.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    4.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    28.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    0
+                                </div>
+                                <div class="check-month item">
+                                    <label for="tragop-3thang">
+                                        <input name="tragop-thang" type="radio" id="tragop-3thang"/>
+                                        <span></span>
+                                        <b> Chọn </b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="month">
+                                <div class="item title">
+                                    3 tháng
+                               </div>
+                                <div class="item">
+                                    28.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    27.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    4.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    28.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    0
+                                </div>
+                                <div class="check-month item">
+                                    <label for="tragop-3thang">
+                                        <input name="tragop-thang" type="radio" id="tragop-3thang"/>
+                                        <span></span>
+                                        <b> Chọn </b>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="month">
+                                <div class="item title">
+                                    3 tháng
+                               </div>
+                                <div class="item">
+                                    28.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    27.990.000 VNĐ
+                                </div>
+                                <div class="item">
+                                    4.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    28.789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    789.345 VNĐ
+                                </div>
+                                <div class="item">
+                                    0
+                                </div>
+                                <div class="check-month item">
+                                    <label for="tragop-3thang">
+                                        <input name="tragop-thang" type="radio" id="tragop-3thang"/>
+                                        <span></span>
+                                        <b> Chọn </b>
+                                    </label>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- end tra gop steps-->
+    <!-- end box tra gogp-->
+    </div>
+
+   
+
+    <!-- script -->
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+
+    <script>
+        function isNumberKey(evt){
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+            return true;
+        }
+        function formatCurrency(a) {
+            var b = parseFloat(a).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1.").toString();
+            var len = b.length;
+            b = b.substring(0, len - 3);
+            return b;
+        }
+        function writeStringToPrice(str){
+    str = (str+'').replace(/\./g, "");
+    var first_group = str.substr(0,str.length % 3);
+    var remain_group = str.replace(first_group,"");
+    var num_group = remain_group.length/3;
+    var result = "";
+    for(var i=0;i < num_group;i++){
+      group_of_three = remain_group.substr(i*3,3);
+      result += group_of_three;
+      if(i != (num_group-1)) result += ".";
+    }
+    if(first_group.length > 0) {
+      if(result != "") return first_group + "." + result ;
+      else return first_group;
+    }else{
+      if(result != "") return result;
+      else return "";
+    }
+  }
+        function chonNganHang(e){
+        var dataBank = jQuery('#'+e.id).data('code');
+        var dataCard = jQuery('#'+e.id).data('card');
+        var data = dataCard.split(',');
+
+        $("#listcardtype").find("li input").each(function(){
+            // xoa checked input truoc
+            $('#'+this.id).prop("checked", false);
+            $('#'+this.id).parent().parent().removeClass('acti');
+
+            var card = $('#'+this.id).data('code');
+            if($.inArray(card, data) == -1){
+                $('#'+this.id).parent().parent().hide();
+            }else{
+                $('#'+this.id).parent().parent().show();
+            };
+        });
+
+        $('#list-bank').find('li input').each(function(){
+            var isChecked = $('#'+this.id).prop('checked');
+            if(isChecked){
+                $('#'+this.id).parent().parent().addClass('active');
+            }else{
+                $('#'+this.id).parent().parent().removeClass('active');
+            }
+        });
+
+        // hien thi steps 2
+        $('#tragop-step2').show();
+
+        // loại bỏ checked input thẻ
+        $('#VISA label input').prop("checked", false);
+        $('#MASTERCARD label input').prop("checked", false);
+        $('#JCB label input').prop("checked", false);
+
+        // ẩn các steps khác
+
+    }
+
+    function SetCard(e){
+        // var card = $('#'+e.id).data('code');
+        $('#listcardtype').find('li input').each(function(){
+            var isChecked = $('#'+this.id).prop('checked');
+            if(isChecked){
+                $('#'+this.id).parent().parent().addClass('active');
+            }else{
+                $('#'+this.id).parent().parent().removeClass('active');
+            }
+        });
+
+        // Lấy data tra gop
+
+        // hien thi steps 3
+        $('#tragop-step3').show();
+
+        // Hide unnecessary data        
+        
+    }
+    </script>
+</body>
+</html>
