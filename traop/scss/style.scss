@@ -41,3 +41,36 @@
         margin-top: 10px;
     }
 }
+#tragop-detail {
+    border: 1px solid #BBBBBB;
+    .item {
+        padding: 10px 15px;
+        &:not(:last-child) {
+            border-bottom: 1px solid #BBBBBB;
+        }
+    }
+    
+    .fixed-titlte {
+        width: 270px;
+        float: left;
+    }
+    
+    .tragop-list-month {
+        border-left: 1px solid #BBBBBB;
+        float: left;
+        width: calc(100% - 270px);
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        background-color: #fff;
+        -webkit-overflow-scrolling: touch;
+        .month {
+            width: 245px;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+            &:not(:first-child) {
+                border-left: 1px solid #BBBBBB;
+            }
+        }
+    }
+}
